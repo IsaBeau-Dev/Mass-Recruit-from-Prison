@@ -1,57 +1,48 @@
-﻿mrfp_is_loaded_sgui = {
-  scope = character
-  is_shown = {
-      #exists = global_var:mrfp_is_loaded
-    has_global_variable = mrfp_is_loaded
-  }
-  is_valid = {
-      #exists = global_var:mrfp_is_loaded
-    has_global_variable = mrfp_is_loaded
-  }
-  effect = {
-    debug_log = "Startup PRISONER RELEASE"
-    if = {
-      limit = {
-          has_prisoners = yes
-      }
-      debug_log = "Startup PRISONER RELEASE has prisoners"
-      every_prisoner = {
-        # limit = {
-        #   save_temporary_scope_as = mrfp_the_prisoner
-        #   #NOT = {prev.faith = this.faith}
-        #   root = { # prev is the ruler
-        #     is_character_interaction_valid = {
-        #       interaction = mrfp_release_from_prison_interaction
-        #       recipient = scope:mrfp_the_prisoner # prev is back to being the prisoner
-        #     }
-        #   }
-        #   #is_landed = no
-        #   #is_ruler = no
-        # }
-      debug_log_scopes = yes
-      save_scope_as = mrfp_global_the_prisoner
-      debug_log = "PRISONER RELEASE :- [THIS.Char.GetNameNoTooltip]"
-        run_interaction = {
-          interaction = mrfp_release_from_prison_interaction2
-          actor = root # prev is the ruler
-          #recipient = this # this is the prisoner
-          recipient = scope:mrfp_global_the_prisoner
-          execute_threshold = accept
-        }
-      }
-    }
-  }
-}
-
-
-
-
-
-
-
-
-
-mrfp_is_loaded_sgui2 = {
+﻿# mrfp_is_loaded_sgui_using_interaction = {
+#   scope = character
+#   is_shown = {
+#       #exists = global_var:mrfp_is_loaded
+#     has_global_variable = mrfp_is_loaded
+#   }
+#   is_valid = {
+#       #exists = global_var:mrfp_is_loaded
+#     has_global_variable = mrfp_is_loaded
+#   }
+#   effect = {
+#     debug_log = "Startup PRISONER RELEASE"
+#     if = {
+#       limit = {
+#           has_prisoners = yes
+#       }
+#       debug_log = "Startup PRISONER RELEASE has prisoners"
+#       every_prisoner = {
+#         # limit = {
+#         #   save_temporary_scope_as = mrfp_the_prisoner
+#         #   #NOT = {prev.faith = this.faith}
+#         #   root = { # prev is the ruler
+#         #     is_character_interaction_valid = {
+#         #       interaction = mrfp_release_from_prison_interaction
+#         #       recipient = scope:mrfp_the_prisoner # prev is back to being the prisoner
+#         #     }
+#         #   }
+#         #   #is_landed = no
+#         #   #is_ruler = no
+#         # }
+#       debug_log_scopes = yes
+#       save_scope_as = mrfp_global_the_prisoner
+#       debug_log = "PRISONER RELEASE :- [THIS.Char.GetNameNoTooltip]"
+#         run_interaction = {
+#           interaction = mrfp_release_from_prison_interaction2
+#           actor = root # prev is the ruler
+#           #recipient = this # this is the prisoner
+#           recipient = scope:mrfp_global_the_prisoner
+#           execute_threshold = accept
+#         }
+#       }
+#     }
+#   }
+# }
+mrfp_is_loaded_sgui = {
   scope = character
   is_shown = {
       #exists = global_var:mrfp_is_loaded
@@ -123,6 +114,11 @@ mrfp_is_loaded_sgui2 = {
           root = {
               add_courtier = scope:mrfp_global_the_prisoner
           }
+          ##testing
+          # if = {
+          #   limit = {mrfp_accept > 0}
+          #   debug_log = "Super Nice"
+          # }
         }
         
         
