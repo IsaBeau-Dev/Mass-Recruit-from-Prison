@@ -42,6 +42,146 @@
     }
   }
 }
+
+
+
+
+
+
+
+
+
+mrfp_is_loaded_sgui2 = {
+  scope = character
+  is_shown = {
+      #exists = global_var:mrfp_is_loaded
+    has_global_variable = mrfp_is_loaded
+  }
+  is_valid = {
+      #exists = global_var:mrfp_is_loaded
+    has_global_variable = mrfp_is_loaded
+  }
+  effect = {
+    debug_log = "Startup PRISONER RELEASE"
+    if = {
+      limit = {
+          has_prisoners = yes
+      }
+      debug_log = "Startup PRISONER RELEASE has prisoners"
+      every_prisoner = {
+        if = {
+          limit = {
+            #is_imprisoned_by = root
+            NOT = { has_character_flag = is_being_tortured }
+            is_ruler = no
+          }
+          save_scope_as = mrfp_global_the_prisoner
+          ###Recruit
+          #loyal servant
+          if = {
+            limit = { root = { culture = { has_cultural_parameter = can_recruit_prisoners_easily } } }
+            add_opinion = {
+              modifier = loyal_servant
+              target = root
+            }
+            root = {
+              if = {
+                limit = {
+                  can_add_hook = {
+                      target = scope:mrfp_global_the_prisoner
+                      type = loyalty_hook
+                  }
+                }
+                add_hook = {
+                  type = loyalty_hook
+                  target = scope:mrfp_global_the_prisoner
+                }
+              }
+            }
+          }
+          #demanded recruitmemt opinion
+          else = {
+            add_opinion = {
+              modifier = demanded_recruitment
+              target = root
+            }
+          }
+          #communal possessions
+          if = {
+            limit = {
+              AND = {
+                root.faith = {
+                    has_doctrine = tenet_communal_possessions
+                }
+                has_trait = peasant_leader
+              }
+            }
+            root = { add_piety = medium_piety_gain }
+          }
+          #release from prison and add to court
+          release_from_prison = yes
+          root = {
+              add_courtier = scope:mrfp_global_the_prisoner
+          }
+        }
+        
+        
+        #Demand Conversion
+        if = {
+          limit = {
+            OR = {
+              NOT = {this.faith = root.faith }
+              AND = {
+                  is_landed = yes
+                  is_vassal_or_below_of = root
+                  NOT = {this.faith = root.faith }
+              }
+            }
+            ###
+            NOT = {
+              AND = {
+                  exists = this.faith.religious_head
+                  this.faith.religious_head = this
+              }
+            }
+            #########
+            NAND = {
+              exists = this.faith
+              this.faith = {
+                  any_faith_holy_order = { leader = this }
+              }
+            }
+            ############
+          }
+
+          #demand_conversion_interaction_effect = yes
+          set_faith = root.faith
+          add_opinion = {
+              modifier = demanded_my_conversion_opinion
+              target = root
+          }
+        }
+          
+          
+          
+        ###remove some flags
+        if = {
+          limit = { has_character_modifier = allowed_to_go_outside }
+          remove_character_modifier = allowed_to_go_outside
+        }
+        if = {
+          limit = { has_character_modifier = moldy_gruel_diet }
+          remove_character_modifier = moldy_gruel_diet
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
 ############old
 # every_prisoner = {
 #     if = {
