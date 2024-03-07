@@ -482,7 +482,8 @@ window = {
 										parentanchor = center
 										#onclick = "[CourtWindow.MassPrisonerAction('release')]"
 										onclick = "[GetScriptedGui('mrfp_is_loaded_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('release')]"
+										#tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('release')]"
+										tooltip = "mrfp_tooltip"
 										using = tooltip_se
 									}
 								}
