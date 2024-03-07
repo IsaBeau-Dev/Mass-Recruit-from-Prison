@@ -52,7 +52,7 @@
 		}
 		if = {
 			limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
-
+			debug_log = "on_accept"
 			scope:recipient = {
 				# Demand Conversion
 				if = {
@@ -572,10 +572,12 @@
 			NOT = { scope:recipient.faith = scope:actor.faith }
 		}
 		is_valid = {
+			
 			trigger_if = {
 				limit = {
 					scope:actor = { is_ai = yes }
 				}
+
 				scope:recipient = {
 					OR = {
 						is_close_or_extended_family_of = scope:actor
