@@ -16,11 +16,14 @@
             every_prisoner = {
               limit = {
                 prev = { # prev is the ruler
+                  NOT = {prev.faith = this.faith}
                   is_character_interaction_valid = {
                     recipient = prev # prev is back to being the prisoner
                     interaction = mrfp_release_from_prison_interaction
                   }
                 }
+                #is_landed = no
+                is_ruler = no
               }
               run_interaction = {
                 interaction = mrfp_release_from_prison_interaction

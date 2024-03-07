@@ -1179,5 +1179,224 @@
 
 	ai_will_do = {
 		base = 0
+
+		modifier = {
+			add = 20
+			scope:demand_conversion = yes
+		}
+		modifier = {
+			add = 100
+			scope:demand_conversion = yes
+			scope:recipient = {
+				is_vassal_of = scope:actor
+			}
+		}
+		modifier = {
+			add = 30
+			scope:renounce_claims = yes
+		}
+		modifier = {
+			add = 50
+			scope:banish = yes
+		}
+		modifier = {
+			add = 30
+			scope:take_vows = yes
+		}
+		modifier = {
+			add = 10
+			scope:recruit = yes
+		}
+		modifier = { # Rivals can rot
+			add = -40
+			scope:actor = {
+				NOT = {
+					has_trait = forgiving
+				}
+			}
+			scope:recipient = {
+				OR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor
+					scope:recipient = {
+						is_spouse_of = scope:actor
+						exposed_cheating_on_spouse_trigger = { SPOUSE = scope:actor }
+					}
+				}
+			}
+		}
+		modifier = { # Rivals can rot FOREVER if vengeful
+			add = -100
+			scope:actor = {
+				NOT = {
+					has_trait = forgiving
+				}
+			}
+			scope:actor.ai_vengefulness >= very_high_positive_ai_value
+			scope:recipient = {
+				OR = {
+					has_relation_rival = scope:actor
+					has_relation_nemesis = scope:actor
+					scope:recipient = {
+						is_spouse_of = scope:actor
+						exposed_cheating_on_spouse_trigger = { SPOUSE = scope:actor }
+					}
+				}
+			}
+		}
+		modifier = { # Compassionate characters don't want to keep children in their dungeon for too long
+			add = 10
+			scope:actor = {
+				is_at_war = no
+				ai_compassion >= low_positive_ai_value
+			}
+			scope:recipient = {
+				is_adult = no
+				time_in_prison = { years > 1 }
+			}
+		}
+		modifier = { # Very compassionate characters tend to release prisoners
+			add = 10
+			scope:actor = {
+				is_at_war = no
+				ai_compassion >= very_high_positive_ai_value
+			}
+			scope:recipient = {
+				time_in_prison = { years > 1 }
+			}
+		}
+		modifier = { # Somewhat compassionate characters tend to keep people in their dungeon for a while
+			add = 10
+			scope:actor = {
+				is_at_war = no
+				ai_compassion >= medium_positive_ai_value
+			}
+			scope:recipient = {
+				is_landed = no
+				time_in_prison = { years > 3 }
+			}
+		}
+		modifier = { # Only truly discompassionate characters will have their dungeon full of hapless victims after 5 years
+			add = 10
+			scope:actor = {
+				is_at_war = no
+				ai_compassion >= low_negative_ai_value
+			}
+			scope:recipient = {
+				is_landed = no
+				time_in_prison = { years > 5 }
+			}
+		}
+		modifier = { # Most AI characters will let family out...
+			add = 10
+			scope:actor = {
+				is_at_war = no
+				OR = {
+					ai_compassion >= very_high_positive_ai_value
+					AND = {
+						ai_compassion >= high_negative_ai_value
+						opinion = {
+							target = scope:recipient
+							value >= low_negative_opinion
+						}
+					}
+				}
+			}
+			scope:recipient = {
+				time_in_prison = { years > 1 }
+				is_landed = no
+				is_close_family_of = scope:actor
+			}
+		}
+		modifier = { # Almost all will let their own children out
+			add = 40
+			scope:actor = {
+				is_at_war = no
+				ai_compassion >= very_high_negative_ai_value
+			}
+			scope:recipient = {
+				is_landed = no
+				is_child_of = scope:actor
+			}
+		}
+		# Struggle
+		modifier = {
+			trigger = {
+				scope:demand_conversion = no
+				scope:renounce_claims = no
+				scope:banish = no
+				scope:gain_hook = no
+				scope:take_vows = no
+				scope:recruit = no
+			}
+			scope:recipient = {
+				any_character_struggle = {
+					involvement = involved
+				}
+			}
+			scope:actor = {
+				any_character_struggle = {
+					involvement = involved
+				}
+			}
+			add = {
+				value = 0
+				if = {
+					limit = {
+						scope:actor = {
+							any_character_struggle = {
+								phase_has_catalyst = catalyst_release_important
+							}
+							has_character_flag = agenda_towards_escalation
+						}
+					}
+					add = -100
+				}
+				else_if = {
+					limit = {
+						scope:actor = {
+							any_character_struggle = {
+								phase_has_catalyst = catalyst_release_important
+							}
+							NOT = {
+								ai_greed >= 25
+							}
+							OR = {
+								ai_compassion > 50
+								AND  = {
+									ai_compassion > 0
+									scope:recipient = {
+										time_in_prison = { years > 1 }
+									}
+								}
+							}
+						}
+					}
+					add = 200
+				}
+			}
+		}
+		modifier = { # Family Feud
+			add = -50
+			exists = scope:actor.house
+			exists = scope:recipient.house
+			scope:actor = {
+				house.house_head = {
+					any_owned_story = {
+						story_type = story_cycle_house_feud
+						has_variable = house_feud_house
+						var:house_feud_house = scope:recipient.house
+					}
+				}
+				has_opinion_modifier = {
+					modifier = house_feud_opinion
+					target = scope:recipient.house.house_head
+				}
+			}
+		}
+
+		evaluate_action_increasing_house_unity = {
+			VALUE = 100
+		}
 	}
 }
