@@ -115,10 +115,10 @@ mrfp_is_loaded_sgui = {
               add_courtier = scope:mrfp_global_the_prisoner
           }
           ##testing
-          if = {
-            limit = {this.mrfp_accept > 0}
-            debug_log = "Super Nice"
-          }
+          # if = {
+          #   limit = {this.mrfp_accept > 0}
+          #   debug_log = "Super Nice"
+          # }
         }
         
         

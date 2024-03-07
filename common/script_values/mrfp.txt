@@ -18,10 +18,16 @@
 # 		add = 50
 # 	}
 # }
-mrfp_accept = {
-	value = 0
+mrfp_accept= {
+	value = 35
 	if = {
-		limit = { exists = scope:imprisoner }
-		add = 10
+		limit = { has_trait = zealous }
+		add = -20
 	}
+	if = {
+		limit = { has_trait = vengeful }
+		add = -20
+	}
+	#recruit
+	add = -10
 }
