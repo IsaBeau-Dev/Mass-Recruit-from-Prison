@@ -115,10 +115,10 @@ mrfp_is_loaded_sgui = {
               add_courtier = scope:mrfp_global_the_prisoner
           }
           ##testing
-          # if = {
-          #   limit = {mrfp_accept > 0}
-          #   debug_log = "Super Nice"
-          # }
+          if = {
+            limit = {this.mrfp_accept > 0}
+            debug_log = "Super Nice"
+          }
         }
         
         
@@ -151,7 +151,8 @@ mrfp_is_loaded_sgui = {
           }
 
           #demand_conversion_interaction_effect = yes
-          set_faith = root.faith
+          #this.set_faith = root.faith
+          set_character_faith = root.faith
           add_opinion = {
               modifier = demanded_my_conversion_opinion
               target = root
