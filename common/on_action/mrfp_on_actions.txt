@@ -1,0 +1,13 @@
+﻿on_game_start = {
+    on_actions = {
+        on_mrfp_start
+    }
+}
+on_mrfp_start = {
+    effect = {
+        set_global_variable = {
+		    name = mrfp_is_loaded
+		    value = yes
+		}
+    }
+}
