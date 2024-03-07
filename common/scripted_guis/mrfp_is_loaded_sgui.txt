@@ -32,7 +32,7 @@
       save_scope_as = mrfp_global_the_prisoner
       debug_log = "PRISONER RELEASE :- [THIS.Char.GetNameNoTooltip]"
         run_interaction = {
-          interaction = mrfp_release_from_prison_interaction
+          interaction = mrfp_release_from_prison_interaction2
           actor = root # prev is the ruler
           #recipient = this # this is the prisoner
           recipient = scope:mrfp_global_the_prisoner

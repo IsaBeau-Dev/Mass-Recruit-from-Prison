@@ -1,8 +1,8 @@
-﻿mrfp_release_from_prison_interaction = {
+﻿mrfp_release_from_prison_interaction2 = {
 	interface_priority = 30
 	common_interaction = yes
 	category = interaction_category_prison
-	special_interaction = release_from_prison_interaction
+	special_interaction = mrfp_release_from_prison_interaction2
 	icon = prison
 
 	desc = release_from_prison_interaction_desc
@@ -12,9 +12,6 @@
 			triggered_desc = {
 				trigger = {
 					scope:demand_conversion = no
-					scope:renounce_claims = no
-					scope:banish = no
-					scope:take_vows = no
 					scope:recruit = no
 				}
 				desc = RELEASE_PRISONER_OFFER
@@ -24,16 +21,13 @@
 	}
 
 	is_shown = {
-		always = no
+		always = yes
 	}
 
 	is_valid_showing_failures_only = {
 		scope:recipient = { is_busy_in_events_localised = yes } #Prisoner
 		scope:recipient = {
-			custom_description = {
-				text = "currently_being_tortured"
 				NOT = { has_character_flag = is_being_tortured }
-			}
 		}
 		cannot_release_former_regent_whilst_old_regent_holds_power_trigger = {
 			PRISONER = scope:recipient
@@ -52,13 +46,14 @@
 		}
 		if = {
 			limit = { scope:recipient = { is_imprisoned_by = scope:actor } }
-			debug_log = "on_accept"
+			#debug_log = "on_accept"
 			scope:recipient = {
 				# Demand Conversion
 				if = {
 					limit = {
 						scope:demand_conversion = yes
 					}
+					debug_log = "scope:demand_conversion = yes"
 					demand_conversion_interaction_effect = yes
 					add_opinion = {
 						modifier = demanded_my_conversion_opinion
@@ -558,6 +553,7 @@
 	}
 
 	on_decline = {
+		debug_log = "on_decline"
 		scope:actor = {
 			trigger_event = char_interaction.0161
 		}
@@ -572,7 +568,7 @@
 			NOT = { scope:recipient.faith = scope:actor.faith }
 		}
 		is_valid = {
-			debug_log = "VALID"
+			#debug_log = "VALID"
 			NOT = { scope:recipient.faith = scope:actor.faith }
 			# trigger_if = {
 			# 	limit = {
@@ -624,328 +620,26 @@
 	}
 
 	send_option = {
-		flag = renounce_claims
-		localization = RELEASE_RENOUNCE_CLAIMS
-		starts_enabled = { always = no }
-		can_be_changed = { always = no }
-		is_shown = {
-			custom_description = {
-				text = "release_renounce_claims"
-				subject = scope:recipient
-				scope:recipient = {
-					any_claim = {
-						explicit = yes
-						save_temporary_scope_as = temp_claim
-						OR = {
-							holder = scope:actor
-							AND = {
-								NOT = { prev = { target_is_liege_or_above = scope:actor } }
-								trigger_if = {
-									limit = {
-										exists = holder
-									}
-									holder = { target_is_liege_or_above = scope:actor }
-								}
-							}
-							scope:actor = {
-								any_held_title = {
-									is_de_jure_liege_or_above_target = scope:temp_claim
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		current_description = {
-			desc = RELEASE_RENOUNCE_CLAIMS_DESC
-		}
-	}
-
-	send_option = {
-		flag = banish
-		localization = "RELEASE_BANISH"
-		starts_enabled = { always = no }
-		can_be_changed = { always = no }
-		is_shown = {
-			trigger_if = {
-				limit = {
-					scope:actor = { is_ai = yes }
-				}
-				scope:recipient = {
-					OR = {
-						AND = {
-							is_landed = no
-							is_ruler = no
-							gold > scope:actor.gold
-							gold > scope:actor.medium_gold_value
-							scope:actor.ai_greed > low_negative_ai_value
-						}
-						AND = {
-							is_landed = no
-							is_ruler = no
-							gold > 0
-							scope:actor = {
-								has_banish_reason = scope:recipient
-							}
-						}
-						AND = {
-							is_landed = no
-							is_ruler = no
-							gold > 100
-							scope:actor.ai_greed >= high_positive_ai_value
-						}
-						AND = {
-							scope:actor = {
-								has_banish_reason = scope:recipient
-							}
-							scope:actor = {
-								opinion = {
-									target = scope:recipient
-									value <= medium_negative_opinion
-								}
-							}
-						}
-					}
-				}
-			}
-			trigger_if = {
-				limit = {
-					scope:recipient = {
-						is_landed = yes
-					}
-				}
-				scope:recipient = {
-					is_vassal_of = scope:actor
-				}
-			}
-			trigger_else = {
-				scope:recipient = {
-					is_courtier_of = scope:actor
-				}
-			}
-			custom_description = {
-				text = "release_banish_invalid_take_vows"
-				object = scope:recipient
-				scope:take_vows = no
-			}
-			scope:recruit = no #Should be impossible to have both but just in case
-			NOT = {
-				scope:recipient = {
-					is_spouse_of = scope:actor
-				}
-			}
-			#scope:recipient = {
-			#	trigger_if = {
-			#		limit = { exists = liege }
-			#		liege = scope:actor
-			#	}
-			#	is_pool_character = no
-			#}
-		}
-	}
-
-	send_option = {
-		flag = gain_hook
-		localization = "RELEASE_GAIN_HOOK"
-		starts_enabled = { always = no }
-		can_be_changed = { always = no }
-		is_valid = {
-			trigger_if = {
-				limit = {
-					scope:actor = { is_ai = yes }
-				}
-				scope:recipient = {
-					OR = {
-						is_vassal_of = scope:actor
-						AND = {
-							exists = liege
-							liege = scope:actor
-						}
-					}
-				}
-			}
-			scope:actor = {
-				can_add_hook = {
-					type = favor_hook #Matches the hook added in the on_accept
-					target = scope:recipient
-				}
-			}
-		}
-	}
-
-
-	send_option = {
-		flag = take_vows
-		localization = "RELEASE_TAKE_VOWS"
-		starts_enabled = { always = no }
-		can_be_changed = { always = no }
-		is_shown = {
-			scope:actor.faith = {
-				has_doctrine_parameter = take_vows_active
-			}
-		}
-		is_valid = {
-			trigger_if = {
-				limit = {
-					scope:actor = { is_ai = yes }
-				}
-				scope:recipient = {
-					is_close_or_extended_family_of = scope:actor
-					NOT = {
-						is_heir_of = scope:actor
-					}
-				}
-				scope:actor = {
-					opinion = {
-						target = scope:recipient
-						value <= medium_negative_opinion
-					}
-				}
-			}
-			scope:recipient = {
-				custom_description = {
-					text = "release_take_vows_invalid_recruit"
-					object = scope:recipient
-					OR = {
-						is_courtier_of = scope:actor
-						scope:recruit = yes
-					}
-				}
-
-			}
-			custom_description = {
-				text = "release_vows_invalid_not_your_faith"
-				object = scope:recipient
-				subject = scope:actor
-				trigger_if = {
-					limit = {
-						NOT = { scope:recipient.faith = scope:actor.faith }
-					}
-					scope:demand_conversion = yes
-				}
-			}
-			custom_description = {
-				text = "release_executioner_invalid_take_vows_condition"
-				object = scope:recipient
-				scope:become_executioner = no
-			}
-			custom_description = {
-				text = "release_banish_invalid_take_vows"
-				object = scope:recipient
-				scope:banish = no
-			}
-			scope:recipient = {
-				age >= 10
-				NOR = {
-					has_trait = excommunicated
-					has_trait = devoted
-					has_trait = incapable
-				}
-				#Do they have the "wrong" marriage type?
-				NOR = {
-					custom_description = {
-						text = is_married_matrilineally
-						subject = scope:recipient
-						any_spouse = {
-							is_female = yes
-							matrilinear_marriage = yes
-						}
-					}
-					custom_description = {
-						text = is_married_patrilineally
-						subject = scope:recipient
-						any_spouse = {
-							is_male = yes
-							patrilinear_marriage = yes
-						}
-					}
-					custom_description = {
-						text = matrilinear_betrothal
-						subject = scope:recipient
-						exists = betrothed
-						betrothed = {
-							is_female = yes
-							matrilinear_betrothal = yes
-						}
-					}
-					custom_description = {
-						text = patrilinear_betrothal
-						subject = scope:recipient
-						exists = betrothed
-						betrothed = {
-							is_male = yes
-							patrilinear_betrothal = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-
-	send_option = {
-		flag = become_executioner
-		localization = "RELEASE_AS_EXECUTIONER"
-		starts_enabled = { always = no }
-		can_be_changed = { always = no }
-		is_shown = {
-			has_ep1_court_positions_dlc_trigger = yes
-			scope:actor = {
-				has_royal_court = yes
-			}
-			scope:recipient = {
-				is_adult = yes
-			}
-		}
-		is_valid = {
-			scope:actor = {
-				NOT = { employs_court_position = executioner_court_position }
-			}
-			scope:recipient = {
-				trigger_if = {
-					limit = { scope:recruit = yes }
-					custom_description = {
-						text = "release_executioner_invalid_recruit"
-						object = scope:recipient
-						scope:recruit = yes
-					}
-				}
-				trigger_else = {
-					is_courtier_of = scope:actor
-				}
-
-				custom_description = {
-					text = "release_executioner_invalid_take_vows_condition"
-					object = scope:recipient
-					scope:take_vows = no
-				}
-				NOT = { is_spouse_of = scope:actor  }
-			}
-		}
-	}
-
-	send_option = {
 		flag = recruit
 		localization = "RELEASE_RECRUIT"
 		starts_enabled = { always = yes }
 		can_be_changed = { always = no }
 		is_shown = {
-			trigger_if = {
-				limit = {
-					scope:actor = { is_ai = yes }
-				}
-				scope:recipient = {
-					OR = {
-						has_relation_best_friend = scope:actor
-						has_relation_friend = scope:actor
-						has_relation_lover = scope:actor
-						has_relation_soulmate = scope:actor
-						has_secret_relation_lover = scope:actor
-						is_heir_of = scope:actor
-					}
-				}
-			}
+			# trigger_if = {
+			# 	limit = {
+			# 		scope:actor = { is_ai = yes }
+			# 	}
+			# 	scope:recipient = {
+			# 		OR = {
+			# 			has_relation_best_friend = scope:actor
+			# 			has_relation_friend = scope:actor
+			# 			has_relation_lover = scope:actor
+			# 			has_relation_soulmate = scope:actor
+			# 			has_secret_relation_lover = scope:actor
+			# 			is_heir_of = scope:actor
+			# 		}
+			# 	}
+			# }
 			scope:recipient = {
 				is_ruler = no
 				NOT = { is_courtier_of = scope:actor }
@@ -970,10 +664,6 @@
 
 	auto_accept = {
 		scope:demand_conversion = no
-		scope:renounce_claims = no
-		scope:banish = no
-		scope:gain_hook = no
-		scope:take_vows = no
 		scope:recruit = no
 	}
 
