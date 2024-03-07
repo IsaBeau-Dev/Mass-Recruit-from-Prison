@@ -1,33 +1,33 @@
 ﻿
-# dungeon_events_on_action_chance = {
+# # dungeon_events_on_action_chance = {
+# # 	if = {
+# # 		limit = {
+# # 			
+# # 			scope:imprisoner = { has_character_flag = reformed_dungeon }
+# # 		}
+# # 		add = 25
+# # 	}
+# # 	if = {
+# # 		limit = {
+# # 			exists = scope:imprisoner
+# # 			scope:imprisoner = { has_character_flag = neglected_dungeon }
+# # 		}
+# # 		add = 75
+# # 	}
+# # 	else = {
+# # 		add = 50
+# # 	}
+# # }
+# mrfp_accept= {
+# 	value = 35
 # 	if = {
-# 		limit = {
-# 			
-# 			scope:imprisoner = { has_character_flag = reformed_dungeon }
-# 		}
-# 		add = 25
+# 		limit = { has_trait = zealous }
+# 		add = -20
 # 	}
 # 	if = {
-# 		limit = {
-# 			exists = scope:imprisoner
-# 			scope:imprisoner = { has_character_flag = neglected_dungeon }
-# 		}
-# 		add = 75
+# 		limit = { has_trait = vengeful }
+# 		add = -20
 # 	}
-# 	else = {
-# 		add = 50
-# 	}
+# 	#recruit
+# 	add = -10
 # }
-mrfp_accept= {
-	value = 35
-	if = {
-		limit = { has_trait = zealous }
-		add = -20
-	}
-	if = {
-		limit = { has_trait = vengeful }
-		add = -20
-	}
-	#recruit
-	add = -10
-}
