@@ -9,25 +9,13 @@
 
     is_shown = {
         is_landed = yes
-        NOT = { has_character_flag = enable_auto_demand_conversion }
+        NOT = { has_character_flag = enable_auto_mrfp }
         has_game_rule = on_mrfp
     }
 
     effect = {
         custom_tooltip = enable_mrfp_decision_effect_tooltip
-        add_character_flag = enable_auto_demand_conversion
-        every_prisoner = {
-            if = {
-              limit = {is_ruler = no}
-              run_interaction = {
-                  interaction = mrfp_release_from_prison_interaction
-                  actor = root
-                  recipient = this
-                  #send_threshold = decline
-                  execute_threshold = accept
-              }
-            }
-          }
+        add_character_flag = enable_auto_mrfp
     }
 
     ai_potential = {
@@ -50,13 +38,13 @@ disable_mrfp_decision = {
 
     is_shown = {
         is_landed = yes
-        has_character_flag = enable_auto_demand_conversion
+        has_character_flag = enable_auto_mrfp
         has_game_rule = on_mrfp
     }
 
     effect = {
         custom_tooltip = disable_mrfp_decision_effect_tooltip
-        remove_character_flag = enable_auto_demand_conversion
+        remove_character_flag = enable_auto_mrfp
     }
 
     ai_potential = {

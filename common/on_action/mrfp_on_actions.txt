@@ -11,3 +11,34 @@ on_mrfp_start = {
 		}
     }
 }
+
+quarterly_playable_pulse = {
+    #this setup makes sure mrfp_auto gets called every month
+    on_actions = {
+        mrfp_auto
+        delay = { months = 1 }
+        mrfp_auto
+        delay = { months = 2 }
+        mrfp_auto
+    }
+}
+
+mrfp_auto = {
+    trigger = {
+        has_character_flag = enable_auto_mrfp
+    }
+    effect = {
+        every_prisoner = {
+            if = {
+              limit = {is_ruler = no}
+              run_interaction = {
+                  interaction = mrfp_release_from_prison_interaction
+                  actor = root
+                  recipient = this
+                  #send_threshold = decline
+                  execute_threshold = accept
+              }
+            }
+          }
+    }
+}
