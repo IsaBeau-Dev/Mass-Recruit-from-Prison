@@ -24,10 +24,10 @@
 	}
 
 	is_shown = {
-		# scope:recipient = {
-		# 	is_imprisoned_by = scope:actor
-		# }
-		always = no
+		scope:recipient = {
+			is_imprisoned_by = scope:actor
+		}
+		# always = no
 	}
 
 	is_valid_showing_failures_only = {
