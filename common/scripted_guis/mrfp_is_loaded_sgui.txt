@@ -4,10 +4,10 @@
       #exists = global_var:mrfp_is_loaded
     has_global_variable = mrfp_is_loaded
   }
-  is_valid = {
-      #exists = global_var:mrfp_is_loaded
-    has_global_variable = mrfp_is_loaded
-  }
+  # is_valid = {
+  #     #exists = global_var:mrfp_is_loaded
+  #   has_global_variable = mrfp_is_loaded
+  # }
   effect = {
     debug_log = "Startup PRISONER RELEASE"
     if = {

@@ -474,7 +474,7 @@ window = {
 								button_round  = {
 									name = "mrfp"
 									#visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
-									visible = "[GetScriptedGui('mrfp_is_loaded_sgui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									#visible = "[GetScriptedGui('mrfp_is_loaded_sgui').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									#visible = no
 									enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
 
