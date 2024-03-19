@@ -1,0 +1,16 @@
+﻿mrfp = {
+	
+	categories = {
+		tweaks
+	}
+	
+	default = on_mrfp
+
+	on_mrfp = {
+	
+	}
+	
+	off_mrfp = {
+	
+	}
+}

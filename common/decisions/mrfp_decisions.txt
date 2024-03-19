@@ -10,6 +10,7 @@
     is_shown = {
         is_landed = yes
         NOT = { has_character_flag = enable_auto_demand_conversion }
+        has_game_rule = on_mrfp
     }
 
     effect = {
@@ -50,6 +51,7 @@ disable_mrfp_decision = {
     is_shown = {
         is_landed = yes
         has_character_flag = enable_auto_demand_conversion
+        has_game_rule = on_mrfp
     }
 
     effect = {
