@@ -1,0 +1,67 @@
+﻿enable_mrfp_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    title = enable_mrfp_decision
+    desc = enable_mrfp_decision_desc
+    confirm_text = enable_mrfp_decision_confirm
+    selection_tooltip = enable_mrfp_decision_tooltip
+
+    ai_check_interval = 0
+
+    is_shown = {
+        is_landed = yes
+        NOT = { has_character_flag = enable_auto_demand_conversion }
+    }
+
+    effect = {
+        custom_tooltip = enable_mrfp_decision_effect_tooltip
+        add_character_flag = enable_auto_demand_conversion
+        every_prisoner = {
+            if = {
+              limit = {is_ruler = no}
+              run_interaction = {
+                  interaction = mrfp_release_from_prison_interaction
+                  actor = root
+                  recipient = this
+                  #send_threshold = decline
+                  execute_threshold = accept
+              }
+            }
+          }
+    }
+
+    ai_potential = {
+        always = no
+    }
+
+    ai_will_do = {
+        base = 0
+    }
+}
+
+disable_mrfp_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    title = disable_mrfp_decision
+    desc = disable_mrfp_decision_desc
+    confirm_text = disable_mrfp_decision_confirm
+    selection_tooltip = disable_mrfp_decision_tooltip
+
+    ai_check_interval = 0
+
+    is_shown = {
+        is_landed = yes
+        has_character_flag = enable_auto_demand_conversion
+    }
+
+    effect = {
+        custom_tooltip = disable_mrfp_decision_effect_tooltip
+        remove_character_flag = enable_auto_demand_conversion
+    }
+
+    ai_potential = {
+        always = no
+    }
+
+    ai_will_do = {
+        base = 0
+    }
+}

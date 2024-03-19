@@ -1,2 +1,14 @@
 ﻿l_english:
  mrfp_tooltip:0 "Recruit all [prisoners|E] and convert them if possible.\nThis only works on characters without a title.\n#weak Prisoners that are hidden by a filter or exempted from Mass Actions will not be affected.#!"
+
+enable_mrfp_decision:0 "Start Demanding Conversions"
+enable_mrfp_decision_tooltip:0 "Automatically, demand conversions, every month."
+enable_mrfp_decision_desc:0 "My [ROOT.Char.Custom('MyPriestTitle')] will demand my willing courtiers, vassals, and house members, to embrace [ROOT.Char.GetFaith.HighGodName]."
+enable_mrfp_decision_effect_tooltip:0 "Every month, my vassals, courtiers, and house members who are convinced will convert to my faith."
+enable_mrfp_decision_confirm:0 "Start converting"
+
+disable_mrfp_decision:0 "Stop Demanding Conversions"
+disable_mrfp_decision_tooltip:0 "Stop automatically demanding conversions."
+disable_mrfp_decision_desc:0 "My [ROOT.Char.Custom('MyPriestTitle')] will not demand conversions any longer."
+disable_mrfp_decision_effect_tooltip:0 "Stop demanding conversions every month."
+disable_mrfp_decision_confirm:0 "Stop converting"

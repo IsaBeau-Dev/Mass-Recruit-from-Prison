@@ -1,2 +1,4 @@
 ﻿l_german:
  mrfp_tooltip:0 "Alle [Concept('prisoners', 'Gefangenen')|E] werden rekrutiert und wenn möglich konvertiert.\nDies funktioniert nur bei Characteren, die keine Titel besitzen.\n#weak Gefangene, die durch Filter verborgen oder von Massenaktionen ausgeschlossen wurden, sind nicht betroffen.#!"
+
+
