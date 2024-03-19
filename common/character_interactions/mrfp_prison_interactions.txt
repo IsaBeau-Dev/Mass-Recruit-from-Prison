@@ -1,7 +1,7 @@
 ﻿mrfp_release_from_prison_interaction = {
 	interface_priority = 30
 	common_interaction = yes
-	category = interaction_category_prison
+	category = interaction_debug_main
 	special_interaction = release_from_prison_interaction
 	icon = prison
 
