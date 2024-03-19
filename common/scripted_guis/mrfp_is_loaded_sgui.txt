@@ -17,7 +17,6 @@
             actor = root
             recipient = this
             #send_threshold = decline
-            #send_threshold = accept
             execute_threshold = accept
         }
       }
