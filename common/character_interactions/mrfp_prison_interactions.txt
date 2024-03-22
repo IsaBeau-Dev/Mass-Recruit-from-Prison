@@ -27,6 +27,7 @@
 		scope:recipient = {
 			is_imprisoned_by = scope:actor
 		}
+		debug_only = yes
 		# always = no
 	}
 

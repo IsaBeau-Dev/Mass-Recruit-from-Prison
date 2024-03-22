@@ -4,4 +4,4 @@ tags={
 	"Gameplay"
 }
 name="Mass Recruit from Prison"
-supported_version="1.12.1"
+supported_version="1.*"
