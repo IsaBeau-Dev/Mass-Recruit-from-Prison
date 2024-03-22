@@ -22,12 +22,12 @@
 			desc = RELEASE_PRISONER_OFFER_CONDITIONAL
 		}
 	}
-
+	hidden = yes
 	is_shown = {
 		scope:recipient = {
 			is_imprisoned_by = scope:actor
 		}
-		debug_only = yes
+		#debug_only = yes
 		# always = no
 	}
 

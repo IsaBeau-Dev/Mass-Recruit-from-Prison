@@ -1,5 +1,5 @@
 ﻿l_english:
- mrfp_tooltip:0 "Recruit all [prisoners|E] and convert them if possible.\nThis only works on characters without a title.\n#weak Prisoners that are hidden by a filter or exempted from Mass Actions will not be affected.#!"
+ mrfp_tooltip:0 "Recruit all [prisoners|E] and convert them if possible.\nThis only works on characters without a title.\n#weak Prisoners that are hidden by a filter or exempted from Mass Actions will ALSO be affected.#!"
 #decision
 enable_mrfp_decision:0 "Start Mass Recruit From Prison"
 enable_mrfp_decision_tooltip:0 "Automatically, recruit prisoners from prison and demand conversions (if possible), every month."
@@ -13,8 +13,8 @@ disable_mrfp_decision_desc:0 "I will not recruit prisoners and demand their conv
 disable_mrfp_decision_effect_tooltip:0 "Stop demanding recruitment and conversions from prisoners every month."
 disable_mrfp_decision_confirm:0 "Stop recruiting and converting"
 #game rule
-rule_mrfp:0 "Auto Mass Recruit from Prison Decision"
-setting_on_mrfp:0 "On"
+rule_mrfp:0 "Auto Mass Recruit from Prison Decision is shown"
+setting_on_mrfp:0 "Yes"
 setting_on_mrfp_desc:0 "You will be able to see the decision that enabled you to mass recruit and convert willing prisoners every month."
-setting_off_mrfp:0 "Off"
+setting_off_mrfp:0 "No"
 setting_off_mrfp_desc:0 "You won`t be able to see the decision that enabled you to mass recruit and convert willing prisoners every month."

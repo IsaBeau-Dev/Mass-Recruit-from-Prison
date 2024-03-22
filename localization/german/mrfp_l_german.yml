@@ -1,4 +1,21 @@
 ﻿l_german:
- mrfp_tooltip:0 "Alle [Concept('prisoners', 'Gefangenen')|E] werden rekrutiert und wenn möglich konvertiert.\nDies funktioniert nur bei Characteren, die keine Titel besitzen.\n#weak Gefangene, die durch Filter verborgen oder von Massenaktionen ausgeschlossen wurden, sind nicht betroffen.#!"
+ mrfp_tooltip:0 "Alle [Concept('prisoners', 'Gefangenen')|E] werden rekrutiert und wenn möglich konvertiert.\nDies funktioniert nur bei Characteren, die keine Titel besitzen.\n#weak Gefangene, die durch Filter verborgen oder von Massenaktionen ausgeschlossen wurden, sind AUCH betroffen.#!"
+#decision
+enable_mrfp_decision:0 "Starte Massenrekrutierung von Gefangenen"
+enable_mrfp_decision_tooltip:0 "Rekrutiere und konvertiere (wenn möglich) automatisch Gefangenen aus dem Gefängnis jeden Monat."
+enable_mrfp_decision_desc:0 "Ich werde von willigen Gefangenen verlangen bei mir am Hof zu bleiben und sich [ROOT.Char.GetFaith.HighGodName] zuzuwenden."
+enable_mrfp_decision_effect_tooltip:0 "Jeden Monat werden meine Gefangenen, die überzeugt werden können, sich meinem Hof anschließen und zu meinem Glauben konvertieren."
+enable_mrfp_decision_confirm:0 "Starte die Rekrutierung und Konvertierung"
 
+disable_mrfp_decision:0 "Stoppe Massenrekrutierung von Gefangenen"
+disable_mrfp_decision_tooltip:0 "Stoppe die automatische Rekrutierung aus dem Gefängnis."
+disable_mrfp_decision_desc:0 "Ich werde nichtmehr Gefangene rekrutieren und ihre Konvertierung verlangen."
+disable_mrfp_decision_effect_tooltip:0 "Zwangsrekrutierung und Konvertierung von Gefangenen wird nicht weiter jeden Monat durchgeführt."
+disable_mrfp_decision_confirm:0 "Stoppe Rekrutierung und Konvertierung"
+#game rule
+rule_mrfp:0 "Automatische Massenrekrutierung aus dem Gefängnis Entscheidung anzeigen"
+setting_on_mrfp:0 "Ja"
+setting_on_mrfp_desc:0 "Die Entscheidung die automatische Rekrutierung und Konvertierung von Gefangenen jeden Monat, die überzeugt werden können, durchzuführen wird sichtbar sein."
+setting_off_mrfp:0 "Nein"
+setting_off_mrfp_desc:0 "Die Entscheidung die automatische Rekrutierung und Konvertierung von Gefangenen jeden Monat, die überzeugt werden können, durchzuführen wird NICHT sichtbar sein."
 
