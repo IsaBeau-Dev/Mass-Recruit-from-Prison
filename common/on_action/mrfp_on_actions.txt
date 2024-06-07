@@ -33,16 +33,6 @@ mrfp_auto = {
                 MRFPROOT = root
                 MRFPTHIS = this
             }
-            # if = {
-            #   limit = {is_ruler = no}
-            #   run_interaction = {
-            #       interaction = mrfp_release_from_prison_interaction
-            #       actor = root
-            #       recipient = this
-            #       #send_threshold = decline
-            #       execute_threshold = accept
-            #   }
-            # }
           }
     }
 }
