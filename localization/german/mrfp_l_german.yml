@@ -19,7 +19,7 @@ setting_on_mrfp_desc:0 "Die Entscheidung die automatische Rekrutierung und Konve
 setting_off_mrfp:0 "Nein"
 setting_off_mrfp_desc:0 "Die Entscheidung die automatische Rekrutierung und Konvertierung von Gefangenen jeden Monat, die überzeugt werden können, durchzuführen wird NICHT sichtbar sein."
 #game rule prowess
-rule_mrfp:0 "Massenrekrutierung aus dem Gefängnis Kampfgeschick Grenzwert"
+rule_mrfp_prowess:0 "Massenrekrutierung aus dem Gefängnis Kampfgeschick Grenzwert"
 setting_mrfp_prowess_5:0 "5"
 setting_mrfp_prowess_5_desc:0 "Der Kampfgeschick Grenzwert um jemanden aus dem Gefängnis zu rekrutieren wird 5 sein."
 setting_mrfp_prowess_10:0 "10"
