@@ -14,3 +14,31 @@
 	
 	}
 }
+mrfp_prowess = {
+	
+	categories = {
+		tweaks
+	}
+	
+	default = off_mrfp_prowess
+
+	mrfp_prowess_5 = {
+	
+	}
+
+	mrfp_prowess_10 = {
+	
+	}
+
+	mrfp_prowess_15 = {
+	
+	}
+
+	mrfp_prowess_20 = {
+	
+	}
+	
+	off_mrfp_prowess = {
+	
+	}
+}

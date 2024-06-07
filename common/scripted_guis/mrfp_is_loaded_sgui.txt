@@ -12,13 +12,77 @@
     every_prisoner = {
       if = {
         limit = {is_ruler = no}
-        run_interaction = {
+        if = {
+          limit = {
+            has_game_rule = mrfp_prowess_5
+            prowess >= 5
+          }
+          run_interaction = {
             interaction = mrfp_release_from_prison_interaction
             actor = root
             recipient = this
             #send_threshold = decline
             execute_threshold = accept
+          }
         }
+        else_if = {
+          limit = {
+            has_game_rule = mrfp_prowess_10
+            prowess >= 10
+          }
+          run_interaction = {
+            interaction = mrfp_release_from_prison_interaction
+            actor = root
+            recipient = this
+            #send_threshold = decline
+            execute_threshold = accept
+          }
+        }
+        else_if = {
+          limit = {
+            has_game_rule = mrfp_prowess_15
+            prowess >= 15
+          }
+          run_interaction = {
+            interaction = mrfp_release_from_prison_interaction
+            actor = root
+            recipient = this
+            #send_threshold = decline
+            execute_threshold = accept
+          }
+        }
+        else_if = {
+          limit = {
+            has_game_rule = mrfp_prowess_20
+            prowess >= 20
+          }
+          run_interaction = {
+            interaction = mrfp_release_from_prison_interaction
+            actor = root
+            recipient = this
+            #send_threshold = decline
+            execute_threshold = accept
+          }
+        }
+        else_if = {
+          limit = {has_game_rule = off_mrfp_prowess}
+          run_interaction = {
+            interaction = mrfp_release_from_prison_interaction
+            actor = root
+            recipient = this
+            #send_threshold = decline
+            execute_threshold = accept
+          }
+        }
+
+
+        # run_interaction = {
+        #     interaction = mrfp_release_from_prison_interaction
+        #     actor = root
+        #     recipient = this
+        #     #send_threshold = decline
+        #     execute_threshold = accept
+        # }
       }
     }
 

@@ -5,3 +5,4 @@ tags={
 }
 name="Mass Recruit from Prison"
 supported_version="1.*"
+remote_file_id="3202921261"
