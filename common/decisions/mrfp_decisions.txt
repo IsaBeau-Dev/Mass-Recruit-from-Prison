@@ -1,5 +1,5 @@
 ﻿enable_mrfp_decision = {
-    #picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+
     picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
     }
@@ -32,8 +32,7 @@
 }
 
 disable_mrfp_decision = {
-    #picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-    
+   
     picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
 	}
