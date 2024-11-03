@@ -40,6 +40,7 @@ mrfp_auto = {
 on_death = {
     on_actions = {
         mrfp_on_death
+        mrfp_on_death_vars
     }
 }
 
@@ -59,5 +60,23 @@ mrfp_on_death = {
             add_character_flag = enable_auto_mrfp
         }
         
+    }
+}
+mrfp_on_death_vars = {
+    trigger = {
+        has_variable = mrfp_threshold_enabled
+        has_variable = mrfp_prowess_threshold
+    }
+    effect = {
+        primary_heir = {
+            set_variable = { 
+                name =  mrfp_prowess_threshold
+                value = root.var:mrfp_prowess_threshold
+            }
+            set_variable = { 
+                name =  mrfp_threshold_enabled
+                value = root.var:mrfp_threshold_enabled
+            }
+        }
     }
 }
