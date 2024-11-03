@@ -4,6 +4,7 @@
 		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
 	}
     decision_group_type = mrfp
+    
     title = enable_mrfp_decision
     desc = enable_mrfp_decision_desc
     confirm_text = enable_mrfp_decision_confirm
