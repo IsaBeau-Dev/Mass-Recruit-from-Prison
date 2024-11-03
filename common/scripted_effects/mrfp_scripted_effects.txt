@@ -9,8 +9,8 @@
 				has_variable = mrfp_prowess_threshold
 			}
 		}
-		debug_log = "has mrfp vars effect"
-		debug_log_scopes = yes
+		# debug_log = "has mrfp vars effect"
+		# debug_log_scopes = yes
 		if = {
 			limit = {
 				prowess >= mrfp.var:mrfplimit
