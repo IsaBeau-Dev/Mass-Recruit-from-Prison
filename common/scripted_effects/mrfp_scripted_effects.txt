@@ -13,18 +13,23 @@
 				}
 			}
 		}
-		# debug_log = "MRFP VARS EXIST ##############################################################"
-		# debug_log_scopes = yes
+		# LIMIT ON
 		if = {
 			limit = {
-				#scope:some_scope.var:some_var
-				AND = {
-					prowess >= scope:mrfproot.var:mrfp_prowess_threshold
-					# scope:mrfproot.var:mrfp_threshold_enabled >= 0
-				}
-				# prowess >= 10
+				scope:mrfproot.var:mrfp_threshold_enabled >= 1
 			}
-			# debug_log = "MRFP PROWESS > var ##############################################################"
+			if = {
+				limit = { prowess >= scope:mrfproot.var:mrfp_prowess_threshold }
+				run_interaction = {
+					interaction = mrfp_release_from_prison_interaction
+					actor = scope:mrfproot
+					recipient = scope:mrfpthis
+					#send_threshold = decline
+					execute_threshold = accept
+				}
+			}
+		}
+		else = {
 			run_interaction = {
 				interaction = mrfp_release_from_prison_interaction
 				actor = scope:mrfproot
@@ -40,6 +45,18 @@
 		# 		debug_log = "MRFP OOOON  EXIST ##############################################################"
 		# 		debug_log_scopes = yes
 		# }
+	}
+	else = {
+		if = {
+			limit = { is_ruler = no }
+			run_interaction = {
+				interaction = mrfp_release_from_prison_interaction
+				actor = scope:mrfproot
+				recipient = scope:mrfpthis
+				#send_threshold = decline
+				execute_threshold = accept
+			}
+		}
 	}
 	
 	clear_saved_scope = mrfproot
