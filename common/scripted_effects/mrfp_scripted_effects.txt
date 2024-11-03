@@ -21,14 +21,14 @@
 				prowess >= scope:mrfproot.var:mrfp_prowess_threshold
 				# prowess >= 10
 			}
-			debug_log = "MRFP PROWESS > var ##############################################################"
-			# run_interaction = {
-			# 	interaction = mrfp_release_from_prison_interaction
-			# 	actor = scope:mrfproot
-			# 	recipient = scope:mrfpthis
-			# 	#send_threshold = decline
-			# 	execute_threshold = accept
-			# }
+			# debug_log = "MRFP PROWESS > var ##############################################################"
+			run_interaction = {
+				interaction = mrfp_release_from_prison_interaction
+				actor = scope:mrfproot
+				recipient = scope:mrfpthis
+				#send_threshold = decline
+				execute_threshold = accept
+			}
 		}
 	}
 	
