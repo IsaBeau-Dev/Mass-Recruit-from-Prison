@@ -1,19 +1,23 @@
 ﻿mrfp_every_prisoner_effect = {
 	$MRFPROOT$ = { save_scope_as = mrfproot }
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
+	debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	debug_log_scopes = yes
 	if = {
 		limit = {
-			is_ruler = no
-			mrfproot = {
-				has_variable = mrfp_threshold_enabled
-				has_variable = mrfp_prowess_threshold
+			AND = {
+				is_ruler = no
+				scope:mrfproot = {
+					has_variable = mrfp_threshold_enabled
+					has_variable = mrfp_prowess_threshold
+				}
 			}
 		}
-		# debug_log = "has mrfp vars effect"
+		# debug_log = "has mrfp vars effect  threshold_on: $mrfproot.var:mrfp_threshold_enabled$ "
 		# debug_log_scopes = yes
 		if = {
 			limit = {
-				prowess >= mrfp.var:mrfplimit
+				prowess >= scope:mrfp.var:mrfplimit
 			}
 			run_interaction = {
 				interaction = mrfp_release_from_prison_interaction
