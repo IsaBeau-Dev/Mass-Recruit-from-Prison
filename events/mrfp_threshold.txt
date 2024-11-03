@@ -19,25 +19,25 @@ mrfp_set_threshold.0001 = {
     first_valid = {
       triggered_desc = {
         trigger = {
-          root: mrfp_prowess_threshold = 12
+          root:mrfp_prowess_threshold = 12
         }
         desc = mrfp_set_threshold.0001.prowess.12
       }
       triggered_desc = {
         trigger = {
-          root: mrfp_prowess_threshold = 16
+          root:mrfp_prowess_threshold = 16
         }
         desc = mrfp_set_threshold.0001.prowess.16
       }
       triggered_desc = {
         trigger = {
-          root: mrfp_prowess_threshold = 20
+          root:mrfp_prowess_threshold = 20
         }
         desc = mrfp_set_threshold.0001.prowess.20
       }
       triggered_desc = {
         trigger = {
-          root: mrfp_prowess_threshold = 24
+          root:mrfp_prowess_threshold = 24
         }
         desc = mrfp_set_threshold.0001.prowess.24
       }
@@ -129,7 +129,7 @@ mrfp_set_threshold.0001 = {
   option = {
     name = mrfp_set_threshold.0001.b
     switch = {
-      trigger = root: mrfp_prowess_threshold
+      trigger = root:mrfp_prowess_threshold
       12 = { 
         set_variable = { 
           name =  mrfp_prowess_threshold

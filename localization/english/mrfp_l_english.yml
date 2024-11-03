@@ -31,3 +31,22 @@ setting_mrfp_prowess_20_desc:0 "The Prowess Threshold to recruit someone from pr
 setting_off_mrfp_prowess:0 "None"
 setting_off_mrfp_prowess_desc:0 "No Prowess Threshild will be applied when recruiting someone from prison"
 decision_group_type_mrfp: "Mass Recruit"
+
+ set_mrfp_threshold:0 "Change Settings of Wandering Warriors Notifications"
+ set_mrfp_threshold_tooltip:0 "Enable|Disable notifications, change minimum Prowess and maximum age"
+ set_mrfp_threshold_confirm:0 "Change Settings"
+ set_mrfp_threshold_desc:0 "Enable|Disable notifications, change minimum Prowess and maximum age"
+
+ mrfp_set_threshold.0001.t:0 "Wandering Warriors Settings"
+ mrfp_set_threshold.0001.settings.t:0 "#T Current Settings:#!\n"
+ mrfp_set_threshold.0001.enabled:0 "#P Enabled#!\n"
+ mrfp_set_threshold.0001.disabled:0 "#N Disabled#!\n"
+ mrfp_set_threshold.0001.prowess.t:0 "Minimum Prowess: "
+ mrfp_set_threshold.0001.prowess.12:0 "12@skill_prowess_icon!\n"
+ mrfp_set_threshold.0001.prowess.16:0 "16@skill_prowess_icon!\n"
+ mrfp_set_threshold.0001.prowess.20:0 "20@skill_prowess_icon!\n"
+ mrfp_set_threshold.0001.prowess.24:0 "24@skill_prowess_icon!\n"
+
+ mrfp_set_threshold.0001.a:0 "Toggle Enable|Disable"
+ mrfp_set_threshold.0001.b:0 "Toggle Prowess"
+ mrfp_set_threshold.0001.d:0 "Exit"
