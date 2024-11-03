@@ -1,8 +1,8 @@
 ﻿enable_mrfp_decision = {
 
-    picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-    }
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+	}
     decision_group_type = mrfp
     title = enable_mrfp_decision
     desc = enable_mrfp_decision_desc
@@ -33,8 +33,8 @@
 
 disable_mrfp_decision = {
    
-    picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
 	}
     title = disable_mrfp_decision
     desc = disable_mrfp_decision_desc
@@ -61,4 +61,12 @@ disable_mrfp_decision = {
     ai_will_do = {
         base = 0
     }
+}
+
+set_mrfp_threshold = {
+    
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+	}
+
 }
