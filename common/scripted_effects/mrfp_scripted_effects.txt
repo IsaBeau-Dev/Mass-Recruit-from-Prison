@@ -13,19 +13,22 @@
 				}
 			}
 		}
-		# debug_log = "has mrfp vars effect  threshold_on: $mrfproot.var:mrfp_threshold_enabled$ "
-		# debug_log_scopes = yes
+		debug_log = "MRFP VARS EXIST ##############################################################"
+		debug_log_scopes = yes
 		if = {
 			limit = {
-				prowess >= scope:mrfp.var:mrfplimit
+				#scope:some_scope.var:some_var
+				prowess >= scope:mrfproot.var:mrfp_prowess_threshold
+				# prowess >= 10
 			}
-			run_interaction = {
-				interaction = mrfp_release_from_prison_interaction
-				actor = scope:mrfproot
-				recipient = scope:mrfpthis
-				#send_threshold = decline
-				execute_threshold = accept
-			}
+			debug_log = "MRFP PROWESS > var ##############################################################"
+			# run_interaction = {
+			# 	interaction = mrfp_release_from_prison_interaction
+			# 	actor = scope:mrfproot
+			# 	recipient = scope:mrfpthis
+			# 	#send_threshold = decline
+			# 	execute_threshold = accept
+			# }
 		}
 	}
 	
