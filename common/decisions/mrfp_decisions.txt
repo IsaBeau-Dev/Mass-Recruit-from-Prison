@@ -40,8 +40,9 @@ disable_mrfp_decision = {
     desc = disable_mrfp_decision_desc
     confirm_text = disable_mrfp_decision_confirm
     selection_tooltip = disable_mrfp_decision_tooltip
+
     decision_group_type = mrfp
-    ai_check_interval = 0
+    
 
     is_shown = {
         is_landed = yes
@@ -61,6 +62,7 @@ disable_mrfp_decision = {
     ai_will_do = {
         base = 0
     }
+    ai_check_interval = 0
 }
 
 set_mrfp_threshold = {
@@ -68,5 +70,29 @@ set_mrfp_threshold = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
 	}
+
+
+    is_shown = {
+        always = yes
+    }
+    decision_group_type = mrfp
+
+    confirm_text = set_mrfp_threshold_confirm
+    selection_tooltip = set_mrfp_threshold_tooltip
+
+    effect = {
+        trigger_event = mrfp_set_threshold.0001
+    }
+
+
+
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
+
+    ai_check_interval = 0
 
 }

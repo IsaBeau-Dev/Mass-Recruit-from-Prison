@@ -1,0 +1,194 @@
+﻿namespace = mrfp_set_threshold
+
+
+mrfp_set_threshold.0001 = {
+  title = mrfp_set_threshold.0001.t
+  theme = martial
+  desc = {
+    desc = mrfp_set_threshold.0001.settings.t
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          global_var:find_wandering_warriors_enabled = 1
+        }
+        desc = mrfp_set_threshold.0001.enabled
+      }
+      desc = mrfp_set_threshold.0001.disabled
+    }
+    desc = mrfp_set_threshold.0001.prowess.t
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          global_var:find_wandering_warriors_prowess = 12
+        }
+        desc = mrfp_set_threshold.0001.prowess.12
+      }
+      triggered_desc = {
+        trigger = {
+          global_var:find_wandering_warriors_prowess = 16
+        }
+        desc = mrfp_set_threshold.0001.prowess.16
+      }
+      triggered_desc = {
+        trigger = {
+          global_var:find_wandering_warriors_prowess = 20
+        }
+        desc = mrfp_set_threshold.0001.prowess.20
+      }
+      triggered_desc = {
+        trigger = {
+          global_var:find_wandering_warriors_prowess = 24
+        }
+        desc = mrfp_set_threshold.0001.prowess.24
+      }
+    }
+    desc = mrfp_set_threshold.0001.age.t
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          global_var:find_wandering_warriors_age = 50
+        }
+        desc = mrfp_set_threshold.0001.age.50
+      }
+      triggered_desc = {
+        trigger = {
+          global_var:find_wandering_warriors_age = 40
+        }
+        desc = mrfp_set_threshold.0001.age.40
+      }
+      triggered_desc = {
+        trigger = {
+          global_var:find_wandering_warriors_age = 30
+        }
+        desc = mrfp_set_threshold.0001.age.30
+      }
+      triggered_desc = {
+        trigger = {
+          global_var:find_wandering_warriors_age = 20
+        }
+        desc = mrfp_set_threshold.0001.age.20
+      }
+    }
+  }
+
+  left_portrait = {
+    character = root
+    animation = personality_cynical
+  }
+
+  immediate = {
+    if = {
+      limit = {
+        NOT = { has_global_variable = find_wandering_warriors_enabled }
+      }
+      set_global_variable = { 
+        name = find_wandering_warriors_enabled
+        value = 1
+      }
+    }
+    if = {
+      limit = {
+        NOT = { has_global_variable = find_wandering_warriors_prowess }
+      }
+      set_global_variable = { 
+        name = find_wandering_warriors_prowess
+        value = 16
+      }
+    }
+    if = {
+      limit = {
+        NOT = { has_global_variable = find_wandering_warriors_age }
+      }
+      set_global_variable = { 
+        name = find_wandering_warriors_age
+        value = 50
+      }
+    }
+  }
+
+  option = {
+    name = mrfp_set_threshold.0001.a
+    switch = {
+      trigger = global_var:find_wandering_warriors_enabled
+      0 = { 
+        set_global_variable = { 
+          name = find_wandering_warriors_enabled
+          value = 1
+        }
+      } 
+      1 = { 
+        set_global_variable = { 
+          name = find_wandering_warriors_enabled
+          value = 0
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+
+  option = {
+    name = mrfp_set_threshold.0001.b
+    switch = {
+      trigger = global_var:find_wandering_warriors_prowess
+      12 = { 
+        set_global_variable = { 
+          name = find_wandering_warriors_prowess
+          value = 16
+        }
+      } 
+      16 = { 
+        set_global_variable = { 
+          name = find_wandering_warriors_prowess
+          value = 20
+        }
+      } 
+      20 = { 
+        set_global_variable = { 
+          name = find_wandering_warriors_prowess
+          value = 24
+        }
+      }
+      24 = { 
+        set_global_variable = { 
+          name = find_wandering_warriors_prowess
+          value = 12
+        }
+      }  
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+  option = {
+    name = mrfp_set_threshold.0001.c
+    switch = {
+      trigger = global_var:find_wandering_warriors_age
+      50 = { 
+        set_global_variable = { 
+          name = find_wandering_warriors_age
+          value = 40
+        }
+      } 
+      40 = { 
+        set_global_variable = { 
+          name = find_wandering_warriors_age
+          value = 30
+        }
+      }
+      30 = { 
+        set_global_variable = { 
+          name = find_wandering_warriors_age
+          value = 20
+        }
+      }
+      20 = { 
+        set_global_variable = { 
+          name = find_wandering_warriors_age
+          value = 50
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+  option = {
+    name = mrfp_set_threshold.0001.d
+  }
+}

@@ -36,11 +36,18 @@ mrfp_auto = {
           }
     }
 }
+
 on_death = {
     on_actions = {
         mrfp_on_death
     }
 }
+
+# on_player_select_destiny_confirmed = {
+#     on_actions = {
+#         mrfp_on_death
+#     }
+# }
 
 mrfp_on_death = {
     trigger = {
