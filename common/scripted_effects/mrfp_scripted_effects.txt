@@ -18,7 +18,10 @@
 		if = {
 			limit = {
 				#scope:some_scope.var:some_var
-				prowess >= scope:mrfproot.var:mrfp_prowess_threshold
+				AND = {
+					prowess >= scope:mrfproot.var:mrfp_prowess_threshold
+					# scope:mrfproot.var:mrfp_threshold_enabled >= 0
+				}
 				# prowess >= 10
 			}
 			# debug_log = "MRFP PROWESS > var ##############################################################"
@@ -30,6 +33,13 @@
 				execute_threshold = accept
 			}
 		}
+		# if = {
+		# 	limit = { 
+		# 		scope:mrfproot.var:mrfp_threshold_enabled >= 1
+		# 	}
+		# 		debug_log = "MRFP OOOON  EXIST ##############################################################"
+		# 		debug_log_scopes = yes
+		# }
 	}
 	
 	clear_saved_scope = mrfproot
