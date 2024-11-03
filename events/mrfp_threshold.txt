@@ -9,7 +9,7 @@ mrfp_set_threshold.0001 = {
     first_valid = {
       triggered_desc = {
         trigger = {
-          global_var:find_wandering_warriors_enabled = 1
+          root:mrfp_threshold_enabled = 1
         }
         desc = mrfp_set_threshold.0001.enabled
       }
@@ -19,56 +19,56 @@ mrfp_set_threshold.0001 = {
     first_valid = {
       triggered_desc = {
         trigger = {
-          global_var:find_wandering_warriors_prowess = 12
+          root: mrfp_prowess_threshold = 12
         }
         desc = mrfp_set_threshold.0001.prowess.12
       }
       triggered_desc = {
         trigger = {
-          global_var:find_wandering_warriors_prowess = 16
+          root: mrfp_prowess_threshold = 16
         }
         desc = mrfp_set_threshold.0001.prowess.16
       }
       triggered_desc = {
         trigger = {
-          global_var:find_wandering_warriors_prowess = 20
+          root: mrfp_prowess_threshold = 20
         }
         desc = mrfp_set_threshold.0001.prowess.20
       }
       triggered_desc = {
         trigger = {
-          global_var:find_wandering_warriors_prowess = 24
+          root: mrfp_prowess_threshold = 24
         }
         desc = mrfp_set_threshold.0001.prowess.24
       }
     }
-    desc = mrfp_set_threshold.0001.age.t
-    first_valid = {
-      triggered_desc = {
-        trigger = {
-          global_var:find_wandering_warriors_age = 50
-        }
-        desc = mrfp_set_threshold.0001.age.50
-      }
-      triggered_desc = {
-        trigger = {
-          global_var:find_wandering_warriors_age = 40
-        }
-        desc = mrfp_set_threshold.0001.age.40
-      }
-      triggered_desc = {
-        trigger = {
-          global_var:find_wandering_warriors_age = 30
-        }
-        desc = mrfp_set_threshold.0001.age.30
-      }
-      triggered_desc = {
-        trigger = {
-          global_var:find_wandering_warriors_age = 20
-        }
-        desc = mrfp_set_threshold.0001.age.20
-      }
-    }
+    # desc = mrfp_set_threshold.0001.age.t
+    # first_valid = {
+    #   triggered_desc = {
+    #     trigger = {
+    #       global_var:find_wandering_warriors_age = 50
+    #     }
+    #     desc = mrfp_set_threshold.0001.age.50
+    #   }
+    #   triggered_desc = {
+    #     trigger = {
+    #       global_var:find_wandering_warriors_age = 40
+    #     }
+    #     desc = mrfp_set_threshold.0001.age.40
+    #   }
+    #   triggered_desc = {
+    #     trigger = {
+    #       global_var:find_wandering_warriors_age = 30
+    #     }
+    #     desc = mrfp_set_threshold.0001.age.30
+    #   }
+    #   triggered_desc = {
+    #     trigger = {
+    #       global_var:find_wandering_warriors_age = 20
+    #     }
+    #     desc = mrfp_set_threshold.0001.age.20
+    #   }
+    # }
   }
 
   left_portrait = {
@@ -79,46 +79,46 @@ mrfp_set_threshold.0001 = {
   immediate = {
     if = {
       limit = {
-        NOT = { has_global_variable = find_wandering_warriors_enabled }
+        NOT = { has_variable = mrfp_threshold_enabled }
       }
-      set_global_variable = { 
-        name = find_wandering_warriors_enabled
+      set_variable = { 
+        name = mrfp_threshold_enabled
         value = 1
       }
     }
     if = {
       limit = {
-        NOT = { has_global_variable = find_wandering_warriors_prowess }
+        NOT = { has_variable =  mrfp_prowess_threshold }
       }
-      set_global_variable = { 
-        name = find_wandering_warriors_prowess
+      set_variable = { 
+        name =  mrfp_prowess_threshold
         value = 16
       }
     }
-    if = {
-      limit = {
-        NOT = { has_global_variable = find_wandering_warriors_age }
-      }
-      set_global_variable = { 
-        name = find_wandering_warriors_age
-        value = 50
-      }
-    }
+    # if = {
+    #   limit = {
+    #     NOT = { has_variable = find_wandering_warriors_age }
+    #   }
+    #   set_variable = { 
+    #     name = find_wandering_warriors_age
+    #     value = 50
+    #   }
+    # }
   }
 
   option = {
     name = mrfp_set_threshold.0001.a
     switch = {
-      trigger = global_var:find_wandering_warriors_enabled
+      trigger = root:mrfp_threshold_enabled
       0 = { 
-        set_global_variable = { 
-          name = find_wandering_warriors_enabled
+        set_variable = { 
+          name = mrfp_threshold_enabled
           value = 1
         }
       } 
       1 = { 
-        set_global_variable = { 
-          name = find_wandering_warriors_enabled
+        set_variable = { 
+          name = mrfp_threshold_enabled
           value = 0
         }
       } 
@@ -129,65 +129,65 @@ mrfp_set_threshold.0001 = {
   option = {
     name = mrfp_set_threshold.0001.b
     switch = {
-      trigger = global_var:find_wandering_warriors_prowess
+      trigger = root: mrfp_prowess_threshold
       12 = { 
-        set_global_variable = { 
-          name = find_wandering_warriors_prowess
+        set_variable = { 
+          name =  mrfp_prowess_threshold
           value = 16
         }
       } 
       16 = { 
-        set_global_variable = { 
-          name = find_wandering_warriors_prowess
+        set_variable = { 
+          name =  mrfp_prowess_threshold
           value = 20
         }
       } 
       20 = { 
-        set_global_variable = { 
-          name = find_wandering_warriors_prowess
+        set_variable = { 
+          name =  mrfp_prowess_threshold
           value = 24
         }
       }
       24 = { 
-        set_global_variable = { 
-          name = find_wandering_warriors_prowess
+        set_variable = { 
+          name =  mrfp_prowess_threshold
           value = 12
         }
       }  
     }
     trigger_event = mrfp_set_threshold.0001
   }
-  option = {
-    name = mrfp_set_threshold.0001.c
-    switch = {
-      trigger = global_var:find_wandering_warriors_age
-      50 = { 
-        set_global_variable = { 
-          name = find_wandering_warriors_age
-          value = 40
-        }
-      } 
-      40 = { 
-        set_global_variable = { 
-          name = find_wandering_warriors_age
-          value = 30
-        }
-      }
-      30 = { 
-        set_global_variable = { 
-          name = find_wandering_warriors_age
-          value = 20
-        }
-      }
-      20 = { 
-        set_global_variable = { 
-          name = find_wandering_warriors_age
-          value = 50
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
+  # option = {
+  #   name = mrfp_set_threshold.0001.c
+  #   switch = {
+  #     trigger = root:find_wandering_warriors_age
+  #     50 = { 
+  #       set_variable = { 
+  #         name = find_wandering_warriors_age
+  #         value = 40
+  #       }
+  #     } 
+  #     40 = { 
+  #       set_variable = { 
+  #         name = find_wandering_warriors_age
+  #         value = 30
+  #       }
+  #     }
+  #     30 = { 
+  #       set_variable = { 
+  #         name = find_wandering_warriors_age
+  #         value = 20
+  #       }
+  #     }
+  #     20 = { 
+  #       set_variable = { 
+  #         name = find_wandering_warriors_age
+  #         value = 50
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
   option = {
     name = mrfp_set_threshold.0001.d
   }
