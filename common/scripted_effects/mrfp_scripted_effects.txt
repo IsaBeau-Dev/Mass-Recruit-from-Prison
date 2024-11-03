@@ -24,36 +24,28 @@
 					interaction = mrfp_release_from_prison_interaction
 					actor = scope:mrfproot
 					recipient = scope:mrfpthis
-					#send_threshold = decline
 					execute_threshold = accept
 				}
 			}
 		}
+		#LIMIT OFF
 		else = {
 			run_interaction = {
 				interaction = mrfp_release_from_prison_interaction
 				actor = scope:mrfproot
 				recipient = scope:mrfpthis
-				#send_threshold = decline
 				execute_threshold = accept
 			}
 		}
-		# if = {
-		# 	limit = { 
-		# 		scope:mrfproot.var:mrfp_threshold_enabled >= 1
-		# 	}
-		# 		debug_log = "MRFP OOOON  EXIST ##############################################################"
-		# 		debug_log_scopes = yes
-		# }
 	}
 	else = {
+		## VARS NOT SET => RECRUIT EVERYONE
 		if = {
 			limit = { is_ruler = no }
 			run_interaction = {
 				interaction = mrfp_release_from_prison_interaction
 				actor = scope:mrfproot
 				recipient = scope:mrfpthis
-				#send_threshold = decline
 				execute_threshold = accept
 			}
 		}
