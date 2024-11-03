@@ -30,4 +30,5 @@ setting_mrfp_prowess_20:0 "20"
 setting_mrfp_prowess_20_desc:0 "Der Kampfgeschick Grenzwert um jemanden aus dem Gefängnis zu rekrutieren wird 20 sein."
 setting_off_mrfp_prowess:0 "None"
 setting_off_mrfp_prowess_desc:0 "Es wird kein Kampfgeschick Grenzwert angewendet um jemanden aus dem Gefängnis zu rekrutieren"
+decision_group_type_mrfp: "Massenrekrutierung"
 

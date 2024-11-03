@@ -1,5 +1,9 @@
 ﻿enable_mrfp_decision = {
-    picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    #picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    }
+    decision_group_type = mrfp
     title = enable_mrfp_decision
     desc = enable_mrfp_decision_desc
     confirm_text = enable_mrfp_decision_confirm
@@ -28,12 +32,16 @@
 }
 
 disable_mrfp_decision = {
-    picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    #picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    
+    picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
     title = disable_mrfp_decision
     desc = disable_mrfp_decision_desc
     confirm_text = disable_mrfp_decision_confirm
     selection_tooltip = disable_mrfp_decision_tooltip
-
+    decision_group_type = mrfp
     ai_check_interval = 0
 
     is_shown = {
