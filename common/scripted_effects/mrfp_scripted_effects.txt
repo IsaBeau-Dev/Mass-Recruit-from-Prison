@@ -1,8 +1,8 @@
 ﻿mrfp_every_prisoner_effect = {
 	$MRFPROOT$ = { save_scope_as = mrfproot }
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
-	debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	debug_log_scopes = yes
+	# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	# debug_log_scopes = yes
 	if = {
 		limit = {
 			AND = {
@@ -13,8 +13,8 @@
 				}
 			}
 		}
-		debug_log = "MRFP VARS EXIST ##############################################################"
-		debug_log_scopes = yes
+		# debug_log = "MRFP VARS EXIST ##############################################################"
+		# debug_log_scopes = yes
 		if = {
 			limit = {
 				#scope:some_scope.var:some_var
