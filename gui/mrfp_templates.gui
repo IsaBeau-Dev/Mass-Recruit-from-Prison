@@ -1,0 +1,52 @@
+types mrfp_button_types
+{
+	type mrfp_button = button_round {
+		# code for your button and any nested controls you want
+		name = "mrfp"
+		visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
+		enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
+
+		button_prison_release = {
+			parentanchor = center
+			onclick = "[GetScriptedGui('mrfp_is_loaded_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			tooltip = "mrfp_tooltip"
+			using = tooltip_se
+		}
+	}
+}
+
+
+
+
+
+# #########toddel
+# button_round  = {
+# 	name = "mrfp"
+# 	enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
+
+# 	button_prison_release = {
+# 		parentanchor = center
+# 		onclick = "[GetScriptedGui('mrfp_is_loaded_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+# 		tooltip = "mrfp_tooltip"
+# 		using = tooltip_se
+# 	}
+# }
+# ###toddel
+
+
+
+###########from uni ui
+# #########toddel
+# button_round  = {
+# 	name = "mrfp"
+# 	visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
+# 	enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
+
+# 	button_prison_release = {
+# 		parentanchor = center
+# 		onclick = "[GetScriptedGui('mrfp_is_loaded_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+# 		tooltip = "mrfp_tooltip"
+# 		using = tooltip_se
+# 	}
+# }
+# ###toddel
