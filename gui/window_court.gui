@@ -1,4 +1,4 @@
-window = {
+﻿window = {
 	name = "court_window"
 	parentanchor = top|right
 	layer = windows_layer
@@ -14,7 +14,6 @@ window = {
 		using = Animation_FadeIn_Quick
 		using = Sound_WindowShow_Standard
 		using = Window_Position_MainTab
-		using = Expand_Court_Positions
 
 		on_start = "[GetVariableSystem.Set( 'council_tabs', 'my_council' )]"
 	}
@@ -143,6 +142,11 @@ window = {
 										size = { 210 28 }
 									}
 
+									blockoverride "vignette_size" {
+										position = { 0 1 }
+										size = { 206 26 }
+									}
+
 									blockoverride "deb_illustration" {
 										visible = no
 									}
@@ -160,6 +164,11 @@ window = {
 
 									blockoverride "size_illustration" {
 										size = { 210 28 }
+									}
+
+									blockoverride "vignette_size" {
+										position = { 0 1 }
+										size = { 206 26 }
 									}
 
 									blockoverride "deb_illustration" {
@@ -470,6 +479,18 @@ window = {
 										using = tooltip_se
 									}
 								}
+
+								button_round  = {
+									name = "execute"
+									enabled = "[CourtWindow.CanDoMassPrisonerAction('execute')]"
+
+									button_prison_execute = {
+										parentanchor = center
+										onclick = "[CourtWindow.MassPrisonerAction('execute')]"
+										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('execute')]"
+										using = tooltip_se
+									}
+								}
 								#########toddel
 								button_round  = {
 									name = "mrfp"
@@ -488,18 +509,6 @@ window = {
 									}
 								}
 								###toddel
-
-								button_round  = {
-									name = "execute"
-									enabled = "[CourtWindow.CanDoMassPrisonerAction('execute')]"
-
-									button_prison_execute = {
-										parentanchor = center
-										onclick = "[CourtWindow.MassPrisonerAction('execute')]"
-										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('execute')]"
-										using = tooltip_se
-									}
-								}
 							}
 						}
 					}
