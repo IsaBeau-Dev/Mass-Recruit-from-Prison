@@ -65,7 +65,7 @@
 mrfp_ransom_every_prisoner_effect = {
 	$MRFPROOT$ = { save_scope_as = mrfproot }
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
-	
+
 	# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	# debug_log_scopes = yes
 
@@ -76,13 +76,7 @@ mrfp_ransom_every_prisoner_effect = {
 	# 	execute_threshold = accept
 	# }
 
-
-
-
-
-
-	###############v2
-
+###################
 	scope:mrfpthis = {
 		save_scope_as = secondary_recipient
 		if = {
