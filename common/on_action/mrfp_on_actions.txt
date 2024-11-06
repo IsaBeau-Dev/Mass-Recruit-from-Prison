@@ -29,7 +29,7 @@ mrfp_auto = {
     }
     effect = {
         every_prisoner = {
-            mrfp_recruit_and_convert_every_prisoner_effect = {
+            mrfp_every_prisoner_effect = {
                 MRFPROOT = root
                 MRFPTHIS = this
             }
