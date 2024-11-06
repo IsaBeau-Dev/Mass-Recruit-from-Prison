@@ -13,7 +13,22 @@ types mrfp_button_types
 			using = tooltip_se
 		}
 	}
+	type mrfp_button_ransom = button_round {
+		# code for your button and any nested controls you want
+		name = "ransom"
+		visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
+		enabled = "[CourtWindow.CanDoMassPrisonerAction('ransom')]"
+
+		button_prison_ransom = {
+			parentanchor = center
+			onclick = "[GetScriptedGui('mrfp_is_loaded_sgui_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			tooltip = "mrfp_tooltip_ransom"
+			using = tooltip_se
+		}
+	}
 }
+
+
 
 
 

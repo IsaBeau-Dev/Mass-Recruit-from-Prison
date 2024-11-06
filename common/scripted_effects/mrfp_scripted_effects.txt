@@ -3,6 +3,10 @@
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
 	# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	# debug_log_scopes = yes
+
+
+
+	##Recruitment and Conversion with Prowess Options
 	if = {
 		limit = {
 			AND = {
@@ -50,16 +54,31 @@
 			}
 		}
 	}
-	
+	################
+
+
 	clear_saved_scope = mrfproot
 	clear_saved_scope = mrfpthis
 }
 
 
+mrfp_ransom_every_prisoner_effect = {
+	$MRFPROOT$ = { save_scope_as = mrfproot }
+   	$MRFPTHIS$ = { save_scope_as = mrfpthis }
+	# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	# debug_log_scopes = yes
+
+	run_interaction = {
+		interaction = mrfp_ransom_interaction
+		actor = scope:mrfproot
+		recipient = scope:mrfpthis
+		execute_threshold = accept
+	}
 
 
-
-
+	clear_saved_scope = mrfproot
+	clear_saved_scope = mrfpthis
+}
 
 
 
