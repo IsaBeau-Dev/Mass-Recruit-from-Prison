@@ -1,4 +1,4 @@
-﻿mrfp_every_prisoner_effect = {
+﻿mrfp_recruit_and_convert_every_prisoner_effect = {
 	$MRFPROOT$ = { save_scope_as = mrfproot }
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
 	# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -70,7 +70,7 @@
 
 
 
-# mrfp_every_prisoner_effect = {
+# mrfp_recruit_and_convert_every_prisoner_effect = {
 # 	$MRFPROOT$ = { save_scope_as = mrfproot }
 #    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
 # 	if = {
