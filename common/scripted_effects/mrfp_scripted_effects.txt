@@ -65,6 +65,7 @@
 mrfp_ransom_every_prisoner_effect = {
 	$MRFPROOT$ = { save_scope_as = mrfproot }
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
+	
 	# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	# debug_log_scopes = yes
 
@@ -98,8 +99,6 @@ mrfp_ransom_every_prisoner_effect = {
 		limit = { 
 			scope:secondary_recipient.ransom_cost_value <= scope:mrfpthis.gold 
 		}
-		# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-		# debug_log_scopes = yes
 		run_interaction = {
 			interaction = ransom_interaction
 			actor = scope:mrfproot
@@ -108,38 +107,6 @@ mrfp_ransom_every_prisoner_effect = {
 		}
 
 	}
-
-
-
-
-
-	############
-
-	############## not working v1
-	# scope:mrfpthis = {
-	# 	save_scope_as = secondary_recipient
-	# 	if = {
-	# 		limit = {
-	# 			is_ruler = no
-	# 			exists = liege
-	# 		}
-	# 		liege = {
-	# 			save_scope_as = mrfpthis
-	# 		}
-	# 	}
-	# }
-
-	# if = {
-	# 	limit = { 
-	# 		scope:secondary_recipient.ransom_cost_value >= scope:mrfpthis.gold 
-	# 	}
-	# 	debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	# 	debug_log_scopes = yes
-	# 	# scope:mrfproot = {
-	# 	# 	ransom_interaction_effect = yes
-	# 	# }
-	# }
-	#############
 
 
 	clear_saved_scope = mrfproot
