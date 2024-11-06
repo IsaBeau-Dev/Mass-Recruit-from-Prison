@@ -3,7 +3,7 @@ MRFP_MASS_ACTION_TT_INCLUDE: "\n#weak Gefangene, die durch Filter verborgen oder
 mrfp_tooltip:0 "Alle [Concept('prisoners', 'Gefangenen')|E] werden rekrutiert und wenn möglich konvertiert.\nDies funktioniert nur bei Characteren, die keine Titel besitzen.\n#weak Gefangene, die durch Filter verborgen oder von Massenaktionen ausgeschlossen wurden, sind AUCH betroffen.#!"
 mrfp_tooltip_ransom: "#T $MASS_PRISONER_ACTION_RANSOM$#!\nAlle [Concept('prisoners', 'Gefangenen')|E] für [gold|E] auslösen.\n\n$MRFP_MASS_ACTION_TT_INCLUDE$"
 
-#decision
+#decision recruit
 enable_mrfp_decision:0 "Starte Massenrekrutierung von Gefangenen"
 enable_mrfp_decision_tooltip:0 "Rekrutiere und konvertiere (wenn möglich) automatisch Gefangenen aus dem Gefängnis jeden Monat."
 enable_mrfp_decision_desc:0 "Ich werde von willigen Gefangenen verlangen bei mir am Hof zu bleiben und sich [ROOT.Char.GetFaith.HighGodName] zuzuwenden."
@@ -15,6 +15,18 @@ disable_mrfp_decision_tooltip:0 "Stoppe die automatische Rekrutierung aus dem Ge
 disable_mrfp_decision_desc:0 "Ich werde nichtmehr Gefangene rekrutieren und ihre Konvertierung verlangen."
 disable_mrfp_decision_effect_tooltip:0 "Zwangsrekrutierung und Konvertierung von Gefangenen wird nicht weiter jeden Monat durchgeführt."
 disable_mrfp_decision_confirm:0 "Stoppe Rekrutierung und Konvertierung"
+#decision ransom
+enable_mrfp_ransom_decision:0 "Starte Massenlösegeld"
+enable_mrfp_ransom_decision_tooltip:0 "Automatically, ransom prisoners every month."
+enable_mrfp_ransom_decision_desc:0 "I will demand the max gold amout."
+enable_mrfp_ransom_decision_effect_tooltip:0 "Every month, my prisoners who can be ransomed for the max gold amout will be sold off."
+enable_mrfp_ransom_decision_confirm:0 "Start ransoming"
+
+disable_mrfp_ransom_decision:0 "Stop Mass Ransom From Prison"
+disable_mrfp_ransom_decision_tooltip:0 "Stop automatically ransoming from prison."
+disable_mrfp_ransom_decision_desc:0 "I will not ransom prisoners any longer."
+disable_mrfp_ransom_decision_effect_tooltip:0 "Stop demanding ransom for prisoners every month."
+disable_mrfp_ransom_decision_confirm:0 "Stop ransoming"
 #game rule
 rule_mrfp:0 "Automatische Massenrekrutierung aus dem Gefängnis Entscheidung anzeigen"
 setting_on_mrfp:0 "Ja"
