@@ -69,3 +69,6 @@ decision_group_type_mrfp: "Mass Recruit"
  mrfp_set_threshold.0001.a:0 "Toggle Enable|Disable"
  mrfp_set_threshold.0001.b:0 "Toggle Prowess"
  mrfp_set_threshold.0001.d:0 "Exit"
+#release from prison popup to message feed
+ prisonreleasethingy.title:0 "Prisoner Agrees To Release"
+ prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] has agreed to your conditions for their release."
