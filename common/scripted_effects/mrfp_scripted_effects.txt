@@ -3,6 +3,10 @@
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
 	# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	# debug_log_scopes = yes
+
+
+
+	##Recruitment and Conversion with Prowess Options
 	if = {
 		limit = {
 			AND = {
@@ -50,95 +54,55 @@
 			}
 		}
 	}
-	
+	################
+
+
 	clear_saved_scope = mrfproot
 	clear_saved_scope = mrfpthis
 }
 
 
+mrfp_ransom_every_prisoner_effect = {
+	$MRFPROOT$ = { save_scope_as = mrfproot }
+   	$MRFPTHIS$ = { save_scope_as = mrfpthis }
+
+	# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	# debug_log_scopes = yes
+
+	# run_interaction = {
+	# 	interaction = mrfp_ransom_interaction
+	# 	actor = scope:mrfproot
+	# 	recipient = scope:mrfpthis
+	# 	execute_threshold = accept
+	# }
+
+###################
+	scope:mrfpthis = {
+		save_scope_as = secondary_recipient
+		if = {
+			limit = {
+				is_ruler = no
+				exists = liege
+			}
+			liege = {
+				save_scope_as = mrfpthis
+			}
+		}
+	}
+	if = {
+		limit = { 
+			scope:secondary_recipient.ransom_cost_value <= scope:mrfpthis.gold 
+		}
+		run_interaction = {
+			interaction = ransom_interaction
+			actor = scope:mrfproot
+			recipient = scope:mrfpthis
+			execute_threshold = accept
+		}
+
+	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-# mrfp_every_prisoner_effect = {
-# 	$MRFPROOT$ = { save_scope_as = mrfproot }
-#    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
-# 	if = {
-# 		limit = {is_ruler = no}
-# 		if = {
-# 		limit = {
-# 			has_game_rule = mrfp_prowess_5
-# 			prowess >= 5
-# 		}
-# 		run_interaction = {
-# 			interaction = mrfp_release_from_prison_interaction
-# 			actor = scope:mrfproot
-# 			recipient = scope:mrfpthis
-# 			#send_threshold = decline
-# 			execute_threshold = accept
-# 		}
-# 		}
-# 		else_if = {
-# 		limit = {
-# 			has_game_rule = mrfp_prowess_10
-# 			prowess >= 10
-# 		}
-# 		run_interaction = {
-# 			interaction = mrfp_release_from_prison_interaction
-# 			actor = scope:mrfproot
-# 			recipient = scope:mrfpthis
-# 			#send_threshold = decline
-# 			execute_threshold = accept
-# 		}
-# 		}
-# 		else_if = {
-# 		limit = {
-# 			has_game_rule = mrfp_prowess_15
-# 			prowess >= 15
-# 		}
-# 		run_interaction = {
-# 			interaction = mrfp_release_from_prison_interaction
-# 			actor = scope:mrfproot
-# 			recipient = scope:mrfpthis
-# 			#send_threshold = decline
-# 			execute_threshold = accept
-# 		}
-# 		}
-# 		else_if = {
-# 		limit = {
-# 			has_game_rule = mrfp_prowess_20
-# 			prowess >= 20
-# 		}
-# 		run_interaction = {
-# 			interaction = mrfp_release_from_prison_interaction
-# 			actor = scope:mrfproot
-# 			recipient = scope:mrfpthis
-# 			#send_threshold = decline
-# 			execute_threshold = accept
-# 		}
-# 		}
-# 		else_if = {
-# 		limit = {has_game_rule = off_mrfp_prowess}
-# 		run_interaction = {
-# 			interaction = mrfp_release_from_prison_interaction
-# 			actor = scope:mrfproot
-# 			recipient = scope:mrfpthis
-# 			#send_threshold = decline
-# 			execute_threshold = accept
-# 		}
-# 		}
-# 	}
-	
-# 	clear_saved_scope = mrfproot
-# 	clear_saved_scope = mrfpthis
-# }
+	clear_saved_scope = mrfproot
+	clear_saved_scope = mrfpthis
+}

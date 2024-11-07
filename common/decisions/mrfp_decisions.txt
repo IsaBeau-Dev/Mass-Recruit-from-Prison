@@ -66,6 +66,74 @@ disable_mrfp_decision = {
     ai_check_interval = 0
 }
 
+enable_mrfp_ransom_decision = {
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+	}
+    decision_group_type = mrfp
+    
+    title = enable_mrfp_ransom_decision
+    desc = enable_mrfp_ransom_decision_desc
+    confirm_text = enable_mrfp_ransom_decision_confirm
+    selection_tooltip = enable_mrfp_ransom_decision_tooltip
+
+    ai_check_interval = 0
+
+    is_shown = {
+        is_landed = yes
+        NOT = { has_character_flag = enable_auto_mrfp_ransom }
+        has_game_rule = on_mrfp
+    }
+
+    effect = {
+        custom_tooltip = enable_mrfp_ransom_decision_effect_tooltip
+        add_character_flag = enable_auto_mrfp_ransom
+    }
+
+    ai_potential = {
+        always = no
+    }
+
+    ai_will_do = {
+        base = 0
+    }
+}
+
+disable_mrfp_ransom_decision = {
+   
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+	}
+    title = disable_mrfp_ransom_decision
+    desc = disable_mrfp_ransom_decision_desc
+    confirm_text = disable_mrfp_ransom_decision_confirm
+    selection_tooltip = disable_mrfp_ransom_decision_tooltip
+
+    decision_group_type = mrfp
+    
+
+    is_shown = {
+        is_landed = yes
+        has_character_flag = enable_auto_mrfp_ransom
+        has_game_rule = on_mrfp
+    }
+
+    effect = {
+        custom_tooltip = disable_mrfp_ransom_decision_effect_tooltip
+        remove_character_flag = enable_auto_mrfp_ransom
+    }
+
+    ai_potential = {
+        always = no
+    }
+
+    ai_will_do = {
+        base = 0
+    }
+    ai_check_interval = 0
+}
+
 set_mrfp_threshold = {
     
 	picture = {

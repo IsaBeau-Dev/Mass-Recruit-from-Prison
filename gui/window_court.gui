@@ -493,6 +493,7 @@
 								}
 								#MRFP
 								mrfp_button = {}
+								mrfp_button_ransom = {}
 								#MRFP
 							}
 						}

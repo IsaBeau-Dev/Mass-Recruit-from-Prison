@@ -15,10 +15,13 @@ on_mrfp_start = {
 quarterly_playable_pulse = {
     #this setup makes sure mrfp_auto gets called every month
     on_actions = {
+        mrfp_auto_ransom
         mrfp_auto
         delay = { months = 1 }
+        mrfp_auto_ransom
         mrfp_auto
         delay = { months = 2 }
+        mrfp_auto_ransom
         mrfp_auto
     }
 }
@@ -36,10 +39,24 @@ mrfp_auto = {
         }
     }
 }
+mrfp_auto_ransom = {
+    trigger = {
+        has_character_flag = enable_auto_mrfp_ransom
+    }
+    effect = {
+        every_prisoner = {
+            mrfp_ransom_every_prisoner_effect = {
+                MRFPROOT = root
+                MRFPTHIS = this
+            }
+        }
+    }
+}
 
 on_death = {
     on_actions = {
         mrfp_on_death
+        mrfp_on_death_ransom
         mrfp_on_death_vars
     }
 }
@@ -58,6 +75,18 @@ mrfp_on_death = {
         #save_scope_as = dying_character
         primary_heir = {
             add_character_flag = enable_auto_mrfp
+        }
+        
+    }
+}
+mrfp_on_death_ransom = {
+    trigger = {
+        has_character_flag = enable_auto_mrfp_ransom
+    }
+    effect = {
+        #save_scope_as = dying_character
+        primary_heir = {
+            add_character_flag = enable_auto_mrfp_ransom
         }
         
     }
