@@ -20,4 +20,13 @@ Is your prison overflowing with potential courtiers, but recruiting each one (an
 [*][b]UniUI Compatibility[/b]: Now fully compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2768734977&searchtext=uniui]UniUI[/url]!
  [*][b]Mod Compatibility[/b]: Compatible with all other mods. Note that the ransom button in the prison window may disappear, but you can still use the monthly decision to ransom prisoners. Ensure this mod is prioritized in your playset to overwrite the GUI file changes. [/list]
 
+
+[h2] Localization [/h2]
+[list]
+[*] [b] English: [/b]  Translated it myself
+[*] [b] German: [/b]  (My native language so hopefully it should be fine)
+[*] [b] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2903983628] Chinese: [/url] [/b] Thanks to @牛奶大魔王 . You need his mod for it to work !
+[/list]
+
+
 A big thank you to CK3COOP for their invaluable assistance and for answering my numerous questions!
