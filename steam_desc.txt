@@ -1,30 +1,23 @@
-Your prison is overflowing with people that you would love to have at your court, but you dont want to recruit (and demand conversion from)  everyone manually ?
-Then this mod is for you. Now you can mass recruit and demand conversion of all non ruler prisoners via a single button click or even start doing it automatically every month via a decision.
+[h1]Tired of Manually Recruiting Prisoners in Your Court?[/h1]
 
-It only works on people that dont hold any land and would be willing to accept the terms like in vanilla. Also like in vanilla when you send your demands it will take some days until you recieve an answer. 
+Is your prison overflowing with potential courtiers, but recruiting each one (and demanding their conversion) manually feels like a chore? Look no further! This mod allows you to mass recruit and demand conversion from all non-ruler prisoners with a single click. You can even automate this process to run every month via an in-game decision.
 
-When a prisoner already has your faith it will still work as long as the prisoner is willing to accept your recruitment.
+[h2]Features:[/h2] [list] 
+[*][b]Mass Recruit & Convert[/b]: Recruit and convert all landless prisoners at once. They must be willing to accept the terms, just like in the vanilla game. Expect a brief waiting period before receiving their responses. 
+[*][b]Faith-Based Recruitment[/b]: If a prisoner already shares your faith and is willing to accept recruitment, the mod will handle it seamlessly. 
+[*][b]Auto-Ransom Update[/b]: Automatically ransom prisoners for money (no hooks) with the new auto-ransom feature. If you prefer using hooks, stick with the vanilla button. [/list]
 
-Now with the newest update there also is an auto ransom feature (only money no hooks. If you want that just use the vanilla button).
+[h2]Important Details:[/h2] [list] 
+[*][b]Visibility[/b]: The "Mass Action" button appears when you have 5 or more prisoners, similar to other mass actions in the game. 
+[*][b]Game Rule Control[/b]: Enable or disable the automatic mass recruit feature via a game rule. [/list]
 
-Before someone asks:
-This "Mass" Action is only visable if 5 or more prisoners are in your prison. (Just like all the other mass actions are).
+[img]https://i.imgur.com/tNcpOMj.png[/img]
 
-It will look like this:
-[img] https://i.imgur.com/tNcpOMj.png [/img]
+[img]https://i.imgur.com/KLonNto.png[/img]
 
-You can prevent the "enable/disable automatically mass recruit" decision via a gamerule:
+[h2]Additional Updates:[/h2] [list] 
+[*][b]Prowess Threshold[/b]: Customize the prowess threshold for recruitment through an in-game decision. 
+[*][b]UniUI Compatibility[/b]: Now fully compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2768734977&searchtext=uniui]UniUI[/url]!
+ [*][b]Mod Compatibility[/b]: Compatible with all other mods. Note that the ransom button in the prison window may disappear, but you can still use the monthly decision to ransom prisoners. Ensure this mod is prioritized in your playset to overwrite the GUI file changes. [/list]
 
-[img] https://i.imgur.com/KLonNto.png [/img]
-
-[b]Now you also can change the Prowess Threshold for recruitment via a in game decision[/b]
-
-[strike]I tried to make this mod UniUi compatible. (It can only be used when the creator of UniUi adds some code for my mod to it so until then it is not compatible.)[/strike]
-
-The mod is now [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2768734977&searchtext=uniui] UniUI [/url] compatible :)
-
-The mod is also compatible with ever other mod if you are willing to accept, that the ransom button in the prison window disappears. (You can still do the action via the decision that triggers every month)
-For that make sure that this mod is on top of the playset so the gui file it changes can be overwritten.
-
-
-Thx a lot to the CK3COOP for their help and for answering my sometimes very confusing questions ;)
+A big thank you to CK3COOP for their invaluable assistance and for answering my numerous questions!
