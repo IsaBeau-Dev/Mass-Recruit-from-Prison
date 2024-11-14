@@ -83,16 +83,47 @@ def read_discord_text_from_file(file_path):
     except FileNotFoundError:
         return "File not found. Please provide a valid file path."
 
-def convert_text_to_readme(text, format_type):
+def convert_to_readme_format(text, format_type):
     if format_type == 'steam':
         discord_text = steam_to_discord(text)
-        readme_text = discord_to_steam(discord_text)
+        readme_text = discord_to_readme(discord_text)
     elif format_type == 'discord':
-        steam_text = discord_to_steam(text)
-        readme_text = steam_to_discord(steam_text)
+        readme_text = discord_to_readme(text)
     else:
         return "Invalid format type. Please provide 'steam' or 'discord'."
     return readme_text
+
+def discord_to_readme(text):
+    # Replace Discord formatting with README formatting
+    text = text.replace('**', '**').replace('**', '**')  # Bold
+    text = text.replace('*', '*').replace('*', '*')  # Italics
+    text = text.replace('__', '__').replace('__', '__')  # Underline
+    text = text.replace('~~', '~~').replace('~~', '~~')  # Strikethrough
+    text = text.replace('||', '||').replace('||', '||')  # Spoilers
+
+    # Handle code blocks (Discord uses ``` tags)
+    text = text.replace('```', '```').replace('```', '```')
+
+    # Handle block quotes (Discord uses > tags)
+    text = text.replace('> ', '> ').replace('\n', '\n')
+
+    # Handle images (Discord uses direct URLs)
+    # Note: README uses direct URLs, so no change needed
+    text = text.replace('', '').replace('', '')
+
+    # Handle lists (Discord uses - for bullet points)
+    text = text.replace('- ', '- ')  # No change needed for lists
+
+    # Handle URLs (Discord uses direct URLs)
+    # Note: README uses direct URLs, so no change needed
+    text = text.replace('', '').replace('', '')
+
+    # Handle headers (Discord uses #, ##, ### for headers)
+    text = text.replace('# ', '# ').replace('\n', '\n')  # No change needed for headers
+    text = text.replace('## ', '## ').replace('\n', '\n')  # No change needed for headers
+    text = text.replace('### ', '### ').replace('\n', '\n')  # No change needed for headers
+
+    return text
 
 # Example usage:
 converted_text = read_steam_text_from_file(file_path)
@@ -106,5 +137,5 @@ print(converted_readme_text)
 # Example usage for converting input text to README text:
 input_text = "[b]Bold text[/b] and [i]italic text[/i]"
 format_type = "steam"
-readme_text = convert_text_to_readme(input_text, format_type)
+readme_text = convert_to_readme_format(input_text, format_type)
 print(readme_text)
