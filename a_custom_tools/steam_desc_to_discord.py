@@ -32,6 +32,40 @@ def steam_to_discord(text):
 
     return text
 
+def discord_to_steam(text):
+    # Replace Discord formatting with Steam formatting
+    text = text.replace('**', '[b]').replace('**', '[/b]')  # Bold
+    text = text.replace('*', '[i]').replace('*', '[/i]')  # Italics
+    text = text.replace('__', '[u]').replace('__', '[/u]')  # Underline
+    text = text.replace('~~', '[strike]').replace('~~', '[/strike]')  # Strikethrough
+    text = text.replace('||', '[spoiler]').replace('||', '[/spoiler]')  # Spoilers
+
+    # Handle code blocks (Discord uses ``` tags)
+    text = text.replace('```', '[code]').replace('```', '[/code]')
+
+    # Handle block quotes (Discord uses > tags)
+    text = text.replace('> ', '[quote]').replace('\n', '[/quote]\n')
+
+    # Handle images (Discord uses direct URLs)
+    # Note: Steam uses [img] tags, but Discord uses direct URLs, so this might need manual adjustment
+    text = text.replace('', '[img]').replace('', '[/img]')
+
+    # Handle lists (Discord uses - for bullet points)
+    text = text.replace('- ', '[*]')  # Convert Discord bullet points to Steam list items
+
+    # Handle URLs (Discord uses direct URLs)
+    # Note: Steam uses [url] tags, but Discord uses direct URLs, so this might need manual adjustment
+    text = text.replace('', '[url]').replace('', '[/url]')
+
+    # Handle headers (Discord uses #, ##, ### for headers)
+    text = text.replace('# ', '[h1]').replace('\n', '[/h1]\n')  # Steam h1 (largest header)
+    text = text.replace('## ', '[h2]').replace('\n', '[/h2]\n')  # Steam h2 (second largest header)
+    text = text.replace('### ', '[h3]').replace('\n', '[/h3]\n')  # Steam h3 (third largest header)
+
+    return text
+
+
+
 def read_steam_text_from_file(file_path):
     try:
         with open(file_path, 'r') as file:
