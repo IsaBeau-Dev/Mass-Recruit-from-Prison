@@ -93,28 +93,29 @@ mrfp_ransom_every_prisoner_effect = {
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
 
 	#############
-	if = {
-		limit = { 
-			exists = liege
-		}
-		if = {
-			limit = {
-				AND = {
-					liege = {
-						is_at_war_with =scope:mrfproot
-					}
-					is_close_family_of = liege
-				} 
-			}
-			add_character_flag = mrfp_blocked
-		}
-	}
-	if = {
-		limit = { 
-			is_at_war_with =scope:mrfproot
-		}
-		add_character_flag = mrfp_blocked
-	}
+	# if = {
+	# 	limit = { 
+	# 		exists = liege
+	# 	}
+	# 	if = {
+	# 		limit = {
+	# 			AND = {
+	# 				liege = {
+	# 					is_at_war_with =scope:mrfproot
+	# 				}
+	# 				is_close_family_of = liege
+	# 			} 
+	# 		}
+	# 		add_character_flag = mrfp_blocked
+	# 	}
+	# }
+	# if = {
+	# 	limit = { 
+	# 		is_at_war_with =scope:mrfproot
+	# 	}
+	# 	add_character_flag = mrfp_blocked
+	# }
+	mrfp_is_at_war_with_target_or_their_liege = yes
 
 	if = {
 		limit = { 
@@ -152,4 +153,29 @@ mrfp_ransom_every_prisoner_effect = {
 	remove_character_flag = mrfp_blocked
 	clear_saved_scope = mrfproot
 	clear_saved_scope = mrfpthis
+}
+
+mrfp_is_at_war_with_target_or_their_liege = {
+	if = {
+		limit = { 
+			exists = liege
+		}
+		if = {
+			limit = {
+				AND = {
+					liege = {
+						is_at_war_with =scope:mrfproot
+					}
+					is_close_family_of = liege
+				} 
+			}
+			add_character_flag = mrfp_blocked
+		}
+	}
+	if = {
+		limit = { 
+			is_at_war_with =scope:mrfproot
+		}
+		add_character_flag = mrfp_blocked
+	}
 }
