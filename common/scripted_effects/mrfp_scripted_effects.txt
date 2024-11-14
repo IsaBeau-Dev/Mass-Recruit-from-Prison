@@ -8,23 +8,6 @@
 
 	##Recruitment and Conversion with Prowess Options
 
-	# scope:mrfproot = {
-	# 	every_character_war = {
-	# 		save_temporary_scope_as = current_war
-
-	# 		if = {
-	# 			limit = {
-	# 				prisoner_gives_warscore_for_trigger = { WAR = scope:current_war CHARACTER = scope:mrfpthis }
-	# 			}
-	# 			debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	# 			debug_log_scopes = yes
-	# 			scope:mrfpthis = {
-	# 				add_character_flag = mrfp_blocked
-	# 			}
-	# 		}
-	# 	}
-	# }
-
 	if = {
 		limit = { 
 			exists = liege
@@ -96,10 +79,6 @@
 			}
 		}
 	}
-	# else = {
-	# 		debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	# 		debug_log_scopes = yes
-	# }
 
 	################
 
@@ -113,17 +92,7 @@ mrfp_ransom_every_prisoner_effect = {
 	$MRFPROOT$ = { save_scope_as = mrfproot }
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
 
-	# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	# debug_log_scopes = yes
-
-	# run_interaction = {
-	# 	interaction = mrfp_ransom_interaction
-	# 	actor = scope:mrfproot
-	# 	recipient = scope:mrfpthis
-	# 	execute_threshold = accept
-	# }
-
-###################
+	#############
 	if = {
 		limit = { 
 			exists = liege

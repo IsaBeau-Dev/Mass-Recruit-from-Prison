@@ -53,55 +53,6 @@ mrfp_auto_ransom = {
     }
 }
 
-#wars
-# on_war_started = {
-#     on_actions = {
-#         mrfp_on_war_started
-#     }
-# }
-# mrfp_on_war_started = {
-#     effect = {
-#         if = {
-#             limit = { 
-#                 primary_attacker = {has_character_flag = enable_auto_mrfp}       
-#                 primary_attacker = {has_character_flag = enable_auto_mrfp_ransom} 
-#             }
-#             primary_defender = {
-#                 every_courtier = {
-#                     add_to_global_variable_list = {
-#                         name = mrfp_blocked_people
-#                         target = this
-#                     }
-#                 }
-#             }
-#         }
-#         else_if = {
-#             limit = { 
-#                 primary_defender = {has_character_flag = enable_auto_mrfp}       
-#                 primary_defender = {has_character_flag = enable_auto_mrfp_ransom} 
-#             }
-#             primary_attacker = {
-#                 every_courtier = {
-#                     add_to_global_variable_list = {
-#                         name = mrfp_blocked_people
-#                         target = this
-#                     }
-#                 }
-#             }
-#         }
-#     }
-# }
-# every_living_character = {
-#     limit = {
-#       NOT = { exists = liege_or_court_owner }
-#     }
-#     add_to_global_variable_list = {
-#       name = wanderers
-#       target = this
-#     }
-#   }
-
-
 
 ###DEATH
 on_death = {
