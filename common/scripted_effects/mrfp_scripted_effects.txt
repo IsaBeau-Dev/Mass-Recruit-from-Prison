@@ -8,22 +8,23 @@
 
 	##Recruitment and Conversion with Prowess Options
 
-	if = {
-		limit = { 
-			exists = liege
-		}
-		if = {
-			limit = {
-				AND = {
-					liege = {
-						is_at_war_with =scope:mrfproot
-					}
-					is_close_family_of = liege
-				} 
-			}
-			add_character_flag = mrfp_blocked
-		}
-	}
+	# if = {
+	# 	limit = { 
+	# 		exists = liege
+	# 	}
+	# 	if = {
+	# 		limit = {
+	# 			AND = {
+	# 				liege = {
+	# 					is_at_war_with =scope:mrfproot
+	# 				}
+	# 				is_close_family_of = liege
+	# 			} 
+	# 		}
+	# 		add_character_flag = mrfp_blocked
+	# 	}
+	# }
+	mrfp_is_at_war_with_targets_liege = yes
 
 	if = {
 		limit = { 
@@ -92,29 +93,6 @@ mrfp_ransom_every_prisoner_effect = {
 	$MRFPROOT$ = { save_scope_as = mrfproot }
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
 
-	#############
-	# if = {
-	# 	limit = { 
-	# 		exists = liege
-	# 	}
-	# 	if = {
-	# 		limit = {
-	# 			AND = {
-	# 				liege = {
-	# 					is_at_war_with =scope:mrfproot
-	# 				}
-	# 				is_close_family_of = liege
-	# 			} 
-	# 		}
-	# 		add_character_flag = mrfp_blocked
-	# 	}
-	# }
-	# if = {
-	# 	limit = { 
-	# 		is_at_war_with =scope:mrfproot
-	# 	}
-	# 	add_character_flag = mrfp_blocked
-	# }
 	mrfp_is_at_war_with_target_or_their_liege = yes
 
 	if = {
@@ -156,6 +134,16 @@ mrfp_ransom_every_prisoner_effect = {
 }
 
 mrfp_is_at_war_with_target_or_their_liege = {
+	mrfp_is_at_war_with_targets_liege = yes
+	if = {
+		limit = { 
+			is_at_war_with =scope:mrfproot
+		}
+		add_character_flag = mrfp_blocked
+	}
+}
+
+mrfp_is_at_war_with_targets_liege = {
 	if = {
 		limit = { 
 			exists = liege
@@ -166,16 +154,14 @@ mrfp_is_at_war_with_target_or_their_liege = {
 					liege = {
 						is_at_war_with =scope:mrfproot
 					}
-					is_close_family_of = liege
+					OR = {
+						is_close_family_of = liege
+						is_primary_heir_of = liege
+					}
 				} 
 			}
 			add_character_flag = mrfp_blocked
 		}
 	}
-	if = {
-		limit = { 
-			is_at_war_with =scope:mrfproot
-		}
-		add_character_flag = mrfp_blocked
-	}
 }
+
