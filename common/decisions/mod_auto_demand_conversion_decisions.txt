@@ -1,5 +1,7 @@
 ﻿enable_auto_demand_conversion_decision = {
-    picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
     title = enable_auto_demand_conversion_decision
     desc = enable_auto_demand_conversion_decision_desc
     confirm_text = enable_auto_demand_conversion_decision_confirm
@@ -27,7 +29,9 @@
 }
 
 disable_auto_demand_conversion_decision = {
-    picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
     title = disable_auto_demand_conversion_decision
     desc = disable_auto_demand_conversion_decision_desc
     confirm_text = disable_auto_demand_conversion_decision_confirm
