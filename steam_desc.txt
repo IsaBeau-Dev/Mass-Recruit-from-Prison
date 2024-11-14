@@ -18,7 +18,9 @@ Is your prison overflowing with potential courtiers, but recruiting each one (an
 [h2]Additional Updates:[/h2] [list] 
 [*][b]Prowess Threshold[/b]: Customize the prowess threshold for recruitment through an in-game decision. 
 [*][b]UniUI Compatibility[/b]: Now fully compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2768734977&searchtext=uniui]UniUI[/url]!
- [*][b]Mod Compatibility[/b]: Compatible with all other mods. Note that the ransom button in the prison window may disappear, but you can still use the monthly decision to ransom prisoners. Ensure this mod is prioritized in your playset to overwrite the GUI file changes. [/list]
+ [*][b]Mod Compatibility[/b]: Compatible with all other mods. Note that the ransom+recruit buttons in the prison window may disappear, but you can still use the monthly decision to ransom/recruit prisoners. Ensure this mod is prioritized in your playset to overwrite the GUI file changes. 
+[*][b]TC Compatibility[/b] Just place this mod before the TC in the load order. You will still be able to use the decisions for the auto recruit/ransom. If the buttons in prison disappear the TC overwrites the same file and take priority.
+[/list]
 
 
 [h2] Localization [/h2]
