@@ -7,6 +7,8 @@
     confirm_text = enable_auto_demand_conversion_decision_confirm
     selection_tooltip = enable_auto_demand_conversion_decision_tooltip
 
+    decision_group_type = mrfp
+
     ai_check_interval = 0
 
     is_shown = {
@@ -36,6 +38,8 @@ disable_auto_demand_conversion_decision = {
     desc = disable_auto_demand_conversion_decision_desc
     confirm_text = disable_auto_demand_conversion_decision_confirm
     selection_tooltip = disable_auto_demand_conversion_decision_tooltip
+
+    decision_group_type = mrfp
 
     ai_check_interval = 0
 
