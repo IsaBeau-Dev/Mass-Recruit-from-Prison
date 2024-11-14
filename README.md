@@ -25,5 +25,3 @@ Tired of manually recruiting prisoners in your court? This mod allows you to mas
 
 ## Acknowledgements
 A big thank you to CK3COOP for their invaluable assistance and for answering my numerous questions!
-
-Based on: [Mass Recruit from Prison](https://github.com/IsaBeau-Dev/Mass-Recruit-from-Prison)
