@@ -1,0 +1,55 @@
+﻿enable_auto_demand_conversion_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    title = enable_auto_demand_conversion_decision
+    desc = enable_auto_demand_conversion_decision_desc
+    confirm_text = enable_auto_demand_conversion_decision_confirm
+    selection_tooltip = enable_auto_demand_conversion_decision_tooltip
+
+    ai_check_interval = 0
+
+    is_shown = {
+        is_landed = yes
+        NOT = { has_character_flag = enable_auto_demand_conversion }
+    }
+
+    effect = {
+        custom_tooltip = enable_auto_demand_conversion_decision_effect_tooltip
+        add_character_flag = enable_auto_demand_conversion
+    }
+
+    ai_potential = {
+        always = no
+    }
+
+    ai_will_do = {
+        base = 0
+    }
+}
+
+disable_auto_demand_conversion_decision = {
+    picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    title = disable_auto_demand_conversion_decision
+    desc = disable_auto_demand_conversion_decision_desc
+    confirm_text = disable_auto_demand_conversion_decision_confirm
+    selection_tooltip = disable_auto_demand_conversion_decision_tooltip
+
+    ai_check_interval = 0
+
+    is_shown = {
+        is_landed = yes
+        has_character_flag = enable_auto_demand_conversion
+    }
+
+    effect = {
+        custom_tooltip = disable_auto_demand_conversion_decision_effect_tooltip
+        remove_character_flag = enable_auto_demand_conversion
+    }
+
+    ai_potential = {
+        always = no
+    }
+
+    ai_will_do = {
+        base = 0
+    }
+}
