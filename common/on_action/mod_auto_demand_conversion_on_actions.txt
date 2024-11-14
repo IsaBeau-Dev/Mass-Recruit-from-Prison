@@ -43,3 +43,20 @@ mod_auto_demand_conversion_on_action = {
         }
     }
 }
+
+on_death = {
+    on_actions = {
+        mod_auto_demand_conversion_on_death
+    }
+}
+mod_auto_demand_conversion_on_death = {
+    trigger = {
+        has_character_flag = enable_auto_demand_conversion
+    }
+    effect = {
+        primary_heir = {
+            add_character_flag = enable_auto_mrfp
+        }
+        
+    }
+}
