@@ -32,3 +32,5 @@ Is your prison overflowing with potential courtiers, but recruiting each one (an
 
 
 A big thank you to CK3COOP for their invaluable assistance and for answering my numerous questions!
+
+[URL=https://github.com/IsaBeau-Dev/Mass-Recruit-from-Prison][IMG]https://img.shields.io/badge/Github-Repository?style=plastic&label=Github%20Repository[/IMG][/URL]
