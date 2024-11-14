@@ -7,23 +7,103 @@
 
 
 	##Recruitment and Conversion with Prowess Options
+		# if = {
+	# 	limit = { 
+	# 		# prisoner_gives_warscore_for_trigger = no
+	# 		#prisoner_gives_warscore_for_trigger = { WAR = scope:some_war CHARACTER = scope:some_prisoner }
+
+	# 		#not at war with them or their liege
+	# 		scope:mrfproot = {
+	# 			NOT = { is_at_war_with = scope:mrfpthis }
+	# 		}
+	# 		# AND = {
+	# 		# 	is_ruler = no
+	# 		# 	exists = liege
+	# 		# }
+	# 		# liege = {
+	# 		# 	NOT = { is_at_war_with =scope:mrfproot }
+	# 		# }
+	# 	}
+	# 	debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	# 	debug_log_scopes = yes
+	#every_character_war
+	# if = {
+	# 	limit = { 
+	# 		exists = liege
+	# 		liege = {
+	# 			NOT = { is_at_war_with =scope:mrfproot }
+	# 		}
+	# 	}
+	# 	debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	# 	debug_log_scopes = yes
+	# }
+	# scope:mrfproot = {
+	# 	every_character_war = {
+	# 		save_temporary_scope_as = current_war
+
+	# 		if = {
+	# 			limit = {
+	# 				prisoner_gives_warscore_for_trigger = { WAR = scope:current_war CHARACTER = scope:mrfpthis }
+	# 			}
+	# 			debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	# 			debug_log_scopes = yes
+	# 			scope:mrfpthis = {
+	# 				add_character_flag = mrfp_blocked
+	# 			}
+	# 		}
+	# 	}
+	# }
+
 	if = {
-		limit = {
-			AND = {
-				is_ruler = no
-				scope:mrfproot = {
-					has_variable = mrfp_threshold_enabled
-					has_variable = mrfp_prowess_threshold
-				}
-			}
+		limit = { 
+			exists = liege
 		}
-		# LIMIT ON
 		if = {
 			limit = {
-				scope:mrfproot.var:mrfp_threshold_enabled >= 1
+				AND = {
+					liege = {
+						is_at_war_with =scope:mrfproot
+					}
+					is_close_family_of = liege
+				} 
 			}
+			add_character_flag = mrfp_blocked
+		}
+	}
+
+	if = {
+		limit = { 
+			NOT = {
+				has_character_flag = mrfp_blocked
+			} 
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ruler = no
+					scope:mrfproot = {
+						has_variable = mrfp_threshold_enabled
+						has_variable = mrfp_prowess_threshold
+					}
+				}
+			}
+			# LIMIT ON
 			if = {
-				limit = { prowess >= scope:mrfproot.var:mrfp_prowess_threshold }
+				limit = {
+					scope:mrfproot.var:mrfp_threshold_enabled >= 1
+				}
+				if = {
+					limit = { prowess >= scope:mrfproot.var:mrfp_prowess_threshold }
+					run_interaction = {
+						interaction = mrfp_release_from_prison_interaction
+						actor = scope:mrfproot
+						recipient = scope:mrfpthis
+						execute_threshold = accept
+					}
+				}
+			}
+			#LIMIT OFF
+			else = {
 				run_interaction = {
 					interaction = mrfp_release_from_prison_interaction
 					actor = scope:mrfproot
@@ -32,31 +112,27 @@
 				}
 			}
 		}
-		#LIMIT OFF
 		else = {
-			run_interaction = {
-				interaction = mrfp_release_from_prison_interaction
-				actor = scope:mrfproot
-				recipient = scope:mrfpthis
-				execute_threshold = accept
+			## VARS NOT SET => RECRUIT EVERYONE
+			if = {
+				limit = { is_ruler = no }
+				run_interaction = {
+					interaction = mrfp_release_from_prison_interaction
+					actor = scope:mrfproot
+					recipient = scope:mrfpthis
+					execute_threshold = accept
+				}
 			}
 		}
 	}
 	else = {
-		## VARS NOT SET => RECRUIT EVERYONE
-		if = {
-			limit = { is_ruler = no }
-			run_interaction = {
-				interaction = mrfp_release_from_prison_interaction
-				actor = scope:mrfproot
-				recipient = scope:mrfpthis
-				execute_threshold = accept
-			}
-		}
+			debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+			debug_log_scopes = yes
 	}
+
 	################
 
-
+	remove_character_flag = mrfp_blocked
 	clear_saved_scope = mrfproot
 	clear_saved_scope = mrfpthis
 }
