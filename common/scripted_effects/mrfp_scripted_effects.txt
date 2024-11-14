@@ -8,22 +8,6 @@
 
 	##Recruitment and Conversion with Prowess Options
 
-	# if = {
-	# 	limit = { 
-	# 		exists = liege
-	# 	}
-	# 	if = {
-	# 		limit = {
-	# 			AND = {
-	# 				liege = {
-	# 					is_at_war_with =scope:mrfproot
-	# 				}
-	# 				is_close_family_of = liege
-	# 			} 
-	# 		}
-	# 		add_character_flag = mrfp_blocked
-	# 	}
-	# }
 	mrfp_is_at_war_with_targets_liege = yes
 
 	if = {
