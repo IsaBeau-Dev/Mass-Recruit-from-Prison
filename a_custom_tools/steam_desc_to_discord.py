@@ -125,17 +125,58 @@ def discord_to_readme(text):
 
     return text
 
+def discord_to_markdown(text):
+    # Replace Discord formatting with Markdown formatting
+    text = text.replace('**', '**').replace('**', '**')  # Bold
+    text = text.replace('*', '*').replace('*', '*')  # Italics
+    text = text.replace('__', '__').replace('__', '__')  # Underline
+    text = text.replace('~~', '~~').replace('~~', '~~')  # Strikethrough
+    text = text.replace('||', '||').replace('||', '||')  # Spoilers
+
+    # Handle code blocks (Discord uses ``` tags)
+    text = text.replace('```', '```').replace('```', '```')
+
+    # Handle inline code (Discord uses ` tags)
+    text = text.replace('`', '`').replace('`', '`')
+
+    # Handle block quotes (Discord uses > tags)
+    text = text.replace('> ', '> ').replace('\n', '\n')
+
+    # Handle images (Discord uses direct URLs)
+    # Note: Markdown uses direct URLs, so no change needed
+    text = text.replace('', '').replace('', '')
+
+    # Handle lists (Discord uses - for bullet points)
+    text = text.replace('- ', '- ')  # No change needed for lists
+
+    # Handle URLs (Discord uses direct URLs)
+    # Note: Markdown uses direct URLs, so no change needed
+    text = text.replace('', '').replace('', '')
+
+    # Handle headers (Discord uses #, ##, ### for headers)
+    text = text.replace('# ', '# ').replace('\n', '\n')  # No change needed for headers
+    text = text.replace('## ', '## ').replace('\n', '\n')  # No change needed for headers
+    text = text.replace('### ', '### ').replace('\n', '\n')  # No change needed for headers
+
+    return text
+
 # Example usage:
-converted_text = read_steam_text_from_file(file_path)
-print(converted_text)
+discord_text = "**Bold text** and *italic text*"
+markdown_text = discord_to_markdown(discord_text)
+print(markdown_text)
 
-# Example usage for README files:
-readme_path = os.path.join(os.path.dirname(__file__), '..', 'README.md')
-converted_readme_text = read_discord_text_from_file(readme_path)
-print(converted_readme_text)
 
-# Example usage for converting input text to README text:
-input_text = "[b]Bold text[/b] and [i]italic text[/i]"
-format_type = "steam"
-readme_text = convert_to_readme_format(input_text, format_type)
-print(readme_text)
+# # Example usage:
+# converted_text = read_steam_text_from_file(file_path)
+# print(converted_text)
+
+# # Example usage for README files:
+# readme_path = os.path.join(os.path.dirname(__file__), '..', 'README.md')
+# converted_readme_text = read_discord_text_from_file(readme_path)
+# print(converted_readme_text)
+
+# # Example usage for converting input text to README text:
+# input_text = "[b]Bold text[/b] and [i]italic text[/i]"
+# format_type = "steam"
+# readme_text = convert_to_readme_format(input_text, format_type)
+# print(readme_text)
