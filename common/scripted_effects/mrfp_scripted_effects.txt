@@ -140,6 +140,12 @@ mrfp_ransom_every_prisoner_effect = {
 			add_character_flag = mrfp_blocked
 		}
 	}
+	if = {
+		limit = { 
+			is_at_war_with =scope:mrfproot
+		}
+		add_character_flag = mrfp_blocked
+	}
 
 	if = {
 		limit = { 
