@@ -1,5 +1,6 @@
-file_path = r"secret"
+import os
 
+file_path = os.path.join(os.path.dirname(__file__), '..', 'steam_desc.txt')
 
 def steam_to_discord(text):
     # Replace Steam formatting with Discord formatting
@@ -64,8 +65,6 @@ def discord_to_steam(text):
 
     return text
 
-
-
 def read_steam_text_from_file(file_path):
     try:
         with open(file_path, 'r') as file:
@@ -75,6 +74,20 @@ def read_steam_text_from_file(file_path):
     except FileNotFoundError:
         return "File not found. Please provide a valid file path."
 
+def read_discord_text_from_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            discord_text = file.read()
+            steam_text = discord_to_steam(discord_text)
+            return steam_text
+    except FileNotFoundError:
+        return "File not found. Please provide a valid file path."
+
 # Example usage:
 converted_text = read_steam_text_from_file(file_path)
 print(converted_text)
+
+# Example usage for README files:
+readme_path = os.path.join(os.path.dirname(__file__), '..', 'README.md')
+converted_readme_text = read_discord_text_from_file(readme_path)
+print(converted_readme_text)
