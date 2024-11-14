@@ -1,0 +1,45 @@
+﻿quarterly_playable_pulse = {
+    on_actions = {
+        mod_auto_demand_conversion_on_action
+        delay = { months = 1 }
+        mod_auto_demand_conversion_on_action
+        delay = { months = 2 }
+        mod_auto_demand_conversion_on_action
+    }
+}
+
+mod_auto_demand_conversion_on_action = {
+    trigger = {
+        has_character_flag = enable_auto_demand_conversion
+    }
+    effect = {
+        house = {
+            every_house_member = {
+                run_interaction = {
+                    interaction = ask_for_conversion_courtier_interaction
+                    actor = root
+                    recipient = this
+                    send_threshold = decline
+                }
+            }
+        }
+
+        every_vassal_or_below = {
+            run_interaction = {
+                interaction = ask_for_conversion_courtier_interaction
+                actor = root
+                recipient = this
+                send_threshold = decline
+            }
+        }
+
+        every_courtier = {
+            run_interaction = {
+                interaction = ask_for_conversion_courtier_interaction
+                actor = root
+                recipient = this
+                send_threshold = decline
+            }
+        }
+    }
+}

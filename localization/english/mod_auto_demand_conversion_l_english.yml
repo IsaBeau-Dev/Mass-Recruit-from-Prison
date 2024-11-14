@@ -1,0 +1,12 @@
+﻿l_english:
+enable_auto_demand_conversion_decision:0 "Start Demanding Conversions"
+enable_auto_demand_conversion_decision_tooltip:0 "Automatically, demand conversions, every month."
+enable_auto_demand_conversion_decision_desc:0 "My [ROOT.Char.Custom('MyPriestTitle')] will demand my willing courtiers, vassals, and house members, to embrace [ROOT.Char.GetFaith.HighGodName]."
+enable_auto_demand_conversion_decision_effect_tooltip:0 "Every month, my vassals, courtiers, and house members who are convinced will convert to my faith."
+enable_auto_demand_conversion_decision_confirm:0 "Start converting"
+
+disable_auto_demand_conversion_decision:0 "Stop Demanding Conversions"
+disable_auto_demand_conversion_decision_tooltip:0 "Stop automatically demanding conversions."
+disable_auto_demand_conversion_decision_desc:0 "My [ROOT.Char.Custom('MyPriestTitle')] will not demand conversions any longer."
+disable_auto_demand_conversion_decision_effect_tooltip:0 "Stop demanding conversions every month."
+disable_auto_demand_conversion_decision_confirm:0 "Stop converting"
