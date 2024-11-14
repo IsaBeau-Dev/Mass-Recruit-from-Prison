@@ -7,36 +7,7 @@
 
 
 	##Recruitment and Conversion with Prowess Options
-		# if = {
-	# 	limit = { 
-	# 		# prisoner_gives_warscore_for_trigger = no
-	# 		#prisoner_gives_warscore_for_trigger = { WAR = scope:some_war CHARACTER = scope:some_prisoner }
 
-	# 		#not at war with them or their liege
-	# 		scope:mrfproot = {
-	# 			NOT = { is_at_war_with = scope:mrfpthis }
-	# 		}
-	# 		# AND = {
-	# 		# 	is_ruler = no
-	# 		# 	exists = liege
-	# 		# }
-	# 		# liege = {
-	# 		# 	NOT = { is_at_war_with =scope:mrfproot }
-	# 		# }
-	# 	}
-	# 	debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	# 	debug_log_scopes = yes
-	#every_character_war
-	# if = {
-	# 	limit = { 
-	# 		exists = liege
-	# 		liege = {
-	# 			NOT = { is_at_war_with =scope:mrfproot }
-	# 		}
-	# 	}
-	# 	debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	# 	debug_log_scopes = yes
-	# }
 	# scope:mrfproot = {
 	# 	every_character_war = {
 	# 		save_temporary_scope_as = current_war
@@ -125,10 +96,10 @@
 			}
 		}
 	}
-	else = {
-			debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-			debug_log_scopes = yes
-	}
+	# else = {
+	# 		debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	# 		debug_log_scopes = yes
+	# }
 
 	################
 
@@ -153,32 +124,57 @@ mrfp_ransom_every_prisoner_effect = {
 	# }
 
 ###################
-	scope:mrfpthis = {
-		save_scope_as = secondary_recipient
-		if = {
-			limit = {
-				is_ruler = no
-				exists = liege
-			}
-			liege = {
-				save_scope_as = mrfpthis
-			}
-		}
-	}
 	if = {
 		limit = { 
-			scope:secondary_recipient.ransom_cost_value <= scope:mrfpthis.gold 
+			exists = liege
 		}
-		run_interaction = {
-			interaction = ransom_interaction
-			actor = scope:mrfproot
-			recipient = scope:mrfpthis
-			execute_threshold = accept
+		if = {
+			limit = {
+				AND = {
+					liege = {
+						is_at_war_with =scope:mrfproot
+					}
+					is_close_family_of = liege
+				} 
+			}
+			add_character_flag = mrfp_blocked
 		}
+	}
 
+	if = {
+		limit = { 
+			NOT = {
+				has_character_flag = mrfp_blocked
+			} 
+		}
+		scope:mrfpthis = {
+			save_scope_as = secondary_recipient
+			if = {
+				limit = {
+					is_ruler = no
+					exists = liege
+				}
+				liege = {
+					save_scope_as = mrfpthis
+				}
+			}
+		}
+		if = {
+			limit = { 
+				scope:secondary_recipient.ransom_cost_value <= scope:mrfpthis.gold 
+			}
+			run_interaction = {
+				interaction = ransom_interaction
+				actor = scope:mrfproot
+				recipient = scope:mrfpthis
+				execute_threshold = accept
+			}
+	
+		}
 	}
 
 
+	remove_character_flag = mrfp_blocked
 	clear_saved_scope = mrfproot
 	clear_saved_scope = mrfpthis
 }
