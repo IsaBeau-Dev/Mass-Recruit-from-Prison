@@ -63,6 +63,6 @@ modded_file_mod_time = datetime.fromtimestamp(os.path.getmtime(modded_file_path)
 
 if vanilla_file_mod_time > modded_file_mod_time:
     print("Vanilla file has been updated. Checking for changes...")
-    # update_modded_file(vanilla_file_path, modded_file_path, mod_lines)
+    update_modded_file(vanilla_file_path, modded_file_path, mod_lines)
 else:
     print("No updates detected for the vanilla file.")
