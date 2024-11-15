@@ -273,7 +273,6 @@ mrfp_set_threshold.0001 = {
     trigger_event = mrfp_set_threshold.0001
   }
 
-  title = mrfp_set_threshold.0001.t
   #set mrfp_RELEASE_DEMAND_CONVERSION
   option = {
     name = RELEASE_DEMAND_CONVERSION
@@ -294,6 +293,109 @@ mrfp_set_threshold.0001 = {
     }
     trigger_event = mrfp_set_threshold.0001
   }
+  #set mrfp_RELEASE_RENOUNCE_CLAIMS
+  option = {
+    name = RELEASE_RENOUNCE_CLAIMS
+    switch = {
+      trigger = var:mrfp_RELEASE_RENOUNCE_CLAIMS
+      yes = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_RENOUNCE_CLAIMS
+          value = no
+        }
+      }
+      no = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_RENOUNCE_CLAIMS
+          value = yes
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+  #set mrfp_RELEASE_BANISH
+  option = {
+    name = RELEASE_BANISH
+    switch = {
+      trigger = var:mrfp_RELEASE_BANISH
+      yes = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_BANISH
+          value = no
+        }
+      }
+      no = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_BANISH
+          value = yes
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+  #set mrfp_RELEASE_GAIN_HOOK
+  option = {
+    name = RELEASE_GAIN_HOOK
+    switch = {
+      trigger = var:mrfp_RELEASE_GAIN_HOOK
+      yes = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_GAIN_HOOK
+          value = no
+        }
+      }
+      no = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_GAIN_HOOK
+          value = yes
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+  #set mrfp_RELEASE_TAKE_VOWS
+  option = {
+    name = RELEASE_TAKE_VOWS
+    switch = {
+      trigger = var:mrfp_RELEASE_TAKE_VOWS
+      yes = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_TAKE_VOWS
+          value = no
+        }
+      }
+      no = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_TAKE_VOWS
+          value = yes
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+  #set mrfp_RELEASE_BANISH
+  option = {
+    name = RELEASE_BANISH
+    switch = {
+      trigger = var:mrfp_RELEASE_BANISH
+      yes = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_BANISH
+          value = no
+        }
+      }
+      no = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_BANISH
+          value = yes
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+
+
+
   option = {
     name = mrfp_set_threshold.0001.d
   }
