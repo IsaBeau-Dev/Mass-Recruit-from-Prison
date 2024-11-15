@@ -3,20 +3,22 @@
 Is your prison overflowing with potential courtiers, but recruiting each one (and demanding their conversion) manually feels like a chore? Look no further! This mod allows you to mass recruit and demand conversion from all non-ruler prisoners with a single click. You can even automate this process to run every month via an in-game decision.
 
 [h2]Features:[/h2] [list] 
-[*][b]Mass Recruit & Convert[/b]: Recruit and convert all landless prisoners at once. They must be willing to accept the terms, just like in the vanilla game. Expect a brief waiting period before receiving their responses. 
-[*][b]Faith-Based Recruitment[/b]: If a prisoner already shares your faith and is willing to accept recruitment, the mod will handle it seamlessly. 
-[*][b]Auto-Ransom Update[/b]: Automatically ransom prisoners for money (no hooks) with the new auto-ransom feature. If you prefer using hooks, stick with the vanilla button. [/list]
+[*][b]Mass interact with prisoners based on your preferences[/b]: Recruit+convert(1 example) all landless prisoners at once. They must be willing to accept the terms, just like in the vanilla game.
+[*][b]Auto-Ransom Update[/b]: Automatically ransom prisoners for money (no hooks) with the new auto-ransom feature. If you prefer using hooks, stick with the vanilla button.
+[*][b]Prowess Threshold[/b]: Customize the prowess threshold for recruitment through an in-game decision. 
+ [/list]
 
 [h2]Important Details:[/h2] [list] 
 [*][b]Visibility[/b]: The "Mass Action" button appears when you have 5 or more prisoners, similar to other mass actions in the game. 
-[*][b]Game Rule Control[/b]: Enable or disable the automatic mass recruit feature via a game rule. [/list]
+[*][b]Game Rule Control[/b]: Enable or disable the automatic mass recruit feature via a game rule.
+[*][b]Choose what you want to do with your prisoners[/b]: Enable or disable each vanilla send option via a decision
+ [/list]
 
 [img]https://i.imgur.com/tNcpOMj.png[/img]
 
 [img]https://i.imgur.com/KLonNto.png[/img]
 
-[h2]Additional Updates:[/h2] [list] 
-[*][b]Prowess Threshold[/b]: Customize the prowess threshold for recruitment through an in-game decision. 
+[h2]Compatibility:[/h2] [list] 
 [*][b]UniUI Compatibility[/b]: Now fully compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2768734977&searchtext=uniui]UniUI[/url]!
  [*][b]Mod Compatibility[/b]: Compatible with all other mods. Note that the ransom+recruit buttons in the prison window may disappear, but you can still use the monthly decision to ransom/recruit prisoners. Ensure this mod is prioritized in your playset to overwrite the GUI file changes. 
 [*][b]TC Compatibility[/b] Just place this mod before the TC in the load order. You will still be able to use the decisions for the auto recruit/ransom. If the buttons in prison disappear the TC overwrites the same file and take priority.
