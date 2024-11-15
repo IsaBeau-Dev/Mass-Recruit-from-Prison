@@ -7,10 +7,14 @@ def insert_into_existing_file():
     with open(vanilla_file_path, 'r') as vanilla_file: 
         vanilla_content = vanilla_file.readlines() 
         with open(modded_file_path, 'w') as modded_file: 
-            for line in vanilla_content: 
-                modded_file.write(line) 
-                if insert_after in line:
-                     modded_file.writelines(mod_lines) 
+            i = 0
+            while i < len(vanilla_content):
+                modded_file.write(vanilla_content[i])
+                if all(line in vanilla_content[i:i+len(insert_after_lines)] for line in insert_after_lines):
+                    modded_file.writelines(mod_lines)
+                    i += len(insert_after_lines)
+                else:
+                    i += 1
         print("Modded file updated.")
 
 # Function to compare files and update the modded file if necessary
@@ -64,7 +68,18 @@ mod_lines = [
     "\t\t\t\t\t\t\t\tmrfp_button_ransom = {}\n",
     "\t\t\t\t\t\t\t\t#MRFP\n"
 ]
-insert_after = "button_prison_execute = {"
+insert_after_lines = [
+    "\t\t\t\t\t\t\tbutton_round  = {\n",
+    "\t\t\t\t\t\t\t\tname = \"execute\"\n",
+    "\t\t\t\t\t\t\t\tenabled = \"[CourtWindow.CanDoMassPrisonerAction('execute')]\"\n",
+    "\t\t\t\t\t\t\t\tbutton_prison_execute = {\n",
+    "\t\t\t\t\t\t\t\t\tparentanchor = center\n",
+    "\t\t\t\t\t\t\t\t\tonclick = \"[CourtWindow.MassPrisonerAction('execute')]\"\n",
+    "\t\t\t\t\t\t\t\t\ttooltip = \"[CourtWindow.GetMassPrisonerActionTooltip('execute')]\"\n",
+    "\t\t\t\t\t\t\t\t\tusing = tooltip_se\n",
+    "\t\t\t\t\t\t\t\t}\n",
+    "\t\t\t\t\t\t\t}\n"
+]
 
 # Check if the vanilla file needs to be updated
 vanilla_file_mod_time = datetime.fromtimestamp(os.path.getmtime(vanilla_file_path))
