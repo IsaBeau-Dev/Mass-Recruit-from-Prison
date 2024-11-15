@@ -12,7 +12,12 @@ def get_ck3_version():
     steam_app_details_url = f"https://store.steampowered.com/api/appdetails?appids={ck3_app_id}"
     response = requests.get(steam_app_details_url)
     ck3_details = response.json()[str(ck3_app_id)]["data"]
-    ck3_version = ck3_details["version"]
+
+    # Check if the version key exists
+    if "version" in ck3_details:
+        ck3_version = ck3_details["version"]
+    else:
+        ck3_version = "Version information not available"
     return ck3_version
 
 # Function to compare files and update the modded file if necessary
