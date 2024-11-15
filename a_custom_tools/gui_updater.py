@@ -10,22 +10,21 @@ def update_modded_file(vanilla_file_path, modded_file_path, mod_lines):
     with open(modded_file_path, 'r') as modded_file:
         modded_content = modded_file.readlines()
 
-    # Check if the modded file contains only the mod lines
+    # Remove mod lines from the modded content for comparison
     modded_content_without_mod_lines = [line for line in modded_content if line not in mod_lines]
 
     if vanilla_content == modded_content_without_mod_lines:
         print("No changes detected in the vanilla file.")
     else:
         print("Changes detected in the vanilla file. Updating the modded file...")
+        # Find the insertion point for the mod lines in the vanilla content
+        insertion_point = modded_content.index(mod_lines[0])
         with open(modded_file_path, 'w') as modded_file:
-            modded_file.writelines(vanilla_content)
+            modded_file.writelines(vanilla_content[:insertion_point])
             modded_file.writelines(mod_lines)
+            modded_file.writelines(vanilla_content[insertion_point:])
         print("Modded file updated.")
 
-# Paths to the vanilla and modded files
-# vanilla_file_path = "path/to/vanilla/file"
-# modded_file_path = "path/to/modded/file"
-  
 # Function to find the Steam installation path via the Windows Registry 
 def find_steam_installation_path(): 
     try: 
@@ -37,12 +36,11 @@ def find_steam_installation_path():
         return steam_path 
     except FileNotFoundError: 
         raise FileNotFoundError("Steam installation not found in the registry.") 
+
 # Paths to the vanilla and modded files 
-# ck3_installation_path = find_ck3_installation_path()
 ck3_installation_path = find_steam_installation_path()  
 vanilla_file_path = os.path.join(ck3_installation_path, 'gui', 'window_court.gui') 
 modded_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'gui', 'window_court.gui')
-
 
 mod_lines = [
     "\t\t\t\t\t\t\t\t#MRFP\n",
@@ -54,6 +52,9 @@ mod_lines = [
 # Check if the vanilla file needs to be updated
 vanilla_file_mod_time = datetime.fromtimestamp(os.path.getmtime(vanilla_file_path))
 modded_file_mod_time = datetime.fromtimestamp(os.path.getmtime(modded_file_path))
+
+# print(f"Vanilla file was updated at: {vanilla_file_mod_time}")
+# print(f"Modded file was updated at: {modded_file_mod_time}")
 
 if vanilla_file_mod_time > modded_file_mod_time:
     print("Vanilla file has been updated. Checking for changes...")
