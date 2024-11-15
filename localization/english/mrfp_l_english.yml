@@ -54,7 +54,7 @@ decision_group_type_mrfp: "Mass Recruit"
  set_mrfp_threshold_desc:0 "Enable|Disable prowess threshold and change minimum Prowess"
 
  mrfp_set_threshold.0001.t:0 "Mass Recruit Settings"
- mrfp_set_threshold.0001.settings.t:0 "#T Current Settings:#!\n"
+ mrfp_set_threshold.0001.settings.t:0 "#T Current Prowess Settings:#!\n"
  mrfp_set_threshold.0001.enabled:0 "#P Enabled Limit#!\n"
  mrfp_set_threshold.0001.disabled:0 "#N Disabled Limit#!\n"
  mrfp_set_threshold.0001.prowess.t:0 "Minimum Prowess: "

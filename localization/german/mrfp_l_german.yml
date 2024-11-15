@@ -55,7 +55,7 @@ decision_group_type_mrfp: "Massenrekrutierung"
  set_mrfp_threshold_desc:0 "Kampffertigkeitslimit aktivieren/deaktivieren und Mindestfähigkeit ändern""
 
  mrfp_set_threshold.0001.t:0 "Massenrekrutierung Einstellung"
- mrfp_set_threshold.0001.settings.t:0 "#T Aktuelle Einstellungen:#!\n"
+ mrfp_set_threshold.0001.settings.t:0 "#T Aktuelle Kampffertigkeitseinstellungen:#!\n"
  mrfp_set_threshold.0001.enabled:0 "#P Limit aktivieren#!\n"
  mrfp_set_threshold.0001.disabled:0 "#N Limit deaktivieren#!\n"
  mrfp_set_threshold.0001.prowess.t:0 "Minimale Fähigkeiten: "
