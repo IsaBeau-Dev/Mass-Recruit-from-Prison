@@ -372,7 +372,11 @@ mrfp_set_threshold.0001 = {
     }
     trigger_event = mrfp_set_threshold.0001
   }
-
+  #change send options
+  option = {
+    name = mrfp_set_threshold.0001.so
+    trigger_event = mrfp_set_threshold.0002
+  }
 
   ##############
   # #set mrfp_RELEASE_DEMAND_CONVERSION
