@@ -2,6 +2,17 @@ import os
 from datetime import datetime
 import winreg
 
+# Function to insert mod lines into the existing file 
+def insert_into_existing_file():
+    with open(vanilla_file_path, 'r') as vanilla_file: 
+        vanilla_content = vanilla_file.readlines() 
+        with open(modded_file_path, 'w') as modded_file: 
+            for line in vanilla_content: 
+                modded_file.write(line) 
+                if insert_after in line:
+                     modded_file.writelines(mod_lines) 
+        print("Modded file updated.")
+
 # Function to compare files and update the modded file if necessary
 def update_modded_file(vanilla_file_path, modded_file_path, mod_lines):
     with open(vanilla_file_path, 'r') as vanilla_file:
@@ -53,6 +64,7 @@ mod_lines = [
     "\t\t\t\t\t\t\t\tmrfp_button_ransom = {}\n",
     "\t\t\t\t\t\t\t\t#MRFP\n"
 ]
+insert_after = "button_prison_execute = {"
 
 # Check if the vanilla file needs to be updated
 vanilla_file_mod_time = datetime.fromtimestamp(os.path.getmtime(vanilla_file_path))
@@ -66,3 +78,5 @@ if vanilla_file_mod_time > modded_file_mod_time:
     update_modded_file(vanilla_file_path, modded_file_path, mod_lines)
 else:
     print("No updates detected for the vanilla file.")
+
+insert_into_existing_file()
