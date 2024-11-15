@@ -3,7 +3,8 @@ from datetime import datetime
 import winreg
 
 def make_path(modid):
-    return os.path.join(ck3_workshop_mods_folder, modid, 'gui', 'window_court.gui')
+    return os.path.join(ck3_workshop_mods_folder, str(modid), 'gui', 'window_court.gui')
+
 # Function to insert mod lines into the existing file 
 def insert_into_existing_file(not_my_modded_file_path):
     with open(vanilla_file_path, 'r') as vanilla_file:
@@ -109,18 +110,6 @@ mod_lines = [
     "\t\t\t\t\t\t\t\tmrfp_button_ransom = {}\n",
     "\t\t\t\t\t\t\t\t#MRFP\n"
 ]
-# insert_after_lines = [
-#     "\t\t\t\t\t\t\tbutton_round  = {\n",
-#     "\t\t\t\t\t\t\t\tname = \"execute\"\n",
-#     "\t\t\t\t\t\t\t\tenabled = \"[CourtWindow.CanDoMassPrisonerAction('execute')]\"\n",
-#     "\t\t\t\t\t\t\t\tbutton_prison_execute = {\n",
-#     "\t\t\t\t\t\t\t\t\tparentanchor = center\n",
-#     "\t\t\t\t\t\t\t\t\tonclick = \"[CourtWindow.MassPrisonerAction('execute')]\"\n",
-#     "\t\t\t\t\t\t\t\t\ttooltip = \"[CourtWindow.GetMassPrisonerActionTooltip('execute')]\"\n",
-#     "\t\t\t\t\t\t\t\t\tusing = tooltip_se\n",
-#     "\t\t\t\t\t\t\t\t}\n",
-#     "\t\t\t\t\t\t\t}\n"
-# ]
 insert_after_lines = [
     '''button_round  = {''''',
     '''name = "execute"''',
@@ -133,7 +122,6 @@ insert_after_lines = [
     '''}''',
     '''}'''
 ]
-print(insert_after_lines)
 
 # Check if the vanilla file needs to be updated
 vanilla_file_mod_time = datetime.fromtimestamp(os.path.getmtime(vanilla_file_path))
@@ -148,4 +136,4 @@ if vanilla_file_mod_time > modded_file_mod_time:
 else:
     print("No updates detected for the vanilla file.")
 
-insert_into_existing_file()
+# insert_into_existing_file()
