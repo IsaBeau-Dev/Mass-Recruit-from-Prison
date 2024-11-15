@@ -592,6 +592,7 @@ mrfp_set_threshold.0002 = {
   desc = {
     #next header
     desc = mrfp_set_threshold.0001.settings.nh
+    desc = mrfp_set_threshold.0001.settings.p1
     desc = RELEASE_DEMAND_CONVERSION
     first_valid = {
       triggered_desc = {
@@ -632,7 +633,7 @@ mrfp_set_threshold.0002 = {
       }
       desc = mrfp.0001.disabled
     }
-    desc = mrfp_set_threshold.0001.settings.p1
+    desc = mrfp_set_threshold.0001.settings.p2
     desc = RELEASE_TAKE_VOWS
     first_valid = {
       triggered_desc = {
@@ -673,7 +674,7 @@ mrfp_set_threshold.0002 = {
       }
       desc = mrfp.0001.disabled
     }
-    desc = mrfp_set_threshold.0001.settings.p2
+    desc = mrfp_set_threshold.0001.settings.p3
     desc = RELEASE_BLIND
     first_valid = {
       triggered_desc = {

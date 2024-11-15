@@ -76,6 +76,7 @@ decision_group_type_mrfp: "Mass Recruit"
  mrfp_set_threshold.0001.so:0 "Send options"
  mrfp_set_threshold.0001.settings.p1:0 "#T Part 1:#!\n"
  mrfp_set_threshold.0001.settings.p2:0 "#T Part 2:#!\n"
+ mrfp_set_threshold.0001.settings.p3:0 "#T Part 3:#!\n"
 
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Prisoner Agrees To Release"
