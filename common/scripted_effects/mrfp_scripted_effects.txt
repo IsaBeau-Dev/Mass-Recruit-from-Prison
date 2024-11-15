@@ -149,12 +149,11 @@ mrfp_is_at_war_with_targets_liege = {
 	# }
 	if = {
 		limit = {
-			OR = {
-				is_at_war_with = scope:mrfproot
-				liege ?= {
-					AND = {
-						is_at_war_with = scope:mrfproot
-						OR = {
+			liege ?= {
+				AND = {
+					is_at_war_with = scope:mrfproot
+					OR = {
+						scope:mrfpthis = {
 							is_close_family_of = liege
 							is_primary_heir_of = liege
 						}
