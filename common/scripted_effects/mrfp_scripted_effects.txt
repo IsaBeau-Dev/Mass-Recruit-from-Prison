@@ -128,24 +128,42 @@ mrfp_is_at_war_with_target_or_their_liege = {
 }
 
 mrfp_is_at_war_with_targets_liege = {
+	# if = {
+	# 	limit = { 
+	# 		exists = liege
+	# 	}
+	# 	if = {
+	# 		limit = {
+	# 			AND = {
+	# 				liege = {
+	# 					is_at_war_with =scope:mrfproot
+	# 				}
+	# 				OR = {
+	# 					is_close_family_of = liege
+	# 					is_primary_heir_of = liege
+	# 				}
+	# 			} 
+	# 		}
+	# 		add_character_flag = mrfp_blocked
+	# 	}
+	# }
 	if = {
-		limit = { 
-			exists = liege
-		}
-		if = {
-			limit = {
-				AND = {
-					liege = {
-						is_at_war_with =scope:mrfproot
+		limit = {
+			OR = {
+				is_at_war_with = scope:mrfproot
+				liege ?= {
+					AND = {
+						is_at_war_with = scope:mrfproot
+						OR = {
+							is_close_family_of = liege
+							is_primary_heir_of = liege
+						}
 					}
-					OR = {
-						is_close_family_of = liege
-						is_primary_heir_of = liege
-					}
-				} 
+				}
 			}
-			add_character_flag = mrfp_blocked
 		}
+		add_character_flag = mrfp_blocked
 	}
+	
 }
 
