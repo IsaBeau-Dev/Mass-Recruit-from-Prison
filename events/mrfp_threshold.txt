@@ -373,20 +373,100 @@ mrfp_set_threshold.0001 = {
     }
     trigger_event = mrfp_set_threshold.0001
   }
-  #set mrfp_RELEASE_BANISH
+  #set mrfp_RELEASE_AS_EXECUTIONER
   option = {
-    name = RELEASE_BANISH
+    name = RELEASE_AS_EXECUTIONER
     switch = {
-      trigger = var:mrfp_RELEASE_BANISH
+      trigger = var:mrfp_RELEASE_AS_EXECUTIONER
       yes = { 
         set_variable = { 
-          name =  mrfp_RELEASE_BANISH
+          name =  mrfp_RELEASE_AS_EXECUTIONER
           value = no
         }
       }
       no = { 
         set_variable = { 
-          name =  mrfp_RELEASE_BANISH
+          name =  mrfp_RELEASE_AS_EXECUTIONER
+          value = yes
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+  #set mrfp_RELEASE_RECRUIT
+  option = {
+    name = RELEASE_RECRUIT
+    switch = {
+      trigger = var:mrfp_RELEASE_RECRUIT
+      yes = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_RECRUIT
+          value = no
+        }
+      }
+      no = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_RECRUIT
+          value = yes
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+  #set mrfp_RELEASE_DISFIGURE
+  option = {
+    name = RELEASE_DISFIGURE
+    switch = {
+      trigger = var:mrfp_RELEASE_DISFIGURE
+      yes = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_DISFIGURE
+          value = no
+        }
+      }
+      no = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_DISFIGURE
+          value = yes
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+  #set mrfp_RELEASE_BLIND
+  option = {
+    name = RELEASE_BLIND
+    switch = {
+      trigger = var:mrfp_RELEASE_BLIND
+      yes = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_BLIND
+          value = no
+        }
+      }
+      no = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_BLIND
+          value = yes
+        }
+      } 
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+  #set mrfp_RELEASE_CASTRATE
+  option = {
+    name = RELEASE_CASTRATE
+    switch = {
+      trigger = var:mrfp_RELEASE_CASTRATE
+      yes = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_CASTRATE
+          value = no
+        }
+      }
+      no = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_CASTRATE
           value = yes
         }
       } 
