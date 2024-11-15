@@ -6,6 +6,7 @@ Is your prison overflowing with potential courtiers, but recruiting each one (an
 [*][b]Mass interact with prisoners based on your preferences[/b]: Recruit+convert(1 example) all landless prisoners at once. They must be willing to accept the terms, just like in the vanilla game.
 [*][b]Auto-Ransom Update[/b]: Automatically ransom prisoners for money (no hooks) with the new auto-ransom feature. If you prefer using hooks, stick with the vanilla button.
 [*][b]Prowess Threshold[/b]: Customize the prowess threshold for recruitment through an in-game decision. 
+[*][b]Inclusion of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2790872361] Auto Demand Conversion [/url][/b]: Was not fixed for new update yet. If the author wishes me to remove it, i will do so. 
  [/list]
 
 [h2]Important Details:[/h2] [list] 
@@ -14,7 +15,11 @@ Is your prison overflowing with potential courtiers, but recruiting each one (an
 [*][b]Choose what you want to do with your prisoners[/b]: Enable or disable each vanilla send option via a decision
  [/list]
 
-[img]https://i.imgur.com/tNcpOMj.png[/img]
+[img]https://i.imgur.com/Ay5jFwL.png[/img]
+
+[img]https://i.imgur.com/43BoMeF.png[/img]
+
+[img]https://i.imgur.com/8pArUD9.png[/img]
 
 [img]https://i.imgur.com/KLonNto.png[/img]
 
