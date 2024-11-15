@@ -62,6 +62,106 @@ mrfp_set_threshold.0001 = {
     }
     #next header
     desc = mrfp_set_threshold.0001.settings.nh
+    desc = RELEASE_DEMAND_CONVERSION
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_DEMAND_CONVERSION = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
+    desc = RELEASE_RENOUNCE_CLAIMS
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_RENOUNCE_CLAIMS = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
+    desc = RELEASE_BANISH
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_BANISH = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
+    desc = RELEASE_GAIN_HOOK
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_GAIN_HOOK = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
+    desc = RELEASE_TAKE_VOWS
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_TAKE_VOWS = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
+    desc = RELEASE_AS_EXECUTIONER
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_AS_EXECUTIONER = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
+    desc = RELEASE_RECRUIT
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_RECRUIT = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
+    desc = RELEASE_DISFIGURE
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_DISFIGURE = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
+    desc = RELEASE_BLIND
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_BLIND = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
+    desc = RELEASE_CASTRATE
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_CASTRATE = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
   }
 
   left_portrait = {
@@ -273,206 +373,208 @@ mrfp_set_threshold.0001 = {
     trigger_event = mrfp_set_threshold.0001
   }
 
-  #set mrfp_RELEASE_DEMAND_CONVERSION
-  option = {
-    name = RELEASE_DEMAND_CONVERSION
-    switch = {
-      trigger = var:mrfp_RELEASE_DEMAND_CONVERSION
-      yes = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_DEMAND_CONVERSION
-          value = no
-        }
-      }
-      no = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_DEMAND_CONVERSION
-          value = yes
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
-  #set mrfp_RELEASE_RENOUNCE_CLAIMS
-  option = {
-    name = RELEASE_RENOUNCE_CLAIMS
-    switch = {
-      trigger = var:mrfp_RELEASE_RENOUNCE_CLAIMS
-      yes = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_RENOUNCE_CLAIMS
-          value = no
-        }
-      }
-      no = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_RENOUNCE_CLAIMS
-          value = yes
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
-  #set mrfp_RELEASE_BANISH
-  option = {
-    name = RELEASE_BANISH
-    switch = {
-      trigger = var:mrfp_RELEASE_BANISH
-      yes = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_BANISH
-          value = no
-        }
-      }
-      no = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_BANISH
-          value = yes
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
-  #set mrfp_RELEASE_GAIN_HOOK
-  option = {
-    name = RELEASE_GAIN_HOOK
-    switch = {
-      trigger = var:mrfp_RELEASE_GAIN_HOOK
-      yes = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_GAIN_HOOK
-          value = no
-        }
-      }
-      no = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_GAIN_HOOK
-          value = yes
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
-  #set mrfp_RELEASE_TAKE_VOWS
-  option = {
-    name = RELEASE_TAKE_VOWS
-    switch = {
-      trigger = var:mrfp_RELEASE_TAKE_VOWS
-      yes = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_TAKE_VOWS
-          value = no
-        }
-      }
-      no = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_TAKE_VOWS
-          value = yes
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
-  #set mrfp_RELEASE_AS_EXECUTIONER
-  option = {
-    name = RELEASE_AS_EXECUTIONER
-    switch = {
-      trigger = var:mrfp_RELEASE_AS_EXECUTIONER
-      yes = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_AS_EXECUTIONER
-          value = no
-        }
-      }
-      no = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_AS_EXECUTIONER
-          value = yes
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
-  #set mrfp_RELEASE_RECRUIT
-  option = {
-    name = RELEASE_RECRUIT
-    switch = {
-      trigger = var:mrfp_RELEASE_RECRUIT
-      yes = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_RECRUIT
-          value = no
-        }
-      }
-      no = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_RECRUIT
-          value = yes
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
-  #set mrfp_RELEASE_DISFIGURE
-  option = {
-    name = RELEASE_DISFIGURE
-    switch = {
-      trigger = var:mrfp_RELEASE_DISFIGURE
-      yes = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_DISFIGURE
-          value = no
-        }
-      }
-      no = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_DISFIGURE
-          value = yes
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
-  #set mrfp_RELEASE_BLIND
-  option = {
-    name = RELEASE_BLIND
-    switch = {
-      trigger = var:mrfp_RELEASE_BLIND
-      yes = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_BLIND
-          value = no
-        }
-      }
-      no = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_BLIND
-          value = yes
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
-  #set mrfp_RELEASE_CASTRATE
-  option = {
-    name = RELEASE_CASTRATE
-    switch = {
-      trigger = var:mrfp_RELEASE_CASTRATE
-      yes = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_CASTRATE
-          value = no
-        }
-      }
-      no = { 
-        set_variable = { 
-          name =  mrfp_RELEASE_CASTRATE
-          value = yes
-        }
-      } 
-    }
-    trigger_event = mrfp_set_threshold.0001
-  }
+
+  ##############
+  # #set mrfp_RELEASE_DEMAND_CONVERSION
+  # option = {
+  #   name = RELEASE_DEMAND_CONVERSION
+  #   switch = {
+  #     trigger = var:mrfp_RELEASE_DEMAND_CONVERSION
+  #     yes = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_DEMAND_CONVERSION
+  #         value = no
+  #       }
+  #     }
+  #     no = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_DEMAND_CONVERSION
+  #         value = yes
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
+  # #set mrfp_RELEASE_RENOUNCE_CLAIMS
+  # option = {
+  #   name = RELEASE_RENOUNCE_CLAIMS
+  #   switch = {
+  #     trigger = var:mrfp_RELEASE_RENOUNCE_CLAIMS
+  #     yes = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_RENOUNCE_CLAIMS
+  #         value = no
+  #       }
+  #     }
+  #     no = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_RENOUNCE_CLAIMS
+  #         value = yes
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
+  # #set mrfp_RELEASE_BANISH
+  # option = {
+  #   name = RELEASE_BANISH
+  #   switch = {
+  #     trigger = var:mrfp_RELEASE_BANISH
+  #     yes = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_BANISH
+  #         value = no
+  #       }
+  #     }
+  #     no = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_BANISH
+  #         value = yes
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
+  # #set mrfp_RELEASE_GAIN_HOOK
+  # option = {
+  #   name = RELEASE_GAIN_HOOK
+  #   switch = {
+  #     trigger = var:mrfp_RELEASE_GAIN_HOOK
+  #     yes = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_GAIN_HOOK
+  #         value = no
+  #       }
+  #     }
+  #     no = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_GAIN_HOOK
+  #         value = yes
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
+  # #set mrfp_RELEASE_TAKE_VOWS
+  # option = {
+  #   name = RELEASE_TAKE_VOWS
+  #   switch = {
+  #     trigger = var:mrfp_RELEASE_TAKE_VOWS
+  #     yes = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_TAKE_VOWS
+  #         value = no
+  #       }
+  #     }
+  #     no = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_TAKE_VOWS
+  #         value = yes
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
+  # #set mrfp_RELEASE_AS_EXECUTIONER
+  # option = {
+  #   name = RELEASE_AS_EXECUTIONER
+  #   switch = {
+  #     trigger = var:mrfp_RELEASE_AS_EXECUTIONER
+  #     yes = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_AS_EXECUTIONER
+  #         value = no
+  #       }
+  #     }
+  #     no = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_AS_EXECUTIONER
+  #         value = yes
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
+  # #set mrfp_RELEASE_RECRUIT
+  # option = {
+  #   name = RELEASE_RECRUIT
+  #   switch = {
+  #     trigger = var:mrfp_RELEASE_RECRUIT
+  #     yes = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_RECRUIT
+  #         value = no
+  #       }
+  #     }
+  #     no = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_RECRUIT
+  #         value = yes
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
+  # #set mrfp_RELEASE_DISFIGURE
+  # option = {
+  #   name = RELEASE_DISFIGURE
+  #   switch = {
+  #     trigger = var:mrfp_RELEASE_DISFIGURE
+  #     yes = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_DISFIGURE
+  #         value = no
+  #       }
+  #     }
+  #     no = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_DISFIGURE
+  #         value = yes
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
+  # #set mrfp_RELEASE_BLIND
+  # option = {
+  #   name = RELEASE_BLIND
+  #   switch = {
+  #     trigger = var:mrfp_RELEASE_BLIND
+  #     yes = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_BLIND
+  #         value = no
+  #       }
+  #     }
+  #     no = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_BLIND
+  #         value = yes
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
+  # #set mrfp_RELEASE_CASTRATE
+  # option = {
+  #   name = RELEASE_CASTRATE
+  #   switch = {
+  #     trigger = var:mrfp_RELEASE_CASTRATE
+  #     yes = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_CASTRATE
+  #         value = no
+  #       }
+  #     }
+  #     no = { 
+  #       set_variable = { 
+  #         name =  mrfp_RELEASE_CASTRATE
+  #         value = yes
+  #       }
+  #     } 
+  #   }
+  #   trigger_event = mrfp_set_threshold.0001
+  # }
 
   option = {
     name = mrfp_set_threshold.0001.d
