@@ -2,14 +2,33 @@ import os
 from datetime import datetime
 import winreg
 
+def make_path(modid):
+    return os.path.join(ck3_workshop_mods_folder, modid, 'gui', 'window_court.gui')
 # Function to insert mod lines into the existing file 
-def insert_into_existing_file():
+def insert_into_existing_file(not_my_modded_file_path):
     with open(vanilla_file_path, 'r') as vanilla_file:
         vanilla_content = vanilla_file.readlines()
-
-    # with open(not_my_modded_file_path, 'r') as modded_file:
-    #     modded_content = modded_file.readlines()
-
+    
+    if os.path.isfile(not_my_modded_file_path):
+        with open(not_my_modded_file_path, 'r') as modded_file:
+            modded_content = modded_file.readlines()
+        stripped_modded_content = []
+        for line in modded_content:
+            stripped_modded_content.append(line.strip())
+            i = 0
+        while i < len(modded_content):
+            if all(line in stripped_modded_content[i:i+len(insert_after_lines)] for line in insert_after_lines):
+                insertion_point = i+len(insert_after_lines)+1
+                print(insertion_point)
+                # with open(not_my_modded_file_path, 'w') as modded_file:
+                with open(modded_file_path, 'w') as modded_file:
+                    modded_file.writelines(modded_content[:insertion_point])
+                    modded_file.writelines(mod_lines)
+                    modded_file.writelines(modded_content[insertion_point:])
+            i+=1
+        print("Modded file updated.")
+    else:
+        print("File does not exist on given path: {not_my_modded_file_path} ")
     # Remove mod lines from the modded content for comparison
     # modded_content_without_mod_lines = [line for line in modded_content if line not in mod_lines]
 
@@ -19,20 +38,22 @@ def insert_into_existing_file():
         # print("Changes detected in the vanilla file. Updating the modded file...")
         # Find the insertion point for the mod lines in the vanilla content
         # insertion_point = modded_content.index(mod_lines[0])
-    stripped_vanilla_content = []
-    for line in vanilla_content:
-        stripped_vanilla_content.append(line.strip())
-    i = 0
-    while i < len(vanilla_content):
-        if all(line in stripped_vanilla_content[i:i+len(insert_after_lines)] for line in insert_after_lines):
-            insertion_point = i+len(insert_after_lines)+1
-            print(insertion_point)
-            with open(modded_file_path, 'w') as modded_file:
-                modded_file.writelines(vanilla_content[:insertion_point])
-                modded_file.writelines(mod_lines)
-                modded_file.writelines(vanilla_content[insertion_point:])
-        i+=1
-    print("Modded file updated.")
+
+        ############
+        # stripped_vanilla_content = []
+        # for line in vanilla_content:
+        #     stripped_vanilla_content.append(line.strip())
+        # i = 0
+        # while i < len(vanilla_content):
+        #     if all(line in stripped_vanilla_content[i:i+len(insert_after_lines)] for line in insert_after_lines):
+        #         insertion_point = i+len(insert_after_lines)+1
+        #         print(insertion_point)
+        #         with open(modded_file_path, 'w') as modded_file:
+        #             modded_file.writelines(vanilla_content[:insertion_point])
+        #             modded_file.writelines(mod_lines)
+        #             modded_file.writelines(vanilla_content[insertion_point:])
+        #     i+=1
+        # print("Modded file updated.")
 
 
 # Function to compare files and update the modded file if necessary
@@ -79,6 +100,8 @@ ck3_installation_path = os.path.join(steam_path, 'steamapps', 'common', 'Crusade
 ck3_workshop_mods_folder = os.path.join(steam_path, 'steamapps', 'workshop', 'content', '1158310')
 vanilla_file_path = os.path.join(ck3_installation_path, 'gui', 'window_court.gui') 
 modded_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'gui', 'window_court.gui')
+lotr_open_beta = make_path(2993056101)
+print(lotr_open_beta) 
 
 mod_lines = [
     "\t\t\t\t\t\t\t\t#MRFP\n",
