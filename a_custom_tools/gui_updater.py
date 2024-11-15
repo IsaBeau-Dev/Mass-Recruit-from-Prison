@@ -31,14 +31,19 @@ def find_steam_installation_path():
         reg_key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\WOW6432Node\Valve\Steam") 
         steam_path, _ = winreg.QueryValueEx(reg_key, "InstallPath") 
         winreg.CloseKey(reg_key)
-        steam_path = os.path.join(steam_path, 'steamapps', 'common', 'Crusader Kings III', 'game')
-        print(steam_path) 
+        # steam_path = os.path.join(steam_path, 'steamapps', 'common', 'Crusader Kings III', 'game')
+        # print(steam_path) 
         return steam_path 
     except FileNotFoundError: 
         raise FileNotFoundError("Steam installation not found in the registry.") 
 
+#global
+steam_path = find_steam_installation_path()
+
+
 # Paths to the vanilla and modded files 
-ck3_installation_path = find_steam_installation_path()  
+ck3_installation_path = os.path.join(steam_path, 'steamapps', 'common', 'Crusader Kings III', 'game')
+ck3_workshop_mods_folder = os.path.join(steam_path, 'steamapps', 'workshop', 'content', '1158310')
 vanilla_file_path = os.path.join(ck3_installation_path, 'gui', 'window_court.gui') 
 modded_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'gui', 'window_court.gui')
 
