@@ -78,6 +78,9 @@ decision_group_type_mrfp: "Massenrekrutierung"
  mrfp_set_threshold.0001.settings.p1:0 "#T Teil 1:#!\n"
  mrfp_set_threshold.0001.settings.p2:0 "#T Teil 2:#!\n"
  mrfp_set_threshold.0001.settings.p3:0 "#T Teil 3:#!\n"
+ mrfp_send_options.p1:0 "Gehe zu Teil 1"
+ mrfp_send_options.p2:0 "Gehe zu Teil 2"
+ mrfp_send_options.p3:0 "Gehe zu Teil 3"
 
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Gefangener freigelassen"
