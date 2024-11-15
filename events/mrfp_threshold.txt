@@ -86,6 +86,107 @@ mrfp_set_threshold.0001 = {
         value = 16
       }
     }
+    #vanilla prison recruitment options => default case will be recruit and convert!
+    # mrfp_RELEASE_DEMAND_CONVERSION
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_RELEASE_DEMAND_CONVERSION }
+      }
+      set_variable = { 
+        name =  mrfp_RELEASE_DEMAND_CONVERSION
+        value = yes
+      }
+    }
+    #mrfp_RELEASE_RENOUNCE_CLAIMS
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_RELEASE_RENOUNCE_CLAIMS }
+      }
+      set_variable = { 
+        name =  mrfp_RELEASE_RENOUNCE_CLAIMS
+        value = no
+      }
+    }
+    #mrfp_RELEASE_BANISH
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_RELEASE_BANISH }
+      }
+      set_variable = { 
+        name =  mrfp_mrfp_RELEASE_BANISH
+        value = no
+      }
+    }
+    #mrfp_RELEASE_GAIN_HOOK
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_RELEASE_GAIN_HOOK }
+      }
+      set_variable = { 
+        name =  mrfp_RELEASE_GAIN_HOOK
+        value = no
+      }
+    }
+    # mrfp_RELEASE_TAKE_VOWS
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_RELEASE_TAKE_VOWS }
+      }
+      set_variable = { 
+        name =  mrfp_RELEASE_TAKE_VOWS
+        value = no
+      }
+    }
+    #mrfp_RELEASE_AS_EXECUTIONER
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_RELEASE_AS_EXECUTIONER }
+      }
+      set_variable = { 
+        name =  mrfp_RELEASE_AS_EXECUTIONER
+        value = no
+      }
+    }
+    #mrfp_RELEASE_RECRUIT
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_RELEASE_RECRUIT }
+      }
+      set_variable = { 
+        name =  mrfp_RELEASE_RECRUIT
+        value = yes
+      }
+    }
+    #mrfp_RELEASE_DISFIGURE
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_RELEASE_DISFIGURE }
+      }
+      set_variable = { 
+        name =  mrfp_RELEASE_DISFIGURE
+        value = no
+      }
+    }
+    #mrfp_RELEASE_BLIND
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_RELEASE_BLIND }
+      }
+      set_variable = { 
+        name =  mrfp_RELEASE_BLIND
+        value = no
+      }
+    }
+    #mrfp_RELEASE_CASTRATE
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_RELEASE_CASTRATE }
+      }
+      set_variable = { 
+        name =  mrfp_RELEASE_CASTRATE
+        value = no
+      }
+    }
   }
 
   option = {
