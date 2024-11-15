@@ -90,6 +90,11 @@ mrfp_ransom_every_prisoner_effect = {
 			if = {
 				limit = {
 					is_ruler = no
+
+					# liege ?= {
+					# 	save_scope_as = mrfpthis
+					# }
+
 					exists = liege
 				}
 				liege = {
@@ -128,37 +133,16 @@ mrfp_is_at_war_with_target_or_their_liege = {
 }
 
 mrfp_is_at_war_with_targets_liege = {
-	# if = {
-	# 	limit = { 
-	# 		exists = liege
-	# 	}
-	# 	if = {
-	# 		limit = {
-	# 			AND = {
-	# 				liege = {
-	# 					is_at_war_with =scope:mrfproot
-	# 				}
-	# 				OR = {
-	# 					is_close_family_of = liege
-	# 					is_primary_heir_of = liege
-	# 				}
-	# 			} 
-	# 		}
-	# 		add_character_flag = mrfp_blocked
-	# 	}
-	# }
 	if = {
 		limit = {
 			liege ?= {
-				# AND = {
-					is_at_war_with = scope:mrfproot
-					OR = {
-						scope:mrfpthis = {
-							is_close_family_of = liege
-							is_primary_heir_of = liege
-						}
+				is_at_war_with = scope:mrfproot
+				OR = {
+					scope:mrfpthis = {
+						is_close_family_of = liege
+						is_primary_heir_of = liege
 					}
-				# }
+				}
 			}
 		}
 		add_character_flag = mrfp_blocked
