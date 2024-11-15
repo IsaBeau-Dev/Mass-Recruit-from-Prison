@@ -40,7 +40,8 @@ def find_steam_installation_path():
         reg_key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\WOW6432Node\Valve\Steam") 
         steam_path, _ = winreg.QueryValueEx(reg_key, "InstallPath") 
         winreg.CloseKey(reg_key)
-        print(steam_path) 
+        steam_path = os.path.join(steam_path, 'steamapps', 'common', 'Crusader Kings III', 'game')
+        # print(steam_path) 
         return steam_path 
     except FileNotFoundError: 
         raise FileNotFoundError("Steam installation not found in the registry.") 
