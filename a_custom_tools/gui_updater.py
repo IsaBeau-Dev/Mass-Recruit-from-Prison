@@ -22,13 +22,27 @@ def update_modded_file(vanilla_file_path, modded_file_path, mod_lines):
         print("Modded file updated.")
 
 # Paths to the vanilla and modded files
-vanilla_file_path = "path/to/vanilla/file"
-modded_file_path = "path/to/modded/file"
+# vanilla_file_path = "path/to/vanilla/file"
+# modded_file_path = "path/to/modded/file"
+# Function to find the CK3 installation path via Steam 
+def find_ck3_installation_path(): 
+    steam_path = os.path.join(os.getenv('ProgramFiles(x86)'), 'Steam', 'steamapps', 'common', 'Crusader Kings III') 
+    if os.path.exists(steam_path):
+        print(steam_path) 
+        return steam_path 
+    else: 
+        raise FileNotFoundError("Crusader Kings III installation not found.")
+# Paths to the vanilla and modded files 
+ck3_installation_path = find_ck3_installation_path() 
+# vanilla_file_path = os.path.join(ck3_installation_path, 'gui', 'your_vanilla_file.gui') 
+# modded_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'gui', 'your_modded_file.gui')
+
+
 mod_lines = [
-    "#MRFP\n",
-    "mrfp_button = {}\n",
-    "mrfp_button_ransom = {}\n",
-    "#MRFP\n"
+    "\t\t\t\t\t\t\t\t#MRFP\n",
+    "\t\t\t\t\t\t\t\tmrfp_button = {}\n",
+    "\t\t\t\t\t\t\t\tmrfp_button_ransom = {}\n",
+    "\t\t\t\t\t\t\t\t#MRFP\n"
 ]
 
 # Check if the vanilla file needs to be updated
@@ -37,6 +51,6 @@ modded_file_mod_time = datetime.fromtimestamp(os.path.getmtime(modded_file_path)
 
 if vanilla_file_mod_time > modded_file_mod_time:
     print("Vanilla file has been updated. Checking for changes...")
-    update_modded_file(vanilla_file_path, modded_file_path, mod_lines)
+    # update_modded_file(vanilla_file_path, modded_file_path, mod_lines)
 else:
     print("No updates detected for the vanilla file.")
