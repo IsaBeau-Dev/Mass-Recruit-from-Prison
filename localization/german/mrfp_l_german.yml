@@ -75,6 +75,8 @@ decision_group_type_mrfp: "Massenrekrutierung"
  mrfp.0001.enabled:0 "#P Aktiviert#!\n"
  mrfp.0001.disabled:0 "#N Deaktiviert#!\n"
  mrfp_set_threshold.0001.so:0 "Sendeoptionen"
+ mrfp_set_threshold.0001.settings.p1:0 "#T Teil 1:#!\n"
+ mrfp_set_threshold.0001.settings.p2:0 "#T Teil 2:#!\n"
 
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Gefangener freigelassen"
