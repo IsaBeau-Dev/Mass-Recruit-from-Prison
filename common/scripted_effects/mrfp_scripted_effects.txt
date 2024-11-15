@@ -150,7 +150,7 @@ mrfp_is_at_war_with_targets_liege = {
 	if = {
 		limit = {
 			liege ?= {
-				AND = {
+				# AND = {
 					is_at_war_with = scope:mrfproot
 					OR = {
 						scope:mrfpthis = {
@@ -158,7 +158,7 @@ mrfp_is_at_war_with_targets_liege = {
 							is_primary_heir_of = liege
 						}
 					}
-				}
+				# }
 			}
 		}
 		add_character_flag = mrfp_blocked
