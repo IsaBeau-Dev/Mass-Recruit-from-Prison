@@ -60,6 +60,8 @@ mrfp_set_threshold.0001 = {
         desc = mrfp_set_threshold.0001.prowess.24
       }
     }
+    #next header
+    desc = mrfp_set_threshold.0001.settings.nh
   }
 
   left_portrait = {
@@ -267,6 +269,28 @@ mrfp_set_threshold.0001 = {
           value = 6
         }
       }  
+    }
+    trigger_event = mrfp_set_threshold.0001
+  }
+
+  title = mrfp_set_threshold.0001.t
+  #set mrfp_RELEASE_DEMAND_CONVERSION
+  option = {
+    name = RELEASE_DEMAND_CONVERSION
+    switch = {
+      trigger = var:mrfp_RELEASE_DEMAND_CONVERSION
+      yes = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_DEMAND_CONVERSION
+          value = no
+        }
+      }
+      no = { 
+        set_variable = { 
+          name =  mrfp_RELEASE_DEMAND_CONVERSION
+          value = yes
+        }
+      } 
     }
     trigger_event = mrfp_set_threshold.0001
   }

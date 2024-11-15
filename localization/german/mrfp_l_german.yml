@@ -70,6 +70,9 @@ decision_group_type_mrfp: "Massenrekrutierung"
  mrfp_set_threshold.0001.a:0 "Umschalten Aktivieren/Deaktivieren"
  mrfp_set_threshold.0001.b:0 "Umschalten Fähigkeit"
  mrfp_set_threshold.0001.d:0 "Beenden"
+#new event options:
+ mrfp_set_threshold.0001.settings.nh: "#T Aktuelle Sendeoptionen:#!\n"
+
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Gefangener freigelassen"
  prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] hat Euren Kerker verlassen."
