@@ -115,7 +115,7 @@ mrfp_set_threshold.0001 = {
         NOT = { has_variable =  mrfp_RELEASE_BANISH }
       }
       set_variable = { 
-        name =  mrfp_mrfp_RELEASE_BANISH
+        name =  mrfp_RELEASE_BANISH
         value = no
       }
     }
@@ -473,8 +473,6 @@ mrfp_set_threshold.0001 = {
     }
     trigger_event = mrfp_set_threshold.0001
   }
-
-
 
   option = {
     name = mrfp_set_threshold.0001.d
