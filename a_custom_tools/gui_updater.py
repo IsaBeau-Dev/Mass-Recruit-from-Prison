@@ -25,10 +25,10 @@ def update_modded_file(vanilla_file_path, modded_file_path, mod_lines):
 vanilla_file_path = "path/to/vanilla/file"
 modded_file_path = "path/to/modded/file"
 mod_lines = [
-    "mod_line_1\n",
-    "mod_line_2\n",
-    "mod_line_3\n",
-    "mod_line_4\n"
+    "#MRFP\n",
+    "mrfp_button = {}\n",
+    "mrfp_button_ransom = {}\n",
+    "#MRFP\n"
 ]
 
 # Check if the vanilla file needs to be updated
