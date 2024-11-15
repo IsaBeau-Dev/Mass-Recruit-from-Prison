@@ -1,24 +1,5 @@
 import os
-import requests
-
-# Function to get the current version of Crusader Kings 3 from Steam
-def get_ck3_version():
-    steam_api_url = "https://api.steampowered.com/ISteamApps/GetAppList/v2/"
-    response = requests.get(steam_api_url)
-    app_list = response.json()["applist"]["apps"]
-    ck3_app = next(app for app in app_list if app["name"] == "Crusader Kings III")
-    ck3_app_id = ck3_app["appid"]
-
-    steam_app_details_url = f"https://store.steampowered.com/api/appdetails?appids={ck3_app_id}"
-    response = requests.get(steam_app_details_url)
-    ck3_details = response.json()[str(ck3_app_id)]["data"]
-
-    # Check if the version key exists
-    if "version" in ck3_details:
-        ck3_version = ck3_details["version"]
-    else:
-        ck3_version = "Version information not available"
-    return ck3_version
+from datetime import datetime
 
 # Function to compare files and update the modded file if necessary
 def update_modded_file(vanilla_file_path, modded_file_path, mod_lines):
@@ -50,9 +31,12 @@ mod_lines = [
     "mod_line_4\n"
 ]
 
-# Get the current version of Crusader Kings 3
-ck3_version = get_ck3_version()
-print(f"Current version of Crusader Kings 3: {ck3_version}")
+# Check if the vanilla file needs to be updated
+vanilla_file_mod_time = datetime.fromtimestamp(os.path.getmtime(vanilla_file_path))
+modded_file_mod_time = datetime.fromtimestamp(os.path.getmtime(modded_file_path))
 
-# Update the modded file if necessary
-# update_modded_file(vanilla_file_path, modded_file_path, mod_lines)
+if vanilla_file_mod_time > modded_file_mod_time:
+    print("Vanilla file has been updated. Checking for changes...")
+    update_modded_file(vanilla_file_path, modded_file_path, mod_lines)
+else:
+    print("No updates detected for the vanilla file.")
