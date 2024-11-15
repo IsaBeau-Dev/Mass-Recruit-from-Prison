@@ -187,8 +187,19 @@ mrfp_set_threshold.0001 = {
         value = no
       }
     }
+    ###Was this Event Called?
+    if = {
+      limit = {
+        NOT = { has_variable =  mrfp_initialized_vars }
+      }
+      set_variable = { 
+        name =  mrfp_initialized_vars
+        value = yes
+      }
+    }
   }
 
+  #set threshold
   option = {
     name = mrfp_set_threshold.0001.a
     switch = {
@@ -209,6 +220,7 @@ mrfp_set_threshold.0001 = {
     trigger_event = mrfp_set_threshold.0001
   }
 
+  #set prowess limit
   option = {
     name = mrfp_set_threshold.0001.b
     switch = {
