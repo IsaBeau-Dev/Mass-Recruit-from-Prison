@@ -627,7 +627,14 @@
 				}
 				else = {
 					scope:actor = {
-						trigger_event = char_interaction.0160
+						##mrfp
+						# trigger_event = char_interaction.0160
+						send_interface_message = {
+							type = event_captured_combatants_good
+							title = prisonreleasethingy.title
+							desc = prisonreleasethingy.message							  
+						}
+						##mrfp
 					}
 				}
 
@@ -2483,7 +2490,14 @@ mrfp_recruit_and_convert_prison_interaction = {
 				}
 				else = {
 					scope:actor = {
-						trigger_event = char_interaction.0160
+						##mrfp
+						# trigger_event = char_interaction.0160
+						send_interface_message = {
+							type = event_captured_combatants_good
+							title = prisonreleasethingy.title
+							desc = prisonreleasethingy.message							  
+						}
+						##mrfp
 					}
 				}
 
@@ -4339,7 +4353,14 @@ mrfp_vars_interaction = {
 				}
 				else = {
 					scope:actor = {
-						trigger_event = char_interaction.0160
+						##mrfp
+						# trigger_event = char_interaction.0160
+						send_interface_message = {
+							type = event_captured_combatants_good
+							title = prisonreleasethingy.title
+							desc = prisonreleasethingy.message							  
+						}
+						##mrfp
 					}
 				}
 
