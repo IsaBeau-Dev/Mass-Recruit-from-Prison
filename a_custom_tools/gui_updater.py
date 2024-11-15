@@ -25,15 +25,7 @@ def update_modded_file(vanilla_file_path, modded_file_path, mod_lines):
 # Paths to the vanilla and modded files
 # vanilla_file_path = "path/to/vanilla/file"
 # modded_file_path = "path/to/modded/file"
-# Function to find the CK3 installation path via Steam 
-def find_ck3_installation_path(): 
-    steam_path = os.path.join(os.getenv('ProgramFiles(x86)'), 'Steam', 'steamapps', 'common', 'Crusader Kings III') 
-    if os.path.exists(steam_path):
-        print(steam_path) 
-        return steam_path 
-    else: 
-        raise FileNotFoundError("Crusader Kings III installation not found.")
-    
+  
 # Function to find the Steam installation path via the Windows Registry 
 def find_steam_installation_path(): 
     try: 
@@ -41,15 +33,15 @@ def find_steam_installation_path():
         steam_path, _ = winreg.QueryValueEx(reg_key, "InstallPath") 
         winreg.CloseKey(reg_key)
         steam_path = os.path.join(steam_path, 'steamapps', 'common', 'Crusader Kings III', 'game')
-        # print(steam_path) 
+        print(steam_path) 
         return steam_path 
     except FileNotFoundError: 
         raise FileNotFoundError("Steam installation not found in the registry.") 
 # Paths to the vanilla and modded files 
 # ck3_installation_path = find_ck3_installation_path()
 ck3_installation_path = find_steam_installation_path()  
-# vanilla_file_path = os.path.join(ck3_installation_path, 'gui', 'your_vanilla_file.gui') 
-# modded_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'gui', 'your_modded_file.gui')
+vanilla_file_path = os.path.join(ck3_installation_path, 'gui', 'window_court.gui') 
+modded_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'gui', 'window_court.gui')
 
 
 mod_lines = [
