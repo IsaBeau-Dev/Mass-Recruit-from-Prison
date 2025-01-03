@@ -39,16 +39,19 @@
     on_owner_death = {
         # Transfer all settings to primary heir
 		story_owner = {
-			if = {
-                limit = {  has_character_flag = enable_auto_mrfp }
-                story_owner.primary_heir = { add_character_flag = enable_auto_mrfp }
-            }
-            if = {
-                limit = { has_character_flag = enable_auto_mrfp_ransom }
-                story_owner.primary_heir = { add_character_flag = enable_auto_mrfp_ransom }
-            }
+			# if = {
+            #     limit = {  has_character_flag = enable_auto_mrfp }
+            #     story_owner.primary_heir = { add_character_flag = enable_auto_mrfp }
+            # }
+            # if = {
+            #     limit = { has_character_flag = enable_auto_mrfp_ransom }
+            #     story_owner.primary_heir = { add_character_flag = enable_auto_mrfp_ransom }
+            # }
 
         }
+
+		debug_log = "Total prisoners recruited: [THIS.Var('mrfp_total_recruited').GetValue]"
+		debug_log = "Total prisoners ransomed: [THIS.Var('mrfp_total_ransomed').GetValue]"
 
         # story_owner.primary_heir = {
         #     # Transfer auto flags
