@@ -45,81 +45,81 @@ mrfp_recruitment_cycle = {
 
     on_owner_death = {
         # Transfer all settings to primary heir
-        story_owner.primary_heir = {
-            # Transfer recruitment settings
-            set_variable = { 
-                name = mrfp_threshold_enabled
-                value = root.var:mrfp_threshold_enabled
-            }
-            set_variable = { 
-                name = mrfp_prowess_threshold
-                value = root.var:mrfp_prowess_threshold
-            }
+        # story_owner.primary_heir = {
+        #     # Transfer recruitment settings
+        #     set_variable = { 
+        #         name = mrfp_threshold_enabled
+        #         value = root.var:mrfp_threshold_enabled
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_prowess_threshold
+        #         value = root.var:mrfp_prowess_threshold
+        #     }
 
-            # Transfer release options
-            set_variable = { 
-                name = mrfp_RELEASE_DEMAND_CONVERSION
-                value = root.var:mrfp_RELEASE_DEMAND_CONVERSION
-            }
-            set_variable = { 
-                name = mrfp_RELEASE_RECRUIT
-                value = root.var:mrfp_RELEASE_RECRUIT
-            }
-            set_variable = { 
-                name = mrfp_RELEASE_RENOUNCE_CLAIMS
-                value = root.var:mrfp_RELEASE_RENOUNCE_CLAIMS
-            }
-            set_variable = { 
-                name = mrfp_RELEASE_BANISH
-                value = root.var:mrfp_RELEASE_BANISH
-            }
-            set_variable = { 
-                name = mrfp_RELEASE_GAIN_HOOK
-                value = root.var:mrfp_RELEASE_GAIN_HOOK
-            }
-            set_variable = { 
-                name = mrfp_RELEASE_TAKE_VOWS
-                value = root.var:mrfp_RELEASE_TAKE_VOWS
-            }
-            set_variable = { 
-                name = mrfp_RELEASE_AS_EXECUTIONER
-                value = root.var:mrfp_RELEASE_AS_EXECUTIONER
-            }
-            set_variable = { 
-                name = mrfp_RELEASE_DISFIGURE
-                value = root.var:mrfp_RELEASE_DISFIGURE
-            }
-            set_variable = { 
-                name = mrfp_RELEASE_BLIND
-                value = root.var:mrfp_RELEASE_BLIND
-            }
-            set_variable = { 
-                name = mrfp_RELEASE_CASTRATE
-                value = root.var:mrfp_RELEASE_CASTRATE
-            }
+        #     # Transfer release options
+        #     set_variable = { 
+        #         name = mrfp_RELEASE_DEMAND_CONVERSION
+        #         value = root.var:mrfp_RELEASE_DEMAND_CONVERSION
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_RELEASE_RECRUIT
+        #         value = root.var:mrfp_RELEASE_RECRUIT
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_RELEASE_RENOUNCE_CLAIMS
+        #         value = root.var:mrfp_RELEASE_RENOUNCE_CLAIMS
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_RELEASE_BANISH
+        #         value = root.var:mrfp_RELEASE_BANISH
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_RELEASE_GAIN_HOOK
+        #         value = root.var:mrfp_RELEASE_GAIN_HOOK
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_RELEASE_TAKE_VOWS
+        #         value = root.var:mrfp_RELEASE_TAKE_VOWS
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_RELEASE_AS_EXECUTIONER
+        #         value = root.var:mrfp_RELEASE_AS_EXECUTIONER
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_RELEASE_DISFIGURE
+        #         value = root.var:mrfp_RELEASE_DISFIGURE
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_RELEASE_BLIND
+        #         value = root.var:mrfp_RELEASE_BLIND
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_RELEASE_CASTRATE
+        #         value = root.var:mrfp_RELEASE_CASTRATE
+        #     }
 
-            # Transfer tracking variables
-            set_variable = { 
-                name = mrfp_total_recruited
-                value = root.var:mrfp_total_recruited
-            }
-            set_variable = { 
-                name = mrfp_total_ransomed
-                value = root.var:mrfp_total_ransomed
-            }
+        #     # Transfer tracking variables
+        #     set_variable = { 
+        #         name = mrfp_total_recruited
+        #         value = root.var:mrfp_total_recruited
+        #     }
+        #     set_variable = { 
+        #         name = mrfp_total_ransomed
+        #         value = root.var:mrfp_total_ransomed
+        #     }
 
-            # Transfer auto flags
-            if = {
-                limit = { root = { has_character_flag = enable_auto_mrfp } }
-                add_character_flag = enable_auto_mrfp
-            }
-            if = {
-                limit = { root = { has_character_flag = enable_auto_mrfp_ransom } }
-                add_character_flag = enable_auto_mrfp_ransom
-            }
-        }
-
-        end_story = yes
+        #     # Transfer auto flags
+        #     if = {
+        #         limit = { root = { has_character_flag = enable_auto_mrfp } }
+        #         add_character_flag = enable_auto_mrfp
+        #     }
+        #     if = {
+        #         limit = { root = { has_character_flag = enable_auto_mrfp_ransom } }
+        #         add_character_flag = enable_auto_mrfp_ransom
+        #     }
+        # }
+		make_story_owner = story_owner.primary_heir
+        #end_story = yes
     }
 
     # Montlhly recruitment cycle

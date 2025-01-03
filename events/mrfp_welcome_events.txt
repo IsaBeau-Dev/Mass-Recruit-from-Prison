@@ -13,6 +13,7 @@ mrfp_welcome_events.0001 = {
 	
 	immediate = {
 		# Any immediate effects you want to apply
+		create_story = mrfp_recruitment_cycle
 	}
 	
 	option = {
