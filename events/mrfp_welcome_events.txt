@@ -1,0 +1,41 @@
+namespace = mrfp_welcome_events
+
+mrfp_welcome_events.0001 = {
+	type = character_event
+	title = mrfp_welcome_events.0001.title
+	desc = mrfp_welcome_events.0001.desc
+	
+	theme = realm
+	
+	trigger = {
+		is_ai = no  # Only trigger for human players
+	}
+	
+	immediate = {
+		# Any immediate effects you want to apply
+	}
+	
+	option = {
+		name = mrfp_welcome_events.0001.option1
+		trigger_event = {
+			id = mrfp_welcome_events.0002
+			days = 3  # Optional: delay the next event
+		}
+	}
+}
+
+mrfp_welcome_events.0002 = {
+	type = character_event
+	title = mrfp_welcome_events.0002.title
+	desc = mrfp_welcome_events.0002.desc
+	
+	theme = realm
+	
+	trigger = {
+		is_ai = no
+	}
+	
+	option = {
+		name = mrfp_welcome_events.0002.option1
+	}
+}

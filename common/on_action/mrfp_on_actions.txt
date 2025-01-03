@@ -12,6 +12,22 @@ on_mrfp_start = {
     }
 }
 
+
+on_game_start_after_lobby = {
+	on_actions = { 
+		mrfp_welcome_event
+	}
+}
+
+mrfp_welcome_event = {
+	effect = {
+		every_player = {
+			trigger_event = mrfp_welcome_events.0001
+		}
+	}
+}
+
+
 quarterly_playable_pulse = {
     #this setup makes sure mrfp_auto gets called every month
     on_actions = {
