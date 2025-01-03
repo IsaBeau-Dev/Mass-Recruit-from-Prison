@@ -33,8 +33,8 @@
 
     on_owner_death = {
 
-		debug_log = "Total prisoners recruited: [THIS.Var('mrfp_total_recruited').GetValue]"
-		debug_log = "Total prisoners ransomed: [THIS.Var('mrfp_total_ransomed').GetValue]"
+		#debug_log = "Total prisoners recruited: [THIS.Var('mrfp_total_recruited').GetValue]"
+		#debug_log = "Total prisoners ransomed: [THIS.Var('mrfp_total_ransomed').GetValue]"
 
 		#Transfer ownership
 		make_story_owner = story_owner.primary_heir
@@ -42,42 +42,45 @@
     }
 
     # Montlhly recruitment cycle
-    # effect_group = {
-    #     months = 1
+    effect_group = {
+        months = 1
 
-        # trigger = {
-		# 	story_owner = {
-        #     has_character_flag = enable_auto_mrfp
-		# 	}
-        # }
+        trigger = {
+			story_owner = {
+            	has_character_flag = enable_auto_mrfp
+			}
+        }
 
-    #     triggered_effect = {
-    #         trigger = {
-    #             any_prisoner = {
-    #                 prowess >= story_owner.var:mrfp_prowess_threshold
-    #             }
-    #         }
-    #         effect = {
-    #             every_prisoner = {
-    #                 limit = {
-    #                     prowess >= story_owner.var:mrfp_prowess_threshold
-    #                 }
-    #                 mrfp_every_prisoner_effect = {
-    #                     MRFPROOT = story_owner
-    #                     MRFPTHIS = this
-    #                 }
+        triggered_effect = {
+            trigger = {
+				story_owner = {
+					any_prisoner = {
+						prowess >= root.var:mrfp_prowess_threshold
+					}
+				}
+            }
+            effect = {
+				save_scope_as = the_story
+                every_prisoner = {
+                    limit = {
+                        prowess >= root.var:mrfp_prowess_threshold
+                    }
+                    mrfp_every_prisoner_effect = {
+                        MRFPROOT = story_owner
+                        MRFPTHIS = this
+                    }
                     
-    #                 # Update recruitment counter
-    #                 story_owner = {
-    #                     change_variable = {
-    #                         name = mrfp_total_recruited
-    #                         add = 1
-    #                     }
-    #                 }
-    #             }
-    #         }
-    #     }
-    # }
+                    # Update recruitment counter
+                    scope:the_story = {
+                        change_variable = {
+                            name = mrfp_total_recruited
+                            add = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     # # Monthly ransom cycle
     # effect_group = {
