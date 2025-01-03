@@ -28,59 +28,28 @@
     }
 
     on_end = {
-		# Remove auto flags
-		story_owner = {
-			remove_character_flag = enable_auto_mrfp
-			remove_character_flag = enable_auto_mrfp_ransom
-		}
 		end_story = yes
     }
 
     on_owner_death = {
-        # Transfer all settings to primary heir
-		story_owner = {
-			# if = {
-            #     limit = {  has_character_flag = enable_auto_mrfp }
-            #     story_owner.primary_heir = { add_character_flag = enable_auto_mrfp }
-            # }
-            # if = {
-            #     limit = { has_character_flag = enable_auto_mrfp_ransom }
-            #     story_owner.primary_heir = { add_character_flag = enable_auto_mrfp_ransom }
-            # }
-
-        }
 
 		debug_log = "Total prisoners recruited: [THIS.Var('mrfp_total_recruited').GetValue]"
 		debug_log = "Total prisoners ransomed: [THIS.Var('mrfp_total_ransomed').GetValue]"
 
-        # story_owner.primary_heir = {
-        #     # Transfer auto flags
-		# 	# [23:46:10][E][jomini_eventtarget.cpp:307]: Invalid scope types for event target link, link: story_owner at file: common/story_cycles/mrfp_story_cycle.txt line: 105 (mrfp_recruitment_cycle:on_owner_death)
-		# 	# [23:46:10][E][jomini_eventtarget.cpp:307]: Invalid scope types for event target link, link: story_owner at file: common/story_cycles/mrfp_story_cycle.txt line: 109 (mrfp_recruitment_cycle:on_owner_death)
-        #     # if = {
-        #     #     limit = { story_owner = { has_character_flag = enable_auto_mrfp } }
-        #     #     add_character_flag = enable_auto_mrfp
-        #     # }
-        #     # if = {
-        #     #     limit = { story_owner = { has_character_flag = enable_auto_mrfp_ransom } }
-        #     #     add_character_flag = enable_auto_mrfp_ransom
-        #     # }
-
-        # }
-
 		#Transfer ownership
 		make_story_owner = story_owner.primary_heir
 
-        #end_story = yes
     }
 
-    # # Montlhly recruitment cycle
+    # Montlhly recruitment cycle
     # effect_group = {
     #     months = 1
 
-    #     trigger = {
-    #         has_character_flag = enable_auto_mrfp
-    #     }
+        # trigger = {
+		# 	story_owner = {
+        #     has_character_flag = enable_auto_mrfp
+		# 	}
+        # }
 
     #     triggered_effect = {
     #         trigger = {
@@ -143,6 +112,22 @@
     #         }
     #     }
     # }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     # # # Additional periodic checks and maintenance
     # # effect_group = {
