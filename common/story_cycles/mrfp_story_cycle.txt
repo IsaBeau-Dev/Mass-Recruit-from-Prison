@@ -1,0 +1,222 @@
+mrfp_recruitment_cycle = {
+    on_setup = {
+        # Core recruitment settings
+        set_variable = {
+            name = mrfp_threshold_enabled
+            value = 1
+        }
+        set_variable = {
+            name = mrfp_prowess_threshold
+            value = 16
+        }
+
+        # Release options configuration
+        set_variable = { name = mrfp_RELEASE_DEMAND_CONVERSION, value = yes }
+        set_variable = { name = mrfp_RELEASE_RECRUIT, value = yes }
+        set_variable = { name = mrfp_RELEASE_RENOUNCE_CLAIMS, value = no }
+        set_variable = { name = mrfp_RELEASE_BANISH, value = no }
+        set_variable = { name = mrfp_RELEASE_GAIN_HOOK, value = no }
+        set_variable = { name = mrfp_RELEASE_TAKE_VOWS, value = no }
+        set_variable = { name = mrfp_RELEASE_AS_EXECUTIONER, value = no }
+        set_variable = { name = mrfp_RELEASE_DISFIGURE, value = no }
+        set_variable = { name = mrfp_RELEASE_BLIND, value = no }
+        set_variable = { name = mrfp_RELEASE_CASTRATE, value = no }
+
+        # Additional tracking variables
+        set_variable = { name = mrfp_total_recruited, value = 0 }
+        set_variable = { name = mrfp_total_ransomed, value = 0 }
+    }
+
+    on_end = {
+        # Cleanup or final logging
+        if = {
+            limit = { exists = var:mrfp_total_recruited }
+            #log = "Total prisoners recruited: [mrfp_total_recruited]"
+			debug_log = "Total prisoners recruited: [mrfp_total_recruited]"
+			debug_log_scopes = yes
+        }
+        if = {
+            limit = { exists = var:mrfp_total_ransomed }
+            #log = "Total prisoners ransomed: [mrfp_total_ransomed]"
+			debug_log = "Total prisoners ransomed: [mrfp_total_ransomed]"
+			debug_log_scopes = yes
+        }
+    }
+
+    on_owner_death = {
+        # Transfer all settings to primary heir
+        story_owner.primary_heir = {
+            # Transfer recruitment settings
+            set_variable = { 
+                name = mrfp_threshold_enabled
+                value = root.var:mrfp_threshold_enabled
+            }
+            set_variable = { 
+                name = mrfp_prowess_threshold
+                value = root.var:mrfp_prowess_threshold
+            }
+
+            # Transfer release options
+            set_variable = { 
+                name = mrfp_RELEASE_DEMAND_CONVERSION
+                value = root.var:mrfp_RELEASE_DEMAND_CONVERSION
+            }
+            set_variable = { 
+                name = mrfp_RELEASE_RECRUIT
+                value = root.var:mrfp_RELEASE_RECRUIT
+            }
+            set_variable = { 
+                name = mrfp_RELEASE_RENOUNCE_CLAIMS
+                value = root.var:mrfp_RELEASE_RENOUNCE_CLAIMS
+            }
+            set_variable = { 
+                name = mrfp_RELEASE_BANISH
+                value = root.var:mrfp_RELEASE_BANISH
+            }
+            set_variable = { 
+                name = mrfp_RELEASE_GAIN_HOOK
+                value = root.var:mrfp_RELEASE_GAIN_HOOK
+            }
+            set_variable = { 
+                name = mrfp_RELEASE_TAKE_VOWS
+                value = root.var:mrfp_RELEASE_TAKE_VOWS
+            }
+            set_variable = { 
+                name = mrfp_RELEASE_AS_EXECUTIONER
+                value = root.var:mrfp_RELEASE_AS_EXECUTIONER
+            }
+            set_variable = { 
+                name = mrfp_RELEASE_DISFIGURE
+                value = root.var:mrfp_RELEASE_DISFIGURE
+            }
+            set_variable = { 
+                name = mrfp_RELEASE_BLIND
+                value = root.var:mrfp_RELEASE_BLIND
+            }
+            set_variable = { 
+                name = mrfp_RELEASE_CASTRATE
+                value = root.var:mrfp_RELEASE_CASTRATE
+            }
+
+            # Transfer tracking variables
+            set_variable = { 
+                name = mrfp_total_recruited
+                value = root.var:mrfp_total_recruited
+            }
+            set_variable = { 
+                name = mrfp_total_ransomed
+                value = root.var:mrfp_total_ransomed
+            }
+
+            # Transfer auto flags
+            if = {
+                limit = { root = { has_character_flag = enable_auto_mrfp } }
+                add_character_flag = enable_auto_mrfp
+            }
+            if = {
+                limit = { root = { has_character_flag = enable_auto_mrfp_ransom } }
+                add_character_flag = enable_auto_mrfp_ransom
+            }
+        }
+
+        end_story = yes
+    }
+
+    # Montlhly recruitment cycle
+    effect_group = {
+        months = 1
+
+        trigger = {
+            has_character_flag = enable_auto_mrfp
+            var:mrfp_threshold_enabled = 1
+        }
+
+        triggered_effect = {
+            trigger = {
+                any_prisoner = {
+                    prowess >= root.var:mrfp_prowess_threshold
+                }
+            }
+            effect = {
+                every_prisoner = {
+                    limit = {
+                        prowess >= root.var:mrfp_prowess_threshold
+                    }
+                    mrfp_every_prisoner_effect = {
+                        MRFPROOT = root
+                        MRFPTHIS = this
+                    }
+                    
+                    # Update recruitment counter
+                    root = {
+                        change_variable = {
+                            name = mrfp_total_recruited
+                            add = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    # Monthly ransom cycle
+    effect_group = {
+        months = 1
+
+        trigger = {
+            has_character_flag = enable_auto_mrfp_ransom
+            var:mrfp_threshold_enabled = 1
+        }
+
+        triggered_effect = {
+            trigger = {
+                any_prisoner = {
+                    # Add specific ransom conditions if needed
+                    always = yes
+                }
+            }
+            effect = {
+                every_prisoner = {
+                    mrfp_ransom_every_prisoner_effect = {
+                        MRFPROOT = root
+                        MRFPTHIS = this
+                    }
+                    
+                    # Update ransom counter
+                    root = {
+                        change_variable = {
+                            name = mrfp_total_ransomed
+                            add = 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    # # Additional periodic checks and maintenance
+    # effect_group = {
+    #     years = 1
+
+    #     trigger = {
+    #         var:mrfp_threshold_enabled = 1
+    #     }
+
+    #     triggered_effect = {
+    #         trigger = {
+    #             # Any additional periodic maintenance conditions
+    #             always = yes
+    #         }
+    #         effect = {
+    #             # Periodic maintenance or logging
+    #             if = {
+    #                 limit = { 
+    #                     NOT = { has_character_flag = enable_auto_mrfp }
+    #                     var:mrfp_total_recruited > 0
+    #                 }
+    #                 add_character_flag = enable_auto_mrfp
+    #             }
+    #         }
+    #     }
+    # }
+}
