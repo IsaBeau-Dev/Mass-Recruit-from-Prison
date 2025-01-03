@@ -28,102 +28,102 @@ mrfp_welcome_event = {
 }
 
 
-quarterly_playable_pulse = {
-    #this setup makes sure mrfp_auto gets called every month
-    on_actions = {
-        mrfp_auto_ransom
-        mrfp_auto
-        delay = { months = 1 }
-        mrfp_auto_ransom
-        mrfp_auto
-        delay = { months = 2 }
-        mrfp_auto_ransom
-        mrfp_auto
-    }
-}
-
-mrfp_auto = {
-    trigger = {
-        has_character_flag = enable_auto_mrfp
-    }
-    effect = {
-        every_prisoner = {
-            mrfp_every_prisoner_effect = {
-                MRFPROOT = root
-                MRFPTHIS = this
-            }
-        }
-    }
-}
-mrfp_auto_ransom = {
-    trigger = {
-        has_character_flag = enable_auto_mrfp_ransom
-    }
-    effect = {
-        every_prisoner = {
-            mrfp_ransom_every_prisoner_effect = {
-                MRFPROOT = root
-                MRFPTHIS = this
-            }
-        }
-    }
-}
-
-
-###DEATH
-on_death = {
-    on_actions = {
-        mrfp_on_death
-        mrfp_on_death_ransom
-        mrfp_on_death_vars
-    }
-}
-
-# on_player_select_destiny_confirmed = {
+# quarterly_playable_pulse = {
+#     #this setup makes sure mrfp_auto gets called every month
 #     on_actions = {
-#         mrfp_on_death
+#         mrfp_auto_ransom
+#         mrfp_auto
+#         delay = { months = 1 }
+#         mrfp_auto_ransom
+#         mrfp_auto
+#         delay = { months = 2 }
+#         mrfp_auto_ransom
+#         mrfp_auto
 #     }
 # }
 
-mrfp_on_death = {
-    trigger = {
-        has_character_flag = enable_auto_mrfp
-    }
-    effect = {
-        #save_scope_as = dying_character
-        primary_heir = {
-            add_character_flag = enable_auto_mrfp
-        }
+# mrfp_auto = {
+#     trigger = {
+#         has_character_flag = enable_auto_mrfp
+#     }
+#     effect = {
+#         every_prisoner = {
+#             mrfp_every_prisoner_effect = {
+#                 MRFPROOT = root
+#                 MRFPTHIS = this
+#             }
+#         }
+#     }
+# }
+# mrfp_auto_ransom = {
+#     trigger = {
+#         has_character_flag = enable_auto_mrfp_ransom
+#     }
+#     effect = {
+#         every_prisoner = {
+#             mrfp_ransom_every_prisoner_effect = {
+#                 MRFPROOT = root
+#                 MRFPTHIS = this
+#             }
+#         }
+#     }
+# }
+
+
+# ###DEATH
+# on_death = {
+#     on_actions = {
+#         mrfp_on_death
+#         mrfp_on_death_ransom
+#         mrfp_on_death_vars
+#     }
+# }
+
+# # on_player_select_destiny_confirmed = {
+# #     on_actions = {
+# #         mrfp_on_death
+# #     }
+# # }
+
+# mrfp_on_death = {
+#     trigger = {
+#         has_character_flag = enable_auto_mrfp
+#     }
+#     effect = {
+#         #save_scope_as = dying_character
+#         primary_heir = {
+#             add_character_flag = enable_auto_mrfp
+#         }
         
-    }
-}
-mrfp_on_death_ransom = {
-    trigger = {
-        has_character_flag = enable_auto_mrfp_ransom
-    }
-    effect = {
-        #save_scope_as = dying_character
-        primary_heir = {
-            add_character_flag = enable_auto_mrfp_ransom
-        }
+#     }
+# }
+# mrfp_on_death_ransom = {
+#     trigger = {
+#         has_character_flag = enable_auto_mrfp_ransom
+#     }
+#     effect = {
+#         #save_scope_as = dying_character
+#         primary_heir = {
+#             add_character_flag = enable_auto_mrfp_ransom
+#         }
         
-    }
-}
-mrfp_on_death_vars = {
-    trigger = {
-        has_variable = mrfp_threshold_enabled
-        has_variable = mrfp_prowess_threshold
-    }
-    effect = {
-        primary_heir = {
-            set_variable = { 
-                name =  mrfp_prowess_threshold
-                value = root.var:mrfp_prowess_threshold
-            }
-            set_variable = { 
-                name =  mrfp_threshold_enabled
-                value = root.var:mrfp_threshold_enabled
-            }
-        }
-    }
-}
+#     }
+# }
+# mrfp_on_death_vars = {
+#     trigger = {
+#         has_variable = mrfp_threshold_enabled
+#         has_variable = mrfp_prowess_threshold
+#     }
+#     effect = {
+#         primary_heir = {
+#             set_variable = { 
+#                 name =  mrfp_prowess_threshold
+#                 value = root.var:mrfp_prowess_threshold
+#             }
+#             set_variable = { 
+#                 name =  mrfp_threshold_enabled
+#                 value = root.var:mrfp_threshold_enabled
+#             }
+#         }
+#     }
+# }
