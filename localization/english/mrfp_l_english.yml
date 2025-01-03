@@ -84,10 +84,10 @@ decision_group_type_mrfp: "Mass Recruit"
  prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] has agreed to your conditions for their release."
 
 ##welcome message
-mrfp_welcome_events.0001.title:0 "Welcome to Mass Recruit from Prison Mod"
-mrfp_welcome_events.0001.desc:0 "This mod introduces new mechanics for recruiting prisoners into your army or workforce."
+mrfp_welcome_events.0001.title:0 "Welcome to Mass Prison Actions"
+mrfp_welcome_events.0001.desc:0 "This mod introduces new mechanics for recruiting and ransoming prisoners."
 mrfp_welcome_events.0001.option1:0 "Interesting!"
 
 mrfp_welcome_events.0002.title:0 "Mod Features"
-mrfp_welcome_events.0002.desc:0 "Key features of the Mass Recruit from Prison mod include:\n- Ability to recruit prisoners\n- Enhanced prisoner management\n- New strategic options for rulers"
+mrfp_welcome_events.0002.desc:0 "Key features of the Mass Prison Actions formerly known as Mass Recruit from Prison mod include:\n- Ability to recruit and ransom prisoners"
 mrfp_welcome_events.0002.option1:0 "Got it!"

@@ -20,7 +20,7 @@ mrfp_welcome_events.0001 = {
 		name = mrfp_welcome_events.0001.option1
 		trigger_event = {
 			id = mrfp_welcome_events.0002
-			days = 3  # Optional: delay the next event
+			#days = 3  # Optional: delay the next event
 		}
 	}
 }
