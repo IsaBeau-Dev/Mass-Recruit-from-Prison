@@ -1,5 +1,12 @@
 ﻿mrfp_recruitment_cycle = {
     on_setup = {
+        story_owner = {
+            set_variable = {
+                name = mrfp_story
+                value = root
+            }
+        }
+
         # Core recruitment settings
         set_variable = {
             name = mrfp_threshold_enabled
@@ -25,6 +32,7 @@
         # Additional tracking variables
         set_variable = { name = mrfp_total_recruited value = 0 }
         set_variable = { name = mrfp_total_ransomed value = 0 }
+        set_variable = { name = mrfp_total_ransomed_gold value = 0 }
     }
 
     on_end = {
