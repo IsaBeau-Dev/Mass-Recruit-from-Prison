@@ -92,7 +92,7 @@
                             }
                             save_scope_as = the_story_prisoner
                             mrfp_is_at_war_with_targets_liege_story = yes
-                            
+
                             mrfp_release_all_unblocked_prisoners = yes
                         }
                         
@@ -100,8 +100,7 @@
                     }
 
                     # Update recruitment counter
-                    change_variable = { name = mrfp_total_recruited  add = scope:the_story.var:mrfp_total_recruited_current }
-                    change_variable = { name = mrfp_total_recruited_current multiply = 0 }
+                    mrfp_update_recruitment_counter = yes
                 }
             }
 
