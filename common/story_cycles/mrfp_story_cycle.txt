@@ -32,8 +32,10 @@
         # Additional tracking variables
         set_variable = { name = mrfp_total_recruited value = 0 }
         set_variable = { name = mrfp_total_recruited_current value = 0 }
-        set_variable = { name = mrfp_total_ransomed value = 0 }
+        set_variable = { name = mrfp_total_ransomed_people value = 0 }
+        set_variable = { name = mrfp_total_ransomed_people_current value = 0 }
         set_variable = { name = mrfp_total_ransomed_gold value = 0 }
+        set_variable = { name = mrfp_total_ransomed_gold_current value = 0 }
     }
 
     on_end = {
@@ -113,37 +115,7 @@
             }
 
             #Prowess threshold disabled
-            # triggered_effect = {
-            #     trigger = {
-            #         mrfp_threshold_enabled = no
-            #         story_owner = {
-            #             any_prisoner = {
-            #                 always = yes
-            #             }
-            #         }
-            #     }
-            #     effect = {
-            #         save_scope_as = the_story
-            #         #debug_log = "Recruiting prisoners..."
-            #         story_owner = {
-            #             every_prisoner = {
-            #                 # mrfp_every_prisoner_effect_story = {
-            #                 #     MRFPROOT = story_owner
-            #                 #     MRFPTHIS = this
-            #                 #     MRFPSTORY = scope:the_story
-            #                 # }
-                            
-            #                 # Update recruitment counter
-            #                 scope:the_story = {
-            #                     change_variable = {
-            #                         name = mrfp_total_recruited
-            #                         add = 1
-            #                     }
-            #                 }
-            #             }
-            #         }
-            #     }
-            # }
+
         }
     }
 
