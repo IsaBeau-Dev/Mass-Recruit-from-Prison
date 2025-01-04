@@ -96,7 +96,7 @@
                                     } 
                                 }
 
-                                # mrfp_every_prisoner_effect_story = yes
+                                mrfp_every_prisoner_effect_story = yes
 
                                 #TODO
                                 # mrfp_every_prisoner_effect_story = {
@@ -106,12 +106,13 @@
                                 # }
                                 
                                 # Update recruitment counter
-                                scope:the_story = {
-                                    change_variable = {
-                                        name = mrfp_total_recruited
-                                        add = 1
-                                    }
-                                }
+                                mrfp_update_recruitment_counter = yes
+                                # scope:the_story = {
+                                #     change_variable = {
+                                #         name = mrfp_total_recruited
+                                #         add = 1
+                                #     }
+                                # }
                             }
                         }
                     }

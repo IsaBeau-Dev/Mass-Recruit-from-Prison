@@ -192,3 +192,12 @@ mrfp_every_prisoner_effect_story = {
 		execute_threshold = accept
 	}
 }
+
+mrfp_update_recruitment_counter = {
+	scope:the_story = {
+		change_variable = {
+			name = mrfp_total_recruited
+			add = 1
+		}
+	}
+}
