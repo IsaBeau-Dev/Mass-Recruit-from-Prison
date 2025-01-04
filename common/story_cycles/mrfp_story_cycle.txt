@@ -68,6 +68,7 @@
 
         #use first valid here. firstly check for prowess threshold of disabled use any prisoner
         first_valid = {
+            #Prowess threshold enabled
             triggered_effect = {
                 trigger = {
                     mrfp_threshold_enabled = yes
@@ -79,29 +80,76 @@
                 }
                 effect = {
                     save_scope_as = the_story
-                    debug_log = "Recruiting prisoners..."
                     story_owner = {
+                        save_scope_as = the_story_owner
                         every_prisoner = {
                             limit = {
                                 prowess >= scope:the_story.var:mrfp_prowess_threshold
+                                is_ruler = no
                             }
-                            # mrfp_every_prisoner_effect_story = {
-                            #     MRFPROOT = story_owner
-                            #     MRFPTHIS = this
-                            #     MRFPSTORY = scope:the_story
-                            # }
-                            
-                            # Update recruitment counter
-                            scope:the_story = {
-                                change_variable = {
-                                    name = mrfp_total_recruited
-                                    add = 1
+                            save_scope_as = the_story_prisoner
+                            mrfp_is_at_war_with_targets_liege_story = yes
+                            if = {
+                                limit = { 
+                                    NOT = {
+                                        has_character_flag = mrfp_blocked
+                                    } 
+                                }
+
+                                # mrfp_every_prisoner_effect_story = yes
+
+                                #TODO
+                                # mrfp_every_prisoner_effect_story = {
+                                #     MRFPROOT = story_owner
+                                #     MRFPTHIS = this
+                                #     MRFPSTORY = scope:the_story
+                                # }
+                                
+                                # Update recruitment counter
+                                scope:the_story = {
+                                    change_variable = {
+                                        name = mrfp_total_recruited
+                                        add = 1
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
+
+            #Prowess threshold disabled
+            # triggered_effect = {
+            #     trigger = {
+            #         mrfp_threshold_enabled = no
+            #         story_owner = {
+            #             any_prisoner = {
+            #                 always = yes
+            #             }
+            #         }
+            #     }
+            #     effect = {
+            #         save_scope_as = the_story
+            #         #debug_log = "Recruiting prisoners..."
+            #         story_owner = {
+            #             every_prisoner = {
+            #                 # mrfp_every_prisoner_effect_story = {
+            #                 #     MRFPROOT = story_owner
+            #                 #     MRFPTHIS = this
+            #                 #     MRFPSTORY = scope:the_story
+            #                 # }
+                            
+            #                 # Update recruitment counter
+            #                 scope:the_story = {
+            #                     change_variable = {
+            #                         name = mrfp_total_recruited
+            #                         add = 1
+            #                     }
+            #                 }
+            #             }
+            #         }
+            #     }
+            # }
         }
     }
 
