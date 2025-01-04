@@ -49,17 +49,15 @@
 			story_owner = {
             	has_character_flag = enable_auto_mrfp
 			}
-            # always = yes
         }
 
         triggered_effect = {
             trigger = {
-				# story_owner = {
-				# 	any_prisoner = {
-				# 		prowess >= root.var:mrfp_prowess_threshold
-				# 	}
-				# }
-                always = yes
+				story_owner = {
+					any_prisoner = {
+						prowess >= root.var:mrfp_prowess_threshold
+					}
+				}
             }
             effect = {
                 debug_log_scopes = yes
