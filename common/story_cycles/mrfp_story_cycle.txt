@@ -105,7 +105,36 @@
             }
 
             #Prowess threshold disabled
+            triggered_effect = {
+                trigger = {
+                    mrfp_threshold_enabled = no
+                    story_owner = {
+                        any_prisoner = {
+                            always = yes
+                        }
+                    }
+                }
+                effect = {
+                    save_scope_as = the_story
+                    story_owner = {
+                        save_scope_as = the_story_owner
+                        every_prisoner = {
+                            limit = {
+                                is_ruler = no
+                            }
+                            save_scope_as = the_story_prisoner
+                            mrfp_is_at_war_with_targets_liege_story = yes
 
+                            mrfp_release_all_unblocked_prisoners = yes
+                        }
+                        
+                        mrfp_send_amout_people_released_message = yes
+                    }
+
+                    # Update recruitment counter
+                    mrfp_update_recruitment_counter = yes
+                }
+            }
         }
     }
 
