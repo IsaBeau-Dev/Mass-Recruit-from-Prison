@@ -98,8 +98,6 @@
 
                                 mrfp_every_prisoner_effect_story = yes
                                 
-                                # Update recruitment counter
-                                #mrfp_update_recruitment_counter = yes
                             }
                         }
                     }

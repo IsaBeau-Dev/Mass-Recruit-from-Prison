@@ -194,8 +194,6 @@ mrfp_every_prisoner_effect_story = {
 }
 
 mrfp_update_recruitment_counter = {
-	# scope:the_story = {
-	# scope:actor.var:mrfp_story.var:mrfp_RELEASE_BANISH
 	scope:actor.var:mrfp_story = {
 		change_variable = {
 			name = mrfp_total_recruited
