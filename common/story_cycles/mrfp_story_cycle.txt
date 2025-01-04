@@ -102,13 +102,15 @@
                                 
                             }
                         }
-
-						send_interface_message = {
-							type = event_captured_combatants_good
-							title = prisonreleasethingy_story.title
-							desc = prisonreleasethingy_story.message							  
-						}
                         
+                        if = {
+                            limit = { scope:the_story.var:mrfp_total_recruited_current >= 1 }
+                            send_interface_message = {
+                                type = event_captured_combatants_good
+                                title = prisonreleasethingy_story.title
+                                desc = prisonreleasethingy_story.message							  
+                            }
+                        }
                     }
 
                     # Update recruitment counter
