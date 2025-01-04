@@ -92,16 +92,8 @@
                             }
                             save_scope_as = the_story_prisoner
                             mrfp_is_at_war_with_targets_liege_story = yes
-                            if = {
-                                limit = { 
-                                    NOT = {
-                                        has_character_flag = mrfp_blocked
-                                    } 
-                                }
-
-                                mrfp_every_prisoner_effect_story = yes
-                                
-                            }
+                            
+                            mrfp_release_all_unblocked_prisoners = yes
                         }
                         
                         mrfp_send_amout_people_released_message = yes

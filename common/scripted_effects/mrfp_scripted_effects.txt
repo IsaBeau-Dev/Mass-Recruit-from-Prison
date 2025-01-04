@@ -212,3 +212,16 @@ mrfp_send_amout_people_released_message = {
 		}
 	}
 }
+
+mrfp_release_all_unblocked_prisoners = {
+	if = {
+		limit = { 
+			NOT = {
+				has_character_flag = mrfp_blocked
+			} 
+		}
+
+		mrfp_every_prisoner_effect_story = yes
+		
+	}
+}
