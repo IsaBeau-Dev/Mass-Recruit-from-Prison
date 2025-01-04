@@ -31,6 +31,7 @@
 
         # Additional tracking variables
         set_variable = { name = mrfp_total_recruited value = 0 }
+        set_variable = { name = mrfp_total_recruited_current value = 0 }
         set_variable = { name = mrfp_total_ransomed value = 0 }
         set_variable = { name = mrfp_total_ransomed_gold value = 0 }
     }
@@ -71,7 +72,8 @@
             #Prowess threshold enabled
             triggered_effect = {
                 trigger = {
-                    mrfp_threshold_enabled = yes
+                    #TODO FIX THIS SHIT
+                    #mrfp_threshold_enabled = yes
                     story_owner = {
                         any_prisoner = {
                             prowess >= root.var:mrfp_prowess_threshold
@@ -81,7 +83,7 @@
                 effect = {
                     save_scope_as = the_story
                     story_owner = {
-                        save_scope_as = the_story_owner
+                        save_scope_as = the_story_owner                        
                         every_prisoner = {
                             limit = {
                                 prowess >= scope:the_story.var:mrfp_prowess_threshold
@@ -100,7 +102,18 @@
                                 
                             }
                         }
+
+						# send_interface_message = {
+						# 	type = event_captured_combatants_good
+						# 	title = prisonreleasethingy_story.title
+						# 	desc = prisonreleasethingy_story.message							  
+						# }
+                        
                     }
+
+                    # Update recruitment counter
+                    change_variable = { name = mrfp_total_recruited  add = scope:the_story.var:mrfp_total_recruited_current }
+                    change_variable = { name = mrfp_total_recruited_current multiply = 0 }
                 }
             }
 

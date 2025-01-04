@@ -83,6 +83,9 @@ decision_group_type_mrfp: "Mass Recruit"
  prisonreleasethingy.title:0 "Prisoner Agrees To Release"
  prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] has agreed to your conditions for their release."
 
+ prisonreleasethingy_story.title:0 "Prisoner(s) Agree(s) To Chosen Options"
+ prisonreleasethingy_story.message:0 "You have released [THIS.Var('mrfp_total_recruited_current').GetValue] people from prison."
+
 ##welcome message
 mrfp_welcome_events.0001.title:0 "Welcome to Mass Prison Actions"
 mrfp_welcome_events.0001.desc:0 "This mod introduces new mechanics for recruiting and ransoming prisoners."
