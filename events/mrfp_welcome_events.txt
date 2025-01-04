@@ -40,3 +40,4 @@ mrfp_welcome_events.0002 = {
 		name = mrfp_welcome_events.0002.option1
 	}
 }
+##TODO add initial setup here where user can set their preferences
