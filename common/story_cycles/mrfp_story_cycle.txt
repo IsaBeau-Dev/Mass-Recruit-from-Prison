@@ -66,6 +66,9 @@
         trigger = {
 			story_owner = {
             	has_character_flag = enable_auto_mrfp
+                any_prisoner = {
+                    always = yes
+                }
 			}
         }
 
@@ -108,11 +111,6 @@
             triggered_effect = {
                 trigger = {
                     mrfp_threshold_enabled = no
-                    story_owner = {
-                        any_prisoner = {
-                            always = yes
-                        }
-                    }
                 }
                 effect = {
                     save_scope_as = the_story
