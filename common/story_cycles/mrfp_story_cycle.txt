@@ -61,8 +61,6 @@
 				}
             }
             effect = {
-                # debug_log_scopes = yes
-                # debug_log = "MRFP: Recruiting prisoners"
 				save_scope_as = the_story
                 story_owner = {
                     every_prisoner = {
@@ -72,7 +70,7 @@
                         mrfp_every_prisoner_effect_story = {
                             MRFPROOT = story_owner
                             MRFPTHIS = this
-                            MRFPTHISSTORY = the_story
+                            MRFPSTORY = scope:the_story
                         }
                         
                         # Update recruitment counter

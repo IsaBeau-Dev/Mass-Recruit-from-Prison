@@ -153,6 +153,7 @@ mrfp_every_prisoner_effect_story = {
 					}
 				}
 			}
+			debug_log = "MRFP STORY RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 			# LIMIT ON
 			if = {
 				limit = {
@@ -161,7 +162,7 @@ mrfp_every_prisoner_effect_story = {
 				if = {
 					limit = { prowess >= scope:mrfpstory.var:mrfp_prowess_threshold }
 					run_interaction = {
-						interaction = mrfp_vars_interaction
+						interaction = mrfp_vars_interaction_story
 						actor = scope:mrfproot
 						recipient = scope:mrfpthis
 						execute_threshold = accept
@@ -171,7 +172,7 @@ mrfp_every_prisoner_effect_story = {
 			#LIMIT OFF
 			else = {
 				run_interaction = {
-					interaction = mrfp_vars_interaction
+					interaction = mrfp_vars_interaction_story
 					actor = scope:mrfproot
 					recipient = scope:mrfpthis
 					execute_threshold = accept
@@ -199,56 +200,6 @@ mrfp_every_prisoner_effect_story = {
 	clear_saved_scope = mrfproot
 	clear_saved_scope = mrfpthis
 }
-
-
-# mrfp_ransom_every_prisoner_effect_story = {
-# 	$MRFPROOT$ = { save_scope_as = mrfproot }
-#    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
-
-# 	mrfp_is_at_war_with_target_or_their_liege = yes
-
-# 	if = {
-# 		limit = { 
-# 			NOT = {
-# 				has_character_flag = mrfp_blocked
-# 			} 
-# 		}
-# 		scope:mrfpthis = {
-# 			save_scope_as = secondary_recipient
-# 			if = {
-# 				limit = {
-# 					is_ruler = no
-
-# 					# liege ?= {
-# 					# 	save_scope_as = mrfpthis
-# 					# }
-
-# 					exists = liege
-# 				}
-# 				liege = {
-# 					save_scope_as = mrfpthis
-# 				}
-# 			}
-# 		}
-# 		if = {
-# 			limit = { 
-# 				scope:secondary_recipient.ransom_cost_value <= scope:mrfpthis.gold 
-# 			}
-# 			run_interaction = {
-# 				interaction = ransom_interaction
-# 				actor = scope:mrfproot
-# 				recipient = scope:mrfpthis
-# 				execute_threshold = accept
-# 			}
-	
-# 		}
-# 	}
-
-
-# 	remove_character_flag = mrfp_blocked
-# 	clear_saved_scope = mrfproot
-# 	clear_saved_scope = mrfpthis
-# }
 
 
 #General shortcuts
