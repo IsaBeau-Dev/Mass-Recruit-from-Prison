@@ -74,8 +74,7 @@
             #Prowess threshold enabled
             triggered_effect = {
                 trigger = {
-                    #TODO FIX THIS SHIT
-                    #mrfp_threshold_enabled = yes
+                    mrfp_threshold_enabled = yes
                     story_owner = {
                         any_prisoner = {
                             prowess >= root.var:mrfp_prowess_threshold
