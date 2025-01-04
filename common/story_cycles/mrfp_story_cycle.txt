@@ -137,6 +137,67 @@
     }
 
     # # Monthly ransom cycle
+    effect_group = {
+        months = 1
+
+        trigger = {
+            story_owner = {
+                has_character_flag = enable_auto_mrfp_ransom
+                any_prisoner = {
+                    always = yes
+                }
+            }
+        }
+
+        triggered_effect = {
+            trigger = {
+                always = yes
+            }
+            effect = {
+                save_scope_as = the_story
+                story_owner = {
+
+                    # send_interface_message = {
+                    #     type = event_captured_combatants_good
+                    #     title = "Debug test"
+                    #     desc = "I managed to come here"						  
+                    # }
+
+                    save_scope_as = the_story_owner
+                    every_prisoner = {
+                        limit = { always = yes }
+                        save_scope_as = the_story_prisoner
+                        mrfp_is_at_war_with_target_or_their_liege_story = yes
+
+
+                        scope:the_story_prisoner = {
+                            save_scope_as = secondary_recipient
+                            if = {
+                                limit = {
+                                    is_ruler = no                
+                                    exists = liege
+                                }
+                                liege = {
+                                    save_scope_as = the_story_prisoner
+                                }
+                            }
+                        }
+
+                        mrfp_release_all_unblocked_ransom_prisoners = yes
+                    }
+                    
+                    mrfp_send_amount_people_ransomed_message = yes
+                }
+
+                # Update ransom counter
+                mrfp_update_ransom_counter = yes
+            }
+        }
+        }
+    }
+
+
+
     # effect_group = {
     #     months = 1
 

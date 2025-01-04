@@ -231,3 +231,57 @@ mrfp_release_all_unblocked_prisoners = {
 		
 	}
 }
+
+
+
+###RANSOM
+mrfp_release_all_unblocked_ransom_prisoners = {
+	if = {
+		limit = { 
+			NOT = {
+				has_character_flag = mrfp_blocked
+			}
+			scope:secondary_recipient.ransom_cost_value <= scope:the_story_prisoner.gold 
+		}
+
+		run_interaction = {
+			interaction = ransom_interaction
+			actor = scope:the_story_owner
+			recipient = scope:the_story_prisoner
+			execute_threshold = accept
+		}
+		
+	}
+}
+
+mrfp_update_ransom_counter_current = {
+	scope:actor.var:mrfp_story = {
+		change_variable = {
+			name = mrfp_total_ransomed_people_current
+			add = 1
+		}
+		change_variable = {
+			name = mrfp_total_ransomed_gold_current
+			#todo
+			add = scope:the_story_prisoner.gold
+		}
+	}
+}
+
+mrfp_update_ransom_counter = {
+	change_variable = { name = mrfp_total_ransomed_people  add = scope:the_story.var:mrfp_total_ransomed_people_current }
+	change_variable = { name = mrfp_total_ransomed_gold  add = scope:the_story.var:mrfp_total_ransomed_gold_current }
+	change_variable = { name = mrfp_total_ransomed_people_current multiply = 0 }
+	change_variable = { name = mrfp_total_ransomed_gold_current multiply = 0 }
+}
+
+mrfp_send_amount_people_ransomed_message = {
+	if = {
+		limit = { scope:the_story.var:mrfp_total_ransomed_people_current >= 1 }
+		send_interface_message = {
+			type = event_captured_combatants_good
+			title = prisonransomthingy_story.title
+			desc = prisonransomthingy_story.message							  
+		}
+	}
+}

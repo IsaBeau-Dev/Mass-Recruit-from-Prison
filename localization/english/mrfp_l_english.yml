@@ -86,6 +86,9 @@ decision_group_type_mrfp: "Mass Recruit"
  prisonreleasethingy_story_release.title:0 "Prisoner(s) Agree(s) To Chosen Options"
  prisonreleasethingy_story_release.message:0 "You have released [ROOT.Var('mrfp_total_recruited_current').GetValue] people from prison."
 
+ prisonransomthingy_story.title:0 "Prisoners Ransomed"
+ prisonransomthingy_story.message:0 "You have ransomed [ROOT.Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_total_ransomed_gold_current').GetValue] gold."
+
 ##welcome message
 mrfp_welcome_events.0001.title:0 "Welcome to Mass Prison Actions"
 mrfp_welcome_events.0001.desc:0 "This mod introduces new mechanics for recruiting and ransoming prisoners."
