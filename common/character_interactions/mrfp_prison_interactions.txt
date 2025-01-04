@@ -6324,7 +6324,7 @@ mrfp_vars_interaction_story = {
 
 	send_option = {
 		#mrfp
-		starts_enabled = { always = scope:actor.var:mrfp_RELEASE_DEMAND_CONVERSION }
+		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_DEMAND_CONVERSION }
 		can_be_changed = { always = no }
 		#mrfp
 
@@ -6384,7 +6384,7 @@ mrfp_vars_interaction_story = {
 
 	send_option = {
 		#mrfp
-		starts_enabled = { always = scope:actor.var:mrfp_RELEASE_RENOUNCE_CLAIMS }
+		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_RENOUNCE_CLAIMS }
 		can_be_changed = { always = no }
 		#mrfp
 		flag = renounce_claims
@@ -6425,7 +6425,7 @@ mrfp_vars_interaction_story = {
 
 	send_option = {
 		#mrfp
-		starts_enabled = { always = scope:actor.var:mrfp_RELEASE_BANISH }
+		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_BANISH }
 		can_be_changed = { always = no }
 		#mrfp
 		flag = banish
@@ -6503,7 +6503,7 @@ mrfp_vars_interaction_story = {
 
 	send_option = {
 		#mrfp
-		starts_enabled = { always = scope:actor.var:mrfp_RELEASE_GAIN_HOOK }
+		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_GAIN_HOOK }
 		can_be_changed = { always = no }
 		#mrfp
 		flag = gain_hook
@@ -6536,7 +6536,7 @@ mrfp_vars_interaction_story = {
 
 	send_option = {
 		#mrfp
-		starts_enabled = { always = scope:actor.var:mrfp_RELEASE_TAKE_VOWS }
+		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_TAKE_VOWS }
 		can_be_changed = { always = no }
 		#mrfp
 		flag = take_vows
@@ -6723,7 +6723,7 @@ mrfp_vars_interaction_story = {
 	}
 	send_option = {
 		#mrfp
-		starts_enabled = { always = scope:actor.var:mrfp_RELEASE_AS_EXECUTIONER }
+		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_AS_EXECUTIONER }
 		can_be_changed = { always = no }
 		#mrfp
 		flag = become_executioner
@@ -6766,7 +6766,7 @@ mrfp_vars_interaction_story = {
 
 	send_option = {
 		#mrfp
-		starts_enabled = { always = scope:actor.var:mrfp_RELEASE_RECRUIT }
+		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_RECRUIT }
 		can_be_changed = { always = no }
 		#mrfp
 		flag = recruit
@@ -6809,7 +6809,7 @@ mrfp_vars_interaction_story = {
 
 	send_option = {
 		#mrfp
-		starts_enabled = { always = scope:actor.var:mrfp_RELEASE_DISFIGURE }
+		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_DISFIGURE }
 		can_be_changed = { always = no }
 		#mrfp
 		flag = disfigure
@@ -6861,7 +6861,7 @@ mrfp_vars_interaction_story = {
 
 	send_option = {
 		#mrfp
-		starts_enabled = { always = scope:actor.var:mrfp_RELEASE_BLIND }
+		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_BLIND }
 		can_be_changed = { always = no }
 		#mrfp
 		flag = blind
@@ -6892,7 +6892,7 @@ mrfp_vars_interaction_story = {
 
 	send_option = {
 		#mrfp
-		starts_enabled = { always = scope:actor.var:mrfp_RELEASE_CASTRATE }
+		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_CASTRATE }
 		can_be_changed = { always = no }
 		#mrfp
 		flag = castrate
