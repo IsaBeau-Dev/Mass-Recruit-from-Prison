@@ -47,6 +47,13 @@
 		#Transfer ownership
 		make_story_owner = story_owner.primary_heir
 
+        story_owner = {
+            set_variable = {
+                name = mrfp_story
+                value = root
+            }
+        }
+
     }
 
     # Montlhly recruitment cycle
