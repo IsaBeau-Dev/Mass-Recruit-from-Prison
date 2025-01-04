@@ -51,6 +51,7 @@
 			}
         }
 
+        #use first valid here. firstly check for prowess threshold of disabled use any prisoner
         triggered_effect = {
             trigger = {
 				story_owner = {
@@ -60,17 +61,18 @@
 				}
             }
             effect = {
-                debug_log_scopes = yes
-                debug_log = "MRFP: Recruiting prisoners"
+                # debug_log_scopes = yes
+                # debug_log = "MRFP: Recruiting prisoners"
 				save_scope_as = the_story
                 story_owner = {
                     every_prisoner = {
                         limit = {
-                            prowess >= root.var:mrfp_prowess_threshold
+                            prowess >= scope:the_story.var:mrfp_prowess_threshold
                         }
-                        mrfp_every_prisoner_effect = {
+                        mrfp_every_prisoner_effect_story = {
                             MRFPROOT = story_owner
                             MRFPTHIS = this
+                            MRFPTHISSTORY = the_story
                         }
                         
                         # Update recruitment counter

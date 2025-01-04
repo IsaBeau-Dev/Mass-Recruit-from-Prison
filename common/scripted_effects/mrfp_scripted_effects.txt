@@ -1,4 +1,5 @@
-﻿mrfp_every_prisoner_effect = {
+﻿#Normal Scripted Effect
+mrfp_every_prisoner_effect = {
 	$MRFPROOT$ = { save_scope_as = mrfproot }
    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
 	# debug_log = "MRFP RUN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -125,6 +126,132 @@ mrfp_ransom_every_prisoner_effect = {
 	clear_saved_scope = mrfpthis
 }
 
+#Story scripted effects
+mrfp_every_prisoner_effect_story = {
+	$MRFPROOT$ = { save_scope_as = mrfproot }
+   	$MRFPTHIS$ = { save_scope_as = mrfpthis }
+	$MRFPSTORY$ = { save_scope_as = mrfpstory }
+
+
+	##Recruitment and Conversion with Prowess Options
+
+	mrfp_is_at_war_with_targets_liege = yes
+
+	if = {
+		limit = { 
+			NOT = {
+				has_character_flag = mrfp_blocked
+			} 
+		}
+		if = {
+			limit = {
+				AND = {
+					is_ruler = no
+					scope:mrfpstory = {
+						has_variable = mrfp_threshold_enabled
+						has_variable = mrfp_prowess_threshold
+					}
+				}
+			}
+			# LIMIT ON
+			if = {
+				limit = {
+					scope:mrfpstory.var:mrfp_threshold_enabled >= 1
+				}
+				if = {
+					limit = { prowess >= scope:mrfpstory.var:mrfp_prowess_threshold }
+					run_interaction = {
+						interaction = mrfp_vars_interaction
+						actor = scope:mrfproot
+						recipient = scope:mrfpthis
+						execute_threshold = accept
+					}
+				}
+			}
+			#LIMIT OFF
+			else = {
+				run_interaction = {
+					interaction = mrfp_vars_interaction
+					actor = scope:mrfproot
+					recipient = scope:mrfpthis
+					execute_threshold = accept
+				}
+			}
+		}
+		# else = {
+		# 	## VARS NOT SET => RECRUIT EVERYONE
+		# 	if = {
+		# 		limit = { is_ruler = no }
+		# 		run_interaction = {
+		# 			# interaction = mrfp_release_from_prison_interaction
+		# 			interaction = mrfp_recruit_and_convert_prison_interaction
+		# 			actor = scope:mrfproot
+		# 			recipient = scope:mrfpthis
+		# 			execute_threshold = accept
+		# 		}
+		# 	}
+		# }
+	}
+
+	################
+
+	remove_character_flag = mrfp_blocked
+	clear_saved_scope = mrfproot
+	clear_saved_scope = mrfpthis
+}
+
+
+# mrfp_ransom_every_prisoner_effect_story = {
+# 	$MRFPROOT$ = { save_scope_as = mrfproot }
+#    	$MRFPTHIS$ = { save_scope_as = mrfpthis }
+
+# 	mrfp_is_at_war_with_target_or_their_liege = yes
+
+# 	if = {
+# 		limit = { 
+# 			NOT = {
+# 				has_character_flag = mrfp_blocked
+# 			} 
+# 		}
+# 		scope:mrfpthis = {
+# 			save_scope_as = secondary_recipient
+# 			if = {
+# 				limit = {
+# 					is_ruler = no
+
+# 					# liege ?= {
+# 					# 	save_scope_as = mrfpthis
+# 					# }
+
+# 					exists = liege
+# 				}
+# 				liege = {
+# 					save_scope_as = mrfpthis
+# 				}
+# 			}
+# 		}
+# 		if = {
+# 			limit = { 
+# 				scope:secondary_recipient.ransom_cost_value <= scope:mrfpthis.gold 
+# 			}
+# 			run_interaction = {
+# 				interaction = ransom_interaction
+# 				actor = scope:mrfproot
+# 				recipient = scope:mrfpthis
+# 				execute_threshold = accept
+# 			}
+	
+# 		}
+# 	}
+
+
+# 	remove_character_flag = mrfp_blocked
+# 	clear_saved_scope = mrfproot
+# 	clear_saved_scope = mrfpthis
+# }
+
+
+#General shortcuts
 mrfp_is_at_war_with_target_or_their_liege = {
 	mrfp_is_at_war_with_targets_liege = yes
 	if = {
