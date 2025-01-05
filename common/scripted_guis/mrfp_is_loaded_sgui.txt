@@ -37,6 +37,7 @@ mrfp_is_loaded_sgui_ransom = {
   }
 }
 
+#temp window stuff
 toggle_my_window = {
   effect = {
       if = {
@@ -48,5 +49,11 @@ toggle_my_window = {
       else = {
           set_variable = show_my_window
       }
+  }
+}
+mrfp_settings_window_Demand_Conversion = {
+  effect = {
+    # onclick = "[GetScriptedGui('mrfp_is_loaded_sgui_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+    root.var:mrfp_story.var:mrfp_RELEASE_DEMAND_CONVERSION
   }
 }

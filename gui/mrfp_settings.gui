@@ -83,8 +83,10 @@
 						}
                         button_checkbox = {
                             #text = "Demand Conversion"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
-                            down = "[Var('mrfp_RELEASE_DEMAND_CONVERSION')]"
+                            # onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
+							# onclick = "[GetPlayer.MakeScope.Var('mrfp_story').MakeScope.Var('mrfp_RELEASE_DEMAND_CONVERSION').Toggle()]"
+							onclick = "[GetScriptedGui('mrfp_settings_window_Demand_Conversion').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                            down = yes
                         }
 
 						text_single = {
