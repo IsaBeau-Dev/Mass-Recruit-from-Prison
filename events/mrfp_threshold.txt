@@ -406,7 +406,7 @@ mrfp_set_threshold.0003 = {
     first_valid = {
       triggered_desc = {
         trigger = {
-          var:mrfp_RELEASE_DEMAND_CONVERSION = yes
+          scope:the_story.var:mrfp_RELEASE_DEMAND_CONVERSION = yes
         }
         desc = mrfp.0001.enabled
       }
@@ -416,7 +416,7 @@ mrfp_set_threshold.0003 = {
     first_valid = {
       triggered_desc = {
         trigger = {
-          var:mrfp_RELEASE_RENOUNCE_CLAIMS = yes
+          scope:the_story.var:mrfp_RELEASE_RENOUNCE_CLAIMS = yes
         }
         desc = mrfp.0001.enabled
       }
@@ -426,7 +426,7 @@ mrfp_set_threshold.0003 = {
     first_valid = {
       triggered_desc = {
         trigger = {
-          var:mrfp_RELEASE_BANISH = yes
+          scope:the_story.var:mrfp_RELEASE_BANISH = yes
         }
         desc = mrfp.0001.enabled
       }
@@ -436,7 +436,7 @@ mrfp_set_threshold.0003 = {
     first_valid = {
       triggered_desc = {
         trigger = {
-          var:mrfp_RELEASE_GAIN_HOOK = yes
+          scope:the_story.var:mrfp_RELEASE_GAIN_HOOK = yes
         }
         desc = mrfp.0001.enabled
       }
@@ -446,7 +446,7 @@ mrfp_set_threshold.0003 = {
     first_valid = {
       triggered_desc = {
         trigger = {
-          var:mrfp_RELEASE_TAKE_VOWS = yes
+          scope:the_story.var:mrfp_RELEASE_TAKE_VOWS = yes
         }
         desc = mrfp.0001.enabled
       }
