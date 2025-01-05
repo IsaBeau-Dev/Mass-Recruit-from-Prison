@@ -2,13 +2,13 @@
     name = "mrfp_settings_window"
     movable = yes
     layer = windows_layer
-
-	visible = "[GetPlayer.MakeScope.Var('show_my_window').IsSet]"
     
     using = Window_Background
     using = Window_Decoration
 
-    size = { 800 600 }
+	visible = "[GetPlayer.MakeScope.Var('show_my_window').IsSet]"
+
+    size = { 1200 800 }
     
     state = {
         name = _show
@@ -17,13 +17,17 @@
     }
 
     vbox = {
+        datacontext = "[GetPlayer.GetPrisonerList]"
+        layoutpolicy_horizontal = expanding
+        layoutpolicy_vertical = expanding
+
         # Window Title
         hbox = {
             layoutpolicy_horizontal = expanding
             margin = { 20 10 }
 
             text_single = {
-                text = "Mass Recruit from Prison - Settings"
+                text = "Mass Recruit from Prison"
                 autoresizebox = yes
                 using = Font_Size_Big
             }
@@ -31,171 +35,188 @@
             expand = {}
         }
 
-        # Main Settings Container
-        scrollbox = {
+        # Empty Prison Placeholder
+        text_single = {
+            visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
+            text = "No Prisoners Available for Recruitment"
+            default_format = "#weak"
+        }
+
+        background = {
+            visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
+            texture = "gfx/interface/skinned/illustrations/dungeon.dds"
+            fittype = centercrop
+            framesize = { 700 800 }
+            frame = 2
+
+            using = Mask_Rough_Edges
+
+            modify_texture = {
+                texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+                blend_mode = alphamultiply
+                mirror = vertical
+            }
+        }
+
+        # Prisoners List
+        vbox_character_list = {
+            visible = "[GreaterThan_int32( GetPlayer.GetPrisonerList.GetTotalNumber, '(int32)0' )]"
             layoutpolicy_horizontal = expanding
             layoutpolicy_vertical = expanding
 
-            vbox = {
-                # Threshold Settings
-                hbox = {
+            blockoverride "container_implementation" {
+                fixedgridbox = {
+                    name = "prisoners_grid"
+                    datamodel = "[CharacterSelectionList.GetList]"
                     layoutpolicy_horizontal = expanding
-                    margin = { 20 10 }
+                    addcolumn = 520
+                    addrow = 200
+                    datamodel_reuse_widgets = yes
 
-                    text_single = {
-                        text = "Recruitment Threshold"
-                        tooltip = "Enable or set the prowess threshold for recruitment"
-                    }
+                    item = {
+                        vbox = {
+                            maximumsize = { 520 200 }
 
-                    expand = {}
+                            widget_character_list_item_finder = {
+                                layoutpolicy_horizontal = expanding
+                                blockoverride "divider" {}
+                                blockoverride "character_relation" {}
 
-                    hbox = {
-                        button_standard = {
-                            text = "[Select('Enabled', 'Disabled', Var('mrfp_threshold_enabled'))]"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_threshold_enabled')]"
-                        }
+                                blockoverride "gridbox_items" {
+                                    datamodel_wrap = 4
+                                    maxverticalslots = 2
+                                }
+                            }
 
-                        button_standard = {
-                            text = "[Var('mrfp_prowess_threshold')]"
-                            onclick = "[GetVariableSystem.Cycle('mrfp_prowess_threshold', '6', '8', '10', '12', '16', '20', '24')]"
+                            hbox = {
+                                layoutpolicy_horizontal = expanding
+                                margin = { 10 10 }
+                                spacing = 5
+
+                                background = {
+                                    using = Background_Area_Dark
+                                }
+
+                                # Prisoner Information
+                                vbox = {
+                                    layoutpolicy_horizontal = expanding
+                                    layoutpolicy_vertical = expanding
+
+                                    text_single = {
+                                        text = "[CharacterListItem.GetCharacter.GetShortUINameNoTooltip]"
+                                        default_format = "#high"
+                                    }
+
+                                    text_single = {
+                                        text = "[CharacterListItem.GetText('tooltip')]"
+                                        default_format = "#low"
+                                    }
+
+                                    # MRFP Specific Information
+                                    hbox = {
+                                        layoutpolicy_horizontal = expanding
+                                        spacing = 10
+
+                                        text_single = {
+                                            text = "Prowess:"
+                                            default_format = "#low"
+                                        }
+
+                                        text_single = {
+                                            text = "[CharacterListItem.GetCharacter.GetProwess]"
+                                            default_format = "#high"
+                                        }
+                                    }
+                                }
+
+                                # Custom MRFP Buttons
+                                hbox = {
+                                    spacing = 5
+
+                                    mrfp_button = {
+                                        name = "mrfp_recruit_button"
+                                        datacontext = "[CharacterListItem.GetCharacter]"
+                                    }
+
+                                    mrfp_button_ransom = {
+                                        name = "mrfp_ransom_button"
+                                        datacontext = "[CharacterListItem.GetCharacter]"
+                                    }
+
+                                    # Standard Prison Actions
+                                    button_round = {
+                                        name = "ransom"
+                                        enabled = "[CharacterListItem.GetBool('can_ransom')]"
+
+                                        button_prison_ransom = {
+                                            parentanchor = center
+                                            onclick = "[CharacterListItem.OnClick('ransom')]"
+                                            tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
+                                            using = tooltip_se
+                                        }
+                                    }
+
+                                    button_round = {
+                                        name = "release"
+                                        enabled = "[CharacterListItem.GetBool('can_release')]"
+
+                                        button_prison_release = {
+                                            parentanchor = center
+                                            onclick = "[CharacterListItem.OnClick('release')]"
+                                            tooltip = "[CharacterListItem.GetText('release_tooltip')]"
+                                            using = tooltip_se
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
+            }
 
-                # Release Options Section
-                vbox = {
-                    margin = { 20 10 }
+            # Mass Action Bar
+            blockoverride "bottom_bar" {
+                hbox = {
+                    margin = { 10 0 }
                     spacing = 10
 
                     text_single = {
-                        text = "Release Options"
-                        using = Font_Size_Medium
+                        text = "Mass Prisoner Actions"
+                        default_format = "#low"
                     }
 
-                    # First Group of Release Options
-                    hbox = {
-                        layoutpolicy_horizontal = expanding
-                        spacing = 10
+                    # Standard Mass Actions
+                    button_round = {
+                        name = "mass_ransom"
+                        enabled = "[GetPlayer.CanDoMassPrisonerAction('ransom')]"
 
-						text_single = {
-							text = "Demand Conversion"
-							using = Font_Size_Medium
-						}
-                        button_checkbox = {
-                            #text = "Demand Conversion"
-                            # onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
-							# onclick = "[GetPlayer.MakeScope.Var('mrfp_story').MakeScope.Var('mrfp_RELEASE_DEMAND_CONVERSION').Toggle()]"
-							onclick = "[GetScriptedGui('mrfp_settings_window_Demand_Conversion').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-                            down = yes
-                        }
-
-						text_single = {
-							text = "Renounce Claims"
-							using = Font_Size_Medium
-						}
-                        button_checkbox = {
-                            # text = "Renounce Claims"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
-                            down = "[Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
-                        }
-
-						text_single = {
-							text = "Banish"
-							using = Font_Size_Medium
-						}
-                        button_checkbox = {
-                            # text = "Banish"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_BANISH')]"
-                            down = "[Var('mrfp_RELEASE_BANISH')]"
+                        button_prison_ransom = {
+                            parentanchor = center
+                            onclick = "[GetPlayer.MassPrisonerAction('ransom')]"
+                            tooltip = "Ransom All Selected Prisoners"
+                            using = tooltip_se
                         }
                     }
 
-                    # Second Group of Release Options
-                    hbox = {
-                        layoutpolicy_horizontal = expanding
-                        spacing = 10
+                    button_round = {
+                        name = "mass_release"
+                        enabled = "[GetPlayer.CanDoMassPrisonerAction('release')]"
 
-						text_single = {
-							text = "Gain Hook"
-							using = Font_Size_Medium
-						}
-                        button_checkbox = {
-                            # text = "Gain Hook"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_GAIN_HOOK')]"
-                            down = "[Var('mrfp_RELEASE_GAIN_HOOK')]"
-                        }
-
-						text_single = {
-							text = "Take Vows"
-							using = Font_Size_Medium
-						}
-                        button_checkbox = {
-                            # text = "Take Vows"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_TAKE_VOWS')]"
-                            down = "[Var('mrfp_RELEASE_TAKE_VOWS')]"
-                        }
-
-						text_single = {
-							text = "As Executioner"
-							using = Font_Size_Medium
-						}
-                        button_checkbox = {
-                            # text = "As Executioner"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_AS_EXECUTIONER')]"
-                            down = "[Var('mrfp_RELEASE_AS_EXECUTIONER')]"
+                        button_prison_release = {
+                            parentanchor = center
+                            onclick = "[GetPlayer.MassPrisonerAction('release')]"
+                            tooltip = "Release All Selected Prisoners"
+                            using = tooltip_se
                         }
                     }
 
-                    # Third Group of Release Options
-                    hbox = {
-                        layoutpolicy_horizontal = expanding
-                        spacing = 10
-
-						text_single = {
-							text = "Recruit"
-							using = Font_Size_Medium
-						}
-                        button_checkbox = {
-                            # text = "Recruit"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_RECRUIT')]"
-                            down = "[Var('mrfp_RELEASE_RECRUIT')]"
-                        }
-
-						text_single = {
-							text = "Disfigure"
-							using = Font_Size_Medium
-						}
-                        button_checkbox = {
-                            # text = "Disfigure"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_DISFIGURE')]"
-                            down = "[Var('mrfp_RELEASE_DISFIGURE')]"
-                        }
-
-						text_single = {
-							text = "Blind"
-							using = Font_Size_Medium
-						}
-                        button_checkbox = {
-                            # text = "Blind"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_BLIND')]"
-                            down = "[Var('mrfp_RELEASE_BLIND')]"
-                        }
+                    # Custom MRFP Mass Actions
+                    mrfp_button = {
+                        name = "mrfp_mass_recruit"
                     }
 
-                    # Fourth Group of Release Options
-                    hbox = {
-                        layoutpolicy_horizontal = expanding
-                        spacing = 10
-
-						text_single = {
-							text = "Castrate"
-							using = Font_Size_Medium
-						}
-                        button_checkbox = {
-                            # text = "Castrate"
-                            onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_CASTRATE')]"
-                            down = "[Var('mrfp_RELEASE_CASTRATE')]"
-                        }
+                    mrfp_button_ransom = {
+                        name = "mrfp_mass_ransom"
                     }
                 }
             }
@@ -215,3 +236,231 @@
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+# window = {
+#     name = "mrfp_settings_window"
+#     movable = yes
+#     layer = windows_layer
+
+# 	visible = "[GetPlayer.MakeScope.Var('show_my_window').IsSet]"
+    
+#     using = Window_Background
+#     using = Window_Decoration
+
+#     size = { 800 600 }
+    
+#     state = {
+#         name = _show
+#         using = Animation_Curve_Default
+#         alpha = 1
+#     }
+
+#     vbox = {
+#         # Window Title
+#         hbox = {
+#             layoutpolicy_horizontal = expanding
+#             margin = { 20 10 }
+
+#             text_single = {
+#                 text = "Mass Recruit from Prison - Settings"
+#                 autoresizebox = yes
+#                 using = Font_Size_Big
+#             }
+
+#             expand = {}
+#         }
+
+#         # Main Settings Container
+#         scrollbox = {
+#             layoutpolicy_horizontal = expanding
+#             layoutpolicy_vertical = expanding
+
+#             vbox = {
+#                 # Threshold Settings
+#                 hbox = {
+#                     layoutpolicy_horizontal = expanding
+#                     margin = { 20 10 }
+
+#                     text_single = {
+#                         text = "Recruitment Threshold"
+#                         tooltip = "Enable or set the prowess threshold for recruitment"
+#                     }
+
+#                     expand = {}
+
+#                     hbox = {
+#                         button_standard = {
+#                             text = "[Select('Enabled', 'Disabled', Var('mrfp_threshold_enabled'))]"
+#                             onclick = "[GetVariableSystem.Toggle('mrfp_threshold_enabled')]"
+#                         }
+
+#                         button_standard = {
+#                             text = "[Var('mrfp_prowess_threshold')]"
+#                             onclick = "[GetVariableSystem.Cycle('mrfp_prowess_threshold', '6', '8', '10', '12', '16', '20', '24')]"
+#                         }
+#                     }
+#                 }
+
+#                 # Release Options Section
+#                 vbox = {
+#                     margin = { 20 10 }
+#                     spacing = 10
+
+#                     text_single = {
+#                         text = "Release Options"
+#                         using = Font_Size_Medium
+#                     }
+
+#                     # First Group of Release Options
+#                     hbox = {
+#                         layoutpolicy_horizontal = expanding
+#                         spacing = 10
+
+# 						text_single = {
+# 							text = "Demand Conversion"
+# 							using = Font_Size_Medium
+# 						}
+#                         button_checkbox = {
+#                             #text = "Demand Conversion"
+#                             # onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
+# 							# onclick = "[GetPlayer.MakeScope.Var('mrfp_story').MakeScope.Var('mrfp_RELEASE_DEMAND_CONVERSION').Toggle()]"
+# 							onclick = "[GetScriptedGui('mrfp_settings_window_Demand_Conversion').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+#                             down = yes
+#                         }
+
+# 						text_single = {
+# 							text = "Renounce Claims"
+# 							using = Font_Size_Medium
+# 						}
+#                         button_checkbox = {
+#                             # text = "Renounce Claims"
+#                             onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
+#                             down = "[Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
+#                         }
+
+# 						text_single = {
+# 							text = "Banish"
+# 							using = Font_Size_Medium
+# 						}
+#                         button_checkbox = {
+#                             # text = "Banish"
+#                             onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_BANISH')]"
+#                             down = "[Var('mrfp_RELEASE_BANISH')]"
+#                         }
+#                     }
+
+#                     # Second Group of Release Options
+#                     hbox = {
+#                         layoutpolicy_horizontal = expanding
+#                         spacing = 10
+
+# 						text_single = {
+# 							text = "Gain Hook"
+# 							using = Font_Size_Medium
+# 						}
+#                         button_checkbox = {
+#                             # text = "Gain Hook"
+#                             onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_GAIN_HOOK')]"
+#                             down = "[Var('mrfp_RELEASE_GAIN_HOOK')]"
+#                         }
+
+# 						text_single = {
+# 							text = "Take Vows"
+# 							using = Font_Size_Medium
+# 						}
+#                         button_checkbox = {
+#                             # text = "Take Vows"
+#                             onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_TAKE_VOWS')]"
+#                             down = "[Var('mrfp_RELEASE_TAKE_VOWS')]"
+#                         }
+
+# 						text_single = {
+# 							text = "As Executioner"
+# 							using = Font_Size_Medium
+# 						}
+#                         button_checkbox = {
+#                             # text = "As Executioner"
+#                             onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_AS_EXECUTIONER')]"
+#                             down = "[Var('mrfp_RELEASE_AS_EXECUTIONER')]"
+#                         }
+#                     }
+
+#                     # Third Group of Release Options
+#                     hbox = {
+#                         layoutpolicy_horizontal = expanding
+#                         spacing = 10
+
+# 						text_single = {
+# 							text = "Recruit"
+# 							using = Font_Size_Medium
+# 						}
+#                         button_checkbox = {
+#                             # text = "Recruit"
+#                             onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_RECRUIT')]"
+#                             down = "[Var('mrfp_RELEASE_RECRUIT')]"
+#                         }
+
+# 						text_single = {
+# 							text = "Disfigure"
+# 							using = Font_Size_Medium
+# 						}
+#                         button_checkbox = {
+#                             # text = "Disfigure"
+#                             onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_DISFIGURE')]"
+#                             down = "[Var('mrfp_RELEASE_DISFIGURE')]"
+#                         }
+
+# 						text_single = {
+# 							text = "Blind"
+# 							using = Font_Size_Medium
+# 						}
+#                         button_checkbox = {
+#                             # text = "Blind"
+#                             onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_BLIND')]"
+#                             down = "[Var('mrfp_RELEASE_BLIND')]"
+#                         }
+#                     }
+
+#                     # Fourth Group of Release Options
+#                     hbox = {
+#                         layoutpolicy_horizontal = expanding
+#                         spacing = 10
+
+# 						text_single = {
+# 							text = "Castrate"
+# 							using = Font_Size_Medium
+# 						}
+#                         button_checkbox = {
+#                             # text = "Castrate"
+#                             onclick = "[GetVariableSystem.Toggle('mrfp_RELEASE_CASTRATE')]"
+#                             down = "[Var('mrfp_RELEASE_CASTRATE')]"
+#                         }
+#                     }
+#                 }
+#             }
+#         }
+
+#         # Close Button
+#         hbox = {
+#             layoutpolicy_horizontal = expanding
+#             margin = { 20 10 }
+
+#             expand = {}
+
+#             button_primary = {
+#                 text = "Close"
+#                 onclick = "[GetScriptedGui('toggle_my_window').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+#             }
+#         }
+#     }
+# }
