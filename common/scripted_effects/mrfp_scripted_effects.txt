@@ -286,3 +286,26 @@ mrfp_send_amount_people_ransomed_message = {
 		}
 	}
 }
+
+#event story stuff
+mrfp_toggle_variable = {
+	switch = {
+		trigger = scope:the_story.var:$VARIABLE_NAME$
+		no = {
+			scope:the_story = {
+				set_variable = { 
+					name = $VARIABLE_NAME$
+					value = yes
+				}
+			} 
+		} 
+		yes = { 
+			scope:the_story = {
+				set_variable = { 
+					name = $VARIABLE_NAME$
+					value = no
+				}
+			} 
+		} 
+	}
+}

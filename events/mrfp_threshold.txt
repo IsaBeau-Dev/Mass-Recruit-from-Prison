@@ -198,25 +198,26 @@ mrfp_set_threshold.0001 = {
   #set threshold
   option = {
     name = mrfp_set_threshold.0001.a
-    switch = {
-      trigger = scope:the_story.var:mrfp_threshold_enabled
-      no = {
-        scope:the_story = {
-          set_variable = { 
-            name = mrfp_threshold_enabled
-            value = yes
-          }
-        } 
-      } 
-      yes = { 
-        scope:the_story = {
-          set_variable = { 
-            name = mrfp_threshold_enabled
-            value = no
-          }
-        } 
-      } 
-    }
+    # switch = {
+    #   trigger = scope:the_story.var:mrfp_threshold_enabled
+    #   no = {
+    #     scope:the_story = {
+    #       set_variable = { 
+    #         name = mrfp_threshold_enabled
+    #         value = yes
+    #       }
+    #     } 
+    #   } 
+    #   yes = { 
+    #     scope:the_story = {
+    #       set_variable = { 
+    #         name = mrfp_threshold_enabled
+    #         value = no
+    #       }
+    #     } 
+    #   } 
+    # }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_threshold_enabled}
     trigger_event = mrfp_set_threshold.0001
   }
 
