@@ -199,7 +199,6 @@ mrfp_set_threshold.0001 = {
   option = {
     name = mrfp_set_threshold.0001.a
     switch = {
-      #scope:actor.var:mrfp_story.var:
       trigger = scope:the_story.var:mrfp_threshold_enabled
       no = {
         scope:the_story = {
@@ -210,10 +209,12 @@ mrfp_set_threshold.0001 = {
         } 
       } 
       yes = { 
-        set_variable = { 
-          name = mrfp_threshold_enabled
-          value = no
-        }
+        scope:the_story = {
+          set_variable = { 
+            name = mrfp_threshold_enabled
+            value = no
+          }
+        } 
       } 
     }
     trigger_event = mrfp_set_threshold.0001
