@@ -2,6 +2,8 @@
     name = "mrfp_settings_window"
     movable = yes
     layer = windows_layer
+
+	visible = "[GetPlayer.MakeScope.Var('show_my_window').IsSet]"
     
     using = Window_Background
     using = Window_Decoration
@@ -206,7 +208,7 @@
 
             button_primary = {
                 text = "Close"
-                onclick = "[GetVariableSystem.Toggle('mrfp_settings_window')]"
+                onclick = "[GetScriptedGui('toggle_my_window').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
         }
     }
