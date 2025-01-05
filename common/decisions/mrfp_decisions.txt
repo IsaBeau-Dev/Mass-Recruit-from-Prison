@@ -169,3 +169,28 @@ set_mrfp_threshold = {
     ai_check_interval = 0
 
 }
+
+decision_mrfp_toggle_settings = {
+    picture = "gfx/interface/icons/character_interactions/befriend_interaction.dds"
+    
+    desc = decision_mrfp_toggle_settings_desc
+    
+    is_shown = {
+        always = yes
+    }
+    
+    effect = {
+        # Toggle the settings window
+        if = {
+            limit = { 
+                NOT = { GetVariableSystem.Exists('mrfp_settings_window') }
+            }
+            GetVariableSystem.Set('mrfp_settings_window', yes)
+        }
+        else = {
+            GetVariableSystem.Clear('mrfp_settings_window')
+        }
+    }
+
+    ai_check_interval = 0
+}

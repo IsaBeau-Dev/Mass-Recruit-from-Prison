@@ -1,0 +1,1 @@
+gui/mrfp_settings.gui = mrfp_settings_window

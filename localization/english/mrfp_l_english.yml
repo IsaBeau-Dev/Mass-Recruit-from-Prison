@@ -97,3 +97,7 @@ mrfp_welcome_events.0001.option1:0 "Interesting!"
 mrfp_welcome_events.0002.title:0 "Mod Features"
 mrfp_welcome_events.0002.desc:0 "Key features of the Mass Prison Actions formerly known as Mass Recruit from Prison mod include:\n- Ability to recruit and ransom prisoners"
 mrfp_welcome_events.0002.option1:0 "Got it!"
+
+#settings window
+ decision_mrfp_toggle_settings_desc: "Open or close the Mass Recruit from Prison settings window."
+ decision_mrfp_toggle_settings: "Toggle MRFP Settings"
