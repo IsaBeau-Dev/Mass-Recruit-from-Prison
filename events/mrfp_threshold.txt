@@ -19,43 +19,43 @@ mrfp_set_threshold.0001 = {
     first_valid = {
       triggered_desc = {
         trigger = {
-          var:mrfp_prowess_threshold = 6
+          scope:the_story.var:mrfp_prowess_threshold = 6
         }
         desc = mrfp_set_threshold.0001.prowess.6
       }
       triggered_desc = {
         trigger = {
-          var:mrfp_prowess_threshold = 8
+          scope:the_story.var:mrfp_prowess_threshold = 8
         }
         desc = mrfp_set_threshold.0001.prowess.8
       }
       triggered_desc = {
         trigger = {
-          var:mrfp_prowess_threshold = 10
+          scope:the_story.var:mrfp_prowess_threshold = 10
         }
         desc = mrfp_set_threshold.0001.prowess.10
       }
       triggered_desc = {
         trigger = {
-          var:mrfp_prowess_threshold = 12
+          scope:the_story.var:mrfp_prowess_threshold = 12
         }
         desc = mrfp_set_threshold.0001.prowess.12
       }
       triggered_desc = {
         trigger = {
-          var:mrfp_prowess_threshold = 16
+          scope:the_story.var:mrfp_prowess_threshold = 16
         }
         desc = mrfp_set_threshold.0001.prowess.16
       }
       triggered_desc = {
         trigger = {
-          var:mrfp_prowess_threshold = 20
+          scope:the_story.var:mrfp_prowess_threshold = 20
         }
         desc = mrfp_set_threshold.0001.prowess.20
       }
       triggered_desc = {
         trigger = {
-          var:mrfp_prowess_threshold = 24
+          scope:the_story.var:mrfp_prowess_threshold = 24
         }
         desc = mrfp_set_threshold.0001.prowess.24
       }
@@ -208,47 +208,61 @@ mrfp_set_threshold.0001 = {
   option = {
     name = mrfp_set_threshold.0001.b
     switch = {
-      trigger = var:mrfp_prowess_threshold
-      6 = { 
-        set_variable = { 
-          name =  mrfp_prowess_threshold
-          value = 8
+      trigger = scope:the_story.var:mrfp_prowess_threshold
+      6 = {
+        scope:the_story = { 
+          set_variable = { 
+            name =  mrfp_prowess_threshold
+            value = 8
+          }
         }
       }
       8 = { 
-        set_variable = { 
-          name =  mrfp_prowess_threshold
-          value = 10
+        scope:the_story = { 
+          set_variable = { 
+            name =  mrfp_prowess_threshold
+            value = 10
+          }
         }
       }
       10 = { 
-        set_variable = { 
-          name =  mrfp_prowess_threshold
-          value = 12
+        scope:the_story = { 
+          set_variable = { 
+            name =  mrfp_prowess_threshold
+            value = 12
+          }
         }
       }
       12 = { 
-        set_variable = { 
-          name =  mrfp_prowess_threshold
-          value = 16
+        scope:the_story = { 
+          set_variable = { 
+            name =  mrfp_prowess_threshold
+            value = 16
+          }
         }
       } 
       16 = { 
-        set_variable = { 
-          name =  mrfp_prowess_threshold
-          value = 20
+        scope:the_story = { 
+          set_variable = { 
+            name =  mrfp_prowess_threshold
+            value = 20
+          }
         }
       } 
       20 = { 
-        set_variable = { 
-          name =  mrfp_prowess_threshold
-          value = 24
+        scope:the_story = { 
+          set_variable = { 
+            name =  mrfp_prowess_threshold
+            value = 24
+          }
         }
       }
       24 = { 
-        set_variable = { 
-          name =  mrfp_prowess_threshold
-          value = 6
+        scope:the_story = { 
+          set_variable = { 
+            name =  mrfp_prowess_threshold
+            value = 6
+          }
         }
       }  
     }
