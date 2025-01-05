@@ -62,17 +62,18 @@ mrfp_set_threshold.0001 = {
     }
     #next header
     desc = mrfp_set_threshold.0001.settings.nh
-    # desc = RELEASE_DEMAND_CONVERSION
-    # first_valid = {
-    #   triggered_desc = {
-    #     trigger = {
-    #       var:mrfp_RELEASE_DEMAND_CONVERSION = yes
-    #     }
-    #     desc = mrfp.0001.enabled
-    #   }
-    #   desc = mrfp.0001.disabled
-    # }
-    mrfp_display_variable = { VARIABLE_NAME = RELEASE_DEMAND_CONVERSION }
+    desc = RELEASE_DEMAND_CONVERSION
+    first_valid = {
+      triggered_desc = {
+        trigger = {
+          var:mrfp_RELEASE_DEMAND_CONVERSION = yes
+        }
+        desc = mrfp.0001.enabled
+      }
+      desc = mrfp.0001.disabled
+    }
+    #Not working
+    # mrfp_display_variable = { VARIABLE_NAME = RELEASE_DEMAND_CONVERSION }
 
     desc = RELEASE_RENOUNCE_CLAIMS
     first_valid = {

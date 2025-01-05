@@ -309,15 +309,15 @@ mrfp_toggle_variable = {
 		} 
 	}
 }
-mrfp_display_variable = {
-    desc = $VARIABLE_NAME$
-    first_valid = {
-      triggered_desc = {
-        trigger = {
-          var:mrfp_$VARIABLE_NAME$ = yes
-        }
-        desc = mrfp.0001.enabled
-      }
-      desc = mrfp.0001.disabled
-    }
-}
+# mrfp_display_variable = {
+#     desc = $VARIABLE_NAME$
+#     first_valid = {
+#       triggered_desc = {
+#         trigger = {
+#           var:mrfp_$VARIABLE_NAME$ = yes
+#         }
+#         desc = mrfp.0001.enabled
+#       }
+#       desc = mrfp.0001.disabled
+#     }
+# }
