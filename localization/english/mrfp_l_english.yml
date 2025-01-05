@@ -99,7 +99,7 @@ mrfp_welcome_events.0002.desc:0 "Key features of the Mass Prison Actions formerl
 mrfp_welcome_events.0002.option1:0 "Got it!"
 
 mrfp_welcome_events.0003.title:0 "Mass Recruit from Prison - Mod Preferences"
-mrfp_welcome_events.0003.desc:0 "Configure the settings for the Mass Recruit from Prison mod. Customize how prisoners are recruited and managed in your realm."
+mrfp_welcome_events.0003.desc:0 "Configure the settings for the Mass Recruit from Prison mod. Customize how prisoners are recruited and managed in your realm.\nYou can also change your preferences via the decision Change Mass Recruit Settings. It will open up the same settings that you will see now."
 
 mrfp_welcome_events.0003.option.threshold_toggle:0 "Change Preferences"
 mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Change your preferences for actions performed on prisoners."
