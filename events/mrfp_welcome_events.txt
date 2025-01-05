@@ -38,6 +38,33 @@ mrfp_welcome_events.0002 = {
 	
 	option = {
 		name = mrfp_welcome_events.0002.option1
+		trigger_event = {
+			id = mrfp_welcome_events.0003
+		}
 	}
 }
 ##TODO add initial setup here where user can set their preferences
+mrfp_welcome_events.0003 = {
+	type = character_event
+	title = mrfp_welcome_events.0003.title
+	desc = mrfp_welcome_events.0003.desc
+	
+	theme = realm
+	
+	trigger = {
+		is_ai = no
+		has_variable = mrfp_story
+	}
+	
+	option = {
+		name = mrfp_welcome_events.0003.option.threshold_toggle
+		save_scope_as = actor
+        scope:actor.var:mrfp_story = {
+            save_scope_as = the_story
+        }
+		trigger_event = {
+			id = mrfp_set_threshold.0001
+			# days = 1
+		}
+	}
+}
