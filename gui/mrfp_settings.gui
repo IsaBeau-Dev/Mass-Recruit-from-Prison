@@ -23,7 +23,7 @@
 
         # Window Title
         hbox = {
-            datacontext = "[AccessCourtWindow]"
+            #datacontext = "[AccessCourtWindow]"
             layoutpolicy_horizontal = expanding
             margin = { 20 10 }
 
@@ -33,13 +33,30 @@
                 using = Font_Size_Big
             }
 
-            text_single = {
-                text = "  Prisoners: [CourtWindow.GetPrisoners.GetTotalNumber]"
-                using = Font_Size_Big
-            }
+            # text_single = {
+            #     text = "[GetPlayer.GetPrisoners]"
+            #     using = Font_Size_Big
+            # }
 
             expand = {}
         }
+
+        dynamicgridbox = {
+            datamodel = "[GetPlayer.GetPrisoners]"
+        
+            item = {
+                flowcontainer = {
+                    datacontext = "[Scope.GetCharacter]"
+        
+                    portrait_head_small = {}
+        
+                    text_single = {
+                        text = "[Character.GetNameNoTooltip]"
+                    }
+                }
+            }
+        }
+        
 
         # Empty Prison Placeholder
         # text_single = {
@@ -236,7 +253,7 @@
             expand = {}
 
             button_primary = {
-                text = "Close"
+                raw_text = "Close"
                 onclick = "[GetScriptedGui('toggle_my_window').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
             }
         }
