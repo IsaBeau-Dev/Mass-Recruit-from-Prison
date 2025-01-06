@@ -17,7 +17,7 @@
     }
 
     vbox = {
-        #datacontext = "[GetPlayer.GetPrisonerList]"
+        #datacontext = "[GetPlayer.GetPrisoners]"
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = expanding
 
@@ -33,10 +33,10 @@
                 using = Font_Size_Big
             }
 
-            text_single = {
-                text = "[GetPlayer.GetPrisoners.GetTotalNumber]"
-                using = Font_Size_Big
-            }
+            # text_single = {
+            #     text = "[GetPlayer.GetPrisoners.GetTotalNumber]"
+            #     using = Font_Size_Big
+            # }
 
             expand = {}
         }
@@ -58,14 +58,14 @@
         # }
         
         # Empty Prison Placeholder
-        text_single = {
-            visible = "[LessThanOrEqualTo_int32( GetPlayer.GetPrisonerList.GetTotalNumber, '(int32)0' )]"
-            text = "No Prisoners Available for Recruitment"
-            default_format = "#weak"
-        }
+        # text_single = {
+        #     visible = "[LessThanOrEqualTo_int32( GetPlayer.GetPrisoners.GetTotalNumber, '(int32)0' )]"
+        #     text = "No Prisoners Available for Recruitment"
+        #     default_format = "#weak"
+        # }
 
         background = {
-            visible = "[LessThanOrEqualTo_int32( GetPlayer.GetPrisonerList.GetTotalNumber, '(int32)0' )]"
+            visible = "[LessThanOrEqualTo_int32( GetPlayer.GetPrisoners.GetTotalNumber, '(int32)0' )]"
             texture = "gfx/interface/skinned/illustrations/dungeon.dds"
             fittype = centercrop
             framesize = { 700 800 }
@@ -81,143 +81,112 @@
         }
 
         # Prisoners List
-        vbox_character_list = {
-            visible = "[GreaterThan_int32( GetPlayer.GetPrisonerList.GetTotalNumber, '(int32)0' )]"
+
+        fixedgridbox = {
+            name = "prisoners_grid"
+            datamodel = "[GetPlayer.GetPrisoners]"
             layoutpolicy_horizontal = expanding
-            layoutpolicy_vertical = expanding
+            addcolumn = 720
+            addrow = 200
+            datamodel_reuse_widgets = yes
 
-            blockoverride "container_implementation" {
-                fixedgridbox = {
-                    name = "prisoners_grid"
-                    datamodel = "[GetPlayer.GetPrisoners]"
-                    layoutpolicy_horizontal = expanding
-                    addcolumn = 520
-                    addrow = 200
-                    datamodel_reuse_widgets = yes
+            item = {
+                vbox = {
+                    maximumsize = { 720 200 }
 
-                    item = {
+                    # widget_character_list_item_finder = {
+                    #     layoutpolicy_horizontal = expanding
+                    #     blockoverride "divider" {}
+                    #     blockoverride "character_relation" {}
+
+                    #     blockoverride "gridbox_items" {
+                    #         datamodel_wrap = 4
+                    #         maxverticalslots = 2
+                    #     }
+                    # }
+
+                    hbox = {
+                        layoutpolicy_horizontal = expanding
+                        margin = { 10 10 }
+                        spacing = 5
+
+                        background = {
+                            using = Background_Area_Dark
+                        }
+
+                        # Prisoner Information
                         vbox = {
-                            maximumsize = { 520 200 }
+                            layoutpolicy_horizontal = expanding
+                            layoutpolicy_vertical = expanding
 
-                            widget_character_list_item_finder = {
-                                layoutpolicy_horizontal = expanding
-                                blockoverride "divider" {}
-                                blockoverride "character_relation" {}
-
-                                blockoverride "gridbox_items" {
-                                    datamodel_wrap = 4
-                                    maxverticalslots = 2
-                                }
+                            text_single = {
+                                text = "[Character.GetShortUINameNoTooltip]"
+                                default_format = "#high"
                             }
 
+                            text_single = {
+                                text = "Prisoner"
+                                default_format = "#low"
+                            }
+
+                            # MRFP Specific Information
                             hbox = {
                                 layoutpolicy_horizontal = expanding
-                                margin = { 10 10 }
-                                spacing = 5
+                                spacing = 10
 
-                                background = {
-                                    using = Background_Area_Dark
+                                text_single = {
+                                    text = "Prowess:"
+                                    default_format = "#low"
                                 }
 
-                                # Prisoner Information
-                                vbox = {
-                                    layoutpolicy_horizontal = expanding
-                                    layoutpolicy_vertical = expanding
-
-                                    text_single = {
-                                        text = "[Character.GetShortUINameNoTooltip]"
-                                        default_format = "#high"
-                                    }
-
-                                    text_single = {
-                                        text = "Prisoner"
-                                        default_format = "#low"
-                                    }
-
-                                    # MRFP Specific Information
-                                    hbox = {
-                                        layoutpolicy_horizontal = expanding
-                                        spacing = 10
-
-                                        text_single = {
-                                            text = "Prowess:"
-                                            default_format = "#low"
-                                        }
-
-                                        text_single = {
-                                            text = "[Character.GetProwess]"
-                                            default_format = "#high"
-                                        }
-                                    }
+                                text_single = {
+                                    text = "[Character.GetProwess]"
+                                    default_format = "#high"
                                 }
-
-                                # Custom MRFP Buttons
-                                # hbox = {
-                                #     spacing = 5
-
-                                #     mrfp_button = {
-                                #         name = "mrfp_recruit_button"
-                                #         datacontext = "[Character]"
-                                #     }
-
-                                #     mrfp_button_ransom = {
-                                #         name = "mrfp_ransom_button"
-                                #         datacontext = "[Character]"
-                                #     }
-
-                                #     # Standard Prison Actions
-                                #     button_round = {
-                                #         name = "ransom"
-                                #         enabled = "[Character.CanBeRansomed]"
-
-                                #         button_prison_ransom = {
-                                #             parentanchor = center
-                                #             onclick = "[Character.Ransom]"
-                                #             tooltip = "Ransom Prisoner"
-                                #             using = tooltip_se
-                                #         }
-                                #     }
-
-                                #     button_round = {
-                                #         name = "release"
-                                #         enabled = "[Character.CanBeReleased]"
-
-                                #         button_prison_release = {
-                                #             parentanchor = center
-                                #             onclick = "[Character.Release]"
-                                #             tooltip = "Release Prisoner"
-                                #             using = tooltip_se
-                                #         }
-                                #     }
-                                # }
                             }
                         }
                     }
                 }
             }
+        }
 
-            # Mass Action Bar
-            blockoverride "bottom_bar" {
-                hbox = {
-                    margin = { 10 0 }
-                    spacing = 10
 
-                    text_single = {
-                        text = "Mass Prisoner Actions"
-                        default_format = "#low"
-                    }
+            # Custom MRFP Buttons
+            hbox = {
+                spacing = 5
 
-                    # Custom MRFP Mass Actions
-                    mrfp_button = {
-                        name = "mrfp_mass_recruit"
-                    }
+                mrfp_button = {
+                    name = "mrfp_recruit_button"
+                    datacontext = "[Character]"
+                }
 
-                    mrfp_button_ransom = {
-                        name = "mrfp_mass_ransom"
-                    }
+                mrfp_button_ransom = {
+                    name = "mrfp_ransom_button"
+                    datacontext = "[Character]"
                 }
             }
-        }
+            # Mass Action Bar
+        #     blockoverride "bottom_bar" {
+        #         hbox = {
+        #             margin = { 10 0 }
+        #             spacing = 10
+
+        #             text_single = {
+        #                 text = "Mass Prisoner Actions"
+        #                 default_format = "#low"
+        #             }
+
+        #             # Custom MRFP Mass Actions
+        #             mrfp_button = {
+        #                 name = "mrfp_mass_recruit"
+        #             }
+
+        #             mrfp_button_ransom = {
+        #                 name = "mrfp_mass_ransom"
+        #             }
+        #         }
+        #     }
+        # }
 
 
         # Close Button
