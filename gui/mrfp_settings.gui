@@ -41,28 +41,32 @@
             expand = {}
         }
 
-        # dynamicgridbox = {
-        #     datamodel = "[GetPlayer.GetPrisoners]"
+        dynamicgridbox = {
+            datamodel = "[GetPlayer.GetPrisoners]"
         
-        #     item = {
-        #         flowcontainer = {
-        #             datacontext = "[Scope.GetCharacter]"
+            item = {
+                flowcontainer = {
+                    datacontext = "[Scope.GetCharacter]"
         
-        #             portrait_head_small = {}
+                    portrait_head_small = {}
         
-        #             text_single = {
-        #                 text = "[Character.GetNameNoTooltip]"
-        #             }
-        #         }
-        #     }
-        # }
-        
-        # Empty Prison Placeholder
-        # text_single = {
-        #     visible = "[LessThanOrEqualTo_int32( GetPlayer.GetPrisoners.GetTotalNumber, '(int32)0' )]"
-        #     text = "No Prisoners Available for Recruitment"
-        #     default_format = "#weak"
-        # }
+                    text_single = {
+                        text = "[Character.GetNameNoTooltip]"
+                    }
+
+                    text_single = {
+                        text = "Prowess:"
+                        default_format = "#low"
+                    }
+
+                    text_single = {
+                        text = "[Character.GetProwess]"
+                        default_format = "#high"
+                    }
+
+                }
+            }
+        }
 
         background = {
             visible = "[LessThanOrEqualTo_int32( GetPlayer.GetPrisoners.GetTotalNumber, '(int32)0' )]"
@@ -93,17 +97,6 @@
             item = {
                 vbox = {
                     maximumsize = { 720 200 }
-
-                    # widget_character_list_item_finder = {
-                    #     layoutpolicy_horizontal = expanding
-                    #     blockoverride "divider" {}
-                    #     blockoverride "character_relation" {}
-
-                    #     blockoverride "gridbox_items" {
-                    #         datamodel_wrap = 4
-                    #         maxverticalslots = 2
-                    #     }
-                    # }
 
                     hbox = {
                         layoutpolicy_horizontal = expanding
@@ -151,43 +144,20 @@
         }
 
 
-            # Custom MRFP Buttons
-            hbox = {
-                spacing = 5
+        # Custom MRFP Buttons
+        hbox = {
+            spacing = 5
 
-                mrfp_button = {
-                    name = "mrfp_recruit_button"
-                    datacontext = "[Character]"
-                }
-
-                mrfp_button_ransom = {
-                    name = "mrfp_ransom_button"
-                    datacontext = "[Character]"
-                }
+            mrfp_button = {
+                name = "mrfp_recruit_button"
+                datacontext = "[Character]"
             }
-            # Mass Action Bar
-        #     blockoverride "bottom_bar" {
-        #         hbox = {
-        #             margin = { 10 0 }
-        #             spacing = 10
 
-        #             text_single = {
-        #                 text = "Mass Prisoner Actions"
-        #                 default_format = "#low"
-        #             }
-
-        #             # Custom MRFP Mass Actions
-        #             mrfp_button = {
-        #                 name = "mrfp_mass_recruit"
-        #             }
-
-        #             mrfp_button_ransom = {
-        #                 name = "mrfp_mass_ransom"
-        #             }
-        #         }
-        #     }
-        # }
-
+            mrfp_button_ransom = {
+                name = "mrfp_ransom_button"
+                datacontext = "[Character]"
+            }
+        }
 
         # Close Button
         hbox = {
