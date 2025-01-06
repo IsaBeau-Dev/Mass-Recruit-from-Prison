@@ -17,26 +17,18 @@
     }
 
     vbox = {
-        #datacontext = "[GetPlayer.GetPrisoners]"
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = expanding
 
         # Window Title
         hbox = {
-            #datacontext = "[AccessCourtWindow]"
             layoutpolicy_horizontal = expanding
             margin = { 20 10 }
 
             text_single = {
                 raw_text = "Mass Recruit from Prison"
-                #autoresizebox = yes
                 using = Font_Size_Big
             }
-
-            # text_single = {
-            #     text = "[GetPlayer.GetPrisoners.GetTotalNumber]"
-            #     using = Font_Size_Big
-            # }
 
             expand = {}
         }
@@ -60,8 +52,6 @@
                         
                         # MRFP Specific Information
                         hbox = {
-                            #layoutpolicy_horizontal = expanding
-                            #spacing = 5
                             text_single = {
                                 text = "Prowess:"
                                 default_format = "#low"
@@ -91,7 +81,6 @@
         
 
         background = {
-            #visible = "[LessThanOrEqualTo_int32( GetPlayer.GetPrisoners.GetTotalNumber, '(int32)0' )]"
             texture = "gfx/interface/skinned/illustrations/dungeon.dds"
             fittype = centercrop
             framesize = { 700 800 }
