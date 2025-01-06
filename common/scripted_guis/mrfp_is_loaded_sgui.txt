@@ -78,8 +78,8 @@ mrfp_prison_window_ransom = {
 		}
     if = {
       limit = {
-        exists = scope:target
-        scope:secondary_recipient.ransom_cost_value >= 100
+        #exists = scope:target
+        scope:secondary_recipient.ransom_cost_value <= scope:target.gold 
       }
       send_interface_message = {
         type = event_captured_combatants_good
