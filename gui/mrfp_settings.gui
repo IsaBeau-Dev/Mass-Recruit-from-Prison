@@ -41,21 +41,21 @@
             expand = {}
         }
 
-        dynamicgridbox = {
-            datamodel = "[GetPlayer.GetPrisoners]"
+        # dynamicgridbox = {
+        #     datamodel = "[GetPlayer.GetPrisoners]"
         
-            item = {
-                flowcontainer = {
-                    datacontext = "[Scope.GetCharacter]"
+        #     item = {
+        #         flowcontainer = {
+        #             datacontext = "[Scope.GetCharacter]"
         
-                    portrait_head_small = {}
+        #             portrait_head_small = {}
         
-                    text_single = {
-                        text = "[Character.GetNameNoTooltip]"
-                    }
-                }
-            }
-        }
+        #             text_single = {
+        #                 text = "[Character.GetNameNoTooltip]"
+        #             }
+        #         }
+        #     }
+        # }
         
         # Empty Prison Placeholder
         text_single = {
@@ -152,44 +152,44 @@
                                 }
 
                                 # Custom MRFP Buttons
-                                hbox = {
-                                    spacing = 5
+                                # hbox = {
+                                #     spacing = 5
 
-                                    mrfp_button = {
-                                        name = "mrfp_recruit_button"
-                                        datacontext = "[Character]"
-                                    }
+                                #     mrfp_button = {
+                                #         name = "mrfp_recruit_button"
+                                #         datacontext = "[Character]"
+                                #     }
 
-                                    mrfp_button_ransom = {
-                                        name = "mrfp_ransom_button"
-                                        datacontext = "[Character]"
-                                    }
+                                #     mrfp_button_ransom = {
+                                #         name = "mrfp_ransom_button"
+                                #         datacontext = "[Character]"
+                                #     }
 
-                                    # Standard Prison Actions
-                                    button_round = {
-                                        name = "ransom"
-                                        enabled = "[Character.CanBeRansomed]"
+                                #     # Standard Prison Actions
+                                #     button_round = {
+                                #         name = "ransom"
+                                #         enabled = "[Character.CanBeRansomed]"
 
-                                        button_prison_ransom = {
-                                            parentanchor = center
-                                            onclick = "[Character.Ransom]"
-                                            tooltip = "Ransom Prisoner"
-                                            using = tooltip_se
-                                        }
-                                    }
+                                #         button_prison_ransom = {
+                                #             parentanchor = center
+                                #             onclick = "[Character.Ransom]"
+                                #             tooltip = "Ransom Prisoner"
+                                #             using = tooltip_se
+                                #         }
+                                #     }
 
-                                    button_round = {
-                                        name = "release"
-                                        enabled = "[Character.CanBeReleased]"
+                                #     button_round = {
+                                #         name = "release"
+                                #         enabled = "[Character.CanBeReleased]"
 
-                                        button_prison_release = {
-                                            parentanchor = center
-                                            onclick = "[Character.Release]"
-                                            tooltip = "Release Prisoner"
-                                            using = tooltip_se
-                                        }
-                                    }
-                                }
+                                #         button_prison_release = {
+                                #             parentanchor = center
+                                #             onclick = "[Character.Release]"
+                                #             tooltip = "Release Prisoner"
+                                #             using = tooltip_se
+                                #         }
+                                #     }
+                                # }
                             }
                         }
                     }
