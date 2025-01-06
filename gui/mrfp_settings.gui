@@ -154,26 +154,27 @@
         # }
 
 
-        # Custom MRFP Buttons
-        hbox = {
-            spacing = 5
-            #layoutpolicy_horizontal = expanding
-
-            mrfp_button = {
-                name = "mrfp_recruit_button"
-                datacontext = "[Character]"
-            }
-
-            mrfp_button_ransom = {
-                name = "mrfp_ransom_button"
-                datacontext = "[Character]"
-            }
-        }
-
-        # Close Button
+        # Custom MRFP Buttons and Close Button
         hbox = {
             layoutpolicy_horizontal = expanding
             margin = { 20 10 }
+            spacing = 20
+
+            hbox = {
+                layoutpolicy_horizontal = expanding
+                spacing = 20
+                halign = center
+
+                mrfp_button = {
+                    name = "mrfp_recruit_button"
+                    datacontext = "[Character]"
+                }
+
+                mrfp_button_ransom = {
+                    name = "mrfp_ransom_button"
+                    datacontext = "[Character]"
+                }
+            }
 
             expand = {}
 
