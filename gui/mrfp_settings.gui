@@ -79,10 +79,12 @@
                             }
 
                             button_checkbox = {
-                                name = "lock_from_mass_actions"
+                                name = "mrfp_can_be_ransomed"
                                 # checked = "[ScriptedGui.IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-                                checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+                                #.AddScope( 'target', Character ).End
+                                checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope)).End)]"
                                 # onclick = "[CharacterListItem.OnClick('mass_action_lock')]"
+                                onclick = "[GetScriptedGui('mrfp_prison_window_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', Scope.GetCharacter ).End)]"
                                 tooltip = "Can be ransomed"
                             }
                         }
