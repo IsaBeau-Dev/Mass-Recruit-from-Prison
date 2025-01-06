@@ -51,9 +51,15 @@ toggle_my_window = {
       }
   }
 }
-mrfp_settings_window_Demand_Conversion = {
-  effect = {
-    # onclick = "[GetScriptedGui('mrfp_is_loaded_sgui_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-    root.var:mrfp_story.var:mrfp_RELEASE_DEMAND_CONVERSION
-  }
+mrfp_prison_window_ransom = {
+  is_valid = {
+    always = no
+  } 
+
 }
+# mrfp_settings_window_Demand_Conversion = {
+#   effect = {
+#     # onclick = "[GetScriptedGui('mrfp_is_loaded_sgui_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+#     root.var:mrfp_story.var:mrfp_RELEASE_DEMAND_CONVERSION
+#   }
+# }
