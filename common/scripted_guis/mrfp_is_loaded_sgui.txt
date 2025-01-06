@@ -68,36 +68,4 @@ mrfp_prison_window_ransom = {
 		}
     scope:secondary_recipient.ransom_cost_value <= scope:target.gold
   } 
-  effect = {
-    scope:target = {
-			save_scope_as = secondary_recipient
-			if = {
-				limit = {
-					is_ruler = no
-					exists = liege
-				}
-				liege = {
-					save_scope_as = target
-				}
-			}
-		}
-    if = {
-      limit = {
-        #exists = scope:target
-        scope:secondary_recipient.ransom_cost_value <= scope:target.gold 
-      }
-      send_interface_message = {
-        type = event_captured_combatants_good
-        title = "Debug test"
-        desc = "I managed to come here"						  
-      }
-    }
-  }
-
 }
-# mrfp_settings_window_Demand_Conversion = {
-#   effect = {
-#     # onclick = "[GetScriptedGui('mrfp_is_loaded_sgui_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-#     root.var:mrfp_story.var:mrfp_RELEASE_DEMAND_CONVERSION
-#   }
-# }
