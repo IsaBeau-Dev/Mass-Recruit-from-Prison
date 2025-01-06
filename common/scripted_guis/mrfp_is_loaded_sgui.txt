@@ -67,5 +67,21 @@ mrfp_prison_window_ransom = {
 			}
 		}
     scope:secondary_recipient.ransom_cost_value <= scope:target.gold
-  } 
+  }
+  # effect = {
+  #   scope:target = {
+  #           save_temporary_scope_as = secondary_recipient
+
+  #           if = {
+  #               limit = {
+  #                   is_ruler = no
+  #                   exists = liege
+  #               }
+  #               liege = {
+  #                   save_temporary_scope_as = secondary_recipient
+  #               }
+  #           }
+  #       }
+  #   scope:target.ransom_cost_value <= scope:secondary_recipient.gold
+  # } 
 }

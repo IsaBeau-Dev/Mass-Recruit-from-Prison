@@ -64,7 +64,8 @@
 
                             text_single = {
                                 # text = "[Character.MakeScope.Var('ransom_cost_value').GetValue|1]"
-                                text = "[gold_i]:"
+                                # [Character.MakeScope.Var('ransom_cost_value').GetValue|0]
+                                text = "         Can be ransomed for: [GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', Character.MakeScope ).ScriptValue('mrfp_target_gold')|0] [gold_i] and the target (or their liege) has [GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', Character.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]. So they can be ransomed:"
                                 default_format = "#high"
                             }
 
