@@ -46,30 +46,40 @@
         
             item = {
                 flowcontainer = {
+                    direction = horizontal
                     datacontext = "[Scope.GetCharacter]"
         
                     portrait_head_small = {}
         
-                    text_single = {
-                        text = "[Character.GetNameNoTooltip]"
+                    flowcontainer = {
+                        direction = vertical
+        
+                        text_single = {
+                            text = "[Character.GetNameNoTooltip]"
+                        }
+                        
+                        # MRFP Specific Information
+                        hbox = {
+                            #layoutpolicy_horizontal = expanding
+                            #spacing = 5
+                            text_single = {
+                                text = "Prowess:"
+                                default_format = "#low"
+                            }
+            
+                            text_single = {
+                                text = "[Character.GetProwess]"
+                                default_format = "#high"
+                            }
+                        }
                     }
-
-                    text_single = {
-                        text = "Prowess:"
-                        default_format = "#low"
-                    }
-
-                    text_single = {
-                        text = "[Character.GetProwess]"
-                        default_format = "#high"
-                    }
-
                 }
             }
         }
+        
 
         background = {
-            visible = "[LessThanOrEqualTo_int32( GetPlayer.GetPrisoners.GetTotalNumber, '(int32)0' )]"
+            #visible = "[LessThanOrEqualTo_int32( GetPlayer.GetPrisoners.GetTotalNumber, '(int32)0' )]"
             texture = "gfx/interface/skinned/illustrations/dungeon.dds"
             fittype = centercrop
             framesize = { 700 800 }
@@ -147,6 +157,7 @@
         # Custom MRFP Buttons
         hbox = {
             spacing = 5
+            #layoutpolicy_horizontal = expanding
 
             mrfp_button = {
                 name = "mrfp_recruit_button"
