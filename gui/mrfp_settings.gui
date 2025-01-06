@@ -82,9 +82,11 @@
                                 name = "mrfp_can_be_ransomed"
                                 # checked = "[ScriptedGui.IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
                                 #.AddScope( 'target', Character ).End
-                                checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope)).End)]"
+                                # checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsValid(GuiScope.SetRoot(GetPlayer.MakeScope)).End)]"
+                                checked = yes
                                 # onclick = "[CharacterListItem.OnClick('mass_action_lock')]"
-                                onclick = "[GetScriptedGui('mrfp_prison_window_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', Scope.GetCharacter ).End)]"
+                                onclick = "[GetScriptedGui('mrfp_prison_window_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', Character.MakeScope ).End)]"
+                                #onclick = "[GetScriptedGui('mrfp_prison_window_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
                                 tooltip = "Can be ransomed"
                             }
                         }
