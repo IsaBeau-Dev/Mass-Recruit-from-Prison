@@ -17,18 +17,24 @@
     }
 
     vbox = {
-        datacontext = "[GetPlayer.GetPrisonerList]"
+        #datacontext = "[GetPlayer.GetPrisonerList]"
         layoutpolicy_horizontal = expanding
         layoutpolicy_vertical = expanding
 
         # Window Title
         hbox = {
+            datacontext = "[AccessCourtWindow]"
             layoutpolicy_horizontal = expanding
             margin = { 20 10 }
 
             text_single = {
-                text = "Mass Recruit from Prison"
-                autoresizebox = yes
+                raw_text = "Mass Recruit from Prison"
+                #autoresizebox = yes
+                using = Font_Size_Big
+            }
+
+            text_single = {
+                text = "  Prisoners: [CourtWindow.GetPrisoners.GetTotalNumber]"
                 using = Font_Size_Big
             }
 
@@ -36,11 +42,11 @@
         }
 
         # Empty Prison Placeholder
-        text_single = {
-            visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
-            text = "No Prisoners Available for Recruitment"
-            default_format = "#weak"
-        }
+        # text_single = {
+        #     visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
+        #     text = "No Prisoners Available for Recruitment"
+        #     default_format = "#weak"
+        # }
 
         background = {
             visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
@@ -58,169 +64,169 @@
             }
         }
 
-        # Prisoners List
-        vbox_character_list = {
-            visible = "[GreaterThan_int32( GetPlayer.GetPrisonerList.GetTotalNumber, '(int32)0' )]"
-            layoutpolicy_horizontal = expanding
-            layoutpolicy_vertical = expanding
+        # # Prisoners List
+        # vbox_character_list = {
+        #     visible = "[GreaterThan_int32( GetPlayer.GetPrisonerList.GetTotalNumber, '(int32)0' )]"
+        #     layoutpolicy_horizontal = expanding
+        #     layoutpolicy_vertical = expanding
 
-            blockoverride "container_implementation" {
-                fixedgridbox = {
-                    name = "prisoners_grid"
-                    datamodel = "[CharacterSelectionList.GetList]"
-                    layoutpolicy_horizontal = expanding
-                    addcolumn = 520
-                    addrow = 200
-                    datamodel_reuse_widgets = yes
+        #     blockoverride "container_implementation" {
+        #         fixedgridbox = {
+        #             name = "prisoners_grid"
+        #             datamodel = "[CharacterSelectionList.GetList]"
+        #             layoutpolicy_horizontal = expanding
+        #             addcolumn = 520
+        #             addrow = 200
+        #             datamodel_reuse_widgets = yes
 
-                    item = {
-                        vbox = {
-                            maximumsize = { 520 200 }
+        #             item = {
+        #                 vbox = {
+        #                     maximumsize = { 520 200 }
 
-                            widget_character_list_item_finder = {
-                                layoutpolicy_horizontal = expanding
-                                blockoverride "divider" {}
-                                blockoverride "character_relation" {}
+        #                     widget_character_list_item_finder = {
+        #                         layoutpolicy_horizontal = expanding
+        #                         blockoverride "divider" {}
+        #                         blockoverride "character_relation" {}
 
-                                blockoverride "gridbox_items" {
-                                    datamodel_wrap = 4
-                                    maxverticalslots = 2
-                                }
-                            }
+        #                         blockoverride "gridbox_items" {
+        #                             datamodel_wrap = 4
+        #                             maxverticalslots = 2
+        #                         }
+        #                     }
 
-                            hbox = {
-                                layoutpolicy_horizontal = expanding
-                                margin = { 10 10 }
-                                spacing = 5
+        #                     hbox = {
+        #                         layoutpolicy_horizontal = expanding
+        #                         margin = { 10 10 }
+        #                         spacing = 5
 
-                                background = {
-                                    using = Background_Area_Dark
-                                }
+        #                         background = {
+        #                             using = Background_Area_Dark
+        #                         }
 
-                                # Prisoner Information
-                                vbox = {
-                                    layoutpolicy_horizontal = expanding
-                                    layoutpolicy_vertical = expanding
+        #                         # Prisoner Information
+        #                         vbox = {
+        #                             layoutpolicy_horizontal = expanding
+        #                             layoutpolicy_vertical = expanding
 
-                                    text_single = {
-                                        text = "[CharacterListItem.GetCharacter.GetShortUINameNoTooltip]"
-                                        default_format = "#high"
-                                    }
+        #                             text_single = {
+        #                                 text = "[CharacterListItem.GetCharacter.GetShortUINameNoTooltip]"
+        #                                 default_format = "#high"
+        #                             }
 
-                                    text_single = {
-                                        text = "[CharacterListItem.GetText('tooltip')]"
-                                        default_format = "#low"
-                                    }
+        #                             text_single = {
+        #                                 text = "[CharacterListItem.GetText('tooltip')]"
+        #                                 default_format = "#low"
+        #                             }
 
-                                    # MRFP Specific Information
-                                    hbox = {
-                                        layoutpolicy_horizontal = expanding
-                                        spacing = 10
+        #                             # MRFP Specific Information
+        #                             hbox = {
+        #                                 layoutpolicy_horizontal = expanding
+        #                                 spacing = 10
 
-                                        text_single = {
-                                            text = "Prowess:"
-                                            default_format = "#low"
-                                        }
+        #                                 text_single = {
+        #                                     text = "Prowess:"
+        #                                     default_format = "#low"
+        #                                 }
 
-                                        text_single = {
-                                            text = "[CharacterListItem.GetCharacter.GetProwess]"
-                                            default_format = "#high"
-                                        }
-                                    }
-                                }
+        #                                 text_single = {
+        #                                     text = "[CharacterListItem.GetCharacter.GetProwess]"
+        #                                     default_format = "#high"
+        #                                 }
+        #                             }
+        #                         }
 
-                                # Custom MRFP Buttons
-                                hbox = {
-                                    spacing = 5
+        #                         # Custom MRFP Buttons
+        #                         hbox = {
+        #                             spacing = 5
 
-                                    mrfp_button = {
-                                        name = "mrfp_recruit_button"
-                                        datacontext = "[CharacterListItem.GetCharacter]"
-                                    }
+        #                             mrfp_button = {
+        #                                 name = "mrfp_recruit_button"
+        #                                 datacontext = "[CharacterListItem.GetCharacter]"
+        #                             }
 
-                                    mrfp_button_ransom = {
-                                        name = "mrfp_ransom_button"
-                                        datacontext = "[CharacterListItem.GetCharacter]"
-                                    }
+        #                             mrfp_button_ransom = {
+        #                                 name = "mrfp_ransom_button"
+        #                                 datacontext = "[CharacterListItem.GetCharacter]"
+        #                             }
 
-                                    # Standard Prison Actions
-                                    button_round = {
-                                        name = "ransom"
-                                        enabled = "[CharacterListItem.GetBool('can_ransom')]"
+        #                             # Standard Prison Actions
+        #                             button_round = {
+        #                                 name = "ransom"
+        #                                 enabled = "[CharacterListItem.GetBool('can_ransom')]"
 
-                                        button_prison_ransom = {
-                                            parentanchor = center
-                                            onclick = "[CharacterListItem.OnClick('ransom')]"
-                                            tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
-                                            using = tooltip_se
-                                        }
-                                    }
+        #                                 button_prison_ransom = {
+        #                                     parentanchor = center
+        #                                     onclick = "[CharacterListItem.OnClick('ransom')]"
+        #                                     tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
+        #                                     using = tooltip_se
+        #                                 }
+        #                             }
 
-                                    button_round = {
-                                        name = "release"
-                                        enabled = "[CharacterListItem.GetBool('can_release')]"
+        #                             button_round = {
+        #                                 name = "release"
+        #                                 enabled = "[CharacterListItem.GetBool('can_release')]"
 
-                                        button_prison_release = {
-                                            parentanchor = center
-                                            onclick = "[CharacterListItem.OnClick('release')]"
-                                            tooltip = "[CharacterListItem.GetText('release_tooltip')]"
-                                            using = tooltip_se
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        #                                 button_prison_release = {
+        #                                     parentanchor = center
+        #                                     onclick = "[CharacterListItem.OnClick('release')]"
+        #                                     tooltip = "[CharacterListItem.GetText('release_tooltip')]"
+        #                                     using = tooltip_se
+        #                                 }
+        #                             }
+        #                         }
+        #                     }
+        #                 }
+        #             }
+        #         }
+        #     }
 
-            # Mass Action Bar
-            blockoverride "bottom_bar" {
-                hbox = {
-                    margin = { 10 0 }
-                    spacing = 10
+        #     # Mass Action Bar
+        #     blockoverride "bottom_bar" {
+        #         hbox = {
+        #             margin = { 10 0 }
+        #             spacing = 10
 
-                    text_single = {
-                        text = "Mass Prisoner Actions"
-                        default_format = "#low"
-                    }
+        #             text_single = {
+        #                 text = "Mass Prisoner Actions"
+        #                 default_format = "#low"
+        #             }
 
-                    # Standard Mass Actions
-                    button_round = {
-                        name = "mass_ransom"
-                        enabled = "[GetPlayer.CanDoMassPrisonerAction('ransom')]"
+        #             # Standard Mass Actions
+        #             button_round = {
+        #                 name = "mass_ransom"
+        #                 enabled = "[GetPlayer.CanDoMassPrisonerAction('ransom')]"
 
-                        button_prison_ransom = {
-                            parentanchor = center
-                            onclick = "[GetPlayer.MassPrisonerAction('ransom')]"
-                            tooltip = "Ransom All Selected Prisoners"
-                            using = tooltip_se
-                        }
-                    }
+        #                 button_prison_ransom = {
+        #                     parentanchor = center
+        #                     onclick = "[GetPlayer.MassPrisonerAction('ransom')]"
+        #                     tooltip = "Ransom All Selected Prisoners"
+        #                     using = tooltip_se
+        #                 }
+        #             }
 
-                    button_round = {
-                        name = "mass_release"
-                        enabled = "[GetPlayer.CanDoMassPrisonerAction('release')]"
+        #             button_round = {
+        #                 name = "mass_release"
+        #                 enabled = "[GetPlayer.CanDoMassPrisonerAction('release')]"
 
-                        button_prison_release = {
-                            parentanchor = center
-                            onclick = "[GetPlayer.MassPrisonerAction('release')]"
-                            tooltip = "Release All Selected Prisoners"
-                            using = tooltip_se
-                        }
-                    }
+        #                 button_prison_release = {
+        #                     parentanchor = center
+        #                     onclick = "[GetPlayer.MassPrisonerAction('release')]"
+        #                     tooltip = "Release All Selected Prisoners"
+        #                     using = tooltip_se
+        #                 }
+        #             }
 
-                    # Custom MRFP Mass Actions
-                    mrfp_button = {
-                        name = "mrfp_mass_recruit"
-                    }
+        #             # Custom MRFP Mass Actions
+        #             mrfp_button = {
+        #                 name = "mrfp_mass_recruit"
+        #             }
 
-                    mrfp_button_ransom = {
-                        name = "mrfp_mass_ransom"
-                    }
-                }
-            }
-        }
+        #             mrfp_button_ransom = {
+        #                 name = "mrfp_mass_ransom"
+        #             }
+        #         }
+        #     }
+        # }
 
         # Close Button
         hbox = {
