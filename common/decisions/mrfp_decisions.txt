@@ -172,7 +172,7 @@ set_mrfp_threshold = {
 
 decision_mrfp_toggle_settings = {
     picture = {
-        reference = "gfx/interface/icons/character_interactions/befriend_interaction.dds"
+        reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
     } 
 
     decision_group_type = mrfp
