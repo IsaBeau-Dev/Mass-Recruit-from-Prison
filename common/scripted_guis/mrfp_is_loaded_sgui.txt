@@ -53,15 +53,20 @@ toggle_my_window = {
 }
 mrfp_prison_window_ransom = {
   scope = character
-  is_valid = {
-    # if = {
-    #   limit = {
-    #     scope:target.var:.ransom_cost_value > 10 
-    #   }
-    #   always = yes
-    # }
-
-    always = yes
+  is_shown = {
+    scope:target = {
+			save_temporary_scope_as = secondary_recipient
+			if = {
+				limit = {
+					is_ruler = no
+					exists = liege
+				}
+				liege = {
+					save_temporary_scope_as = target
+				}
+			}
+		}
+    scope:secondary_recipient.ransom_cost_value <= scope:target.gold
   } 
   effect = {
     scope:target = {
@@ -87,12 +92,6 @@ mrfp_prison_window_ransom = {
         desc = "I managed to come here"						  
       }
     }
-    # send_interface_message = {
-    #   type = event_captured_combatants_good
-    #   title = "Debug test 2"
-    #   desc = "I managed to come here not if"						  
-    # }
-
   }
 
 }
