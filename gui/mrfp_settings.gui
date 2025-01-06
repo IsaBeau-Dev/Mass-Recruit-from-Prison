@@ -43,49 +43,27 @@
 
         dynamicgridbox = {
             datamodel = "[GetPlayer.GetPrisoners]"
-            
-            spacing = 10
-            
+        
             item = {
                 flowcontainer = {
-                    direction = vertical
-                    margin = { 10 10 }
-                    
-                    background = {
-                        using = default_background
-                        margin = { -5 -5 }
-                    }
-                    
                     datacontext = "[Scope.GetCharacter]"
         
-                    portrait_head = {
-                        blockoverride "size" {
-                            size = { 100 100 }
-                        }
-                    }
+                    portrait_head_small = {}
         
                     text_single = {
                         text = "[Character.GetNameNoTooltip]"
-                        autoresize = yes
-                        using = fontsize_large
-                        align = center
                     }
 
-                    flowcontainer = {
-                        direction = horizontal
-                        spacing = 5
-                        align = center
-                        
-                        text_single = {
-                            text = "Prowess:"
-                            default_format = "#low"
-                        }
-
-                        text_single = {
-                            text = "[Character.GetProwess]"
-                            default_format = "#high"
-                        }
+                    text_single = {
+                        text = "Prowess:"
+                        default_format = "#low"
                     }
+
+                    text_single = {
+                        text = "[Character.GetProwess]"
+                        default_format = "#high"
+                    }
+
                 }
             }
         }
@@ -108,62 +86,62 @@
 
         # Prisoners List
 
-        # fixedgridbox = {
-        #     name = "prisoners_grid"
-        #     datamodel = "[GetPlayer.GetPrisoners]"
-        #     layoutpolicy_horizontal = expanding
-        #     addcolumn = 720
-        #     addrow = 200
-        #     datamodel_reuse_widgets = yes
+        fixedgridbox = {
+            name = "prisoners_grid"
+            datamodel = "[GetPlayer.GetPrisoners]"
+            layoutpolicy_horizontal = expanding
+            addcolumn = 720
+            addrow = 200
+            datamodel_reuse_widgets = yes
 
-        #     item = {
-        #         vbox = {
-        #             maximumsize = { 720 200 }
+            item = {
+                vbox = {
+                    maximumsize = { 720 200 }
 
-        #             hbox = {
-        #                 layoutpolicy_horizontal = expanding
-        #                 margin = { 10 10 }
-        #                 spacing = 5
+                    hbox = {
+                        layoutpolicy_horizontal = expanding
+                        margin = { 10 10 }
+                        spacing = 5
 
-        #                 background = {
-        #                     using = Background_Area_Dark
-        #                 }
+                        background = {
+                            using = Background_Area_Dark
+                        }
 
-        #                 # Prisoner Information
-        #                 vbox = {
-        #                     layoutpolicy_horizontal = expanding
-        #                     layoutpolicy_vertical = expanding
+                        # Prisoner Information
+                        vbox = {
+                            layoutpolicy_horizontal = expanding
+                            layoutpolicy_vertical = expanding
 
-        #                     text_single = {
-        #                         text = "[Character.GetShortUINameNoTooltip]"
-        #                         default_format = "#high"
-        #                     }
+                            text_single = {
+                                text = "[Character.GetShortUINameNoTooltip]"
+                                default_format = "#high"
+                            }
 
-        #                     text_single = {
-        #                         text = "Prisoner"
-        #                         default_format = "#low"
-        #                     }
+                            text_single = {
+                                text = "Prisoner"
+                                default_format = "#low"
+                            }
 
-        #                     # MRFP Specific Information
-        #                     hbox = {
-        #                         layoutpolicy_horizontal = expanding
-        #                         spacing = 10
+                            # MRFP Specific Information
+                            hbox = {
+                                layoutpolicy_horizontal = expanding
+                                spacing = 10
 
-        #                         text_single = {
-        #                             text = "Prowess:"
-        #                             default_format = "#low"
-        #                         }
+                                text_single = {
+                                    text = "Prowess:"
+                                    default_format = "#low"
+                                }
 
-        #                         text_single = {
-        #                             text = "[Character.GetProwess]"
-        #                             default_format = "#high"
-        #                         }
-        #                     }
-        #                 }
-        #             }
-        #         }
-        #     }
-        # }
+                                text_single = {
+                                    text = "[Character.GetProwess]"
+                                    default_format = "#high"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
 
         # Custom MRFP Buttons
