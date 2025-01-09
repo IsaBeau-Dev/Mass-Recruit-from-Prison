@@ -636,6 +636,10 @@
 													default_format = "#low"
 												}
 											}
+											text_single = {
+												text = "Can be ransomed:"
+												default_format = "#low"
+											}
 
 											# New ransom checkbox
 											button_checkbox = {
