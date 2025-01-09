@@ -169,23 +169,3 @@ set_mrfp_threshold = {
     ai_check_interval = 0
 
 }
-
-decision_mrfp_toggle_settings = {
-    picture = {
-        reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
-    } 
-
-    decision_group_type = mrfp
-    
-    desc = decision_mrfp_toggle_settings_desc
-    
-    is_shown = {
-        always = yes
-    }
-    
-    effect = {
-        set_variable = show_my_window
-    }
-
-    ai_check_interval = 0
-}
