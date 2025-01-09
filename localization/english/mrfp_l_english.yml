@@ -101,3 +101,5 @@ mrfp_welcome_events.0002.option1:0 "Got it!"
 #settings window
  decision_mrfp_toggle_settings_desc: "Open or close the Mass Recruit from Prison settings window."
  decision_mrfp_toggle_settings: "Toggle MRFP Settings"
+
+ mrfp_can_be_ransomed:0 "Can be ransomed:"
