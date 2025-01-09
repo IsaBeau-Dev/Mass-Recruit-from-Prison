@@ -24,3 +24,7 @@ mrfp_amout_of_prisoners = {
       add = 1
     }
 }
+
+mrfp_get_gui_total_recruited_value = {
+    value = root.var:mrfp_story.var:mrfp_total_recruited
+}
