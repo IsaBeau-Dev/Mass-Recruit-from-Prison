@@ -76,7 +76,7 @@
                             button_checkbox = {
                                 name = "mrfp_can_be_ransomed"
                                 checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', Character.MakeScope ).End)]"
-                                tooltip = "Can be ransomed (and the ransom demand would be accepted)"
+                                tooltip = "Can be ransomed"
                             }
                         }
                     }
