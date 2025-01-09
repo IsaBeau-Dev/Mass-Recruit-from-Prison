@@ -351,7 +351,7 @@
 
 							text_single = {
 								name = "mrfp_gui_total_ransomed_people_value"
-								text = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_total_ransomed').GetValue|0]"
+								text = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_total_ransomed_people').GetValue|0]"
 								default_format = "#low"
 								autoresize = yes
 							}
