@@ -307,7 +307,6 @@
 						}
 					}
 
-					# MRFP
 					hbox = {
 						name = "prison_info_box"
 						layoutpolicy_horizontal = expanding
@@ -318,29 +317,64 @@
 							using = Background_Area_Dark
 						}
 
-
-						text_single = {
-							name = "mrfp_gui_total_recruited"
+						vbox = {
+							name = "mrfp_recruited_vbox"
 							layoutpolicy_horizontal = expanding
-							text = "total recruited"
-							default_format = "#high"
-							autoresize = no
+							spacing = 5
+
+							text_single = {
+								name = "mrfp_gui_total_recruited_label"
+								text = "Total Recruited:"
+								default_format = "#header"
+								autoresize = yes
+							}
+
+							text_single = {
+								name = "mrfp_gui_total_recruited_value"
+								text = "total recruited"
+								default_format = "#low"
+								autoresize = yes
+							}
 						}
 
-						text_single = {
-							name = "mrfp_gui_total_ransomed_people"
+						vbox = {
+							name = "mrfp_ransomed_people_vbox"
 							layoutpolicy_horizontal = expanding
-							text = "total ransomed"
-							default_format = "#low"
-							autoresize = no
+							spacing = 5
+
+							text_single = {
+								name = "mrfp_gui_total_ransomed_people_label"
+								text = "Total Ransomed People:"
+								default_format = "#header"
+								autoresize = yes
+							}
+
+							text_single = {
+								name = "mrfp_gui_total_ransomed_people_value"
+								text = "total ransomed"
+								default_format = "#low"
+								autoresize = yes
+							}
 						}
 
-						text_single = {
-							name = "mrfp_gui_total_ransomed_gold"
+						vbox = {
+							name = "mrfp_ransomed_gold_vbox"
 							layoutpolicy_horizontal = expanding
-							text = "total gold ransomed"
-							default_format = "#low"
-							autoresize = no
+							spacing = 5
+
+							text_single = {
+								name = "mrfp_gui_total_ransomed_gold_label"
+								text = "Total Gold  [gold_i] Ransomed:"
+								default_format = "#header"
+								autoresize = yes
+							}
+
+							text_single = {
+								name = "mrfp_gui_total_ransomed_gold_value"
+								text = "total gold ransomed"
+								default_format = "#low"
+								autoresize = yes
+							}
 						}
 					}
 
