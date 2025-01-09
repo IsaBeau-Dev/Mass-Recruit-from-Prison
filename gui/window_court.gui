@@ -325,13 +325,14 @@
 							text_single = {
 								name = "mrfp_gui_total_recruited_label"
 								text = "Total Recruited:"
-								default_format = "#header"
+								default_format = "#high"
 								autoresize = yes
 							}
 
 							text_single = {
 								name = "mrfp_gui_total_recruited_value"
-								text = "total recruited"
+								#text = "total recruited"
+								text = "[GetPlayer.MakeScope.Var('mrfp_story').MakeScope.Var('mrfp_total_recruited').GetValue|1]"
 								default_format = "#low"
 								autoresize = yes
 							}
@@ -345,7 +346,7 @@
 							text_single = {
 								name = "mrfp_gui_total_ransomed_people_label"
 								text = "Total Ransomed People:"
-								default_format = "#header"
+								default_format = "#high"
 								autoresize = yes
 							}
 
@@ -364,8 +365,8 @@
 
 							text_single = {
 								name = "mrfp_gui_total_ransomed_gold_label"
-								text = "Total Gold  [gold_i] Ransomed:"
-								default_format = "#header"
+								text = "Total Gold [gold_i] Ransomed:"
+								default_format = "#high"
 								autoresize = yes
 							}
 
