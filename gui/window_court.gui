@@ -534,14 +534,14 @@
 							layoutpolicy_horizontal = expanding
 							layoutpolicy_vertical = expanding
 							addcolumn = 262
-							addrow = 405
+							addrow = 505
 							datamodel_wrap = 2
 							flipdirection = yes
 							#setitemsizefromcell = yes
 
 							item = {
 								widget = {
-									size = { 262 395}
+									size = { 262 495}
 									datacontext = "[CharacterListItem.GetCharacter]"
 
 									background = {
@@ -564,7 +564,7 @@
 
 										portrait_body = {
 											parentanchor = bottom|hcenter
-											position = { 0 -70 }
+											position = { 0 -170 }
 
 											blockoverride "coa" {}
 											blockoverride "opinion_box" {}
