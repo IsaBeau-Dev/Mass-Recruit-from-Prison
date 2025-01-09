@@ -308,6 +308,41 @@
 					}
 
 					# MRFP
+					hbox = {
+						name = "prison_info_box"
+						layoutpolicy_horizontal = expanding
+						margin = { 10 10 }
+						spacing = 5
+
+						background = {
+							using = Background_Area_Dark
+						}
+
+
+						text_single = {
+							name = "mrfp_gui_total_recruited"
+							layoutpolicy_horizontal = expanding
+							text = "total recruited"
+							default_format = "#high"
+							autoresize = no
+						}
+
+						text_single = {
+							name = "mrfp_gui_total_ransomed_people"
+							layoutpolicy_horizontal = expanding
+							text = "total ransomed"
+							default_format = "#low"
+							autoresize = no
+						}
+
+						text_single = {
+							name = "mrfp_gui_total_ransomed_gold"
+							layoutpolicy_horizontal = expanding
+							text = "total gold ransomed"
+							default_format = "#low"
+							autoresize = no
+						}
+					}
 
 					## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
 					mrfp_layout_with_more_than_4_prisoners = {}
