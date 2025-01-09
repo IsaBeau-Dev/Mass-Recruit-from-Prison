@@ -33,6 +33,10 @@
             expand = {}
         }
 
+        text_single = {
+            text = "Amout of prisoners: [GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('mrfp_amout_of_prisoners')|0]"
+        }
+
         dynamicgridbox = {
             datamodel = "[GetPlayer.GetPrisoners]"
         
@@ -65,14 +69,14 @@
                             text_single = {
                                 # text = "[Character.MakeScope.Var('ransom_cost_value').GetValue|1]"
                                 # [Character.MakeScope.Var('ransom_cost_value').GetValue|0]
-                                text = "         [GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', Character.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', Character.MakeScope ).ScriptValue('mrfp_target_gold')|0] [gold_i]. So they can be ransomed:"
+                                text = "         [GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', Character.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', Character.MakeScope ).ScriptValue('mrfp_target_gold')|0] [gold_i]. Can be ransomed:"
                                 default_format = "#high"
                             }
 
                             button_checkbox = {
                                 name = "mrfp_can_be_ransomed"
                                 checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', Character.MakeScope ).End)]"
-                                tooltip = "Can be ransomed"
+                                tooltip = "Can be ransomed (and the ransom demand would be accepted)"
                             }
                         }
                     }

@@ -17,3 +17,10 @@
 mrfp_target_gold = {
     value = scope:target.ransom_cost_value
 }
+
+mrfp_amout_of_prisoners = {
+    value = 0
+    every_prisoner = {
+      add = 1
+    }
+}
