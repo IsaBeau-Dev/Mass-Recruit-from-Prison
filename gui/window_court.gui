@@ -307,421 +307,427 @@
 						}
 					}
 
+					# MRFP
+
 					## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
-					vbox_character_list = {
-						visible = "[GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) )]"
-						layoutpolicy_horizontal = expanding
-						layoutpolicy_vertical = expanding
+					# vbox_character_list = {
+					# 	visible = "[GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) )]"
+					# 	layoutpolicy_horizontal = expanding
+					# 	layoutpolicy_vertical = expanding
 
-						blockoverride "container_implementation"
-						{
-							fixedgridbox = {
-								name = "characters_grid"
-								datamodel = "[CharacterSelectionList.GetList]"
-								visible = "[Not(CharacterSelectionList.IsBuildingList)]"
-								layoutpolicy_horizontal = expanding
-								addcolumn = 520
-								addrow = 200
-								datamodel_reuse_widgets = yes
+					# 	blockoverride "container_implementation"
+					# 	{
+					# 		fixedgridbox = {
+					# 			name = "characters_grid"
+					# 			datamodel = "[CharacterSelectionList.GetList]"
+					# 			visible = "[Not(CharacterSelectionList.IsBuildingList)]"
+					# 			layoutpolicy_horizontal = expanding
+					# 			addcolumn = 520
+					# 			addrow = 200
+					# 			datamodel_reuse_widgets = yes
 
-								item = {
-									vbox = {
-										maximumsize = { 520 200 }
+					# 			item = {
+					# 				vbox = {
+					# 					maximumsize = { 520 200 }
 
-										widget_character_list_item_finder = {
-											layoutpolicy_horizontal = expanding
-											blockoverride "divider" {}
-											blockoverride "character_relation" {}
+					# 					widget_character_list_item_finder = {
+					# 						layoutpolicy_horizontal = expanding
+					# 						blockoverride "divider" {}
+					# 						blockoverride "character_relation" {}
 
-											blockoverride "gridbox_items"
-											{
-												datamodel_wrap = 4
-												maxverticalslots = 2
-											}
-										}
+					# 						blockoverride "gridbox_items"
+					# 						{
+					# 							datamodel_wrap = 4
+					# 							maxverticalslots = 2
+					# 						}
+					# 					}
 
-										# New gold display and ransom checkbox
-										hbox = {
-											layoutpolicy_horizontal = expanding
-											margin = { 10 5 }
-											spacing = 5
+					# 					# New gold display and ransom checkbox
+					# 					hbox = {
+					# 						layoutpolicy_horizontal = expanding
+					# 						margin = { 10 5 }
+					# 						spacing = 5
 
-											text_single = {
-												text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_gold')|0] [gold_i]"
-												default_format = "#low"
-											}
-											text_single = {
-												text =  "mrfp_can_be_ransomed"
-												default_format = "#low"
-											}
+					# 						text_single = {
+					# 							text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_gold')|0] [gold_i]"
+					# 							default_format = "#low"
+					# 						}
+					# 						text_single = {
+					# 							text =  "mrfp_can_be_ransomed"
+					# 							default_format = "#low"
+					# 						}
 
-											button_checkbox = {
-												name = "mrfp_can_be_ransomed"
-												checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-												tooltip = "Can be ransomed"
-											}
-										}
+					# 						button_checkbox = {
+					# 							name = "mrfp_can_be_ransomed"
+					# 							checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
+					# 							tooltip = "Can be ransomed"
+					# 						}
+					# 					}
 
-										hbox = {
-											name = "prisoner_data"
-											layoutpolicy_horizontal = expanding
-											margin = { 10 10 }
-											spacing = 5
+					# 					hbox = {
+					# 						name = "prisoner_data"
+					# 						layoutpolicy_horizontal = expanding
+					# 						margin = { 10 10 }
+					# 						spacing = 5
 
-											background = {
-												using = Background_Area_Dark
-											}
+					# 						background = {
+					# 							using = Background_Area_Dark
+					# 						}
 
-											vbox = {
-												name = "info_text"
-												layoutpolicy_horizontal = expanding
-												layoutpolicy_vertical = expanding
+					# 						vbox = {
+					# 							name = "info_text"
+					# 							layoutpolicy_horizontal = expanding
+					# 							layoutpolicy_vertical = expanding
 
-												text_single = {
-													visible = "[CharacterListItem.GetCharacter.IsImprisoned]"
-													name = "type"
-													layoutpolicy_horizontal = expanding
-													text = "[CharacterListItem.GetText('tooltip')]"
-													default_format = "#low"
-													autoresize = no
-												}
+					# 							text_single = {
+					# 								visible = "[CharacterListItem.GetCharacter.IsImprisoned]"
+					# 								name = "type"
+					# 								layoutpolicy_horizontal = expanding
+					# 								text = "[CharacterListItem.GetText('tooltip')]"
+					# 								default_format = "#low"
+					# 								autoresize = no
+					# 							}
 
-												hbox = {
-													layoutpolicy_horizontal = expanding
-													spacing = 5
-													visible = "[CharacterListItem.GetCharacter.IsImprisoned]"
+					# 							hbox = {
+					# 								layoutpolicy_horizontal = expanding
+					# 								spacing = 5
+					# 								visible = "[CharacterListItem.GetCharacter.IsImprisoned]"
 
-													icon = {
-														texture = "gfx/interface/icons/portraits/punishment.dds"
-														size = { 30 30 }
-													}
+					# 								icon = {
+					# 									texture = "gfx/interface/icons/portraits/punishment.dds"
+					# 									size = { 30 30 }
+					# 								}
 
-													text_single = {
-														name = "imprisoned_time"
-														layoutpolicy_horizontal = expanding
-														text = "[CharacterListItem.GetText('imprisoned_time')]"
-														autoresize = no
-													}
-												}
+					# 								text_single = {
+					# 									name = "imprisoned_time"
+					# 									layoutpolicy_horizontal = expanding
+					# 									text = "[CharacterListItem.GetText('imprisoned_time')]"
+					# 									autoresize = no
+					# 								}
+					# 							}
 
-												expand = {}
-											}
+					# 							expand = {}
+					# 						}
 
-											button_checkbox = {
-												name = "lock_from_mass_actions"
-												checked = "[CharacterListItem.GetBool('is_mass_action_locked')]"
-												onclick = "[CharacterListItem.OnClick('mass_action_lock')]"
-												tooltip = "[CharacterListItem.GetText('mass_action_lock_tooltip')]"
-											}
+					# 						button_checkbox = {
+					# 							name = "lock_from_mass_actions"
+					# 							checked = "[CharacterListItem.GetBool('is_mass_action_locked')]"
+					# 							onclick = "[CharacterListItem.OnClick('mass_action_lock')]"
+					# 							tooltip = "[CharacterListItem.GetText('mass_action_lock_tooltip')]"
+					# 						}
 
-											hbox = {
-												spacing = 3
+					# 						hbox = {
+					# 							spacing = 3
 
-												button_round  = {
-													name = "ransom"
-													enabled = "[CharacterListItem.GetBool('can_ransom')]"
+					# 							button_round  = {
+					# 								name = "ransom"
+					# 								enabled = "[CharacterListItem.GetBool('can_ransom')]"
 
-													button_prison_ransom = {
-														parentanchor = center
-														onclick = "[CharacterListItem.OnClick('ransom')]"
-														enabled = "[CharacterListItem.GetBool('can_ransom')]"
-														tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
-														using = tooltip_se
-													}
-												}
+					# 								button_prison_ransom = {
+					# 									parentanchor = center
+					# 									onclick = "[CharacterListItem.OnClick('ransom')]"
+					# 									enabled = "[CharacterListItem.GetBool('can_ransom')]"
+					# 									tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
+					# 									using = tooltip_se
+					# 								}
+					# 							}
 
-												button_round  = {
-													name = "release"
-													enabled = "[CharacterListItem.GetBool('can_release')]"
+					# 							button_round  = {
+					# 								name = "release"
+					# 								enabled = "[CharacterListItem.GetBool('can_release')]"
 
-													button_prison_release = {
-														parentanchor = center
-														onclick = "[CharacterListItem.OnClick('release')]"
-														enabled = "[CharacterListItem.GetBool('can_release')]"
-														tooltip = "[CharacterListItem.GetText('release_tooltip')]"
-														using = tooltip_se
-													}
-												}
+					# 								button_prison_release = {
+					# 									parentanchor = center
+					# 									onclick = "[CharacterListItem.OnClick('release')]"
+					# 									enabled = "[CharacterListItem.GetBool('can_release')]"
+					# 									tooltip = "[CharacterListItem.GetText('release_tooltip')]"
+					# 									using = tooltip_se
+					# 								}
+					# 							}
 
-												button_round  = {
-													name = "execute"
-													enabled = "[CharacterListItem.GetBool('can_execute')]"
+					# 							button_round  = {
+					# 								name = "execute"
+					# 								enabled = "[CharacterListItem.GetBool('can_execute')]"
 
-													button_prison_execute = {
-														parentanchor = center
-														onclick = "[CharacterListItem.OnClick('execute')]"
-														enabled = "[CharacterListItem.GetBool('can_execute')]"
-														tooltip = "[CharacterListItem.GetText('execute_tooltip')]"
-														using = tooltip_se
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
+					# 								button_prison_execute = {
+					# 									parentanchor = center
+					# 									onclick = "[CharacterListItem.OnClick('execute')]"
+					# 									enabled = "[CharacterListItem.GetBool('can_execute')]"
+					# 									tooltip = "[CharacterListItem.GetText('execute_tooltip')]"
+					# 									using = tooltip_se
+					# 								}
+					# 							}
+					# 						}
+					# 					}
+					# 				}
+					# 			}
+					# 		}
+					# 	}
 
-						blockoverride "bottom_bar"
-						{
-							hbox = {
-								margin = { 10 0 }
-								spacing = 3
+					# 	blockoverride "bottom_bar"
+					# 	{
+					# 		hbox = {
+					# 			margin = { 10 0 }
+					# 			spacing = 3
 
-								text_single = {
-									text = "MASS_PRISONER_ACTIONS"
-									default_format = "#low"
-									align = nobaseline
-								}
+					# 			text_single = {
+					# 				text = "MASS_PRISONER_ACTIONS"
+					# 				default_format = "#low"
+					# 				align = nobaseline
+					# 			}
 
-								spacer = {
-									size = { 5 5 }
-								}
+					# 			spacer = {
+					# 				size = { 5 5 }
+					# 			}
 
-								button_round  = {
-									name = "ransom"
-									enabled = "[CourtWindow.CanDoMassPrisonerAction('ransom')]"
+					# 			button_round  = {
+					# 				name = "ransom"
+					# 				enabled = "[CourtWindow.CanDoMassPrisonerAction('ransom')]"
 
-									button_prison_ransom = {
-										parentanchor = center
-										onclick = "[CourtWindow.MassPrisonerAction('ransom')]"
-										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('ransom')]"
-										using = tooltip_se
-									}
-								}
+					# 				button_prison_ransom = {
+					# 					parentanchor = center
+					# 					onclick = "[CourtWindow.MassPrisonerAction('ransom')]"
+					# 					tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('ransom')]"
+					# 					using = tooltip_se
+					# 				}
+					# 			}
 
-								button_round  = {
-									name = "release"
-									enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
+					# 			button_round  = {
+					# 				name = "release"
+					# 				enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
 
-									button_prison_release = {
-										parentanchor = center
-										onclick = "[CourtWindow.MassPrisonerAction('release')]"
-										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('release')]"
-										using = tooltip_se
-									}
-								}
+					# 				button_prison_release = {
+					# 					parentanchor = center
+					# 					onclick = "[CourtWindow.MassPrisonerAction('release')]"
+					# 					tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('release')]"
+					# 					using = tooltip_se
+					# 				}
+					# 			}
 
-								button_round  = {
-									name = "execute"
-									enabled = "[CourtWindow.CanDoMassPrisonerAction('execute')]"
+					# 			button_round  = {
+					# 				name = "execute"
+					# 				enabled = "[CourtWindow.CanDoMassPrisonerAction('execute')]"
 
-									button_prison_execute = {
-										parentanchor = center
-										onclick = "[CourtWindow.MassPrisonerAction('execute')]"
-										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('execute')]"
-										using = tooltip_se
-									}
-								}
-								#MRFP
-								mrfp_button = {}
-								mrfp_button_ransom = {}
-								#MRFP
-							}
-						}
-					}
+					# 				button_prison_execute = {
+					# 					parentanchor = center
+					# 					onclick = "[CourtWindow.MassPrisonerAction('execute')]"
+					# 					tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('execute')]"
+					# 					using = tooltip_se
+					# 				}
+					# 			}
+					# 			#MRFP
+					# 			mrfp_button = {}
+					# 			mrfp_button_ransom = {}
+					# 			#MRFP
+					# 		}
+					# 	}
+					# }
+					mrfp_layout_with_more_than_4_prisoners = {}
 
 					## Layout with MAX_PRISONER_COUNT_GRID(4) or fewer prisoners
-					vbox = {
-						visible = "[And( GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, '(int32)0' ), LessThanOrEqualTo_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) ) )]"
-						layoutpolicy_horizontal = expanding
-						layoutpolicy_vertical = expanding
-						margin = { 0 15 }
-						margin_left = 10
+					# vbox = {
+					# 	visible = "[And( GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, '(int32)0' ), LessThanOrEqualTo_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) ) )]"
+					# 	layoutpolicy_horizontal = expanding
+					# 	layoutpolicy_vertical = expanding
+					# 	margin = { 0 15 }
+					# 	margin_left = 10
 
-						fixedgridbox = {
-							datamodel = "[CharacterSelectionList.GetList]"
-							layoutpolicy_horizontal = expanding
-							layoutpolicy_vertical = expanding
-							addcolumn = 262
-							addrow = 505
-							datamodel_wrap = 2
-							flipdirection = yes
-							#setitemsizefromcell = yes
+					# 	fixedgridbox = {
+					# 		datamodel = "[CharacterSelectionList.GetList]"
+					# 		layoutpolicy_horizontal = expanding
+					# 		layoutpolicy_vertical = expanding
+					# 		addcolumn = 262
+					# 		addrow = 505
+					# 		datamodel_wrap = 2
+					# 		flipdirection = yes
+					# 		#setitemsizefromcell = yes
 
-							item = {
-								widget = {
-									size = { 262 495}
-									datacontext = "[CharacterListItem.GetCharacter]"
+					# 		item = {
+					# 			widget = {
+					# 				size = { 262 495}
+					# 				datacontext = "[CharacterListItem.GetCharacter]"
 
-									background = {
-										texture = "gfx/interface/skinned/illustrations/dungeon.dds"
-										margin = { -5 0 }
-										fittype = centercrop
-										alpha = 0.3
+					# 				background = {
+					# 					texture = "gfx/interface/skinned/illustrations/dungeon.dds"
+					# 					margin = { -5 0 }
+					# 					fittype = centercrop
+					# 					alpha = 0.3
 
-										using = Mask_Rough_Edges
-									}
+					# 					using = Mask_Rough_Edges
+					# 				}
 
-									background = {
-										using = Background_Frame
-										alpha = 0.5
-									}
+					# 				background = {
+					# 					using = Background_Frame
+					# 					alpha = 0.5
+					# 				}
 
-									widget = {
-										size = { 100% 100% }
-										scissor = yes
+					# 				widget = {
+					# 					size = { 100% 100% }
+					# 					scissor = yes
 
-										portrait_body = {
-											parentanchor = bottom|hcenter
-											position = { 0 -170 }
+					# 					portrait_body = {
+					# 						parentanchor = bottom|hcenter
+					# 						position = { 0 -170 }
 
-											blockoverride "coa" {}
-											blockoverride "opinion_box" {}
-											blockoverride "status_icons" {}
-										}
-									}
+					# 						blockoverride "coa" {}
+					# 						blockoverride "opinion_box" {}
+					# 						blockoverride "status_icons" {}
+					# 					}
+					# 				}
 
-									vbox = {
-										expand = {}
+					# 				vbox = {
+					# 					expand = {}
 
-										hbox = {
-											layoutpolicy_horizontal = expanding
-											margin = { 5 5 }
+					# 					hbox = {
+					# 						layoutpolicy_horizontal = expanding
+					# 						margin = { 5 5 }
 
-											expand = {}
+					# 						expand = {}
 
-											hbox = {
-												spacing = 5
+					# 						hbox = {
+					# 							spacing = 5
 
-												background = {
-													using = Background_Area
-												}
+					# 							background = {
+					# 								using = Background_Area
+					# 							}
 
-												vbox = {
-													margin_bottom = 3
+					# 							vbox = {
+					# 								margin_bottom = 3
 
-													expand = {}
+					# 								expand = {}
 
-													portrait_status_icons = {}
-												}
+					# 								portrait_status_icons = {}
+					# 							}
 
-												vbox = {
-													layoutpolicy_vertical = expanding
+					# 							vbox = {
+					# 								layoutpolicy_vertical = expanding
 
-													expand = {}
+					# 								expand = {}
 
-													coa_realm_tiny_crown = {
-														visible = "[Character.HasLandedTitles]"
-													}
+					# 								coa_realm_tiny_crown = {
+					# 									visible = "[Character.HasLandedTitles]"
+					# 								}
 
-													portrait_opinion = {}
-												}
-											}
-										}
-
-
-										vbox = {
-											layoutpolicy_horizontal = expanding
-											margin = { 5 5 }
-
-											background = {
-												using = Background_Area
-												margin_bottom = 3
-											}
-
-											text_single = {
-												text = "[Character.GetShortUINameNoTooltip]"
-												default_format = "#high"
-												using = Font_Size_Medium
-											}
-
-											text_single = {
-												visible = "[Character.IsImprisoned]"
-												name = "type"
-												text = "[CharacterListItem.GetText('tooltip')]"
-											}
-										}
-
-										spacer = {
-											size = { 3 3 }
-										}
-
-										### Actions
-										vbox = {
-											name = "actions"
-											layoutpolicy_horizontal = expanding
-											visible = "[And( CharacterListItem.GetCharacter.IsAlive, CharacterListItem.GetCharacter.IsImprisoned )]"
-											spacing = 10
-											margin = { 10 5 }
-											margin_bottom = 15
-
-											background = {
-												using = Background_Area_Dark
-											}
-
-											hbox = {
-												spacing = 5
-
-												icon = {
-													texture = "gfx/interface/icons/portraits/punishment.dds"
-													size = { 20 20 }
-												}
-
-												text_single = {
-													name = "imprisoned_time"
-													layoutpolicy_horizontal = expanding
-													text = "[CharacterListItem.GetText('imprisoned_time')]"
-												}
-											}
+					# 								portrait_opinion = {}
+					# 							}
+					# 						}
+					# 					}
 
 
-											# New gold display
-											mrfp_prisoner_gold_display = {}
+					# 					vbox = {
+					# 						layoutpolicy_horizontal = expanding
+					# 						margin = { 5 5 }
 
-											# Can be ransomed text and checkbox
-											mrfp_can_be_ransomed = {}
+					# 						background = {
+					# 							using = Background_Area
+					# 							margin_bottom = 3
+					# 						}
 
-											hbox = {
-												spacing = 8
+					# 						text_single = {
+					# 							text = "[Character.GetShortUINameNoTooltip]"
+					# 							default_format = "#high"
+					# 							using = Font_Size_Medium
+					# 						}
 
-												button_round  = {
-													name = "ransom"
-													enabled = "[CharacterListItem.GetBool('can_ransom')]"
+					# 						text_single = {
+					# 							visible = "[Character.IsImprisoned]"
+					# 							name = "type"
+					# 							text = "[CharacterListItem.GetText('tooltip')]"
+					# 						}
+					# 					}
 
-													button_prison_ransom = {
-														parentanchor = center
-														onclick = "[CharacterListItem.OnClick('ransom')]"
-														enabled = "[CharacterListItem.GetBool('can_ransom')]"
-														tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
-														using = tooltip_se
+					# 					spacer = {
+					# 						size = { 3 3 }
+					# 					}
 
-													}
-												}
+					# 					### Actions
+					# 					vbox = {
+					# 						name = "actions"
+					# 						layoutpolicy_horizontal = expanding
+					# 						visible = "[And( CharacterListItem.GetCharacter.IsAlive, CharacterListItem.GetCharacter.IsImprisoned )]"
+					# 						spacing = 10
+					# 						margin = { 10 5 }
+					# 						margin_bottom = 15
 
-												button_round  = {
-													name = "release"
-													enabled = "[CharacterListItem.GetBool('can_release')]"
+					# 						background = {
+					# 							using = Background_Area_Dark
+					# 						}
 
-													button_prison_release = {
-														parentanchor = center
-														onclick = "[CharacterListItem.OnClick('release')]"
-														enabled = "[CharacterListItem.GetBool('can_release')]"
-														tooltip = "[CharacterListItem.GetText('release_tooltip')]"
-														using = tooltip_se
+					# 						hbox = {
+					# 							spacing = 5
 
-													}
-												}
+					# 							icon = {
+					# 								texture = "gfx/interface/icons/portraits/punishment.dds"
+					# 								size = { 20 20 }
+					# 							}
 
-												button_round  = {
-													name = "execute"
-													enabled = "[CharacterListItem.GetBool('can_execute')]"
+					# 							text_single = {
+					# 								name = "imprisoned_time"
+					# 								layoutpolicy_horizontal = expanding
+					# 								text = "[CharacterListItem.GetText('imprisoned_time')]"
+					# 							}
+					# 						}
 
-													button_prison_execute = {
-														parentanchor = center
-														onclick = "[CharacterListItem.OnClick('execute')]"
-														enabled = "[CharacterListItem.GetBool('can_execute')]"
-														tooltip = "[CharacterListItem.GetText('execute_tooltip')]"
-														using = tooltip_se
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
+
+					# 						# New gold display
+					# 						mrfp_prisoner_gold_display = {}
+
+					# 						# Can be ransomed text and checkbox
+					# 						mrfp_can_be_ransomed = {}
+
+					# 						hbox = {
+					# 							spacing = 8
+
+					# 							button_round  = {
+					# 								name = "ransom"
+					# 								enabled = "[CharacterListItem.GetBool('can_ransom')]"
+
+					# 								button_prison_ransom = {
+					# 									parentanchor = center
+					# 									onclick = "[CharacterListItem.OnClick('ransom')]"
+					# 									enabled = "[CharacterListItem.GetBool('can_ransom')]"
+					# 									tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
+					# 									using = tooltip_se
+
+					# 								}
+					# 							}
+
+					# 							button_round  = {
+					# 								name = "release"
+					# 								enabled = "[CharacterListItem.GetBool('can_release')]"
+
+					# 								button_prison_release = {
+					# 									parentanchor = center
+					# 									onclick = "[CharacterListItem.OnClick('release')]"
+					# 									enabled = "[CharacterListItem.GetBool('can_release')]"
+					# 									tooltip = "[CharacterListItem.GetText('release_tooltip')]"
+					# 									using = tooltip_se
+
+					# 								}
+					# 							}
+
+					# 							button_round  = {
+					# 								name = "execute"
+					# 								enabled = "[CharacterListItem.GetBool('can_execute')]"
+
+					# 								button_prison_execute = {
+					# 									parentanchor = center
+					# 									onclick = "[CharacterListItem.OnClick('execute')]"
+					# 									enabled = "[CharacterListItem.GetBool('can_execute')]"
+					# 									tooltip = "[CharacterListItem.GetText('execute_tooltip')]"
+					# 									using = tooltip_se
+					# 								}
+					# 							}
+					# 						}
+					# 					}
+					# 				}
+					# 			}
+					# 		}
+					# 	}
+					# }
+					mrfp_layout_with_4_prisoners_or_fewer = {}
+
+					# MRFP
 				}
 			}
 		}
