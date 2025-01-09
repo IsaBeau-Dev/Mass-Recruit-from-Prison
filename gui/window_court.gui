@@ -352,7 +352,7 @@
 
 							text_single = {
 								name = "mrfp_gui_total_ransomed_people_value"
-								text = "total ransomed"
+								text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('mrfp_get_gui_total_ransomed_people_value')|0]"
 								default_format = "#low"
 								autoresize = yes
 							}
@@ -372,7 +372,7 @@
 
 							text_single = {
 								name = "mrfp_gui_total_ransomed_gold_value"
-								text = "total gold ransomed"
+								text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).ScriptValue('mrfp_get_gui_total_ransomed_gold_value')|0]"
 								default_format = "#low"
 								autoresize = yes
 							}
