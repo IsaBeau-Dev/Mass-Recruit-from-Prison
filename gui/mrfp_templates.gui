@@ -54,6 +54,28 @@ types mrfp_window_types {
 			tooltip = "Can be ransomed"
 		}
 	}
+
+	type mrfp_merged_gold_display_and_can_be_ransomed = hbox {
+		layoutpolicy_horizontal = expanding
+		margin = { 10 5 }
+		spacing = 5
+
+		text_single = {
+			text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_gold')|0] [gold_i]"
+			default_format = "#low"
+		}
+		text_single = {
+			text =  "mrfp_can_be_ransomed"
+			default_format = "#low"
+		}
+
+		button_checkbox = {
+			name = "mrfp_can_be_ransomed"
+			checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
+			tooltip = "Can be ransomed"
+		}
+	}
+
 	## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
 	type mrfp_layout_with_more_than_4_prisoners = vbox_character_list {
 		visible = "[GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) )]"
@@ -67,13 +89,17 @@ types mrfp_window_types {
 				datamodel = "[CharacterSelectionList.GetList]"
 				visible = "[Not(CharacterSelectionList.IsBuildingList)]"
 				layoutpolicy_horizontal = expanding
+				# MRFP
 				addcolumn = 520
+				# MRFP
 				addrow = 200
 				datamodel_reuse_widgets = yes
 
 				item = {
 					vbox = {
+						# MRFP
 						maximumsize = { 520 200 }
+						# MRFP
 
 						widget_character_list_item_finder = {
 							layoutpolicy_horizontal = expanding
@@ -86,28 +112,31 @@ types mrfp_window_types {
 								maxverticalslots = 2
 							}
 						}
+						
 
 						# New gold display and ransom checkbox
-						hbox = {
-							layoutpolicy_horizontal = expanding
-							margin = { 10 5 }
-							spacing = 5
+						# hbox = {
+						# 	layoutpolicy_horizontal = expanding
+						# 	margin = { 10 5 }
+						# 	spacing = 5
 
-							text_single = {
-								text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_gold')|0] [gold_i]"
-								default_format = "#low"
-							}
-							text_single = {
-								text =  "mrfp_can_be_ransomed"
-								default_format = "#low"
-							}
+						# 	text_single = {
+						# 		text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_gold')|0] [gold_i]"
+						# 		default_format = "#low"
+						# 	}
+						# 	text_single = {
+						# 		text =  "mrfp_can_be_ransomed"
+						# 		default_format = "#low"
+						# 	}
 
-							button_checkbox = {
-								name = "mrfp_can_be_ransomed"
-								checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-								tooltip = "Can be ransomed"
-							}
-						}
+						# 	button_checkbox = {
+						# 		name = "mrfp_can_be_ransomed"
+						# 		checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
+						# 		tooltip = "Can be ransomed"
+						# 	}
+						# }
+						mrfp_merged_gold_display_and_can_be_ransomed = {}
+
 
 						hbox = {
 							name = "prisoner_data"
