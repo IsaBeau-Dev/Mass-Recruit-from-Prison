@@ -55,18 +55,18 @@ mrfp_prison_window_ransom = {
   scope = character
   is_shown = {
     scope:target = {
-			save_temporary_scope_as = secondary_recipient
-			if = {
-				limit = {
-					is_ruler = no
-					exists = liege
-				}
-				liege = {
-					save_temporary_scope_as = target
-				}
-			}
-		}
-    scope:secondary_recipient.ransom_cost_value <= scope:target.gold
+      save_temporary_scope_as = secondary_recipient
+      trigger_if = {
+          limit = {
+              is_ruler = no
+              exists = liege
+          }
+          liege = {
+              save_temporary_scope_as = secondary_recipient
+          }
+      }
+    }
+    scope:target.ransom_cost_value <= scope:secondary_recipient.gold
   }
   # effect = {
   #   scope:target = {
