@@ -114,29 +114,9 @@ types mrfp_window_types {
 						}
 						
 
-						# New gold display and ransom checkbox
-						# hbox = {
-						# 	layoutpolicy_horizontal = expanding
-						# 	margin = { 10 5 }
-						# 	spacing = 5
-
-						# 	text_single = {
-						# 		text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_gold')|0] [gold_i]"
-						# 		default_format = "#low"
-						# 	}
-						# 	text_single = {
-						# 		text =  "mrfp_can_be_ransomed"
-						# 		default_format = "#low"
-						# 	}
-
-						# 	button_checkbox = {
-						# 		name = "mrfp_can_be_ransomed"
-						# 		checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-						# 		tooltip = "Can be ransomed"
-						# 	}
-						# }
+						# MRFP
 						mrfp_merged_gold_display_and_can_be_ransomed = {}
-
+						# MRFP
 
 						hbox = {
 							name = "prisoner_data"
@@ -310,14 +290,18 @@ types mrfp_window_types {
 			layoutpolicy_horizontal = expanding
 			layoutpolicy_vertical = expanding
 			addcolumn = 262
+			# MRFP
 			addrow = 505
+			# MRFP
 			datamodel_wrap = 2
 			flipdirection = yes
 			#setitemsizefromcell = yes
 
 			item = {
 				widget = {
+					# MRFP
 					size = { 262 495}
+					# MRFP
 					datacontext = "[CharacterListItem.GetCharacter]"
 
 					background = {
@@ -441,12 +425,14 @@ types mrfp_window_types {
 								}
 							}
 
-
+							# MRFP
 							# New gold display
 							mrfp_prisoner_gold_display = {}
 
 							# Can be ransomed text and checkbox
 							mrfp_can_be_ransomed = {}
+							# MRFP
+
 
 							hbox = {
 								spacing = 8
