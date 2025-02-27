@@ -44,6 +44,13 @@
       }
     }
 
+    # #Prowess threshold disabled
+    # if = {
+    #   limit = {
+    #     scope:the_story.var:mrfp_threshold_enabled = no
+    #   }
+    # }
+    
     ###
   # #Prowess threshold disabled
   # triggered_effect = {
