@@ -32,7 +32,9 @@
       }
       mrfp_send_amout_people_released_message = yes
       
-      mrfp_update_recruitment_counter = yes
+      scope:the_story = {
+        mrfp_update_recruitment_counter = yes
+      }
     }
 
     ###
