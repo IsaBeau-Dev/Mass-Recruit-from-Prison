@@ -15,8 +15,17 @@ on_mrfp_start = {
 
 on_game_start_after_lobby = {
 	on_actions = { 
-		mrfp_welcome_event
+		#mrfp_welcome_event
+        mrfp_start_story
 	}
+}
+
+mrfp_start_story = {
+    effect = {
+        every_player = {
+            create_story = mrfp_recruitment_cycle
+        }
+    }
 }
 
 mrfp_welcome_event = {
