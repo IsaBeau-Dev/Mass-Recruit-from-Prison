@@ -76,11 +76,58 @@ mrfp_is_loaded_sgui_ransom = {
     has_global_variable = mrfp_is_loaded
   }
   effect = {
-    every_prisoner = {
-      mrfp_ransom_every_prisoner_effect = {
-        MRFPROOT = root
-        MRFPTHIS = this
-      }
+    mrfp_start_story_if_not_exist = yes
+
+    #save scopes like in story so the scripted effects works
+    save_scope_as = the_story_owner 
+    root.var:mrfp_story = {
+      save_scope_as = the_story
     }
+    every_prisoner = {
+      limit = { always = yes }
+      save_scope_as = the_story_prisoner
+      mrfp_is_at_war_with_target_or_their_liege_story = yes
+
+
+      scope:the_story_prisoner = {
+          save_scope_as = secondary_recipient
+          if = {
+              limit = {
+                  is_ruler = no                
+                  exists = liege
+              }
+              liege = {
+                  save_scope_as = the_story_prisoner
+              }
+          }
+      }
+
+      mrfp_release_all_unblocked_ransom_prisoners = yes
+    }
+
+    #temp set var for scripted effect to work (call this regardless because both on/off threshold will do it)
+    set_variable = {
+      name = mrfp_total_ransomed_people_current
+      value = scope:the_story.var:mrfp_total_ransomed_people_current
+    }
+    set_variable = {
+      name = mrfp_total_ransomed_gold_current
+      value = scope:the_story.var:mrfp_total_ransomed_gold_current
+    }
+    mrfp_send_amount_people_ransomed_message = yes
+    remove_variable = mrfp_total_ransomed_people_current
+    remove_variable = mrfp_total_ransomed_gold_current
+    
+    scope:the_story = {
+      mrfp_update_ransom_counter = yes
+    }
+
+    #old code
+    # every_prisoner = {
+    #   mrfp_ransom_every_prisoner_effect = {
+    #     MRFPROOT = root
+    #     MRFPTHIS = this
+    #   }
+    # }
   }
 }
