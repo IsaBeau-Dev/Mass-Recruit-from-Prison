@@ -11,13 +11,17 @@
     
     if = {
       limit = {
-        this.var:mrfp_story.var:mrfp_threshold_enabled = yes
+        root.var:mrfp_story.var:mrfp_threshold_enabled = yes
+        any_prisoner = {
+            prowess >= root.var:mrfp_story.var:mrfp_prowess_threshold
+            is_ruler = no
+        }
       }
       send_interface_message = {
         type = event_captured_combatants_good
         title = "Debug test"
         desc = "I managed to come here"						  
-    }
+      }
     }
 
     ###
