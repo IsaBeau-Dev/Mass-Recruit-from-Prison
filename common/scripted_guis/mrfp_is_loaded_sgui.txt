@@ -30,15 +30,6 @@
 
     ###
   #   #Prowess threshold enabled
-  #   triggered_effect = {
-  #     trigger = {
-  #         mrfp_threshold_enabled = yes
-  #         story_owner = {
-  #             any_prisoner = {
-  #                 prowess >= root.var:mrfp_prowess_threshold
-  #             }
-  #         }
-  #     }
   #     effect = {
   #         save_scope_as = the_story
   #         story_owner = {
@@ -61,6 +52,8 @@
   #         mrfp_update_recruitment_counter = yes
   #     }
   # }
+
+
 
   # #Prowess threshold disabled
   # triggered_effect = {
