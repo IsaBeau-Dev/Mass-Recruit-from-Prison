@@ -6,12 +6,13 @@
   effect = {
     mrfp_start_story_if_not_exist = yes
 
-    # mrfp_story.var:
-    #Prowess threshold enabled
+    #save scopes like in story so the scripted effects works
+    save_scope_as = the_story_owner 
     root.var:mrfp_story = {
       save_scope_as = the_story
     }
-
+    
+    #Prowess threshold enabled
     if = {
       limit = {
         root.var:mrfp_story.var:mrfp_threshold_enabled = yes
