@@ -9,6 +9,84 @@
   #   has_global_variable = mrfp_is_loaded
   # }
   effect = {
+    mrfp_start_story_if_not_exist = yes
+
+    # mrfp_story.var:
+    #Prowess threshold enabled
+    
+    if = {
+      limit = {
+        this.var:mrfp_story.var:mrfp_threshold_enabled = yes
+      }
+      send_interface_message = {
+        type = event_captured_combatants_good
+        title = "Debug test"
+        desc = "I managed to come here"						  
+    }
+    }
+
+    ###
+  #   #Prowess threshold enabled
+  #   triggered_effect = {
+  #     trigger = {
+  #         mrfp_threshold_enabled = yes
+  #         story_owner = {
+  #             any_prisoner = {
+  #                 prowess >= root.var:mrfp_prowess_threshold
+  #             }
+  #         }
+  #     }
+  #     effect = {
+  #         save_scope_as = the_story
+  #         story_owner = {
+  #             save_scope_as = the_story_owner                        
+  #             every_prisoner = {
+  #                 limit = {
+  #                     prowess >= scope:the_story.var:mrfp_prowess_threshold
+  #                     is_ruler = no
+  #                 }
+  #                 save_scope_as = the_story_prisoner
+  #                 mrfp_is_at_war_with_targets_liege_story = yes
+
+  #                 mrfp_release_all_unblocked_prisoners = yes
+  #             }
+              
+  #             mrfp_send_amout_people_released_message = yes
+  #         }
+
+  #         # Update recruitment counter
+  #         mrfp_update_recruitment_counter = yes
+  #     }
+  # }
+
+  # #Prowess threshold disabled
+  # triggered_effect = {
+  #     trigger = {
+  #         mrfp_threshold_enabled = no
+  #     }
+  #     effect = {
+  #         save_scope_as = the_story
+  #         story_owner = {
+  #             save_scope_as = the_story_owner
+  #             every_prisoner = {
+  #                 limit = {
+  #                     is_ruler = no
+  #                 }
+  #                 save_scope_as = the_story_prisoner
+  #                 mrfp_is_at_war_with_targets_liege_story = yes
+
+  #                 mrfp_release_all_unblocked_prisoners = yes
+  #             }
+              
+  #             mrfp_send_amout_people_released_message = yes
+  #         }
+
+  #         # Update recruitment counter
+  #         mrfp_update_recruitment_counter = yes
+  #     }
+  # }
+
+    ##old code
     every_prisoner = {
       mrfp_every_prisoner_effect = {
         MRFPROOT = root
