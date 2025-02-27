@@ -15,9 +15,9 @@
     #Prowess threshold enabled
     if = {
       limit = {
-        root.var:mrfp_story.var:mrfp_threshold_enabled = yes
+        scope:the_story.var:mrfp_threshold_enabled = yes
         any_prisoner = {
-            prowess >= root.var:mrfp_story.var:mrfp_prowess_threshold
+            prowess >= scope:the_story.var:mrfp_prowess_threshold
             is_ruler = no
         }
       }
