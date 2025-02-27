@@ -14,3 +14,19 @@
 	
 	}
 }
+mrfp_welcome_event = {
+	
+	categories = {
+		tweaks
+	}
+	
+	default = on_mrfp
+
+	on_mrfp_welcome_event = {
+	
+	}
+	
+	off_mrfp_welcome_event = {
+	
+	}
+}
