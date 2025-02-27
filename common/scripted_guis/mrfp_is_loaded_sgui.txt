@@ -44,12 +44,32 @@
       }
     }
 
-    # #Prowess threshold disabled
-    # if = {
-    #   limit = {
-    #     scope:the_story.var:mrfp_threshold_enabled = no
-    #   }
-    # }
+    #Prowess threshold disabled
+    if = {
+      limit = {
+        scope:the_story.var:mrfp_threshold_enabled = no
+      }
+      every_prisoner = {
+        limit = {
+            is_ruler = no
+        }
+        save_scope_as = the_story_prisoner
+        mrfp_is_at_war_with_targets_liege_story = yes
+
+        mrfp_release_all_unblocked_prisoners = yes
+      }
+      #temp set var for scripted effect to work
+      set_variable = {
+        name = mrfp_total_recruited_current
+        value = scope:the_story.var:mrfp_total_recruited_current
+      }
+      mrfp_send_amout_people_released_message = yes
+      remove_variable = mrfp_total_recruited_current
+      
+      scope:the_story = {
+        mrfp_update_recruitment_counter = yes
+      }
+    }
     
     ###
   # #Prowess threshold disabled
