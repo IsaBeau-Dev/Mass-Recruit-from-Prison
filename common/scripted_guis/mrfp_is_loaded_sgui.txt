@@ -1,13 +1,8 @@
 ﻿mrfp_is_loaded_sgui = {
   scope = character
   is_shown = {
-      #exists = global_var:mrfp_is_loaded
     has_global_variable = mrfp_is_loaded
   }
-  # is_valid = {
-  #     #exists = global_var:mrfp_is_loaded
-  #   has_global_variable = mrfp_is_loaded
-  # }
   effect = {
     mrfp_start_story_if_not_exist = yes
 
@@ -98,13 +93,8 @@
 mrfp_is_loaded_sgui_ransom = {
   scope = character
   is_shown = {
-      #exists = global_var:mrfp_is_loaded
     has_global_variable = mrfp_is_loaded
   }
-  # is_valid = {
-  #     #exists = global_var:mrfp_is_loaded
-  #   has_global_variable = mrfp_is_loaded
-  # }
   effect = {
     every_prisoner = {
       mrfp_ransom_every_prisoner_effect = {
