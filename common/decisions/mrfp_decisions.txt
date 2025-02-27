@@ -150,6 +150,7 @@ set_mrfp_threshold = {
     selection_tooltip = set_mrfp_threshold_tooltip
 
     effect = {
+        mrfp_start_story_if_not_exist = yes
         save_scope_as = actor
         scope:actor.var:mrfp_story = {
             save_scope_as = the_story
