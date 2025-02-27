@@ -321,3 +321,15 @@ mrfp_toggle_variable = {
 #       desc = mrfp.0001.disabled
 #     }
 # }
+
+#### Check if story exists else start it on player
+mrfp_start_story_if_not_exist = {
+	if = {
+		limit = {
+			NOT = {
+				has_variable = mrfp_story
+			}
+		 }
+		 create_story = mrfp_recruitment_cycle
+	}
+}
