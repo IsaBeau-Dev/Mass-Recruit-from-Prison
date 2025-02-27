@@ -20,7 +20,7 @@ mrfp_welcome_event = {
 		tweaks
 	}
 	
-	default = on_mrfp
+	default = on_mrfp_welcome_event
 
 	on_mrfp_welcome_event = {
 	
