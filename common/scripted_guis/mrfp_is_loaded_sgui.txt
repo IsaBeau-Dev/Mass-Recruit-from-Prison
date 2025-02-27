@@ -31,17 +31,6 @@
 
         mrfp_release_all_unblocked_prisoners = yes
       }
-      #temp set var for scripted effect to work
-      set_variable = {
-        name = mrfp_total_recruited_current
-        value = scope:the_story.var:mrfp_total_recruited_current
-      }
-      mrfp_send_amout_people_released_message = yes
-      remove_variable = mrfp_total_recruited_current
-      
-      scope:the_story = {
-        mrfp_update_recruitment_counter = yes
-      }
     }
 
     #Prowess threshold disabled
@@ -58,17 +47,18 @@
 
         mrfp_release_all_unblocked_prisoners = yes
       }
-      #temp set var for scripted effect to work
-      set_variable = {
-        name = mrfp_total_recruited_current
-        value = scope:the_story.var:mrfp_total_recruited_current
-      }
-      mrfp_send_amout_people_released_message = yes
-      remove_variable = mrfp_total_recruited_current
-      
-      scope:the_story = {
-        mrfp_update_recruitment_counter = yes
-      }
+    }
+
+    #temp set var for scripted effect to work (call this regardless because both on/off threshold will do it)
+    set_variable = {
+      name = mrfp_total_recruited_current
+      value = scope:the_story.var:mrfp_total_recruited_current
+    }
+    mrfp_send_amout_people_released_message = yes
+    remove_variable = mrfp_total_recruited_current
+    
+    scope:the_story = {
+      mrfp_update_recruitment_counter = yes
     }
     
     ###
