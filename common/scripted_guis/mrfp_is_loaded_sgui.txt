@@ -8,7 +8,10 @@
 
     # mrfp_story.var:
     #Prowess threshold enabled
-    
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+
     if = {
       limit = {
         root.var:mrfp_story.var:mrfp_threshold_enabled = yes
@@ -17,11 +20,12 @@
             is_ruler = no
         }
       }
-      send_interface_message = {
-        type = event_captured_combatants_good
-        title = "Debug test"
-        desc = "I managed to come here"						  
-      }
+      # send_interface_message = {
+      #   type = event_captured_combatants_good
+      #   title = "Debug test"
+      #   desc = "I managed to come here"						  
+      # }
+
     }
 
     ###
