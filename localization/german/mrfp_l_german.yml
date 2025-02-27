@@ -33,6 +33,12 @@ setting_on_mrfp:0 "Ja"
 setting_on_mrfp_desc:0 "Die Entscheidung die automatische Rekrutierung und Konvertierung von Gefangenen jeden Monat, die überzeugt werden können, durchzuführen wird sichtbar sein."
 setting_off_mrfp:0 "Nein"
 setting_off_mrfp_desc:0 "Die Entscheidung die automatische Rekrutierung und Konvertierung von Gefangenen jeden Monat, die überzeugt werden können, durchzuführen wird NICHT sichtbar sein."
+#
+rule_mrfp_welcome_event:1 "Willkommensevent ist aktiviert"
+setting_on_mrfp_welcome_event:1 "Ja"
+setting_on_mrfp_welcome_event_desc:1 "Das Spiel zeigt beim Start ein mod-spezifisches Willkommensevent für neue Spieler an."
+setting_off_mrfp_welcome_event:1 "Nein"
+setting_off_mrfp_welcome_event_desc:1 "Das Spiel zeigt beim Start kein mod-spezifisches Willkommensevent für neue Spieler an."
 #game rule prowess
 # rule_mrfp_prowess:0 "Massenrekrutierung aus dem Gefängnis Kampfgeschick Grenzwert"
 # setting_mrfp_prowess_5:0 "5"
