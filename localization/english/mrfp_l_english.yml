@@ -32,6 +32,12 @@ setting_on_mrfp:0 "Yes"
 setting_on_mrfp_desc:0 "You will be able to see the decision that enabled you to mass recruit and convert willing prisoners every month."
 setting_off_mrfp:0 "No"
 setting_off_mrfp_desc:0 "You won`t be able to see the decision that enabled you to mass recruit and convert willing prisoners every month."
+#
+rule_mrfp_welcome_event:1 "Welcome Event is Enabled"
+setting_on_welcome_event:1 "Yes"
+setting_on_welcome_event_desc:1 "The game will show a mod specific welcoming event to new players upon starting."
+setting_off_welcome_event:1 "No"
+setting_off_welcome_event_desc:1 "The game will not show any mod specific welcoming event to new players upon starting."
 #game rule prowess
 # rule_mrfp_prowess:0 "Mass Recruit from Prison Prowess Threshold"
 # setting_mrfp_prowess_5:0 "5"
