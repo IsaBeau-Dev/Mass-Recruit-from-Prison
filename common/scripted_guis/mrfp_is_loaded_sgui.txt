@@ -90,12 +90,12 @@
   # }
 
     ##old code
-    every_prisoner = {
-      mrfp_every_prisoner_effect = {
-        MRFPROOT = root
-        MRFPTHIS = this
-      }
-    }
+    # every_prisoner = {
+    #   mrfp_every_prisoner_effect = {
+    #     MRFPROOT = root
+    #     MRFPTHIS = this
+    #   }
+    # }
   }
 }
 mrfp_is_loaded_sgui_ransom = {
