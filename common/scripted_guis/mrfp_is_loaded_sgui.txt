@@ -21,16 +21,21 @@
             is_ruler = no
         }
       }
-      # send_interface_message = {
-      #   type = event_captured_combatants_good
-      #   title = "Debug test"
-      #   desc = "I managed to come here"						  
-      # }
+      every_prisoner = {
+        limit = {
+            prowess >= scope:the_story.var:mrfp_prowess_threshold
+            is_ruler = no
+        }
+        mrfp_is_at_war_with_targets_liege_story = yes
 
+        mrfp_release_all_unblocked_prisoners = yes
+      }
+      mrfp_send_amout_people_released_message = yes
+      
+      mrfp_update_recruitment_counter = yes
     }
 
     ###
-  #   #Prowess threshold enabled
   #     effect = {
   #         save_scope_as = the_story
   #         story_owner = {
