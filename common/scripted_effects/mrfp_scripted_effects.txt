@@ -167,12 +167,59 @@ mrfp_toggle_variable = {
 
 #### Check if story exists else start it on player
 mrfp_start_story_if_not_exist = {
+	#not has var but owns story
 	if = {
 		limit = {
 			NOT = {
 				has_variable = mrfp_story
 			}
-		 }
-		 create_story = mrfp_recruitment_cycle
+			any_owned_story = {
+				limit = {
+					story_type = mrfp_recruitment_cycle
+				}
+			}
+		}
+		any_owned_story = {
+			limit = {
+				story_type = mrfp_recruitment_cycle
+			}
+			save_scope_as = the_story
+		}
+		set_variable = {
+			name = mrfp_story
+			value = the_story
+		}
+	}
+	# has variable but no story
+	else_if = {
+		limit = {
+			has_variable = mrfp_story
+			NOT = {
+				any_owned_story = {
+					limit = {
+						story_type = mrfp_recruitment_cycle
+					}
+				}
+			}
+		}
+		remove_variable = mrfp_story
+		create_story = mrfp_recruitment_cycle
+	}
+
+	# does not have both
+	else_if = {
+		limit = {
+			NOT = {
+				has_variable = mrfp_story
+			}
+			NOT = {
+				any_owned_story = {
+					limit = {
+						story_type = mrfp_recruitment_cycle
+					}
+				}
+			}
+		}
+		create_story = mrfp_recruitment_cycle
 	}
 }
