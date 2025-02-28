@@ -309,6 +309,7 @@
 
 					# MRFP
 
+					#prison info box aka amout recruited and earned gold
 					hbox = {
 						name = "prison_info_box"
 						layoutpolicy_horizontal = expanding
