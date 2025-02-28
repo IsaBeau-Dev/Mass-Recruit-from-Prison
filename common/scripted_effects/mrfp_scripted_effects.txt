@@ -174,9 +174,7 @@ mrfp_start_story_if_not_exist = {
 				has_variable = mrfp_story
 			}
 			any_owned_story = {
-				limit = {
-					story_type = mrfp_recruitment_cycle
-				}
+				story_type = mrfp_recruitment_cycle
 			}
 		}
 		any_owned_story = {
@@ -189,6 +187,11 @@ mrfp_start_story_if_not_exist = {
 			name = mrfp_story
 			value = the_story
 		}
+		send_interface_message = {
+			type = event_captured_combatants_good
+			title = "Debug test"
+			desc = "not has var but owns story"						  
+		}
 	}
 	# has variable but no story
 	else_if = {
@@ -196,14 +199,17 @@ mrfp_start_story_if_not_exist = {
 			has_variable = mrfp_story
 			NOT = {
 				any_owned_story = {
-					limit = {
-						story_type = mrfp_recruitment_cycle
-					}
+					story_type = mrfp_recruitment_cycle
 				}
 			}
 		}
 		remove_variable = mrfp_story
 		create_story = mrfp_recruitment_cycle
+		send_interface_message = {
+			type = event_captured_combatants_good
+			title = "Debug test"
+			desc = "has variable but no story"						  
+		}
 	}
 
 	# does not have both
@@ -214,12 +220,15 @@ mrfp_start_story_if_not_exist = {
 			}
 			NOT = {
 				any_owned_story = {
-					limit = {
-						story_type = mrfp_recruitment_cycle
-					}
+					story_type = mrfp_recruitment_cycle
 				}
 			}
 		}
 		create_story = mrfp_recruitment_cycle
+		send_interface_message = {
+			type = event_captured_combatants_good
+			title = "Debug test"
+			desc = "does not have both"						  
+		}
 	}
 }
