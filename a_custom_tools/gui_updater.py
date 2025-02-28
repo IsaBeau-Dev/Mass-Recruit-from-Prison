@@ -83,7 +83,7 @@ godherja = make_path(2326030123)
 
 mod_lines = [
     "\t\t\t\t\t\t\t\t#MRFP\n",
-    "\t\t\t\t\t\t\t\tmrfp_button = {}\n",
+    "\t\t\t\t\t\t\t\tmrfp_button_recruit = {}\n",
     "\t\t\t\t\t\t\t\tmrfp_button_ransom = {}\n",
     "\t\t\t\t\t\t\t\t#MRFP\n"
 ]

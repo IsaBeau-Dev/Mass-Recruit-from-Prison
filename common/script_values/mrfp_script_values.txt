@@ -1,0 +1,26 @@
+﻿mrfp_secondary_recipient_gold = {
+    scope:target = {
+        save_temporary_scope_as = secondary_recipient
+
+        if = {
+            limit = {
+                is_ruler = no
+                exists = liege
+            }
+            liege = {
+                save_temporary_scope_as = secondary_recipient
+            }
+        }
+    }
+    value = scope:secondary_recipient.gold
+}
+mrfp_target_gold = {
+    value = scope:target.ransom_cost_value
+}
+
+mrfp_amout_of_prisoners = {
+    value = 0
+    every_prisoner = {
+      add = 1
+    }
+}

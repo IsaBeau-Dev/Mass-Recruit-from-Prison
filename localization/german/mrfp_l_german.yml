@@ -1,7 +1,7 @@
 ﻿l_german:
-MRFP_MASS_ACTION_TT_INCLUDE: "\n#weak Gefangene, die durch Filter verborgen oder von Massenaktionen ausgeschlossen wurden, sind AUCH betroffen.#!"
-mrfp_tooltip:0 "Alle [Concept('prisoners', 'Gefangenen')|E] werden rekrutiert und wenn möglich konvertiert.\nDies funktioniert nur bei Characteren, die keine Titel besitzen.\n#weak Gefangene, die durch Filter verborgen oder von Massenaktionen ausgeschlossen wurden, sind AUCH betroffen.#!"
-mrfp_tooltip_ransom: "#T $MASS_PRISONER_ACTION_RANSOM$#!\nAlle [Concept('prisoners', 'Gefangenen')|E] für [gold|E] auslösen.\n\n$MRFP_MASS_ACTION_TT_INCLUDE$"
+MRFP_MASS_ACTION_TT_INCLUDE: "\n#weak Gefangene, die durch Filter verborgen wurden, sind AUCH betroffen.#!"
+mrfp_tooltip:0 "Alle [Concept('prisoners', 'Gefangenen')|E] werden rekrutiert und wenn möglich konvertiert.\nDies funktioniert nur bei Characteren, die keine Titel besitzen.$MRFP_MASS_ACTION_TT_INCLUDE$"
+mrfp_tooltip_ransom: "#T $MASS_PRISONER_ACTION_RANSOM$#!\nAlle [Concept('prisoners', 'Gefangenen')|E] für [gold|E] auslösen.\n$MRFP_MASS_ACTION_TT_INCLUDE$"
 
 #decision recruit
 enable_mrfp_decision:0 "Starte Massenrekrutierung von Gefangenen"
@@ -39,18 +39,12 @@ setting_on_mrfp_welcome_event:1 "Ja"
 setting_on_mrfp_welcome_event_desc:1 "Das Spiel zeigt beim Start ein mod-spezifisches Willkommensevent für neue Spieler an."
 setting_off_mrfp_welcome_event:1 "Nein"
 setting_off_mrfp_welcome_event_desc:1 "Das Spiel zeigt beim Start kein mod-spezifisches Willkommensevent für neue Spieler an."
-#game rule prowess
-# rule_mrfp_prowess:0 "Massenrekrutierung aus dem Gefängnis Kampfgeschick Grenzwert"
-# setting_mrfp_prowess_5:0 "5"
-# setting_mrfp_prowess_5_desc:0 "Der Kampfgeschick Grenzwert um jemanden aus dem Gefängnis zu rekrutieren wird 5 sein."
-# setting_mrfp_prowess_10:0 "10"
-# setting_mrfp_prowess_10_desc:0 "Der Kampfgeschick Grenzwert um jemanden aus dem Gefängnis zu rekrutieren wird 10 sein."
-# setting_mrfp_prowess_15:0 "15"
-# setting_mrfp_prowess_15_desc:0 "Der Kampfgeschick Grenzwert um jemanden aus dem Gefängnis zu rekrutieren wird 15 sein."
-# setting_mrfp_prowess_20:0 "20"
-# setting_mrfp_prowess_20_desc:0 "Der Kampfgeschick Grenzwert um jemanden aus dem Gefängnis zu rekrutieren wird 20 sein."
-# setting_off_mrfp_prowess:0 "None"
-# setting_off_mrfp_prowess_desc:0 "Es wird kein Kampfgeschick Grenzwert angewendet um jemanden aus dem Gefängnis zu rekrutieren"
+#
+rule_mrfp_only_recruit_summary:1 "Nur Rekrutierungszusammenfassung anzeigen"
+setting_on_mrfp_only_recruit_summary:1 "Ja"
+setting_on_mrfp_only_recruit_summary_desc:1 "Das Spiel zeigt nur eine Rekrutierungszusammenfassung an, die Ihnen mitteilt, wie viele Menschen Sie aus dem Gefängnis entlassen haben."
+setting_off_mrfp_only_recruit_summary:1 "Nein"
+setting_off_mrfp_only_recruit_summary_desc:1 "Das Spiel zeigt nur eine Rekrutierungszusammenfassung an, die Ihnen mitteilt, wie viele Menschen Sie aus dem Gefängnis entlassen haben, und eine Nachricht für jeden entlassenen Gefangenen."
 # decision group
 decision_group_type_mrfp: "Massenrekrutierung"
 
@@ -111,3 +105,7 @@ mrfp_welcome_events.0003.desc:0 "Konfigurieren Sie die Einstellungen für die Mo
 
 mrfp_welcome_events.0003.option.threshold_toggle:0 "Einstellungen ändern"
 mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Ändern Sie Ihre Präferenzen für Aktionen, die an Gefangenen durchgeführt werden."
+
+#prison gui
+mrfp_can_be_ransomed:0 "Kann freigekauft werden:"
+mrfp_can_be_recruited:0 "Kann rekrutiert werden:"

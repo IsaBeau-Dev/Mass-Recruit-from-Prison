@@ -37,6 +37,22 @@ mrfp_welcome_event = {
 }
 
 
+on_release_from_prison = {
+    on_actions = {
+        mrfp_on_release_from_prison
+    }
+}
+
+mrfp_on_release_from_prison = {
+    effect = {
+        if = {
+            limit = { has_character_flag = mrfp_blocked }
+        }
+        remove_character_flag = mrfp_blocked
+    }
+}
+
+
 # quarterly_playable_pulse = {
 #     #this setup makes sure mrfp_auto gets called every month
 #     on_actions = {

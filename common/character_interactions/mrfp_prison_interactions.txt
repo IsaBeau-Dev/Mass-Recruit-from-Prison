@@ -632,10 +632,13 @@
 					scope:actor = {
 						##mrfp
 						# trigger_event = char_interaction.0160
-						send_interface_message = {
-							type = event_captured_combatants_good
-							title = prisonreleasethingy.title
-							desc = prisonreleasethingy.message							  
+						if = {
+							limit = {has_game_rule = off_mrfp_only_recruit_summary }
+							send_interface_message = {
+								type = event_captured_combatants_good
+								title = prisonreleasethingy.title
+								desc = prisonreleasethingy.message							  
+							}
 						}
 						##mrfp
 					}
