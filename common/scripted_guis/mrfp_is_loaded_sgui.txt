@@ -166,12 +166,12 @@ mrfp_prison_window_block_or_unblock_character = {
   effect = {
     if = {
       limit = {
-        has_character_flag = mrfp_blocked
+        has_character_flag = mrfp_blocked_gui
       }
-      remove_character_flag = mrfp_blocked
+      remove_character_flag = mrfp_blocked_gui
     }
     else = {
-      add_character_flag = mrfp_blocked
+      add_character_flag = mrfp_blocked_gui
     }
   }
 }
