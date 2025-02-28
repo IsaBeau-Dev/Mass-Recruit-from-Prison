@@ -8,10 +8,10 @@ Is your prison overflowing with potential courtiers, but recruiting each one (an
 [*][b]Prowess Threshold[/b]: Customize the prowess threshold for recruitment through an in-game decision. 
 [*][b]Release from prison POPUP removal[/b]: No more annoying popups when you perform the mass actions from the mod on a prisoner.
 [*][b]Inclusion of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2790872361] Auto Demand Conversion [/url][/b]: Was not fixed for new update yet. If the author wishes me to remove it, i will do so. 
-[*][b]Better prison GUI 
-[*][b]Open settings on new game optionally (Can be disabled via gamerule)
-[*][b]Mass Torture Button
- [/list]
+[*][b]Better prison GUI [/b]
+[*][b]Open settings on new game optionally [/b] (Can be disabled via gamerule)
+[*][b]Mass Torture Button[/b] : like requested in the comments 
+[/list]
 
 [h2]Important Details:[/h2] [list] 
 [*][b]Visibility[/b]: The "Mass Action" button appears when you have 5 or more prisoners, similar to other mass actions in the game. 
