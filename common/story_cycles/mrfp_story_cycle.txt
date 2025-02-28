@@ -1,0 +1,198 @@
+﻿mrfp_recruitment_cycle = {
+    on_setup = {
+        story_owner = {
+            set_variable = {
+                name = mrfp_story
+                value = root
+            }
+        }
+
+        # Core recruitment settings
+        set_variable = {
+            name = mrfp_threshold_enabled
+            value = no
+        }
+        set_variable = {
+            name = mrfp_prowess_threshold
+            value = 16
+        }
+
+        # Release options configuration
+        set_variable = { name = mrfp_RELEASE_DEMAND_CONVERSION value = yes }
+        set_variable = { name = mrfp_RELEASE_RECRUIT value = yes }
+        set_variable = { name = mrfp_RELEASE_RENOUNCE_CLAIMS value = no }
+        set_variable = { name = mrfp_RELEASE_BANISH value = no }
+        set_variable = { name = mrfp_RELEASE_GAIN_HOOK value = no }
+        set_variable = { name = mrfp_RELEASE_TAKE_VOWS value = no }
+        set_variable = { name = mrfp_RELEASE_AS_EXECUTIONER value = no }
+        set_variable = { name = mrfp_RELEASE_DISFIGURE value = no }
+        set_variable = { name = mrfp_RELEASE_BLIND value = no }
+        set_variable = { name = mrfp_RELEASE_CASTRATE value = no }
+
+        # Additional tracking variables
+        set_variable = { name = mrfp_total_recruited value = 0 }
+        set_variable = { name = mrfp_total_recruited_current value = 0 }
+        set_variable = { name = mrfp_total_ransomed_people value = 0 }
+        set_variable = { name = mrfp_total_ransomed_people_current value = 0 }
+        set_variable = { name = mrfp_total_ransomed_gold value = 0 }
+        set_variable = { name = mrfp_total_ransomed_gold_current value = 0 }
+    }
+
+    on_end = {
+		end_story = yes
+    }
+
+    on_owner_death = {
+
+		#debug_log = "Total prisoners recruited: [THIS.Var('mrfp_total_recruited').GetValue]"
+		#debug_log = "Total prisoners ransomed: [THIS.Var('mrfp_total_ransomed').GetValue]"
+
+		#Transfer ownership
+		make_story_owner = story_owner.primary_heir
+
+        story_owner = {
+            set_variable = {
+                name = mrfp_story
+                value = root
+            }
+        }
+
+    }
+
+    # Montlhly recruitment cycle
+    effect_group = {
+        months = 1
+
+        trigger = {
+			story_owner = {
+            	has_character_flag = enable_auto_mrfp
+                any_prisoner = {
+                    always = yes
+                }
+			}
+        }
+
+        #use first valid here. firstly check for prowess threshold of disabled use any prisoner
+        first_valid = {
+            #Prowess threshold enabled
+            triggered_effect = {
+                trigger = {
+                    mrfp_threshold_enabled = yes
+                    story_owner = {
+                        any_prisoner = {
+                            prowess >= root.var:mrfp_prowess_threshold
+                        }
+                    }
+                }
+                effect = {
+                    save_scope_as = the_story
+                    story_owner = {
+                        save_scope_as = the_story_owner                        
+                        every_prisoner = {
+                            limit = {
+                                prowess >= scope:the_story.var:mrfp_prowess_threshold
+                                is_ruler = no
+                            }
+                            save_scope_as = the_story_prisoner
+                            mrfp_is_at_war_with_targets_liege_story = yes
+
+                            mrfp_release_all_unblocked_prisoners = yes
+                        }
+                        
+                        mrfp_send_amout_people_released_message = yes
+                    }
+
+                    # Update recruitment counter
+                    mrfp_update_recruitment_counter = yes
+                }
+            }
+
+            #Prowess threshold disabled
+            triggered_effect = {
+                trigger = {
+                    mrfp_threshold_enabled = no
+                }
+                effect = {
+                    save_scope_as = the_story
+                    story_owner = {
+                        save_scope_as = the_story_owner
+                        every_prisoner = {
+                            limit = {
+                                is_ruler = no
+                            }
+                            save_scope_as = the_story_prisoner
+                            mrfp_is_at_war_with_targets_liege_story = yes
+
+                            mrfp_release_all_unblocked_prisoners = yes
+                        }
+                        
+                        mrfp_send_amout_people_released_message = yes
+                    }
+
+                    # Update recruitment counter
+                    mrfp_update_recruitment_counter = yes
+                }
+            }
+        }
+    }
+
+    # # Monthly ransom cycle
+    effect_group = {
+        months = 1
+
+        trigger = {
+            story_owner = {
+                has_character_flag = enable_auto_mrfp_ransom
+                any_prisoner = {
+                    always = yes
+                }
+            }
+        }
+
+        triggered_effect = {
+            trigger = {
+                always = yes
+            }
+            effect = {
+                save_scope_as = the_story
+                story_owner = {
+
+                    # send_interface_message = {
+                    #     type = event_captured_combatants_good
+                    #     title = "Debug test"
+                    #     desc = "I managed to come here"						  
+                    # }
+
+                    save_scope_as = the_story_owner
+                    every_prisoner = {
+                        limit = { always = yes }
+                        save_scope_as = the_story_prisoner
+                        mrfp_is_at_war_with_target_or_their_liege_story = yes
+
+
+                        scope:the_story_prisoner = {
+                            save_scope_as = secondary_recipient
+                            if = {
+                                limit = {
+                                    is_ruler = no                
+                                    exists = liege
+                                }
+                                liege = {
+                                    save_scope_as = the_story_prisoner
+                                }
+                            }
+                        }
+
+                        mrfp_release_all_unblocked_ransom_prisoners = yes
+                    }
+                    
+                    mrfp_send_amount_people_ransomed_message = yes
+                }
+
+                # Update ransom counter
+                mrfp_update_ransom_counter = yes
+            }
+        }
+        }
+    }
+}

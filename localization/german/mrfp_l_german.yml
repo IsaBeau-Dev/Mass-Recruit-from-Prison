@@ -33,6 +33,12 @@ setting_on_mrfp:0 "Ja"
 setting_on_mrfp_desc:0 "Die Entscheidung die automatische Rekrutierung und Konvertierung von Gefangenen jeden Monat, die überzeugt werden können, durchzuführen wird sichtbar sein."
 setting_off_mrfp:0 "Nein"
 setting_off_mrfp_desc:0 "Die Entscheidung die automatische Rekrutierung und Konvertierung von Gefangenen jeden Monat, die überzeugt werden können, durchzuführen wird NICHT sichtbar sein."
+#
+rule_mrfp_welcome_event:1 "Willkommensevent ist aktiviert"
+setting_on_mrfp_welcome_event:1 "Ja"
+setting_on_mrfp_welcome_event_desc:1 "Das Spiel zeigt beim Start ein mod-spezifisches Willkommensevent für neue Spieler an."
+setting_off_mrfp_welcome_event:1 "Nein"
+setting_off_mrfp_welcome_event_desc:1 "Das Spiel zeigt beim Start kein mod-spezifisches Willkommensevent für neue Spieler an."
 #game rule prowess
 # rule_mrfp_prowess:0 "Massenrekrutierung aus dem Gefängnis Kampfgeschick Grenzwert"
 # setting_mrfp_prowess_5:0 "5"
@@ -83,3 +89,25 @@ decision_group_type_mrfp: "Massenrekrutierung"
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Gefangener freigelassen"
  prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] hat Euren Kerker verlassen."
+
+ prisonreleasethingy_story_release.title:0 "Gefangene(r) stimmt/stimmen den gewählten Optionen zu"
+ prisonreleasethingy_story_release.message:0 "Du hast insgesamt [ROOT.Var('mrfp_total_recruited_current').GetValue] Personen aus dem Gefängnis entlassen."
+
+ prisonransomthingy_story.title:0 "Gefangene freigekauft"
+ prisonransomthingy_story.message:0 "Sie haben [ROOT.Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
+
+#TODO TRANSLATE IF WELCOME EVENT MAKES IT INTO MOD
+##welcome message
+mrfp_welcome_events.0001.title:0 "Willkommen zu Massenaktionen im Gefängnis"
+mrfp_welcome_events.0001.desc:0 "Dieses Mod führt neue Mechaniken zum Rekrutieren und Freikaufen von Gefangenen ein."
+mrfp_welcome_events.0001.option1:0 "Interessant!"
+
+mrfp_welcome_events.0002.title:0 "Mod-Funktionen"
+mrfp_welcome_events.0002.desc:0 "Wichtige Funktionen des Massenaktionen im Gefängnis (ehemals Mass Recruit from Prison Mod) sind:\n- Möglichkeit, Gefangene zu rekrutieren und freizukaufen"
+mrfp_welcome_events.0002.option1:0 "Verstanden!"
+
+mrfp_welcome_events.0003.title:0 "Massenrekrutierung aus dem Gefängnis - Mod-Einstellungen"
+mrfp_welcome_events.0003.desc:0 "Konfigurieren Sie die Einstellungen für die Mod zur Massenrekrutierung aus dem Gefängnis. Passen Sie an, wie Gefangene in Ihrem Reich rekrutiert und verwaltet werden.\nSie können Ihre Einstellungen auch über die Entscheidung 'Ändere Massenrekrutierungseinstellungen' ändern. Es wird die gleichen Einstellungen öffnen, die Sie jetzt sehen werden."
+
+mrfp_welcome_events.0003.option.threshold_toggle:0 "Einstellungen ändern"
+mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Ändern Sie Ihre Präferenzen für Aktionen, die an Gefangenen durchgeführt werden."
