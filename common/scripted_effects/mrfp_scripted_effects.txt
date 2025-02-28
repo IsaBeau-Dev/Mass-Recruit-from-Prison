@@ -187,11 +187,6 @@ mrfp_start_story_if_not_exist = {
 			name = mrfp_story
 			value = scope:the_story
 		}
-		send_interface_message = {
-			type = event_captured_combatants_good
-			title = "Debug test"
-			desc = "not has var but owns story"						  
-		}
 	}
 	# has variable but no story
 	else_if = {
@@ -205,11 +200,6 @@ mrfp_start_story_if_not_exist = {
 		}
 		remove_variable = mrfp_story
 		create_story = mrfp_recruitment_cycle
-		send_interface_message = {
-			type = event_captured_combatants_good
-			title = "Debug test"
-			desc = "has variable but no story"						  
-		}
 	}
 
 	# does not have both
@@ -225,10 +215,5 @@ mrfp_start_story_if_not_exist = {
 			}
 		}
 		create_story = mrfp_recruitment_cycle
-		send_interface_message = {
-			type = event_captured_combatants_good
-			title = "Debug test"
-			desc = "does not have both"						  
-		}
 	}
 }
