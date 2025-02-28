@@ -15,8 +15,8 @@ on_mrfp_start = {
 
 on_game_start_after_lobby = {
 	on_actions = { 
-		mrfp_welcome_event
         mrfp_start_story
+		mrfp_welcome_event
 	}
 }
 
