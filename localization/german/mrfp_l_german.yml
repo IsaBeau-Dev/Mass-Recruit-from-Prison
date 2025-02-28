@@ -39,6 +39,13 @@ setting_on_mrfp_welcome_event:1 "Ja"
 setting_on_mrfp_welcome_event_desc:1 "Das Spiel zeigt beim Start ein mod-spezifisches Willkommensevent für neue Spieler an."
 setting_off_mrfp_welcome_event:1 "Nein"
 setting_off_mrfp_welcome_event_desc:1 "Das Spiel zeigt beim Start kein mod-spezifisches Willkommensevent für neue Spieler an."
+#
+rule_mrfp_only_recruit_summary:1 "Nur Rekrutierungszusammenfassung anzeigen"
+setting_on_mrfp_only_recruit_summary:1 "Ja"
+setting_on_mrfp_only_recruit_summary_desc:1 "Das Spiel zeigt nur eine Rekrutierungszusammenfassung an, die Ihnen mitteilt, wie viele Menschen Sie aus dem Gefängnis entlassen haben."
+setting_off_mrfp_only_recruit_summary:1 "Nein"
+setting_off_mrfp_only_recruit_summary_desc:1 "Das Spiel zeigt nur eine Rekrutierungszusammenfassung an, die Ihnen mitteilt, wie viele Menschen Sie aus dem Gefängnis entlassen haben, und eine Nachricht für jeden entlassenen Gefangenen."
+
 #game rule prowess
 # rule_mrfp_prowess:0 "Massenrekrutierung aus dem Gefängnis Kampfgeschick Grenzwert"
 # setting_mrfp_prowess_5:0 "5"

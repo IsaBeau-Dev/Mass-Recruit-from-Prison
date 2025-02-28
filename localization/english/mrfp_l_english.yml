@@ -38,6 +38,12 @@ setting_on_mrfp_welcome_event:1 "Yes"
 setting_on_mrfp_welcome_event_desc:1 "The game will show a mod specific welcoming event to new players upon starting."
 setting_off_mrfp_welcome_event:1 "No"
 setting_off_mrfp_welcome_event_desc:1 "The game will not show any mod specific welcoming event to new players upon starting."
+#
+rule_mrfp_only_recruit_summary:1 "Only Show a Recruit Summary"
+setting_on_mrfp_only_recruit_summary:1 "Yes"
+setting_on_mrfp_only_recruit_summary_desc:1 "The game will only show a recruit summary telling you how many people you released from prison."
+setting_off_mrfp_only_recruit_summary:1 "No"
+setting_off_mrfp_only_recruit_summary_desc:1 "The game will only show a recruit summary telling you how many people you released from prison and a message for each prisoner that was released"
 #game rule prowess
 # rule_mrfp_prowess:0 "Mass Recruit from Prison Prowess Threshold"
 # setting_mrfp_prowess_5:0 "5"
