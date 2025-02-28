@@ -56,6 +56,8 @@ types mrfp_window_types {
 	}
 
 	type mrfp_can_be_recruited = hbox {
+		layoutpolicy_horizontal = expanding
+		margin = { 10 5 }
 		spacing = 5
 		
 		text_single = {
