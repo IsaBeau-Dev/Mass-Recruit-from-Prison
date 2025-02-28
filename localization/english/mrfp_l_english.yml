@@ -1,7 +1,8 @@
 ﻿l_english:
-mrfp_tooltip_ransom: "#T $MASS_PRISONER_ACTION_RANSOM$#!\nRansom all [prisoners|E] for [gold|E].\n$MRFP_MASS_ACTION_TT_INCLUDE$"
- mrfp_tooltip:0 "Recruit all [prisoners|E] and convert them if possible.\nThis only works on characters without a title.$MRFP_MASS_ACTION_TT_INCLUDE$"
 MRFP_MASS_ACTION_TT_INCLUDE: "\n#weak Prisoners that are hidden by a filter will ALSO be affected.#!"
+mrfp_tooltip_ransom: "#T $MASS_PRISONER_ACTION_RANSOM$#!\nRansom all [prisoners|E] for [gold|E].\n$MRFP_MASS_ACTION_TT_INCLUDE$"
+mrfp_tooltip:0 "Recruit all [prisoners|E] and convert them if possible.\nThis only works on characters without a title.$MRFP_MASS_ACTION_TT_INCLUDE$"
+mrfp_tooltip_torture:0 "Torture all [prisoners|E]. Prisoners excluded via vanilla gui checkbox will not be affected!$MRFP_MASS_ACTION_TT_INCLUDE$"
 #decision recruit
 enable_mrfp_decision:0 "Start Mass Recruit From Prison"
 enable_mrfp_decision_tooltip:0 "Automatically, recruit prisoners from prison and demand conversions (if possible), every month."
