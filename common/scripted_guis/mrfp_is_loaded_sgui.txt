@@ -152,3 +152,17 @@ mrfp_prison_window_ransom = {
     scope:target.ransom_cost_value <= scope:secondary_recipient.gold
   }
 }
+mrfp_prison_window_block_or_unblock_character = {
+  scope = character
+  effect = {
+    if = {
+      limit = {
+        has_character_flag = mrfp_blocked
+      }
+      remove_character_flag = mrfp_blocked
+    }
+    else = {
+      add_character_flag = mrfp_blocked
+    }
+  }
+}

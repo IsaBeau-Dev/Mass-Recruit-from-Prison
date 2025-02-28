@@ -167,6 +167,9 @@ types mrfp_window_types {
 								name = "lock_from_mass_actions"
 								checked = "[CharacterListItem.GetBool('is_mass_action_locked')]"
 								onclick = "[CharacterListItem.OnClick('mass_action_lock')]"
+								#mrfp
+								onclick = "[GetScriptedGui('mrfp_prison_window_block_or_unblock_character').Execute(GuiScope.SetRoot(CharacterListItem.GetCharacter.MakeScope).End)]"
+								#mrfp
 								tooltip = "[CharacterListItem.GetText('mass_action_lock_tooltip')]"
 							}
 
