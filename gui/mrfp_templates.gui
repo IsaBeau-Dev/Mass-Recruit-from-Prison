@@ -65,7 +65,7 @@ types mrfp_window_types {
 
 		button_checkbox = {
 			name = "mrfp_can_be_recruited"
-			checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', Character.MakeScope ).End)]"
+			checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
 			tooltip = "Can be recruited"
 		}
 	}
