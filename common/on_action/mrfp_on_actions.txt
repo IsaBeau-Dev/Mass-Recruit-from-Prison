@@ -33,6 +33,10 @@ mrfp_welcome_event = {
         if = {
             limit = { has_game_rule = on_mrfp_open_settings_on_new_game }
             every_player = {
+                save_scope_as = actor
+                scope:actor.var:mrfp_story = {
+                    save_scope_as = the_story
+                }
                 # trigger_event = mrfp_welcome_events.0001
                 trigger_event = mrfp_set_threshold.0001
             }
