@@ -71,8 +71,6 @@ mrfp_release_all_unblocked_prisoners = {
 		}
 
 		mrfp_every_prisoner_effect_story = yes
-
-		remove_character_flag = mrfp_blocked
 		
 	}
 }
@@ -96,8 +94,6 @@ mrfp_release_all_unblocked_ransom_prisoners = {
 			recipient = scope:the_story_prisoner
 			execute_threshold = accept
 		}
-
-		remove_character_flag = mrfp_blocked
 		
 	}
 }
