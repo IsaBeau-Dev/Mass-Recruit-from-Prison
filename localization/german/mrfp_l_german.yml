@@ -28,6 +28,7 @@ disable_mrfp_ransom_decision_desc:0 "I will not ransom prisoners any longer."
 disable_mrfp_ransom_decision_effect_tooltip:0 "Stop demanding ransom for prisoners every month."
 disable_mrfp_ransom_decision_confirm:0 "Stop ransoming"
 #game rule
+game_rule_category_mrfp:0 "Massengefängnisaktionen"
 rule_mrfp:0 "Automatische Massenrekrutierung aus dem Gefängnis Entscheidung anzeigen"
 setting_on_mrfp:0 "Ja"
 setting_on_mrfp_desc:0 "Die Entscheidung die automatische Rekrutierung und Konvertierung von Gefangenen jeden Monat, die überzeugt werden können, durchzuführen wird sichtbar sein."
@@ -45,6 +46,13 @@ setting_on_mrfp_only_recruit_summary:1 "Ja"
 setting_on_mrfp_only_recruit_summary_desc:1 "Das Spiel zeigt nur eine Rekrutierungszusammenfassung an, die Ihnen mitteilt, wie viele Menschen Sie aus dem Gefängnis entlassen haben."
 setting_off_mrfp_only_recruit_summary:1 "Nein"
 setting_off_mrfp_only_recruit_summary_desc:1 "Das Spiel zeigt nur eine Rekrutierungszusammenfassung an, die Ihnen mitteilt, wie viele Menschen Sie aus dem Gefängnis entlassen haben, und eine Nachricht für jeden entlassenen Gefangenen."
+#
+rule_mrfp_open_settings_on_new_game:1 "Modeinstellungen beim Spielstart öffnen"
+setting_on_mrfp_open_settings_on_new_game:1 "Ja"
+setting_on_mrfp_open_settings_on_new_game_desc:1 "Das Spiel öffnet automatisch das Modeinstellungsmenü, wenn ein neues Spiel gestartet wird."
+setting_off_mrfp_open_settings_on_new_game:1 "Nein"
+setting_off_mrfp_open_settings_on_new_game_desc:1 "Das Spiel öffnet das Modeinstellungsmenü nicht automatisch, wenn ein neues Spiel gestartet wird."
+
 # decision group
 decision_group_type_mrfp: "Massenrekrutierung"
 
@@ -79,6 +87,7 @@ decision_group_type_mrfp: "Massenrekrutierung"
  mrfp_set_threshold.0001.settings.p2:0 "#T Teil 2:#!\n"
  mrfp_send_options.p1:0 "Gehe zu Teil 1"
  mrfp_send_options.p2:0 "Gehe zu Teil 2"
+ mrfp_back_to_send_options:0 "Zurück zu den Sendeoptionen"
 
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Gefangener freigelassen"
@@ -90,7 +99,6 @@ decision_group_type_mrfp: "Massenrekrutierung"
  prisonransomthingy_story.title:0 "Gefangene freigekauft"
  prisonransomthingy_story.message:0 "Sie haben [ROOT.Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
 
-#TODO TRANSLATE IF WELCOME EVENT MAKES IT INTO MOD
 ##welcome message
 mrfp_welcome_events.0001.title:0 "Willkommen zu Massenaktionen im Gefängnis"
 mrfp_welcome_events.0001.desc:0 "Dieses Mod führt neue Mechaniken zum Rekrutieren und Freikaufen von Gefangenen ein."

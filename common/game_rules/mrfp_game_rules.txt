@@ -1,7 +1,7 @@
 ﻿mrfp = {
 	
 	categories = {
-		tweaks
+		mrfp
 	}
 	
 	default = on_mrfp
@@ -17,7 +17,7 @@
 mrfp_only_recruit_summary = {
 	
 	categories = {
-		tweaks
+		mrfp
 	}
 	
 	default = on_mrfp_only_recruit_summary
@@ -27,6 +27,22 @@ mrfp_only_recruit_summary = {
 	}
 	
 	off_mrfp_only_recruit_summary  = {
+	
+	}
+}
+mrfp_open_settings_on_new_game = {
+	
+	categories = {
+		mrfp
+	}
+	
+	default = on_mrfp_open_settings_on_new_game
+
+	on_mrfp_open_settings_on_new_game = {
+	
+	}
+	
+	off_mrfp_open_settings_on_new_game  = {
 	
 	}
 }
