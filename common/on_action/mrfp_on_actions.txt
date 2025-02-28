@@ -47,8 +47,12 @@ mrfp_on_release_from_prison = {
     effect = {
         if = {
             limit = { has_character_flag = mrfp_blocked }
+            remove_character_flag = mrfp_blocked
         }
-        remove_character_flag = mrfp_blocked
+        if = {
+            limit = { has_character_flag = mrfp_blocked_gui }
+            remove_character_flag = mrfp_blocked_gui
+        }
     }
 }
 

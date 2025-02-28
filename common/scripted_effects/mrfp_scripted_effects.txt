@@ -64,9 +64,14 @@ mrfp_send_amout_people_released_message = {
 
 mrfp_release_all_unblocked_prisoners = {
 	if = {
-		limit = { 
-			NOT = {
-				has_character_flag = mrfp_blocked
+		limit = {
+			OR = {
+				NOT = {
+					has_character_flag = mrfp_blocked
+				}
+				NOT = {
+					has_character_flag = mrfp_blocked_gui
+				}
 			} 
 		}
 
@@ -81,8 +86,13 @@ mrfp_release_all_unblocked_prisoners = {
 mrfp_release_all_unblocked_ransom_prisoners = {
 	if = {
 		limit = { 
-			NOT = {
-				has_character_flag = mrfp_blocked
+			OR = {
+				NOT = {
+					has_character_flag = mrfp_blocked
+				}
+				NOT = {
+					has_character_flag = mrfp_blocked_gui
+				}
 			}
 			scope:secondary_recipient.ransom_cost_value <= scope:the_story_prisoner.gold 
 		}
