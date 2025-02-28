@@ -34,6 +34,23 @@ types mrfp_button_types
 			alpha = 1
 		}
 	}
+	type mrfp_button_torture = button_round {
+		# code for your button and any nested controls you want
+		name = "torture"
+		visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
+		enabled = "[CourtWindow.CanDoMassPrisonerAction('execute')]"
+
+		button_prison_execute = {
+			parentanchor = center
+			onclick = "[GetScriptedGui('mrfp_is_loaded_sgui_torture').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			tooltip = "mrfp_tooltip_torture"
+			using = tooltip_se
+		}
+		modify_texture = {
+			texture = "gfx/interface/colors/gold.dds"
+			alpha = 1
+		}
+	}
 }
 
 
@@ -389,6 +406,7 @@ types mrfp_window_types {
 				#MRFP
 				mrfp_button_recruit = {}
 				mrfp_button_ransom = {}
+				mrfp_button_torture = {}
 				#MRFP
 			}
 		}
