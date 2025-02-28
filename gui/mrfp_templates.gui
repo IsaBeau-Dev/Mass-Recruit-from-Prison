@@ -56,9 +56,6 @@ types mrfp_window_types {
 	}
 
 	type mrfp_can_be_recruited = hbox {
-		# layoutpolicy_horizontal = expanding
-		# margin = { 10 5 }
-		# spacing = 5
 		spacing = 3
 		
 		text_single = {
@@ -73,7 +70,7 @@ types mrfp_window_types {
 		}
 	}
 
-	type mrfp_merged_gold_display_and_can_be_ransomed = hbox {
+	type mrfp_merged_gold_display_and_can_be_ransomed_and_can_be_recruited = hbox {
 		layoutpolicy_horizontal = expanding
 		margin = { 10 5 }
 		spacing = 5
@@ -82,15 +79,34 @@ types mrfp_window_types {
 			text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_gold')|0] [gold_i]"
 			default_format = "#low"
 		}
-		text_single = {
-			text =  "mrfp_can_be_ransomed"
-			default_format = "#low"
-		}
+		vbox = {
+			hbox = {
+				spacing = 25
+				text_single = {
+					text =  "mrfp_can_be_ransomed"
+					default_format = "#low"
+				}
+		
+				button_checkbox = {
+					name = "mrfp_can_be_ransomed"
+					checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
+					tooltip = "Can be ransomed"
+				}
+			}
+			hbox = {
+				spacing = 25
+				text_single = {
+					text = "mrfp_can_be_recruited"
+					default_format = "#low"
+				}
+		
+				button_checkbox = {
+					name = "mrfp_can_be_recruited"
+					checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
+					tooltip = "Can be recruited"
+				}
+			}
 
-		button_checkbox = {
-			name = "mrfp_can_be_ransomed"
-			checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-			tooltip = "Can be ransomed"
 		}
 	}
 
@@ -205,8 +221,7 @@ types mrfp_window_types {
 						
 
 						# MRFP
-						mrfp_merged_gold_display_and_can_be_ransomed = {}
-						mrfp_can_be_recruited = {}
+						mrfp_merged_gold_display_and_can_be_ransomed_and_can_be_recruited = {}
 						# MRFP
 
 						hbox = {

@@ -105,3 +105,7 @@ mrfp_welcome_events.0003.desc:0 "Konfigurieren Sie die Einstellungen für die Mo
 
 mrfp_welcome_events.0003.option.threshold_toggle:0 "Einstellungen ändern"
 mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Ändern Sie Ihre Präferenzen für Aktionen, die an Gefangenen durchgeführt werden."
+
+#prison gui
+mrfp_can_be_ransomed:0 "Kann freigekauft werden:"
+mrfp_can_be_recruited:0 "Kann rekrutiert werden:"
