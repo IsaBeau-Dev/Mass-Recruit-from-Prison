@@ -12,6 +12,10 @@ types mrfp_button_types
 			tooltip = "mrfp_tooltip"
 			using = tooltip_se
 		}
+		modify_texture = {
+			texture = "gfx/interface/colors/gold.dds"
+			alpha = 1
+		}
 	}
 	type mrfp_button_ransom = button_round {
 		# code for your button and any nested controls you want
@@ -24,6 +28,10 @@ types mrfp_button_types
 			onclick = "[GetScriptedGui('mrfp_is_loaded_sgui_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 			tooltip = "mrfp_tooltip_ransom"
 			using = tooltip_se
+		}
+		modify_texture = {
+			texture = "gfx/interface/colors/gold.dds"
+			alpha = 1
 		}
 	}
 }
