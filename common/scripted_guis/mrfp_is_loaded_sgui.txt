@@ -145,7 +145,10 @@ mrfp_is_loaded_sgui_torture = {
       save_scope_as = the_story
     }
     every_prisoner = {
-      limit = { NOT={has_character_modifier = recently_tortured} }
+      limit = { 
+        NOT={ has_character_modifier = recently_tortured }
+        NOT={ has_character_flag = mrfp_blocked_gui }
+       }
       save_scope_as = the_story_prisoner
       run_interaction = {
         #interaction = ransom_interaction
