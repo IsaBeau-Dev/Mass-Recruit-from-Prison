@@ -79,6 +79,7 @@ decision_group_type_mrfp: "Massenrekrutierung"
  mrfp_set_threshold.0001.settings.p2:0 "#T Teil 2:#!\n"
  mrfp_send_options.p1:0 "Gehe zu Teil 1"
  mrfp_send_options.p2:0 "Gehe zu Teil 2"
+ mrfp_back_to_send_options:0 "Zurück zu den Sendeoptionen"
 
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Gefangener freigelassen"
@@ -90,7 +91,6 @@ decision_group_type_mrfp: "Massenrekrutierung"
  prisonransomthingy_story.title:0 "Gefangene freigekauft"
  prisonransomthingy_story.message:0 "Sie haben [ROOT.Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
 
-#TODO TRANSLATE IF WELCOME EVENT MAKES IT INTO MOD
 ##welcome message
 mrfp_welcome_events.0001.title:0 "Willkommen zu Massenaktionen im Gefängnis"
 mrfp_welcome_events.0001.desc:0 "Dieses Mod führt neue Mechaniken zum Rekrutieren und Freikaufen von Gefangenen ein."
