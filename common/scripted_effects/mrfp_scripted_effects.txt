@@ -177,7 +177,7 @@ mrfp_start_story_if_not_exist = {
 				story_type = mrfp_recruitment_cycle
 			}
 		}
-		any_owned_story = {
+		random_owned_story = {
 			limit = {
 				story_type = mrfp_recruitment_cycle
 			}
