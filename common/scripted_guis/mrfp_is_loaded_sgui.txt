@@ -155,7 +155,10 @@ mrfp_prison_window_ransom = {
 mrfp_prison_window_recruited = {
   scope = character
   is_shown = {
-    always = yes
+    is_character_interaction_potentially_accepted = {
+      recipient = scope:target
+      interaction = mrfp_vars_interaction_story
+    }
   }
 }
 mrfp_prison_window_block_or_unblock_character = {
