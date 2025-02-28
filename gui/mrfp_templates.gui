@@ -1,6 +1,6 @@
 types mrfp_button_types
 {
-	type mrfp_button = button_round {
+	type mrfp_button_recruit = button_round {
 		# code for your button and any nested controls you want
 		name = "mrfp"
 		visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
@@ -270,7 +270,7 @@ types mrfp_window_types {
 					}
 				}
 				#MRFP
-				mrfp_button = {}
+				mrfp_button_recruit = {}
 				mrfp_button_ransom = {}
 				#MRFP
 			}

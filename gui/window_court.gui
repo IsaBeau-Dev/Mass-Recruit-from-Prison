@@ -307,6 +307,8 @@
 						}
 					}
 
+					# MRFP
+
 					hbox = {
 						name = "prison_info_box"
 						layoutpolicy_horizontal = expanding
