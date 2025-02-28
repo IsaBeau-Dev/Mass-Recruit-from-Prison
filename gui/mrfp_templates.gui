@@ -55,6 +55,21 @@ types mrfp_window_types {
 		}
 	}
 
+	type mrfp_can_be_recruited = hbox {
+		spacing = 3
+		
+		text_single = {
+			text = "mrfp_can_be_recruited"
+			default_format = "#low"
+		}
+
+		button_checkbox = {
+			name = "mrfp_can_be_recruited"
+			checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', Character.MakeScope ).End)]"
+			tooltip = "Can be recruited"
+		}
+	}
+
 	type mrfp_merged_gold_display_and_can_be_ransomed = hbox {
 		layoutpolicy_horizontal = expanding
 		margin = { 10 5 }
@@ -188,6 +203,7 @@ types mrfp_window_types {
 
 						# MRFP
 						mrfp_merged_gold_display_and_can_be_ransomed = {}
+						# mrfp_can_be_recruited = {}
 						# MRFP
 
 						hbox = {
