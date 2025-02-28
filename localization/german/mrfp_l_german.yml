@@ -89,3 +89,25 @@ decision_group_type_mrfp: "Massenrekrutierung"
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Gefangener freigelassen"
  prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] hat Euren Kerker verlassen."
+
+ prisonreleasethingy_story_release.title:0 "Gefangene(r) stimmt/stimmen den gewählten Optionen zu"
+ prisonreleasethingy_story_release.message:0 "Du hast insgesamt [ROOT.Var('mrfp_total_recruited_current').GetValue] Personen aus dem Gefängnis entlassen."
+
+ prisonransomthingy_story.title:0 "Gefangene freigekauft"
+ prisonransomthingy_story.message:0 "Sie haben [ROOT.Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
+
+#TODO TRANSLATE IF WELCOME EVENT MAKES IT INTO MOD
+##welcome message
+mrfp_welcome_events.0001.title:0 "Welcome to Mass Prison Actions"
+mrfp_welcome_events.0001.desc:0 "This mod introduces new mechanics for recruiting and ransoming prisoners."
+mrfp_welcome_events.0001.option1:0 "Interesting!"
+
+mrfp_welcome_events.0002.title:0 "Mod Features"
+mrfp_welcome_events.0002.desc:0 "Key features of the Mass Prison Actions formerly known as Mass Recruit from Prison mod include:\n- Ability to recruit and ransom prisoners"
+mrfp_welcome_events.0002.option1:0 "Got it!"
+
+mrfp_welcome_events.0003.title:0 "Mass Recruit from Prison - Mod Preferences"
+mrfp_welcome_events.0003.desc:0 "Configure the settings for the Mass Recruit from Prison mod. Customize how prisoners are recruited and managed in your realm.\nYou can also change your preferences via the decision Change Mass Recruit Settings. It will open up the same settings that you will see now."
+
+mrfp_welcome_events.0003.option.threshold_toggle:0 "Change Preferences"
+mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Change your preferences for actions performed on prisoners."
