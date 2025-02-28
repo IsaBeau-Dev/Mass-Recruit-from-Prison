@@ -310,76 +310,7 @@
 					# MRFP
 
 					#prison info box aka amout recruited and earned gold
-					hbox = {
-						name = "prison_info_box"
-						layoutpolicy_horizontal = expanding
-						margin = { 10 10 }
-						spacing = 5
-
-						background = {
-							using = Background_Area_Dark
-						}
-
-						vbox = {
-							name = "mrfp_recruited_vbox"
-							layoutpolicy_horizontal = expanding
-							spacing = 5
-
-							text_single = {
-								name = "mrfp_gui_total_recruited_label"
-								text = "Total Recruited:"
-								default_format = "#high"
-								autoresize = yes
-							}
-
-							text_single = {
-								name = "mrfp_gui_total_recruited_value"
-								text = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_total_recruited').GetValue|0]"
-								default_format = "#low"
-								autoresize = yes
-							}
-						}
-
-						vbox = {
-							name = "mrfp_ransomed_people_vbox"
-							layoutpolicy_horizontal = expanding
-							spacing = 5
-
-							text_single = {
-								name = "mrfp_gui_total_ransomed_people_label"
-								text = "Total Ransomed People:"
-								default_format = "#high"
-								autoresize = yes
-							}
-
-							text_single = {
-								name = "mrfp_gui_total_ransomed_people_value"
-								text = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_total_ransomed_people').GetValue|0]"
-								default_format = "#low"
-								autoresize = yes
-							}
-						}
-
-						vbox = {
-							name = "mrfp_ransomed_gold_vbox"
-							layoutpolicy_horizontal = expanding
-							spacing = 5
-
-							text_single = {
-								name = "mrfp_gui_total_ransomed_gold_label"
-								text = "Total Gold [gold_i] Ransomed:"
-								default_format = "#high"
-								autoresize = yes
-							}
-
-							text_single = {
-								name = "mrfp_gui_total_ransomed_gold_value"
-								text = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_total_ransomed_gold').GetValue|0]"
-								default_format = "#low"
-								autoresize = yes
-							}
-						}
-					}
+					mrfp_prison_stats = {}
 
 					## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
 					mrfp_layout_with_more_than_4_prisoners = {}
