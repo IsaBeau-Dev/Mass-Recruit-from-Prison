@@ -56,7 +56,7 @@ types mrfp_window_types {
 	}
 
 	type mrfp_can_be_recruited = hbox {
-		spacing = 3
+		spacing = 5
 		
 		text_single = {
 			text = "mrfp_can_be_recruited"
@@ -178,14 +178,14 @@ types mrfp_window_types {
 				layoutpolicy_horizontal = expanding
 				# MRFP
 				addcolumn = 520
+				addrow = 240
 				# MRFP
-				addrow = 200
 				datamodel_reuse_widgets = yes
 
 				item = {
 					vbox = {
 						# MRFP
-						maximumsize = { 520 200 }
+						maximumsize = { 520 240 }
 						# MRFP
 
 						widget_character_list_item_finder = {
@@ -203,7 +203,7 @@ types mrfp_window_types {
 
 						# MRFP
 						mrfp_merged_gold_display_and_can_be_ransomed = {}
-						# mrfp_can_be_recruited = {}
+						mrfp_can_be_recruited = {}
 						# MRFP
 
 						hbox = {
