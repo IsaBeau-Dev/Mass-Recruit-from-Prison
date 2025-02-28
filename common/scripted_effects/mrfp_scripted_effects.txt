@@ -185,7 +185,7 @@ mrfp_start_story_if_not_exist = {
 		}
 		set_variable = {
 			name = mrfp_story
-			value = the_story
+			value = scope:the_story
 		}
 		send_interface_message = {
 			type = event_captured_combatants_good
