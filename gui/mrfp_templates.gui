@@ -56,9 +56,10 @@ types mrfp_window_types {
 	}
 
 	type mrfp_can_be_recruited = hbox {
-		layoutpolicy_horizontal = expanding
-		margin = { 10 5 }
-		spacing = 5
+		# layoutpolicy_horizontal = expanding
+		# margin = { 10 5 }
+		# spacing = 5
+		spacing = 3
 		
 		text_single = {
 			text = "mrfp_can_be_recruited"
@@ -524,6 +525,8 @@ types mrfp_window_types {
 
 							# Can be ransomed text and checkbox
 							mrfp_can_be_ransomed = {}
+
+							mrfp_can_be_recruited = {}
 							# MRFP
 
 
