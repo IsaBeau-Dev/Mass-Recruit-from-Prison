@@ -28,6 +28,7 @@ disable_mrfp_ransom_decision_desc:0 "I will not ransom prisoners any longer."
 disable_mrfp_ransom_decision_effect_tooltip:0 "Stop demanding ransom for prisoners every month."
 disable_mrfp_ransom_decision_confirm:0 "Stop ransoming"
 #game rule
+game_rule_category_mrfp:0 "Massengefängnisaktionen"
 rule_mrfp:0 "Automatische Massenrekrutierung aus dem Gefängnis Entscheidung anzeigen"
 setting_on_mrfp:0 "Ja"
 setting_on_mrfp_desc:0 "Die Entscheidung die automatische Rekrutierung und Konvertierung von Gefangenen jeden Monat, die überzeugt werden können, durchzuführen wird sichtbar sein."
@@ -45,6 +46,13 @@ setting_on_mrfp_only_recruit_summary:1 "Ja"
 setting_on_mrfp_only_recruit_summary_desc:1 "Das Spiel zeigt nur eine Rekrutierungszusammenfassung an, die Ihnen mitteilt, wie viele Menschen Sie aus dem Gefängnis entlassen haben."
 setting_off_mrfp_only_recruit_summary:1 "Nein"
 setting_off_mrfp_only_recruit_summary_desc:1 "Das Spiel zeigt nur eine Rekrutierungszusammenfassung an, die Ihnen mitteilt, wie viele Menschen Sie aus dem Gefängnis entlassen haben, und eine Nachricht für jeden entlassenen Gefangenen."
+#
+rule_mrfp_open_settings_on_new_game:1 "Modeinstellungen beim Spielstart öffnen"
+setting_on_mrfp_open_settings_on_new_game:1 "Ja"
+setting_on_mrfp_open_settings_on_new_game_desc:1 "Das Spiel öffnet automatisch das Modeinstellungsmenü, wenn ein neues Spiel gestartet wird."
+setting_off_mrfp_open_settings_on_new_game:1 "Nein"
+setting_off_mrfp_open_settings_on_new_game_desc:1 "Das Spiel öffnet das Modeinstellungsmenü nicht automatisch, wenn ein neues Spiel gestartet wird."
+
 # decision group
 decision_group_type_mrfp: "Massenrekrutierung"
 
