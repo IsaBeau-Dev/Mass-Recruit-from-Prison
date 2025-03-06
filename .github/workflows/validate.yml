@@ -38,6 +38,6 @@ jobs:
       - name: Validate
         uses: ./validation/
         with:
-          mod-directory: 'mod'
+          mod-directory: '.'
           action-directory: 'validation'
           game: 'ck3' # Also supports ck3
