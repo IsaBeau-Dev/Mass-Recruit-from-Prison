@@ -31,6 +31,9 @@ jobs:
           ref: 'main'
           path: 'validation'
           token: ${{ secrets.VALIDATION_TOKEN }}
+      
+      - name: Set execute permissions
+        run: chmod +x validation/validate.sh
 
       - name: Validate
         uses: ./validation/
