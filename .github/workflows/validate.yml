@@ -1,0 +1,38 @@
+name: Validation
+permissions:
+  contents: read
+  packages: write
+  checks: write
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: 'true'
+
+      - name: Checkout Validation
+        uses: actions/checkout@v4
+        with:
+          repository: IsaBeau-Dev/ck3-tiger-action
+          ref: 'main'
+          path: 'validation'
+          token: ${{ secrets.VALIDATION_TOKEN }}
+
+      - name: Validate
+        uses: ./validation/
+        with:
+          mod-directory: 'mod'
+          action-directory: 'validation'
+          game: 'ck3' # Also supports ck3
