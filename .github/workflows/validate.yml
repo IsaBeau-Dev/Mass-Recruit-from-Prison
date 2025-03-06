@@ -5,6 +5,8 @@ permissions:
   checks: write
 
 on:
+  # Allows manual triggering of the workflow
+  workflow_dispatch:
   pull_request:
     branches:
       - main
