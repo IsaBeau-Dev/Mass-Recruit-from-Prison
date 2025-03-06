@@ -32,9 +32,6 @@ jobs:
           path: 'validation'
           token: ${{ secrets.VALIDATION_TOKEN }}
 
-      - name: List files
-        run: ls -al validation
-
       - name: Set execute permissions for validation directory
         run: chmod -R +x validation
 
