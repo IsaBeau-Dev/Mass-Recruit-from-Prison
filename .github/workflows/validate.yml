@@ -17,7 +17,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,9 +31,12 @@ jobs:
           ref: 'main'
           path: 'validation'
           token: ${{ secrets.VALIDATION_TOKEN }}
-      
-      - name: Set execute permissions
-        run: chmod +x validation/validate.sh
+
+      - name: List files
+        run: ls -al validation
+
+      - name: Set execute permissions for validation directory
+        run: chmod -R +x validation
 
       - name: Validate
         uses: ./validation/
