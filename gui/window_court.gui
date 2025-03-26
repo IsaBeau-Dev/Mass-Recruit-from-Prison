@@ -128,7 +128,7 @@
 							hbox = {
 								spacing = 10
 
-								button_court = {
+								button_decision_entry = {
 									name = "invite_knights_decision"
 									datacontext = "[GetDecisionWithKey('invite_knights_decision')]"
 									visible = "[Decision.IsShownForPlayer]"
@@ -136,23 +136,18 @@
 									onclick = "[OpenGameViewData( 'decision_detail', Decision.Self)]"
 									using = tooltip_se
 
-									size = { 210 30 }
-
-									blockoverride "size_illustration" {
-										size = { 210 28 }
+									blockoverride "button_size"
+									{
+										size = { 210 30 }
 									}
 
-									blockoverride "vignette_size" {
-										position = { 0 1 }
-										size = { 206 26 }
-									}
-
-									blockoverride "deb_illustration" {
-										visible = no
+									blockoverride "vignette_size"
+									{
+										size = { 98% 88% }
 									}
 								}
 
-								button_court = {
+								button_decision_entry = {
 									name = "invite_claimants_decision"
 									datacontext = "[GetDecisionWithKey('invite_claimants_decision')]"
 									visible = "[Decision.IsShownForPlayer]"
@@ -160,19 +155,14 @@
 									onclick = "[OpenGameViewData( 'decision_detail', Decision.Self)]"
 									using = tooltip_se
 
-									size = { 210 30 }
-
-									blockoverride "size_illustration" {
-										size = { 210 28 }
+									blockoverride "button_size"
+									{
+										size = { 210 30 }
 									}
 
-									blockoverride "vignette_size" {
-										position = { 0 1 }
-										size = { 206 26 }
-									}
-
-									blockoverride "deb_illustration" {
-										visible = no
+									blockoverride "vignette_size"
+									{
+										size = { 98% 88% }
 									}
 								}
 							}
@@ -319,7 +309,7 @@
 					mrfp_layout_with_4_prisoners_or_fewer = {}
 
 					# MRFP
-				}
+
 			}
 		}
 	}
@@ -327,7 +317,7 @@
 	window_character_filter = {
 		name = "court_character_filter_window"
 		datacontext = "[CourtWindow.GetCourt]"
-		size = { 510 860 }
+		size = { 510 902 }
 
 		blockoverride "editbox_properties"
 		{
@@ -394,6 +384,10 @@
 					filter_item = {
 						layoutpolicy_horizontal = expanding
 						datacontext = "[CharacterSelectionList.GetFilter('inspiration_filter')]"
+					}
+					filter_item = {
+						layoutpolicy_horizontal = expanding
+						datacontext = "[CharacterSelectionList.GetFilter('tutor_filter')]"
 					}
 				}
 			}
@@ -466,6 +460,10 @@
 					filter_item = {
 						layoutpolicy_horizontal = expanding
 						datacontext = "[CharacterSelectionList.GetFilter('inspiration_filter')]"
+					}
+					filter_item = {
+						layoutpolicy_horizontal = expanding
+						datacontext = "[CharacterSelectionList.GetFilter('tutor_filter')]"
 					}
 				}
 			}
