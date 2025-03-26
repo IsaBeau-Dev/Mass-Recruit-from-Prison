@@ -128,7 +128,7 @@
 							hbox = {
 								spacing = 10
 
-								button_court = {
+								button_decision_entry = {
 									name = "invite_knights_decision"
 									datacontext = "[GetDecisionWithKey('invite_knights_decision')]"
 									visible = "[Decision.IsShownForPlayer]"
@@ -136,23 +136,18 @@
 									onclick = "[OpenGameViewData( 'decision_detail', Decision.Self)]"
 									using = tooltip_se
 
-									size = { 210 30 }
-
-									blockoverride "size_illustration" {
-										size = { 210 28 }
+									blockoverride "button_size"
+									{
+										size = { 210 30 }
 									}
 
-									blockoverride "vignette_size" {
-										position = { 0 1 }
-										size = { 206 26 }
-									}
-
-									blockoverride "deb_illustration" {
-										visible = no
+									blockoverride "vignette_size"
+									{
+										size = { 98% 88% }
 									}
 								}
 
-								button_court = {
+								button_decision_entry = {
 									name = "invite_claimants_decision"
 									datacontext = "[GetDecisionWithKey('invite_claimants_decision')]"
 									visible = "[Decision.IsShownForPlayer]"
@@ -160,19 +155,14 @@
 									onclick = "[OpenGameViewData( 'decision_detail', Decision.Self)]"
 									using = tooltip_se
 
-									size = { 210 30 }
-
-									blockoverride "size_illustration" {
-										size = { 210 28 }
+									blockoverride "button_size"
+									{
+										size = { 210 30 }
 									}
 
-									blockoverride "vignette_size" {
-										position = { 0 1 }
-										size = { 206 26 }
-									}
-
-									blockoverride "deb_illustration" {
-										visible = no
+									blockoverride "vignette_size"
+									{
+										size = { 98% 88% }
 									}
 								}
 							}
@@ -307,18 +297,325 @@
 						}
 					}
 
-					# MRFP
-
-					#prison info box aka amout recruited and earned gold
-					mrfp_prison_stats = {}
-
 					## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
-					mrfp_layout_with_more_than_4_prisoners = {}
+					vbox_character_list = {
+						visible = "[GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) )]"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+
+						blockoverride "container_implementation"
+						{
+							fixedgridbox = {
+								name = "characters_grid"
+								datamodel = "[CharacterSelectionList.GetList]"
+								visible = "[Not(CharacterSelectionList.IsBuildingList)]"
+								layoutpolicy_horizontal = expanding
+								addcolumn = 520
+								addrow = 148
+								datamodel_reuse_widgets = yes
+
+								item = {
+									vbox = {
+										maximumsize = { 520 148 }
+
+										widget_character_list_item_finder = {
+											layoutpolicy_horizontal = expanding
+											blockoverride "divider" {}
+											blockoverride "character_relation" {}
+
+											blockoverride "gridbox_items"
+											{
+												datamodel_wrap = 4
+												maxverticalslots = 2
+											}
+										}
+
+										hbox = {
+											name = "prisoner_data"
+											layoutpolicy_horizontal = expanding
+											margin = { 8 4 }
+											spacing = 5
+
+											background = {
+												using = Background_Area_Dark
+												alpha = 0.5
+											}
+
+											hbox = {
+												name = "info_text"
+												layoutpolicy_horizontal = expanding
+												layoutpolicy_vertical = expanding
+
+												text_single = {
+													name = "imprisoned_time"
+													layoutpolicy_horizontal = expanding
+													text = "[CharacterListItem.GetText('imprisoned_time')]"
+													autoresize = no
+													align = nobaseline
+												}
+
+												text_single = {
+													name = "type"
+													layoutpolicy_horizontal = expanding
+													text = "[CharacterListItem.GetText('tooltip')]"
+													default_format = "#low"
+													autoresize = no
+													align = nobaseline
+												}
+											}
+
+											button_checkbox = {
+												name = "lock_from_mass_actions"
+												checked = "[CharacterListItem.GetBool('is_mass_action_locked')]"
+												onclick = "[CharacterListItem.OnClick('mass_action_lock')]"
+												tooltip = "[CharacterListItem.GetText('mass_action_lock_tooltip')]"
+											}
+
+											hbox = {
+												spacing = 3
+
+												button_round = {
+
+													datacontext = "[CharacterListItem.GetCharacter]"
+
+													tooltip = "PRISON_INTERACTIONS_BUTTON_TOOLTIP"
+													tooltip_visible = "[Not(IsInteractionMenuOpenForCharacterWithFilter(Character.Self, 'interaction_category_prison'))]"
+
+													onclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'interaction_category_prison')]"
+
+													button_icon = {
+														alwaystransparent = yes
+														parentanchor = center
+														size = { 30 30 }
+														texture = "gfx/interface/icons/flat_icons/character_interactions.dds"
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+
+						blockoverride "bottom_bar"
+						{
+							hbox = {
+								margin = { 10 0 }
+								spacing = 3
+
+								text_single = {
+									text = "MASS_PRISONER_ACTIONS"
+									default_format = "#low"
+									align = nobaseline
+								}
+
+								spacer = {
+									size = { 5 5 }
+								}
+
+								button_round  = {
+									name = "ransom"
+									enabled = "[CourtWindow.CanDoMassPrisonerAction('ransom')]"
+
+									button_prison_ransom = {
+										parentanchor = center
+										onclick = "[CourtWindow.MassPrisonerAction('ransom')]"
+										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('ransom')]"
+										using = tooltip_se
+									}
+								}
+
+								button_round  = {
+									name = "release"
+									enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
+
+									button_prison_release = {
+										parentanchor = center
+										onclick = "[CourtWindow.MassPrisonerAction('release')]"
+										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('release')]"
+										using = tooltip_se
+									}
+								}
+
+								button_round  = {
+									name = "execute"
+									enabled = "[CourtWindow.CanDoMassPrisonerAction('execute')]"
+
+									button_prison_execute = {
+										parentanchor = center
+										onclick = "[CourtWindow.MassPrisonerAction('execute')]"
+										tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('execute')]"
+										using = tooltip_se
+									}
+								}
+							}
+						}
+					}
 
 					## Layout with MAX_PRISONER_COUNT_GRID(4) or fewer prisoners
-					mrfp_layout_with_4_prisoners_or_fewer = {}
+					vbox = {
+						visible = "[And( GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, '(int32)0' ), LessThanOrEqualTo_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) ) )]"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						margin = { 0 15 }
+						margin_left = 10
 
-					# MRFP
+						fixedgridbox = {
+							datamodel = "[CharacterSelectionList.GetList]"
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+							addcolumn = 262
+							addrow = 405
+							datamodel_wrap = 2
+							flipdirection = yes
+							#setitemsizefromcell = yes
+
+							item = {
+								widget = {
+									size = { 262 395}
+									datacontext = "[CharacterListItem.GetCharacter]"
+
+									background = {
+										texture = "gfx/interface/skinned/illustrations/dungeon.dds"
+										margin = { -5 0 }
+										fittype = centercrop
+										alpha = 0.3
+
+										using = Mask_Rough_Edges
+									}
+
+									background = {
+										using = Background_Frame
+										alpha = 0.5
+									}
+
+									widget = {
+										size = { 100% 100% }
+										scissor = yes
+
+										portrait_body = {
+											parentanchor = bottom|hcenter
+											position = { 0 -70 }
+
+											blockoverride "coa" {}
+											blockoverride "opinion_box" {}
+											blockoverride "status_icons" {}
+										}
+									}
+
+									vbox = {
+										expand = {}
+
+										hbox = {
+											layoutpolicy_horizontal = expanding
+											margin = { 5 5 }
+
+											expand = {}
+
+											hbox = {
+												spacing = 5
+
+												background = {
+													using = Background_Area
+												}
+
+												vbox = {
+													margin_bottom = 3
+
+													expand = {}
+
+													portrait_status_icons = {}
+												}
+
+												vbox = {
+													layoutpolicy_vertical = expanding
+
+													expand = {}
+
+													coa_realm_tiny_crown = {
+														visible = "[Character.HasLandedTitles]"
+													}
+
+													portrait_opinion = {}
+												}
+											}
+										}
+
+
+										vbox = {
+											layoutpolicy_horizontal = expanding
+											margin = { 5 5 }
+
+											background = {
+												using = Background_Area
+												margin_bottom = 3
+											}
+
+											text_single = {
+												text = "[Character.GetShortUINameNoTooltip]"
+												default_format = "#high"
+												using = Font_Size_Medium
+											}
+
+											text_single = {
+												visible = "[Character.IsImprisoned]"
+												name = "type"
+												text = "[CharacterListItem.GetText('tooltip')]"
+											}
+										}
+
+										spacer = {
+											size = { 3 3 }
+										}
+
+										### Actions
+										vbox = {
+											name = "actions"
+											layoutpolicy_horizontal = expanding
+											visible = "[And( CharacterListItem.GetCharacter.IsAlive, CharacterListItem.GetCharacter.IsImprisoned )]"
+											spacing = 10
+											margin = { 10 5 }
+											margin_bottom = 15
+
+											background = {
+												using = Background_Area_Dark
+											}
+
+											hbox = {
+												spacing = 5
+
+												icon = {
+													texture = "gfx/interface/icons/portraits/punishment.dds"
+													size = { 20 20 }
+												}
+
+												text_single = {
+													name = "imprisoned_time"
+													layoutpolicy_horizontal = expanding
+													text = "[CharacterListItem.GetText('imprisoned_time')]"
+												}
+											}
+
+											button_round = {
+
+												tooltip = "PRISON_INTERACTIONS_BUTTON_TOOLTIP"
+												tooltip_visible = "[Not(IsInteractionMenuOpenForCharacterWithFilter(Character.Self, 'interaction_category_prison'))]"
+
+												onclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'interaction_category_prison')]"
+
+												button_icon = {
+													alwaystransparent = yes
+													parentanchor = center
+													size = { 30 30 }
+													texture = "gfx/interface/icons/flat_icons/character_interactions.dds"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -327,7 +624,7 @@
 	window_character_filter = {
 		name = "court_character_filter_window"
 		datacontext = "[CourtWindow.GetCourt]"
-		size = { 510 860 }
+		size = { 510 902 }
 
 		blockoverride "editbox_properties"
 		{
@@ -394,6 +691,10 @@
 					filter_item = {
 						layoutpolicy_horizontal = expanding
 						datacontext = "[CharacterSelectionList.GetFilter('inspiration_filter')]"
+					}
+					filter_item = {
+						layoutpolicy_horizontal = expanding
+						datacontext = "[CharacterSelectionList.GetFilter('tutor_filter')]"
 					}
 				}
 			}
@@ -466,6 +767,10 @@
 					filter_item = {
 						layoutpolicy_horizontal = expanding
 						datacontext = "[CharacterSelectionList.GetFilter('inspiration_filter')]"
+					}
+					filter_item = {
+						layoutpolicy_horizontal = expanding
+						datacontext = "[CharacterSelectionList.GetFilter('tutor_filter')]"
 					}
 				}
 			}
