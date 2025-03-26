@@ -358,11 +358,13 @@ types mrfp_window_types {
 				margin = { 10 0 }
 				spacing = 3
 
-				text_single = {
-					text = "MASS_PRISONER_ACTIONS"
-					default_format = "#low"
-					align = nobaseline
-				}
+				#MRFP
+				# text_single = {
+				# 	text = "MASS_PRISONER_ACTIONS"
+				# 	default_format = "#low"
+				# 	align = nobaseline
+				# }
+				#MRFP
 
 				spacer = {
 					size = { 5 5 }
