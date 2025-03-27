@@ -15,8 +15,8 @@ def generate_workshop_bbcode(json_file="window_court_check.json"):
     bbcode_output.append("Court UI Compatibility Status:\n")
     
     for mod_id, mod_data in results.items():
-        status = "compatible" if mod_data['exists'] else "incompatible"
-        color = "brightgreen" if mod_data['exists'] else "red"
+        status = "compatible" if mod_data['exists']==False else "conflict"
+        color = "brightgreen" if mod_data['exists']==False else "yellow"
         name = mod_data.get('short') or mod_data.get('name') or f"ID {mod_id}"
         
         badge_url = (
