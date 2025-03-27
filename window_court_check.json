@@ -3,5 +3,40 @@
         "exists": false,
         "name": "A Game of Thrones",
         "short": "AGOT"
+    },
+    "2291024373": {
+        "exists": false,
+        "name": "LotR: Realms in Exile",
+        "short": "LotR"
+    },
+    "2887120253": {
+        "exists": false,
+        "name": "Elder Kings 2",
+        "short": "Elder Kings 2"
+    },
+    "2243307127": {
+        "exists": false,
+        "name": "The Fallen Eagle - After the Pharaohs Update",
+        "short": "The Fallen Eagle"
+    },
+    "2216659254": {
+        "exists": false,
+        "name": "Princes of Darkness",
+        "short": "POD"
+    },
+    "2949767945": {
+        "exists": false,
+        "name": "Warcraft: Guardians of Azeroth Reforged (Release Alpha)",
+        "short": "Warcraft: Guardians of Azeroth"
+    },
+    "2882431747": {
+        "exists": false,
+        "name": "The Witchers Realms",
+        "short": "The Witchers Realms"
+    },
+    "2326030123": {
+        "exists": false,
+        "name": "Godherja: The Dying World",
+        "short": "Godherja: The Dying World"
     }
 }
