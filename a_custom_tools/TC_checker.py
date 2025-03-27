@@ -44,6 +44,7 @@ def main():
         # Example:
         # 123456789,
         # 987654321,
+        2962333032 #AGOT
     ]
     
     if not ids_to_check:
