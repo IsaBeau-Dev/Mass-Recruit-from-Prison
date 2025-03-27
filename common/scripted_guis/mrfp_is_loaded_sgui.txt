@@ -12,6 +12,12 @@
       save_scope_as = the_story
     }
     
+    #remove mrfp_blocked_can_ransom flag on every prisoner because in GUI user can block people themself
+    every_prisoner = {
+      limit = { has_character_flag = mrfp_blocked_can_ransom }
+      remove_character_flag = mrfp_blocked_can_ransom
+    }
+
     #Prowess threshold enabled
     if = {
       limit = {
