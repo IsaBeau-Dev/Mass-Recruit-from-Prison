@@ -71,11 +71,21 @@ mrfp_release_all_unblocked_prisoners = {
 			NOT = {
 				has_character_flag = mrfp_blocked_gui
 			}
+			NOT = {
+				has_character_flag = mrfp_blocked_can_ransom
+			}
 		}
 
 		mrfp_every_prisoner_effect_story = yes
 		
 	}
+}
+
+mrfp_block_high_value_ransoms_effect = {
+    if = {
+        limit = { scope:the_story_prisoner.ransom_cost_value >= 20 }
+        add_character_flag = mrfp_blocked_can_ransom
+    }
 }
 
 
