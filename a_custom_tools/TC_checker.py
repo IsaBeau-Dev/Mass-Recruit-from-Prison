@@ -12,11 +12,14 @@ def get_steam_workshop_path():
         print(f"Error accessing Steam registry: {e}")
         return None
 
-def check_window_court_files(id_list, workshop_path):
+def check_window_court_files(mod_list, workshop_path):
     results = {}
-    for mod_id in id_list:
+    for mod_info in mod_list:
+        mod_id = mod_info['id']
+        mod_name = mod_info.get('name', '')
+        mod_short = mod_info.get('short', '')
+        
         gui_path = os.path.join(workshop_path, str(mod_id), "gui")
-        window_court_path = os.path.join(gui_path, "window_court")
         
         # Check if the file exists (with any extension)
         exists = False
@@ -27,8 +30,14 @@ def check_window_court_files(id_list, workshop_path):
                     exists = True
                     break
         
-        results[mod_id] = exists
-        print(f"Checked ID {mod_id}: {'Found' if exists else 'Not found'}")
+        results[mod_id] = {
+            'exists': exists,
+            'name': mod_name,
+            'short': mod_short
+        }
+        
+        display_name = f"{mod_name} ({mod_short})" if mod_name and mod_short else mod_name or mod_short or str(mod_id)
+        print(f"Checked {display_name} [{mod_id}]: {'Found' if exists else 'Not found'}")
     
     return results
 
@@ -38,17 +47,23 @@ def save_to_json(data, filename="window_court_check.json"):
     print(f"Results saved to {filename}")
 
 def main():
-    # Predefined list of IDs to check
-    ids_to_check = [
-        # Add your mod IDs here
-        # Example:
-        # 123456789,
-        # 987654321,
-        2962333032 #AGOT
+    # List of mods to check with their IDs, names, and shorts
+    mods_to_check = [
+        {
+            'id': 2962333032,
+            'name': 'A Game of Thrones',
+            'short': 'AGOT'
+        },
+        # Add more mods in the same format:
+        # {
+        #     'id': 123456789,
+        #     'name': 'Mod Full Name',
+        #     'short': 'MOD'
+        # },
     ]
     
-    if not ids_to_check:
-        print("No IDs to check. Please add some IDs to the ids_to_check list.")
+    if not mods_to_check:
+        print("No mods to check. Please add some mods to the mods_to_check list.")
         return
     
     workshop_path = get_steam_workshop_path()
@@ -60,7 +75,7 @@ def main():
         print(f"Workshop path does not exist: {workshop_path}")
         return
     
-    results = check_window_court_files(ids_to_check, workshop_path)
+    results = check_window_court_files(mods_to_check, workshop_path)
     save_to_json(results)
 
 if __name__ == "__main__":

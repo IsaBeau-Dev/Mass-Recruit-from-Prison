@@ -1,3 +1,7 @@
 {
-    "2962333032": true
+    "2962333032": {
+        "exists": true,
+        "name": "A Game of Thrones",
+        "short": "AGOT"
+    }
 }
