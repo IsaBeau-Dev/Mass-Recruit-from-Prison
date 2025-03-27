@@ -10,7 +10,7 @@ Is your prison overflowing with potential courtiers, but recruiting each one (an
 [*][b]Inclusion of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2790872361] Auto Demand Conversion [/url][/b]: Was not fixed for new update yet. If the author wishes me to remove it, i will do so. 
 [*][b]Better prison GUI [/b]
 [*][b]Open settings on new game optionally [/b] (Can be disabled via gamerule)
-[*][b]Mass Torture Button[/b] : like requested in the comments
+[*][b]Mass Torture Button[/b] : like requested in the comments 
 [*]The exclusion from mass actions now also works for the mass actions from the mod 
 [/list]
 
@@ -38,6 +38,16 @@ Is your prison overflowing with potential courtiers, but recruiting each one (an
 [*][b]UniUI Compatibility[/b]: Now fully compatible with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2768734977&searchtext=uniui]UniUI[/url]!
  [*][b]Mod Compatibility[/b]: Compatible with all other mods. Note that the ransom+recruit buttons in the prison window may disappear, but you can still use the monthly decision to ransom/recruit prisoners. Ensure this mod is prioritized in your playset to overwrite the GUI file changes. 
 [*][b]TC Compatibility[/b] Just place this mod before the TC in the load order. You will still be able to use the decisions for the auto recruit/ransom. If the buttons in prison disappear the TC overwrites the same file and take priority.
+[*]TCs checked on 27.3.25:
+[b] Conflict means that they overwrite the same vanilla file as this mod. Then you need to follow the instructions above about load order and you should be fine. [/b]
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2962333032][IMG]https://img.shields.io/badge/AGOT-compatible-brightgreen?style=plastic[/IMG][/URL]
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2291024373][IMG]https://img.shields.io/badge/LotR-compatible-brightgreen?style=plastic[/IMG][/URL]
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2887120253][IMG]https://img.shields.io/badge/Elder%20Kings%202-compatible-brightgreen?style=plastic[/IMG][/URL]
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2243307127][IMG]https://img.shields.io/badge/The%20Fallen%20Eagle-compatible-brightgreen?style=plastic[/IMG][/URL]
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2216659254][IMG]https://img.shields.io/badge/POD-compatible-brightgreen?style=plastic[/IMG][/URL]
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2949767945][IMG]https://img.shields.io/badge/Warcraft:%20Guardians%20of%20Azeroth-compatible-brightgreen?style=plastic[/IMG][/URL]
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2882431747][IMG]https://img.shields.io/badge/The%20Witchers%20Realms-compatible-brightgreen?style=plastic[/IMG][/URL]
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2326030123][IMG]https://img.shields.io/badge/Godherja:%20The%20Dying%20World-compatible-brightgreen?style=plastic[/IMG][/URL]
 [/list]
 
 
