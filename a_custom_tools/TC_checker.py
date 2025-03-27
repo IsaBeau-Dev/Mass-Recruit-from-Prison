@@ -53,6 +53,41 @@ def main():
             'name': 'A Game of Thrones',
             'short': 'AGOT'
         },
+        {
+            'id': 2291024373,
+            'name': 'LotR: Realms in Exile',
+            'short': 'LotR'
+        },
+        {
+            'id': 2887120253,
+            'name': 'Elder Kings 2',
+            'short': 'Elder Kings 2'
+        },
+        {
+            'id': 2243307127,
+            'name': 'The Fallen Eagle - After the Pharaohs Update',
+            'short': 'The Fallen Eagle'
+        },
+        {
+            'id': 2216659254,
+            'name': 'Princes of Darkness',
+            'short': 'POD'
+        },
+        {
+            'id': 2949767945,
+            'name': 'Warcraft: Guardians of Azeroth Reforged (Release Alpha)',
+            'short': 'Warcraft: Guardians of Azeroth'
+        },
+        {
+            'id': 2882431747,
+            'name': 'The Witchers Realms',
+            'short': 'The Witchers Realms'
+        },
+        {
+            'id': 2326030123,
+            'name': 'Godherja: The Dying World',
+            'short': 'Godherja: The Dying World'
+        },
         # Add more mods in the same format:
         # {
         #     'id': 123456789,
