@@ -26,9 +26,8 @@ def check_window_court_files(mod_list, workshop_path):
         if os.path.exists(gui_path):
             # Check for any file named window_court (with or without extension)
             for file in os.listdir(gui_path):
-                if file.startswith("window_court"):
-                    exists = True
-                    break
+                file_path = os.path.join(gui_path, "window_court.gui")
+                exists = os.path.isfile(file_path)
         
         results[mod_id] = {
             'exists': exists,
