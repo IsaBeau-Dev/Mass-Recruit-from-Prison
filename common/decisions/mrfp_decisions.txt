@@ -13,7 +13,7 @@
     ai_check_interval = 0
 
     is_shown = {
-        is_landed = yes
+        is_ai = no
         NOT = { has_character_flag = enable_auto_mrfp }
         has_game_rule = on_mrfp
     }
@@ -46,7 +46,7 @@ disable_mrfp_decision = {
     
 
     is_shown = {
-        is_landed = yes
+        is_ai = no
         has_character_flag = enable_auto_mrfp
         has_game_rule = on_mrfp
     }
@@ -81,7 +81,7 @@ enable_mrfp_ransom_decision = {
     ai_check_interval = 0
 
     is_shown = {
-        is_landed = yes
+        is_ai = no
         NOT = { has_character_flag = enable_auto_mrfp_ransom }
         has_game_rule = on_mrfp
     }
@@ -114,7 +114,7 @@ disable_mrfp_ransom_decision = {
     
 
     is_shown = {
-        is_landed = yes
+        is_ai = no
         has_character_flag = enable_auto_mrfp_ransom
         has_game_rule = on_mrfp
     }
@@ -142,7 +142,7 @@ set_mrfp_threshold = {
 
 
     is_shown = {
-        always = yes
+        is_ai = no
     }
     decision_group_type = mrfp
 
