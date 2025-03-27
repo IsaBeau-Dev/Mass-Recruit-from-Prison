@@ -61,6 +61,10 @@ mrfp_on_release_from_prison = {
             limit = { has_character_flag = mrfp_blocked_gui }
             remove_character_flag = mrfp_blocked_gui
         }
+        if = {
+            limit = { has_character_flag = mrfp_blocked_can_ransom }
+            remove_character_flag = mrfp_blocked_can_ransom
+        }
     }
 }
 

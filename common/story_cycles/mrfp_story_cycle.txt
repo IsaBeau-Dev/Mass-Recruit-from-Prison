@@ -96,6 +96,9 @@
                             save_scope_as = the_story_prisoner
                             mrfp_is_at_war_with_targets_liege_story = yes
 
+                            #Add blocked ransom flag to people you can ransom for >20 gold
+                            mrfp_block_high_value_ransoms_effect = yes
+
                             mrfp_release_all_unblocked_prisoners = yes
                         }
                         
@@ -122,6 +125,9 @@
                             }
                             save_scope_as = the_story_prisoner
                             mrfp_is_at_war_with_targets_liege_story = yes
+
+                            #Add blocked ransom flag to people you can ransom for >20 gold
+                            mrfp_block_high_value_ransoms_effect = yes
 
                             mrfp_release_all_unblocked_prisoners = yes
                         }
