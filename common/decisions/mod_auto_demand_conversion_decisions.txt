@@ -12,7 +12,6 @@
     ai_check_interval = 0
 
     is_shown = {
-        is_landed = yes
         NOT = { has_character_flag = enable_auto_demand_conversion }
     }
 
@@ -44,7 +43,6 @@ disable_auto_demand_conversion_decision = {
     ai_check_interval = 0
 
     is_shown = {
-        is_landed = yes
         has_character_flag = enable_auto_demand_conversion
     }
 
