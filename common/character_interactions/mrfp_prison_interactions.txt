@@ -2245,6 +2245,7 @@ mrfp_ransom_interaction_story = {
 		EXTORTIONATE_RANSOM_COST = scope:secondary_recipient.increased_ransom_cost_value
 		RANSOM_COST = scope:secondary_recipient.ransom_cost_value
 		CURRENT_GOLD = scope:recipient.gold
+		RANSOM_HERD_COST= ransom_herd_value_recipient
 	}
 
 	ai_accept = {
