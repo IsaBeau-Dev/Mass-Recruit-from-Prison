@@ -3,7 +3,7 @@ types mrfp_button_types
 	type mrfp_button_recruit = button_round {
 		# code for your button and any nested controls you want
 		name = "mrfp"
-		visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
+		#visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
 		enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
 
 		button_prison_release = {
@@ -20,7 +20,7 @@ types mrfp_button_types
 	type mrfp_button_ransom = button_round {
 		# code for your button and any nested controls you want
 		name = "ransom"
-		visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
+		#visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
 		enabled = "[CourtWindow.CanDoMassPrisonerAction('ransom')]"
 
 		button_prison_ransom = {
@@ -37,7 +37,7 @@ types mrfp_button_types
 	type mrfp_button_torture = button_round {
 		# code for your button and any nested controls you want
 		name = "torture"
-		visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
+		#visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
 		enabled = "[CourtWindow.CanDoMassPrisonerAction('execute')]"
 
 		button_prison_execute = {
