@@ -287,161 +287,18 @@
 							mirror = vertical
 						}
 					}
+					# MRFP
+
+					#prison info box aka amout recruited and earned gold
+					mrfp_prison_stats = {}
 
 					## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
 					mrfp_layout_with_more_than_4_prisoners = {}
 
 					## Layout with MAX_PRISONER_COUNT_GRID(4) or fewer prisoners
-					vbox = {
-						visible = "[And( GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, '(int32)0' ), LessThanOrEqualTo_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) ) )]"
-						layoutpolicy_horizontal = expanding
-						layoutpolicy_vertical = expanding
-						margin = { 0 15 }
-						margin_left = 10
+					mrfp_layout_with_4_prisoners_or_fewer = {}
 
-						fixedgridbox = {
-							datamodel = "[CharacterSelectionList.GetList]"
-							layoutpolicy_horizontal = expanding
-							layoutpolicy_vertical = expanding
-							addcolumn = 262
-							addrow = 405
-							datamodel_wrap = 2
-							flipdirection = yes
-							#setitemsizefromcell = yes
-
-							item = {
-								widget = {
-									size = { 262 395}
-									datacontext = "[CharacterListItem.GetCharacter]"
-
-									background = {
-										texture = "gfx/interface/skinned/illustrations/dungeon.dds"
-										margin = { -5 0 }
-										fittype = centercrop
-										alpha = 0.3
-
-										using = Mask_Rough_Edges
-									}
-
-									background = {
-										using = Background_Frame
-										alpha = 0.5
-									}
-
-									widget = {
-										size = { 100% 100% }
-										scissor = yes
-
-										portrait_body = {
-											parentanchor = bottom|hcenter
-											position = { 0 -70 }
-
-											blockoverride "coa" {}
-											blockoverride "opinion_box" {}
-											blockoverride "status_icons" {}
-										}
-									}
-
-									vbox = {
-										expand = {}
-
-										hbox = {
-											layoutpolicy_horizontal = expanding
-											margin = { 5 5 }
-
-											expand = {}
-
-											hbox = {
-												spacing = 5
-
-												background = {
-													using = Background_Area
-												}
-
-												vbox = {
-													margin_bottom = 3
-
-													expand = {}
-
-													portrait_status_icons = {}
-												}
-
-												vbox = {
-													layoutpolicy_vertical = expanding
-
-													expand = {}
-
-													coa_realm_tiny_crown = {
-														visible = "[Character.HasLandedTitles]"
-													}
-
-													portrait_opinion = {}
-												}
-											}
-										}
-
-
-										vbox = {
-											layoutpolicy_horizontal = expanding
-											margin = { 5 5 }
-
-											background = {
-												using = Background_Area
-												margin_bottom = 3
-											}
-
-											text_single = {
-												text = "[Character.GetShortUINameNoTooltip]"
-												default_format = "#high"
-												using = Font_Size_Medium
-											}
-
-											text_single = {
-												visible = "[Character.IsImprisoned]"
-												name = "type"
-												text = "[CharacterListItem.GetText('tooltip')]"
-											}
-										}
-
-										spacer = {
-											size = { 3 3 }
-										}
-
-										### Actions
-										vbox = {
-											name = "actions"
-											layoutpolicy_horizontal = expanding
-											visible = "[And( CharacterListItem.GetCharacter.IsAlive, CharacterListItem.GetCharacter.IsImprisoned )]"
-											spacing = 10
-											margin = { 10 5 }
-											margin_bottom = 15
-
-											background = {
-												using = Background_Area_Dark
-											}
-
-											hbox = {
-												spacing = 5
-
-												icon = {
-													texture = "gfx/interface/icons/portraits/punishment.dds"
-													size = { 20 20 }
-												}
-
-												text_single = {
-													name = "imprisoned_time"
-													layoutpolicy_horizontal = expanding
-													text = "[CharacterListItem.GetText('imprisoned_time')]"
-												}
-											}
-
-											prison_interactions_hbox = {}
-										}
-									}
-								}
-							}
-						}
-					}
+					# MRFP
 				}
 			}
 		}

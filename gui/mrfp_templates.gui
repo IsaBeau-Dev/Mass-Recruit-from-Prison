@@ -524,51 +524,7 @@ types mrfp_window_types {
 							mrfp_can_be_recruited = {}
 							# MRFP
 
-
-							hbox = {
-								spacing = 8
-
-								button_round  = {
-									name = "ransom"
-									enabled = "[CharacterListItem.GetBool('can_ransom')]"
-
-									button_prison_ransom = {
-										parentanchor = center
-										onclick = "[CharacterListItem.OnClick('ransom')]"
-										enabled = "[CharacterListItem.GetBool('can_ransom')]"
-										tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
-										using = tooltip_se
-
-									}
-								}
-
-								button_round  = {
-									name = "release"
-									enabled = "[CharacterListItem.GetBool('can_release')]"
-
-									button_prison_release = {
-										parentanchor = center
-										onclick = "[CharacterListItem.OnClick('release')]"
-										enabled = "[CharacterListItem.GetBool('can_release')]"
-										tooltip = "[CharacterListItem.GetText('release_tooltip')]"
-										using = tooltip_se
-
-									}
-								}
-
-								button_round  = {
-									name = "execute"
-									enabled = "[CharacterListItem.GetBool('can_execute')]"
-
-									button_prison_execute = {
-										parentanchor = center
-										onclick = "[CharacterListItem.OnClick('execute')]"
-										enabled = "[CharacterListItem.GetBool('can_execute')]"
-										tooltip = "[CharacterListItem.GetText('execute_tooltip')]"
-										using = tooltip_se
-									}
-								}
-							}
+							prison_interactions_hbox = {}
 						}
 					}
 				}
