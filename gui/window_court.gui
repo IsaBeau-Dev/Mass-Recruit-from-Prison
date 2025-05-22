@@ -27,7 +27,8 @@
 
 	margin_widget = {
 		size = { 100% 100% }
-		margin = { 0 26 }
+		margin_top = 30
+		margin_bottom = 25
 		margin_right = 13
 
 		widget = {
@@ -140,11 +141,6 @@
 									{
 										size = { 210 30 }
 									}
-
-									blockoverride "vignette_size"
-									{
-										size = { 98% 88% }
-									}
 								}
 
 								button_decision_entry = {
@@ -158,11 +154,6 @@
 									blockoverride "button_size"
 									{
 										size = { 210 30 }
-									}
-
-									blockoverride "vignette_size"
-									{
-										size = { 98% 88% }
 									}
 								}
 							}
@@ -296,7 +287,6 @@
 							mirror = vertical
 						}
 					}
-
 					# MRFP
 
 					#prison info box aka amout recruited and earned gold
@@ -309,7 +299,7 @@
 					mrfp_layout_with_4_prisoners_or_fewer = {}
 
 					# MRFP
-
+				}
 			}
 		}
 	}
@@ -474,4 +464,75 @@
 			}
 		}
 	}
+}
+
+types PrisonTypes
+{
+
+	type prison_interactions_hbox = hbox {
+		spacing = 1
+
+		button_round  = {
+			name = "ransom"
+			enabled = "[CharacterListItem.GetBool('can_ransom')]"
+
+			button_prison_ransom = {
+				parentanchor = center
+				onclick = "[CharacterListItem.OnClick('ransom')]"
+				enabled = "[CharacterListItem.GetBool('can_ransom')]"
+				tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
+				using = tooltip_se
+			}
+		}
+
+		button_round  = {
+			name = "release"
+			enabled = "[CharacterListItem.GetBool('can_release')]"
+
+			button_prison_release = {
+				parentanchor = center
+				onclick = "[CharacterListItem.OnClick('release')]"
+				enabled = "[CharacterListItem.GetBool('can_release')]"
+				tooltip = "[CharacterListItem.GetText('release_tooltip')]"
+				using = tooltip_se
+			}
+		}
+
+		button_round  = {
+			name = "execute"
+			enabled = "[CharacterListItem.GetBool('can_execute')]"
+
+			button_prison_execute = {
+				parentanchor = center
+				onclick = "[CharacterListItem.OnClick('execute')]"
+				enabled = "[CharacterListItem.GetBool('can_execute')]"
+				tooltip = "[CharacterListItem.GetText('execute_tooltip')]"
+				using = tooltip_se
+			}
+		}
+
+		divider_light = {
+			layoutpolicy_vertical = expanding
+		}
+
+		button_round = {
+
+			datacontext = "[CharacterListItem.GetCharacter]"
+
+			tooltip = "PRISON_INTERACTIONS_BUTTON_TOOLTIP"
+			tooltip_visible = "[Not(IsInteractionMenuOpenForCharacterWithFilter(Character.Self, 'interaction_category_prison'))]"
+			using = tooltip_se
+
+			onclick = "[ToggleFilteredCharacterInteractionMenu(Character.Self, 'interaction_category_prison')]"
+
+			button_icon = {
+				alwaystransparent = yes
+				parentanchor = center
+				size = { 30 30 }
+				texture = "gfx/interface/icons/flat_icons/character_interactions.dds"
+			}
+		}
+	}
+
+
 }

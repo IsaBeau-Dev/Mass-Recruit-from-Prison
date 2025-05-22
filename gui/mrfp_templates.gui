@@ -3,7 +3,7 @@ types mrfp_button_types
 	type mrfp_button_recruit = button_round {
 		# code for your button and any nested controls you want
 		name = "mrfp"
-		visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
+		#visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
 		enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
 
 		button_prison_release = {
@@ -20,7 +20,7 @@ types mrfp_button_types
 	type mrfp_button_ransom = button_round {
 		# code for your button and any nested controls you want
 		name = "ransom"
-		visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
+		#visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
 		enabled = "[CourtWindow.CanDoMassPrisonerAction('ransom')]"
 
 		button_prison_ransom = {
@@ -37,7 +37,7 @@ types mrfp_button_types
 	type mrfp_button_torture = button_round {
 		# code for your button and any nested controls you want
 		name = "torture"
-		visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
+		#visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
 		enabled = "[CourtWindow.CanDoMassPrisonerAction('execute')]"
 
 		button_prison_execute = {
@@ -243,7 +243,6 @@ types mrfp_window_types {
 								maxverticalslots = 2
 							}
 						}
-						
 
 						# MRFP
 						mrfp_merged_gold_display_and_can_be_ransomed_and_can_be_recruited = {}
@@ -252,46 +251,40 @@ types mrfp_window_types {
 						hbox = {
 							name = "prisoner_data"
 							layoutpolicy_horizontal = expanding
-							margin = { 10 10 }
+							margin = { 8 4 }
 							spacing = 5
 
 							background = {
 								using = Background_Area_Dark
+								alpha = 0.5
 							}
 
-							vbox = {
+							hbox = {
 								name = "info_text"
 								layoutpolicy_horizontal = expanding
 								layoutpolicy_vertical = expanding
 
+								spacing = 8
+
 								text_single = {
-									visible = "[CharacterListItem.GetCharacter.IsImprisoned]"
 									name = "type"
 									layoutpolicy_horizontal = expanding
 									text = "[CharacterListItem.GetText('tooltip')]"
 									default_format = "#low"
 									autoresize = no
+									align = nobaseline
 								}
 
-								hbox = {
+								text_single = {
+									name = "imprisoned_time"
 									layoutpolicy_horizontal = expanding
-									spacing = 5
-									visible = "[CharacterListItem.GetCharacter.IsImprisoned]"
-
-									icon = {
-										texture = "gfx/interface/icons/portraits/punishment.dds"
-										size = { 30 30 }
-									}
-
-									text_single = {
-										name = "imprisoned_time"
-										layoutpolicy_horizontal = expanding
-										text = "[CharacterListItem.GetText('imprisoned_time')]"
-										autoresize = no
-									}
+									text = "[CharacterListItem.GetText('imprisoned_time')]"
+									autoresize = no
+									align = nobaseline
+									default_format = "#low"
 								}
 
-								expand = {}
+								
 							}
 
 							button_checkbox = {
@@ -304,48 +297,7 @@ types mrfp_window_types {
 								tooltip = "[CharacterListItem.GetText('mass_action_lock_tooltip')]"
 							}
 
-							hbox = {
-								spacing = 3
-
-								button_round  = {
-									name = "ransom"
-									enabled = "[CharacterListItem.GetBool('can_ransom')]"
-
-									button_prison_ransom = {
-										parentanchor = center
-										onclick = "[CharacterListItem.OnClick('ransom')]"
-										enabled = "[CharacterListItem.GetBool('can_ransom')]"
-										tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
-										using = tooltip_se
-									}
-								}
-
-								button_round  = {
-									name = "release"
-									enabled = "[CharacterListItem.GetBool('can_release')]"
-
-									button_prison_release = {
-										parentanchor = center
-										onclick = "[CharacterListItem.OnClick('release')]"
-										enabled = "[CharacterListItem.GetBool('can_release')]"
-										tooltip = "[CharacterListItem.GetText('release_tooltip')]"
-										using = tooltip_se
-									}
-								}
-
-								button_round  = {
-									name = "execute"
-									enabled = "[CharacterListItem.GetBool('can_execute')]"
-
-									button_prison_execute = {
-										parentanchor = center
-										onclick = "[CharacterListItem.OnClick('execute')]"
-										enabled = "[CharacterListItem.GetBool('can_execute')]"
-										tooltip = "[CharacterListItem.GetText('execute_tooltip')]"
-										using = tooltip_se
-									}
-								}
-							}
+							prison_interactions_hbox = {}
 						}
 					}
 				}
@@ -572,51 +524,7 @@ types mrfp_window_types {
 							mrfp_can_be_recruited = {}
 							# MRFP
 
-
-							hbox = {
-								spacing = 8
-
-								button_round  = {
-									name = "ransom"
-									enabled = "[CharacterListItem.GetBool('can_ransom')]"
-
-									button_prison_ransom = {
-										parentanchor = center
-										onclick = "[CharacterListItem.OnClick('ransom')]"
-										enabled = "[CharacterListItem.GetBool('can_ransom')]"
-										tooltip = "[CharacterListItem.GetText('ransom_tooltip')]"
-										using = tooltip_se
-
-									}
-								}
-
-								button_round  = {
-									name = "release"
-									enabled = "[CharacterListItem.GetBool('can_release')]"
-
-									button_prison_release = {
-										parentanchor = center
-										onclick = "[CharacterListItem.OnClick('release')]"
-										enabled = "[CharacterListItem.GetBool('can_release')]"
-										tooltip = "[CharacterListItem.GetText('release_tooltip')]"
-										using = tooltip_se
-
-									}
-								}
-
-								button_round  = {
-									name = "execute"
-									enabled = "[CharacterListItem.GetBool('can_execute')]"
-
-									button_prison_execute = {
-										parentanchor = center
-										onclick = "[CharacterListItem.OnClick('execute')]"
-										enabled = "[CharacterListItem.GetBool('can_execute')]"
-										tooltip = "[CharacterListItem.GetText('execute_tooltip')]"
-										using = tooltip_se
-									}
-								}
-							}
+							prison_interactions_hbox = {}
 						}
 					}
 				}
