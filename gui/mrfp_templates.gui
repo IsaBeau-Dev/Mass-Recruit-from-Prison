@@ -228,9 +228,9 @@ types mrfp_window_types {
 
 				item = {
 					vbox = {
-					# MRFP
-					maximumsize = { 520 240 }
-					# MRFP
+						# MRFP
+						maximumsize = { 520 240 }
+						# MRFP
 
 						widget_character_list_item_finder = {
 							layoutpolicy_horizontal = expanding
