@@ -193,6 +193,5 @@
                 mrfp_update_ransom_counter = yes
             }
         }
-        }
     }
 }
