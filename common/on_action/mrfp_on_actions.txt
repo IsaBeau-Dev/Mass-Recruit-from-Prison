@@ -120,6 +120,14 @@ on_death = {
     }
 }
 
+
+### Called when player has confirmed their selection of a destiny character
+# Scopes:
+# root: destiny character (is already current player)
+# scope:destiny_type_flag - flag of selected destiny type
+# scope:previous_player_character - previous player character
+# scope:previous_player_heir - previous player heir
+
 # # on_player_select_destiny_confirmed = {
 # #     on_actions = {
 # #         mrfp_on_death
