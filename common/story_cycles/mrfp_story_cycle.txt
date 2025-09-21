@@ -163,12 +163,6 @@
                 save_scope_as = the_story
                 story_owner = {
 
-                    # send_interface_message = {
-                    #     type = event_captured_combatants_good
-                    #     title = "Debug test"
-                    #     desc = "I managed to come here"						  
-                    # }
-
                     save_scope_as = the_story_owner
                     every_prisoner = {
                         limit = { always = yes }

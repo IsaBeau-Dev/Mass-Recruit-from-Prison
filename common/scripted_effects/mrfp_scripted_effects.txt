@@ -229,3 +229,11 @@ mrfp_start_story_if_not_exist = {
 		create_story = mrfp_recruitment_cycle
 	}
 }
+
+mrfp_send_debug_message = {
+	send_interface_message = {
+		type = event_captured_combatants_good
+		title = "Debug test"
+		desc = "I managed to come here"						  
+	}
+}
