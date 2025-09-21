@@ -1,4 +1,4 @@
-namespace = mrfp_welcome_events
+﻿namespace = mrfp_welcome_events
 
 mrfp_welcome_events.0001 = {
 	type = character_event
