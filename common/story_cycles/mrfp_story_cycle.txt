@@ -47,25 +47,15 @@
 		#debug_log = "Total prisoners recruited: [THIS.Var('mrfp_total_recruited').GetValue]"
 		#debug_log = "Total prisoners ransomed: [THIS.Var('mrfp_total_ransomed').GetValue]"
 
-        if = {
-            limit = {
-                story_owner.primary_heir = {
-                    is_ai = no
-                }
-            }
-            #Transfer ownership
-            make_story_owner = story_owner.primary_heir
-            #Transfer variables for the story
-            story_owner = {
-                set_variable = {
-                    name = mrfp_story
-                    value = root
-                }
+		#Transfer ownership
+		make_story_owner = story_owner.primary_heir
+
+        story_owner = {
+            set_variable = {
+                name = mrfp_story
+                value = root
             }
         }
-
-
-
 
     }
 
