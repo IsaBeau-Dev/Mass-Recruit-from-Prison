@@ -233,7 +233,7 @@ mrfp_start_story_if_not_exist = {
 mrfp_send_debug_message = {
 	send_interface_message = {
 		type = event_captured_combatants_good
-		title = "Debug test"
-		desc = "I managed to come here"						  
+		title = debug_mrfp_title
+		desc = debug_mrfp_desc
 	}
 }
