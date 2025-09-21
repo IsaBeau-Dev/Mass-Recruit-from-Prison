@@ -120,20 +120,6 @@ on_death = {
     }
 }
 
-
-### Called when player has confirmed their selection of a destiny character
-# Scopes:
-# root: destiny character (is already current player)
-# scope:destiny_type_flag - flag of selected destiny type
-# scope:previous_player_character - previous player character
-# scope:previous_player_heir - previous player heir
-
-# # on_player_select_destiny_confirmed = {
-# #     on_actions = {
-# #         mrfp_on_death
-# #     }
-# # }
-
 mrfp_on_death = {
     trigger = {
         has_character_flag = enable_auto_mrfp
@@ -154,6 +140,82 @@ mrfp_on_death_ransom = {
         }
     }
 }
+
+
+### Called when player has confirmed their selection of a destiny character
+# Scopes:
+# root: destiny character (is already current player)
+# scope:destiny_type_flag - flag of selected destiny type
+# scope:previous_player_character - previous player character
+# scope:previous_player_heir - previous player heir
+
+on_player_select_destiny_confirmed = {
+    on_actions = {
+        mrfp_recruit_destiny_confirmed
+        mrfp_ransom_destiny_confirmed
+        mrfp_story_transfer
+    }
+}
+
+mrfp_recruit_destiny_confirmed = {
+    trigger = {
+        scope:previous_player_heir = {
+            has_character_flag = enable_auto_mrfp
+        }
+    }
+    effect = {
+        scope:previous_player_heir = {
+            remove_character_flag = enable_auto_mrfp
+        }
+        add_character_flag = enable_auto_mrfp
+    }
+}
+
+mrfp_ransom_destiny_confirmed = {
+    trigger = {
+        scope:previous_player_heir = {
+            has_character_flag = enable_auto_mrfp_ransom
+        }
+    }
+    effect = {
+        scope:previous_player_heir = {
+            remove_character_flag = enable_auto_mrfp_ransom
+        }
+        add_character_flag = enable_auto_mrfp_ransom
+    }
+}
+mrfp_story_transfer = {
+    trigger = {
+        scope:previous_player_heir = {
+            has_variable = mrfp_story
+        }
+    }
+    effect = {
+        #transfer story ownership
+        scope:previous_player_heir.var:mrfp_story = {
+            make_story_owner = scope:root
+        }
+
+        #transfer story variable to new owner
+        set_variable = {
+            name = mrfp_story
+            value = scope:previous_player_heir.var:mrfp_story
+        }
+        
+        #remove variable from old owner
+        scope:previous_player_heir = {
+            remove_variable = mrfp_story
+        }
+    }
+}
+
+
+
+
+
+
+
+
 
 # mrfp_on_death_vars = {
 #     trigger = {
