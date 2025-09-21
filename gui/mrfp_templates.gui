@@ -76,7 +76,7 @@ types mrfp_window_types {
 		button_checkbox = {
 			name = "mrfp_can_be_ransomed"
 			checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', Character.MakeScope ).End)]"
-			tooltip = "Can be ransomed"
+			raw_tooltip = "Can be ransomed"
 		}
 	}
 
@@ -91,7 +91,7 @@ types mrfp_window_types {
 		button_checkbox = {
 			name = "mrfp_can_be_recruited"
 			checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-			tooltip = "Can be recruited"
+			raw_tooltip = "Can be recruited"
 		}
 	}
 
@@ -115,7 +115,7 @@ types mrfp_window_types {
 				button_checkbox = {
 					name = "mrfp_can_be_ransomed"
 					checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-					tooltip = "Can be ransomed"
+					raw_tooltip = "Can be ransomed"
 				}
 			}
 			hbox = {
@@ -128,7 +128,7 @@ types mrfp_window_types {
 				button_checkbox = {
 					name = "mrfp_can_be_recruited"
 					checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-					tooltip = "Can be recruited"
+					raw_tooltip = "Can be recruited"
 				}
 			}
 
@@ -153,7 +153,7 @@ types mrfp_window_types {
 
 			text_single = {
 				name = "mrfp_gui_total_recruited_label"
-				text = "Total Recruited:"
+				raw_text = "Total Recruited:"
 				default_format = "#high"
 				autoresize = yes
 			}
@@ -173,7 +173,7 @@ types mrfp_window_types {
 
 			text_single = {
 				name = "mrfp_gui_total_ransomed_people_label"
-				text = "Total Ransomed People:"
+				raw_text = "Total Ransomed People:"
 				default_format = "#high"
 				autoresize = yes
 			}
@@ -193,7 +193,7 @@ types mrfp_window_types {
 
 			text_single = {
 				name = "mrfp_gui_total_ransomed_gold_label"
-				text = "Total Gold [gold_i] Ransomed:"
+				raw_text = "Total Gold [gold_i] Ransomed:"
 				default_format = "#high"
 				autoresize = yes
 			}
