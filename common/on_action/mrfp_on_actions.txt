@@ -139,7 +139,6 @@ mrfp_on_death = {
         has_character_flag = enable_auto_mrfp
     }
     effect = {
-        #save_scope_as = dying_character
         primary_heir = {
             add_character_flag = enable_auto_mrfp
         }
@@ -150,12 +149,12 @@ mrfp_on_death_ransom = {
         has_character_flag = enable_auto_mrfp_ransom
     }
     effect = {
-        #save_scope_as = dying_character
         primary_heir = {
             add_character_flag = enable_auto_mrfp_ransom
         }
     }
 }
+
 # mrfp_on_death_vars = {
 #     trigger = {
 #         has_variable = mrfp_threshold_enabled
