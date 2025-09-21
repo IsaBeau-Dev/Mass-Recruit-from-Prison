@@ -184,6 +184,7 @@ mrfp_ransom_destiny_confirmed = {
         add_character_flag = enable_auto_mrfp_ransom
     }
 }
+
 mrfp_story_transfer = {
     trigger = {
         scope:previous_player_heir = {
