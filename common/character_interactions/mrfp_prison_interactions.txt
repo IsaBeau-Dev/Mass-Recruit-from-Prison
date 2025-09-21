@@ -1137,6 +1137,7 @@
 			}
 		}
 	}
+	
 	send_option = {
 		#mrfp
 		starts_enabled = { always = scope:actor.var:mrfp_story.var:mrfp_RELEASE_AS_EXECUTIONER }
