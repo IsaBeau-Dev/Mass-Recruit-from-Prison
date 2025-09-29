@@ -30,6 +30,9 @@
 	}
 
 	is_shown = {
+		#mrfp
+		scope:actor = { is_ai = no }
+		#mrfp
 		scope:recipient = {
 			is_imprisoned_by = scope:actor
 		}
@@ -1914,6 +1917,9 @@ mrfp_ransom_interaction_story = {
 	}
 
 	is_shown = {
+		#mrfp
+		scope:actor = { is_ai = no }
+		#mrfp
 		scope:secondary_recipient = {
 			#exists = liege
 			is_imprisoned_by = scope:actor
