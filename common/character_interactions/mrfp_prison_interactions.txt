@@ -1604,6 +1604,7 @@
 		}
 	}
 
+	#mrfp
 	# AI
 	# ai_targets = {
 	# 	ai_recipients = prisoners
@@ -1613,10 +1614,12 @@
 	# ai_potential = {
 	# 	has_prisoners = yes
 	# }
+	#mrfp
 
 	ai_will_do = {
 		base = 0
 
+		#mrfp
 		# modifier = {
 		# 	add = 20
 		# 	scope:demand_conversion = yes
@@ -1863,6 +1866,7 @@
 		# 		has_character_flag = being_prisonbroken_by_laamp
 		# 	}
 		# }
+		#mrfp
 	}
 
 }
@@ -2382,15 +2386,17 @@ mrfp_ransom_interaction_story = {
 		}
 	}
 
+	#mrfp
 	# AI
-	ai_targets = {
-		ai_recipients = prisoners
-	}
-	ai_frequency = 6
+	# ai_targets = {
+	# 	ai_recipients = prisoners
+	# }
+	# ai_frequency = 6
 
-	ai_potential = {
-		always = yes
-	}
+	# ai_potential = {
+	# 	always = yes
+	# }
+	#mrfp
 
 	ai_will_do = {
 		base = 0
