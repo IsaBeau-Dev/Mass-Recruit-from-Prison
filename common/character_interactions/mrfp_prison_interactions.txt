@@ -2530,6 +2530,4 @@ mrfp_ransom_interaction_story = {
 		flag = invalid
 		localization = "INVALID"
 	}
-
-
 }
