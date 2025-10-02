@@ -166,22 +166,22 @@
                     save_scope_as = the_story_owner
                     every_prisoner = {
                         limit = { always = yes }
-                        save_scope_as = target
+                        save_scope_as = the_story_prisoner
                         mrfp_is_at_war_with_target_or_their_liege_story = yes
 
 
-                        # scope:the_story_prisoner = {
-                        #     save_scope_as = secondary_recipient
-                        #     if = {
-                        #         limit = {
-                        #             is_ruler = no                
-                        #             exists = liege
-                        #         }
-                        #         liege = {
-                        #             save_scope_as = the_story_prisoner
-                        #         }
-                        #     }
-                        # }
+                        scope:the_story_prisoner = {
+                            save_scope_as = secondary_recipient
+                            if = {
+                                limit = {
+                                    is_ruler = no                
+                                    exists = liege
+                                }
+                                liege = {
+                                    save_scope_as = the_story_prisoner
+                                }
+                            }
+                        }
 
                         mrfp_release_all_unblocked_ransom_prisoners = yes
                     }
