@@ -100,7 +100,7 @@ mrfp_release_all_unblocked_ransom_prisoners = {
 	scope:the_story_prisoner = {
 		set_variable = {
 			name = temp
-			value = mrfp_target_gold
+			value = mrfp_target_ransom_cost
 		}
 	}
 	if = {
@@ -138,7 +138,7 @@ mrfp_update_ransom_counter_current = {
 		scope:actor = {
 			set_variable = {
 				name = temp
-				value = mrfp_target_gold
+				value = mrfp_target_ransom_cost
 			}
 		}
 		# relevant change to total ransomed gold current
