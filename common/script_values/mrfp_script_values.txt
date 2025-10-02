@@ -16,6 +16,15 @@
 }
 mrfp_target_gold = {
     value = scope:target.ransom_cost_value
+    if = {
+        limit = {
+                exists = dynasty
+                dynasty = {
+                    has_dynasty_perk = fp1_pillage_legacy_3
+                }
+        }
+        value = scope:target.increased_ransom_cost_value
+    }
 }
 
 mrfp_amout_of_prisoners = {
