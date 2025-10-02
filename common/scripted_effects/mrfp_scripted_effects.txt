@@ -111,7 +111,6 @@ mrfp_release_all_unblocked_ransom_prisoners = {
 		}
 
 		run_interaction = {
-			#interaction = ransom_interaction
 			interaction = mrfp_ransom_interaction_story
 			actor = scope:the_story_owner
 			recipient = scope:the_story_prisoner
