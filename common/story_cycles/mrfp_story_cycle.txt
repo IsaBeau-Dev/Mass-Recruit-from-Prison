@@ -162,35 +162,9 @@
             effect = {
                 save_scope_as = the_story
                 story_owner = {
-
                     save_scope_as = the_story_owner
-                    every_prisoner = {
-                        limit = { always = yes }
-                        save_scope_as = the_story_prisoner
-                        mrfp_is_at_war_with_target_or_their_liege_story = yes
-
-
-                        scope:the_story_prisoner = {
-                            save_scope_as = secondary_recipient
-                            if = {
-                                limit = {
-                                    is_ruler = no                
-                                    exists = liege
-                                }
-                                liege = {
-                                    save_scope_as = the_story_prisoner
-                                }
-                            }
-                        }
-
-                        mrfp_ransom_all_unblocked_prisoners = yes
-                    }
-                    
-                    mrfp_send_amount_people_ransomed_message = yes
+                    mrfp_ransom = yes
                 }
-
-                # Update ransom counter
-                mrfp_update_ransom_counter = yes
             }
         }
     }
