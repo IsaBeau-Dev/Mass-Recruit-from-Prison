@@ -92,7 +92,7 @@ mrfp_block_high_value_ransoms_effect = {
 
 
 ###RANSOM
-mrfp_release_all_unblocked_ransom_prisoners = {
+mrfp_ransom_all_unblocked_prisoners = {
 	if = {
 		limit = { 
 			NOT = {	has_character_flag = mrfp_blocked	}

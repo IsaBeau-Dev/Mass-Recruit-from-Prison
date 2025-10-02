@@ -183,7 +183,7 @@
                             }
                         }
 
-                        mrfp_release_all_unblocked_ransom_prisoners = yes
+                        mrfp_ransom_all_unblocked_prisoners = yes
                     }
                     
                     mrfp_send_amount_people_ransomed_message = yes

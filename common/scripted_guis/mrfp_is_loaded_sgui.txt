@@ -108,7 +108,7 @@ mrfp_is_loaded_sgui_ransom = {
           }
       }
 
-      mrfp_release_all_unblocked_ransom_prisoners = yes
+      mrfp_ransom_all_unblocked_prisoners = yes
     }
 
     #temp set var for scripted effect to work (call this regardless because both on/off threshold will do it)
