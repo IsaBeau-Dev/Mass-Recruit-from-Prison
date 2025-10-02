@@ -10,21 +10,22 @@ mrfp_is_at_war_with_target_or_their_liege_story = {
 }
 
 mrfp_is_at_war_with_targets_liege_story = {
-	if = {
-		limit = {
-			liege ?= {
-				is_at_war_with = scope:the_story_owner
-				OR = {
-					scope:the_story_prisoner = {
-						is_close_family_of = liege
-						is_primary_heir_of = liege
-					}
-				}
-			}
-		}
-		add_character_flag = mrfp_blocked
-	}
-	
+    if = {
+        limit = {
+            liege ?= {
+                is_at_war_with = scope:the_story_owner
+                OR = {
+                    scope:the_story_prisoner = {
+                        is_close_family_of = liege
+                    }
+                    scope:the_story_prisoner = {
+                        is_primary_heir_of = liege
+                    }
+                }
+            }
+        }
+        add_character_flag = mrfp_blocked
+    }
 }
 
 mrfp_every_prisoner_effect_story = {
