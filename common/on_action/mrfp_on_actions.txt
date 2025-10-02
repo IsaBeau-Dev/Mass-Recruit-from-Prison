@@ -194,7 +194,7 @@ mrfp_story_transfer = {
     effect = {
         #transfer story ownership
         scope:previous_player_heir.var:mrfp_story = {
-            make_story_owner = scope:root
+            make_story_owner = root
         }
 
         #transfer story variable to new owner
