@@ -170,20 +170,8 @@ mrfp_is_loaded_sgui_torture = {
 mrfp_prison_window_ransom = {
   scope = character
   is_shown = {
-    scope:target = {
-      save_temporary_scope_as = secondary_recipient
-      trigger_if = {
-          limit = {
-              is_ruler = no
-              exists = liege
-          }
-          liege = {
-              save_temporary_scope_as = secondary_recipient
-          }
-      }
-    }
-
-    mrfp_target_gold <= scope:secondary_recipient.gold
+    #test for script values
+    mrfp_target_gold <= mrfp_secondary_recipient_gold
   }
 }
 mrfp_prison_window_recruited = {
