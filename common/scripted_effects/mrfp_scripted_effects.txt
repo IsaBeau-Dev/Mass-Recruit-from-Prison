@@ -117,10 +117,22 @@ mrfp_update_ransom_counter_current = {
 			name = mrfp_total_ransomed_people_current
 			add = 1
 		}
+		scope:secondary_recipient = {
+			save_scope_as = target
+		}
+		scope:actor = {
+			set_variable = {
+				name = temp
+				value = mrfp_target_gold
+			}
+		}
 		change_variable = {
 			name = mrfp_total_ransomed_gold_current
 			#todo
-			add = scope:secondary_recipient.ransom_cost_value
+			add = scope:actor.var:temp
+		}
+		scope:actor = {
+			remove_variable = temp
 		}
 	}
 }
