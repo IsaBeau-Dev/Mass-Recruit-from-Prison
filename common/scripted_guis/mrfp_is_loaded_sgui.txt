@@ -182,7 +182,8 @@ mrfp_prison_window_ransom = {
           }
       }
     }
-    scope:target.ransom_cost_value <= scope:secondary_recipient.gold
+
+    mrfp_target_gold <= scope:secondary_recipient.gold
   }
 }
 mrfp_prison_window_recruited = {
