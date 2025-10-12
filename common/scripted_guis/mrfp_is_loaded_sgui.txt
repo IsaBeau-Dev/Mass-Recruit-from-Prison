@@ -89,52 +89,7 @@ mrfp_is_loaded_sgui_ransom = {
     root.var:mrfp_story = {
       save_scope_as = the_story
     }
-    every_prisoner = {
-      limit = { always = yes }
-      save_scope_as = the_story_prisoner
-      mrfp_is_at_war_with_target_or_their_liege_story = yes
-
-
-      scope:the_story_prisoner = {
-          save_scope_as = secondary_recipient
-          if = {
-              limit = {
-                  is_ruler = no                
-                  exists = liege
-              }
-              liege = {
-                  save_scope_as = the_story_prisoner
-              }
-          }
-      }
-
-      mrfp_release_all_unblocked_ransom_prisoners = yes
-    }
-
-    #temp set var for scripted effect to work (call this regardless because both on/off threshold will do it)
-    set_variable = {
-      name = mrfp_total_ransomed_people_current
-      value = scope:the_story.var:mrfp_total_ransomed_people_current
-    }
-    set_variable = {
-      name = mrfp_total_ransomed_gold_current
-      value = scope:the_story.var:mrfp_total_ransomed_gold_current
-    }
-    mrfp_send_amount_people_ransomed_message = yes
-    remove_variable = mrfp_total_ransomed_people_current
-    remove_variable = mrfp_total_ransomed_gold_current
-    
-    scope:the_story = {
-      mrfp_update_ransom_counter = yes
-    }
-
-    #old code
-    # every_prisoner = {
-    #   mrfp_ransom_every_prisoner_effect = {
-    #     MRFPROOT = root
-    #     MRFPTHIS = this
-    #   }
-    # }
+    mrfp_ransom = yes
   }
 }
 
@@ -157,7 +112,6 @@ mrfp_is_loaded_sgui_torture = {
        }
       save_scope_as = the_story_prisoner
       run_interaction = {
-        #interaction = ransom_interaction
         interaction = torture_interaction
         actor = scope:the_story_owner
         recipient = scope:the_story_prisoner
@@ -170,19 +124,8 @@ mrfp_is_loaded_sgui_torture = {
 mrfp_prison_window_ransom = {
   scope = character
   is_shown = {
-    scope:target = {
-      save_temporary_scope_as = secondary_recipient
-      trigger_if = {
-          limit = {
-              is_ruler = no
-              exists = liege
-          }
-          liege = {
-              save_temporary_scope_as = secondary_recipient
-          }
-      }
-    }
-    scope:target.ransom_cost_value <= scope:secondary_recipient.gold
+    #test for script values
+    mrfp_target_ransom_cost <= mrfp_secondary_recipient_gold
   }
 }
 mrfp_prison_window_recruited = {

@@ -10,21 +10,22 @@ mrfp_is_at_war_with_target_or_their_liege_story = {
 }
 
 mrfp_is_at_war_with_targets_liege_story = {
-	if = {
-		limit = {
-			liege ?= {
-				is_at_war_with = scope:the_story_owner
-				OR = {
-					scope:the_story_prisoner = {
-						is_close_family_of = liege
-						is_primary_heir_of = liege
-					}
-				}
-			}
-		}
-		add_character_flag = mrfp_blocked
-	}
-	
+    if = {
+        limit = {
+            liege ?= {
+                is_at_war_with = scope:the_story_owner
+                OR = {
+                    scope:the_story_prisoner = {
+                        is_close_family_of = liege
+                    }
+                    scope:the_story_prisoner = {
+                        is_primary_heir_of = liege
+                    }
+                }
+            }
+        }
+        add_character_flag = mrfp_blocked
+    }
 }
 
 mrfp_every_prisoner_effect_story = {
@@ -91,16 +92,48 @@ mrfp_block_high_value_ransoms_effect = {
 
 
 ###RANSOM
-mrfp_release_all_unblocked_ransom_prisoners = {
+mrfp_ransom = {
+	every_prisoner = {
+		limit = { always = yes }
+		save_scope_as = the_story_prisoner
+		mrfp_is_at_war_with_target_or_their_liege_story = yes
+
+		#save again for script values
+		save_scope_as = target
+	
+
+		mrfp_ransom_all_unblocked_prisoners = yes
+    }
+
+    #temp set var for scripted effect to work (call this regardless because both on/off threshold will do it)
+    set_variable = {
+      name = mrfp_total_ransomed_people_current
+      value = scope:the_story.var:mrfp_total_ransomed_people_current
+    }
+    set_variable = {
+      name = mrfp_total_ransomed_gold_current
+      value = scope:the_story.var:mrfp_total_ransomed_gold_current
+    }
+    mrfp_send_amount_people_ransomed_message = yes
+    remove_variable = mrfp_total_ransomed_people_current
+    remove_variable = mrfp_total_ransomed_gold_current
+    
+    scope:the_story = {
+      mrfp_update_ransom_counter = yes
+    }
+}
+
+mrfp_ransom_all_unblocked_prisoners = {
 	if = {
 		limit = { 
 			NOT = {	has_character_flag = mrfp_blocked	}
 			NOT = {	has_character_flag = mrfp_blocked_gui }
-			scope:secondary_recipient.ransom_cost_value <= scope:the_story_prisoner.gold 
+			scope:the_story_owner = {
+				mrfp_target_ransom_cost <= mrfp_secondary_recipient_gold
+			}
 		}
 
 		run_interaction = {
-			#interaction = ransom_interaction
 			interaction = mrfp_ransom_interaction_story
 			actor = scope:the_story_owner
 			recipient = scope:the_story_prisoner
@@ -116,10 +149,25 @@ mrfp_update_ransom_counter_current = {
 			name = mrfp_total_ransomed_people_current
 			add = 1
 		}
+		# stuff for the script_value to work
+		scope:secondary_recipient = {
+			save_scope_as = target
+		}
+		scope:actor = {
+			set_variable = {
+				name = temp
+				value = mrfp_target_ransom_cost
+			}
+		}
+		# relevant change to total ransomed gold current
 		change_variable = {
 			name = mrfp_total_ransomed_gold_current
 			#todo
-			add = scope:secondary_recipient.ransom_cost_value
+			add = scope:actor.var:temp
+		}
+		#remove the temp variable
+		scope:actor = {
+			remove_variable = temp
 		}
 	}
 }
@@ -227,5 +275,13 @@ mrfp_start_story_if_not_exist = {
 			}
 		}
 		create_story = mrfp_recruitment_cycle
+	}
+}
+
+mrfp_send_debug_message = {
+	send_interface_message = {
+		type = event_captured_combatants_good
+		title = debug_mrfp_title
+		desc = debug_mrfp_desc
 	}
 }
