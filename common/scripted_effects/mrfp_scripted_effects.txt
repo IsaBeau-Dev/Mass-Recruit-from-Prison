@@ -144,6 +144,10 @@ mrfp_update_ransom_counter_current = {
 			name = mrfp_total_ransomed_people_current
 			add = 1
 		}
+		change_variable = {
+			name = mrfp_total_ransomed_gold_current
+			add = mrfp_target_ransom_cost
+		}
 		# # stuff for the script_value to work
 		# scope:secondary_recipient = {
 		# 	save_scope_as = target
