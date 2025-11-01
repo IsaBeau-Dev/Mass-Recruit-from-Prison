@@ -130,11 +130,24 @@ mrfp_ransom_all_unblocked_prisoners = {
 			NOT = {	has_character_flag = mrfp_blocked_gui }
 			scope:the_story_owner = {
 				mrfp_target_ransom_cost <= mrfp_secondary_recipient_gold
+				is_character_interaction_potentially_accepted = {
+					interaction = mrfp_ransom_interaction_story
+					recipient = scope:the_story_prisoner
+				}
 			}
 		}
 
+		# run_interaction = {
+		# 	interaction = mrfp_ransom_interaction_story
+		# 	actor = scope:the_story_owner
+		# 	recipient = scope:the_story_prisoner
+		# 	execute_threshold = accept
+		# }
+
+		mrfp_update_ransom_counter_current = yes
+		# ransom_interaction
 		run_interaction = {
-			interaction = mrfp_ransom_interaction_story
+			interaction = ransom_interaction
 			actor = scope:the_story_owner
 			recipient = scope:the_story_prisoner
 			execute_threshold = accept
