@@ -118,7 +118,7 @@ mrfp_ransom_all_unblocked_prisoners = {
 			scope:the_story_owner = {
 				mrfp_target_ransom_cost <= mrfp_secondary_recipient_gold
 				is_character_interaction_potentially_accepted = {
-					interaction = mrfp_ransom_interaction_story
+					interaction = ransom_interaction
 					recipient = scope:the_story_prisoner
 				}
 			}
@@ -126,6 +126,7 @@ mrfp_ransom_all_unblocked_prisoners = {
 
 		mrfp_update_ransom_counter_current = yes
 		# ransom_interaction
+		#flag = herd_send_option
 		run_interaction = {
 			interaction = ransom_interaction
 			actor = scope:the_story_owner
