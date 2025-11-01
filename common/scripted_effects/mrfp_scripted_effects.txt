@@ -105,18 +105,7 @@ mrfp_ransom = {
 		mrfp_ransom_all_unblocked_prisoners = yes
     }
 
-    #temp set var for scripted effect to work (call this regardless because both on/off threshold will do it)
-    set_variable = {
-      name = mrfp_total_ransomed_people_current
-      value = scope:the_story.var:mrfp_total_ransomed_people_current
-    }
-    set_variable = {
-      name = mrfp_total_ransomed_gold_current
-      value = scope:the_story.var:mrfp_total_ransomed_gold_current
-    }
     mrfp_send_amount_people_ransomed_message = yes
-    remove_variable = mrfp_total_ransomed_people_current
-    remove_variable = mrfp_total_ransomed_gold_current
     
     scope:the_story = {
       mrfp_update_ransom_counter = yes
