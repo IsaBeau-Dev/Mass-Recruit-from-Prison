@@ -137,13 +137,6 @@ mrfp_ransom_all_unblocked_prisoners = {
 			}
 		}
 
-		# run_interaction = {
-		# 	interaction = mrfp_ransom_interaction_story
-		# 	actor = scope:the_story_owner
-		# 	recipient = scope:the_story_prisoner
-		# 	execute_threshold = accept
-		# }
-
 		mrfp_update_ransom_counter_current = yes
 		# ransom_interaction
 		run_interaction = {
