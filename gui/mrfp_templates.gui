@@ -65,33 +65,37 @@ types mrfp_window_types {
 		}
 	}
 
-	type mrfp_can_be_ransomed = hbox {
-		spacing = 3
-		
-		text_single = {
-			text = "mrfp_can_be_ransomed"
-			default_format = "#low"
+	type mrfp_can_be_ransomed_and_can_be_recruited = hbox = {
+		layoutpolicy_horizontal = fixed
+		spacing = 5
+
+		vbox = {
+			spacing = 5
+
+			text_single = {
+				text = "mrfp_can_be_ransomed"
+				default_format = "#low"
+			}
+			text_single = {
+				text = "mrfp_can_be_recruited"
+				default_format = "#low"
+			}
 		}
 
-		button_checkbox = {
-			name = "mrfp_can_be_ransomed"
-			checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', Character.MakeScope ).End)]"
-			raw_tooltip = "Can be ransomed"
-		}
-	}
+		vbox = {
+			spacing = 5
 
-	type mrfp_can_be_recruited = hbox {
-		spacing = 3
-		
-		text_single = {
-			text = "mrfp_can_be_recruited"
-			default_format = "#low"
-		}
+			button_checkbox = {
+				name = "mrfp_can_be_ransomed"
+				checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
+				raw_tooltip = "Can be ransomed"
+			}
 
-		button_checkbox = {
-			name = "mrfp_can_be_recruited"
-			checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-			raw_tooltip = "Can be recruited"
+			button_checkbox = {
+				name = "mrfp_can_be_recruited"
+				checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
+				raw_tooltip = "Can be recruited"
+			}
 		}
 	}
 
@@ -542,10 +546,7 @@ types mrfp_window_types {
 							# New gold display
 							mrfp_prisoner_gold_display = {}
 
-							# Can be ransomed text and checkbox
-							mrfp_can_be_ransomed = {}
-
-							mrfp_can_be_recruited = {}
+							mrfp_can_be_ransomed_and_can_be_recruited = {}
 							# MRFP
 
 							prison_interactions_hbox = {}
