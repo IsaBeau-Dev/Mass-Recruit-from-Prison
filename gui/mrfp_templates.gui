@@ -108,43 +108,7 @@ types mrfp_window_types {
 			text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_ransom_cost')|0] [gold_i]"
 			default_format = "#low"
 		}
-
-		hbox = {
-			layoutpolicy_horizontal = fixed
-			spacing = 5
-
-			vbox = {
-				spacing = 5
-				# layoutpolicy_horizontal = expanding
-
-				text_single = {
-					text = "mrfp_can_be_ransomed"
-					default_format = "#low"
-				}
-				text_single = {
-					text = "mrfp_can_be_recruited"
-					default_format = "#low"
-				}
-
-
-			}
-
-			vbox = {
-				spacing = 5
-
-				button_checkbox = {
-					name = "mrfp_can_be_ransomed"
-					checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-					raw_tooltip = "Can be ransomed"
-				}
-
-				button_checkbox = {
-					name = "mrfp_can_be_recruited"
-					checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-					raw_tooltip = "Can be recruited"
-				}
-			}
-		}
+		mrfp_can_be_ransomed_and_can_be_recruited = {}
 	}
 
 
