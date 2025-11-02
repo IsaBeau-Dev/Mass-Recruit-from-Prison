@@ -72,7 +72,7 @@ types mrfp_window_types {
 
 		vbox = {
 			spacing = 5
-
+			# TODO use "[IsNomad( GetPlayer )]" to hide/show relevant text
 			text_single = {
 				text = "mrfp_can_be_ransomed"
 				default_format = "#low"
