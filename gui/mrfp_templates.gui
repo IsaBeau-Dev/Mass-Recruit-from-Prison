@@ -105,31 +105,33 @@ types mrfp_window_types {
 			default_format = "#low"
 		}
 
-		vbox = {
-			layoutpolicy_horizontal = expanding
+		hbox = {
+			layoutpolicy_horizontal = fixed
 			spacing = 5
 
-			hbox = {
+			vbox = {
 				spacing = 5
+				# layoutpolicy_horizontal = expanding
 
 				text_single = {
 					text = "mrfp_can_be_ransomed"
 					default_format = "#low"
 				}
+				text_single = {
+					text = "mrfp_can_be_recruited"
+					default_format = "#low"
+				}
+
+
+			}
+
+			vbox = {
+				spacing = 5
 
 				button_checkbox = {
 					name = "mrfp_can_be_ransomed"
 					checked = "[GetScriptedGui('mrfp_prison_window_ransom').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
 					raw_tooltip = "Can be ransomed"
-				}
-			}
-
-			hbox = {
-				spacing = 5
-
-				text_single = {
-					text = "mrfp_can_be_recruited"
-					default_format = "#low"
 				}
 
 				button_checkbox = {
