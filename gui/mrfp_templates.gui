@@ -204,6 +204,22 @@ types mrfp_window_types {
 				default_format = "#low"
 				autoresize = yes
 			}
+
+			text_single = {
+				name = "mrfp_gui_total_ransomed_herd_label"
+				raw_text = "Total Herd [herd_i] Ransomed:"
+				default_format = "#high"
+				autoresize = yes
+				# visible = No
+			}
+
+			text_single = {
+				name = "mrfp_gui_total_ransomed_herd_value"
+				text = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_total_ransomed_herd').GetValue|0]"
+				default_format = "#low"
+				autoresize = yes
+				# visible = No
+			}
 		}
 	}
 
