@@ -55,6 +55,7 @@ types mrfp_button_types
 
 
 types mrfp_window_types {
+	# can only be used for fewer than MAX_PRISONER_COUNT_GRID(4) prisoners
 	type mrfp_prisoner_gold_display = hbox {
 		layoutpolicy_horizontal = expanding
 		spacing = 5
