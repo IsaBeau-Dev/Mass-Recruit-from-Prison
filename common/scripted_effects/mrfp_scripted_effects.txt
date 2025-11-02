@@ -120,6 +120,7 @@ mrfp_ransom_all_unblocked_prisoners = {
 				is_character_interaction_potentially_accepted = {
 					interaction = ransom_interaction
 					recipient = scope:the_story_prisoner
+					required_response = yes
 				}
 			}
 		}
