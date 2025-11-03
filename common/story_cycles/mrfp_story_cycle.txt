@@ -19,8 +19,8 @@
 
         # Ransom for herd or gold settings
         set_variable = {
-            name = mrfp_ransom_payment_option
-            value = gold
+            name = mrfp_ransom_for_herd_enabled
+            value = no
         }
 
         # Release options configuration
