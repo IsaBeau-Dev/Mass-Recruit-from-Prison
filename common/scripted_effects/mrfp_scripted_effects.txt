@@ -201,6 +201,7 @@ mrfp_update_ransom_counter_current = {
 			name = mrfp_total_ransomed_people_current
 			add = 1
 		}
+		## TODO WATCH OUT
 		change_variable = {
 			name = mrfp_total_ransomed_gold_current
 			add = mrfp_target_ransom_gold_cost
