@@ -184,7 +184,7 @@ mrfp_prison_window_show_herd = {
     exists = domicile
     is_ai = no
 
-    #scope does not exists ????
+    #scope does exist
     scope:secondary_recipient = {
       always = yes
     }
