@@ -154,6 +154,30 @@ mrfp_prison_window_recruited = {
     }
   }
 }
+
+mrfp_prison_window_show_herd = {
+  scope = character
+  is_shown = {
+    mrfp_redirect_from_target_to_liege = yes
+    always = yes
+		# scope:actor = {
+    #   government_has_flag = government_is_nomadic
+    #   exists = domicile
+    #   is_ai = no
+    # }
+    # # Recipient must care about Herd
+    # scope:recipient ?= {
+    #   government_has_flag = government_is_nomadic
+    #   exists = domicile
+    # }
+    # }
+    # is_valid = {
+    #   # Recipient has enough Herd
+    #   scope:recipient = { domicile.herd >= domicile.medium_herd_value }
+    # }
+  }
+}
+
 mrfp_prison_window_block_or_unblock_character = {
   scope = character
   effect = {
