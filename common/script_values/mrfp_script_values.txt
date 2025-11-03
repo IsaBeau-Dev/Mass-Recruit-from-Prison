@@ -47,6 +47,7 @@ mrfp_target_ransom_gold_cost = {
 
 mrfp_target_ransom_herd_cost = {
     value = scope:target.domicile.medium_herd_value
+    #not needed as the legacy does not increase herd ransom cost
     # if = {
     #     limit = {
     #             exists = dynasty
