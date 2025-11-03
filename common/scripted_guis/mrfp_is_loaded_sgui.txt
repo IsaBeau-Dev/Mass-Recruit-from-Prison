@@ -171,11 +171,6 @@ mrfp_prison_window_show_herd = {
               save_temporary_scope_as = secondary_recipient
           }
       }
-      }
-
-    #scope target exists
-    scope:target = {
-      always = yes
     }
 
     # always = yes
@@ -183,12 +178,6 @@ mrfp_prison_window_show_herd = {
     government_has_flag = government_is_nomadic
     exists = domicile
     is_ai = no
-
-    #scope does exist
-    scope:secondary_recipient = {
-      always = yes
-    }
-
 
     # # Target or their liege (= secondary_recipient) must care about Herd
     scope:secondary_recipient = {
