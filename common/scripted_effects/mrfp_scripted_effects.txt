@@ -237,6 +237,7 @@ mrfp_update_ransom_counter = {
 	}
 }
 
+#TODO different localization with herd/gold included or not based on the current amout (herd=0 dont mention herd)
 mrfp_send_amount_people_ransomed_message = {
 	if = {
 		limit = { scope:the_story.var:mrfp_total_ransomed_people_current >= 1 }
