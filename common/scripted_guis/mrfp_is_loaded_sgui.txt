@@ -161,7 +161,7 @@ mrfp_prison_window_show_herd = {
     scope:target = {
       save_temporary_scope_as = secondary_recipient
 
-      if = {
+      trigger_if = {
           limit = {
               is_ruler = no
               exists = liege
