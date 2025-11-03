@@ -159,18 +159,18 @@ mrfp_prison_window_show_herd = {
   scope = character
   is_shown = {
     mrfp_redirect_from_target_to_liege = yes
-    always = yes
-		# scope:actor = {
-    #   government_has_flag = government_is_nomadic
-    #   exists = domicile
-    #   is_ai = no
-    # }
-    # # Recipient must care about Herd
-    # scope:recipient ?= {
-    #   government_has_flag = government_is_nomadic
-    #   exists = domicile
-    # }
-    # }
+    # always = yes
+    #root is player
+    government_has_flag = government_is_nomadic
+    exists = domicile
+    is_ai = no
+
+    # # Target or their liege (= secondary_recipient) must care about Herd
+    scope:secondary_recipient ?= {
+      government_has_flag = government_is_nomadic
+      exists = domicile
+    }
+
     # is_valid = {
     #   # Recipient has enough Herd
     #   scope:recipient = { domicile.herd >= domicile.medium_herd_value }

@@ -99,12 +99,13 @@ types mrfp_window_types {
 				text_single = {
 					text = "[herd_i]"
 					default_format = "#low"
+					# visible = "[GetScriptedGui('mrfp_prison_window_show_herd').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
 				}
-				# TODO use "[IsNomad( GetPlayer )]" to hide/show relevant text
 				button_checkbox = {
 					name = "mrfp_can_be_ransomed_herd"
 					checked = "[GetScriptedGui('mrfp_prison_window_ransom_herd').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
 					raw_tooltip = "Can be ransomed for herd"
+					# visible = "[GetScriptedGui('mrfp_prison_window_show_herd').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
 				}
 			}
 
@@ -136,7 +137,8 @@ types mrfp_window_types {
 			text_single = {
 				text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_herd')|0] [herd_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_ransom_herd_cost')|0] [herd_i]"
 				default_format = "#low"
-				visible = "[IsNomad( GetPlayer )]" #TODO also make sure the target has herd as a ransom option
+				# visible = "[IsNomad( GetPlayer )]" #TODO also make sure the target has herd as a ransom option
+				# visible = "[GetScriptedGui('mrfp_prison_window_show_herd').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
 			}
 		}
 		mrfp_can_be_ransomed_and_can_be_recruited = {}
