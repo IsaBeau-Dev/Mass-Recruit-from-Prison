@@ -346,20 +346,3 @@ mrfp_send_debug_message = {
 		desc = debug_mrfp_desc
 	}
 }
-
-# does not work as intended
-# mrfp_redirect_from_target_to_liege = {
-# 	scope:target = {
-#         save_temporary_scope_as = secondary_recipient
-
-#         if = {
-#             limit = {
-#                 is_ruler = no
-#                 exists = liege
-#             }
-#             liege = {
-#                 save_temporary_scope_as = secondary_recipient
-#             }
-#         }
-#     }
-# }
