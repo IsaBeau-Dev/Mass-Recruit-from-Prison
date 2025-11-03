@@ -104,9 +104,12 @@ mrfp_ransom = {
 		if = {
 			limit = { scope:the_story.var:mrfp_ransom_payment_option = gold }
 			mrfp_ransom_all_unblocked_prisoners_for_gold = yes
+			scope:the_story_owner = {
+				mrfp_send_debug_message = yes
+			}
 		}
 
-		mrfp_ransom_all_unblocked_prisoners_for_gold = yes
+		# mrfp_ransom_all_unblocked_prisoners_for_gold = yes
     }
 
     mrfp_send_amount_people_ransomed_message = yes
