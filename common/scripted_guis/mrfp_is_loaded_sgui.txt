@@ -124,8 +124,15 @@ mrfp_is_loaded_sgui_torture = {
 mrfp_prison_window_ransom = {
   scope = character
   is_shown = {
+    ##TODO also check if target has ransom option (gold or herd)
     #test for script values
     mrfp_target_ransom_gold_cost <= mrfp_secondary_recipient_gold
+    #also make sure that the interaction will be accepted
+    is_character_interaction_potentially_accepted = {
+      interaction = ransom_interaction
+      recipient = scope:target
+      required_response = yes
+    }
   }
 }
 mrfp_prison_window_recruited = {
