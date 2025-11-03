@@ -216,8 +216,10 @@ mrfp_update_ransom_counter = {
 	scope:the_story = {
 		change_variable = { name = mrfp_total_ransomed_people  add = scope:the_story.var:mrfp_total_ransomed_people_current }
 		change_variable = { name = mrfp_total_ransomed_gold  add = scope:the_story.var:mrfp_total_ransomed_gold_current }
+		change_variable = { name = mrfp_total_ransomed_herd  add = scope:the_story.var:mrfp_total_ransomed_herd_current }
 		change_variable = { name = mrfp_total_ransomed_people_current multiply = 0 }
 		change_variable = { name = mrfp_total_ransomed_gold_current multiply = 0 }
+		change_variable = { name = mrfp_total_ransomed_herd_current multiply = 0 }
 	}
 }
 
