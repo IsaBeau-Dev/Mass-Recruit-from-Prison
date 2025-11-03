@@ -143,28 +143,28 @@ mrfp_ransom_all_unblocked_prisoners = {
 		mrfp_update_ransom_counter_current = yes
 		# ransom_interaction
 		#flag = herd_send_option
-		scope:the_story_owner = {
-			save_scope_value_as = { name = herd_send_option value = yes }
-		}
-		scope:the_story_prisoner = {
-			save_scope_as = payer
-			if = {
-				limit = {
-					is_ruler = no
-					exists = liege
-				}
-				liege = {
-					save_scope_as = payer
-				}
-			}
-		}
-		scope:the_story_prisoner = {
-			save_scope_as = prisoner
-		}
-		scope:the_story_owner = {
-			save_scope_as = imprisoner
-		}
-		ransom_interaction_effect = yes
+		# scope:the_story_owner = {
+		# 	save_scope_value_as = { name = herd_send_option value = yes }
+		# }
+		# scope:the_story_prisoner = {
+		# 	save_scope_as = payer
+		# 	if = {
+		# 		limit = {
+		# 			is_ruler = no
+		# 			exists = liege
+		# 		}
+		# 		liege = {
+		# 			save_scope_as = payer
+		# 		}
+		# 	}
+		# }
+		# scope:the_story_prisoner = {
+		# 	save_scope_as = prisoner
+		# }
+		# scope:the_story_owner = {
+		# 	save_scope_as = imprisoner
+		# }
+		# ransom_interaction_effect = yes
 		run_interaction = {
 			interaction = ransom_interaction
 			actor = scope:the_story_owner
@@ -230,6 +230,7 @@ mrfp_toggle_variable = {
 		} 
 	}
 }
+
 # mrfp_display_variable = {
 #     desc = $VARIABLE_NAME$
 #     first_valid = {
