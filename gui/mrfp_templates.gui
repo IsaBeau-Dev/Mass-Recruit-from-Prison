@@ -111,7 +111,7 @@ types mrfp_window_types {
 				icon = {
 					texture = "gfx/interface/icons/icon_prison.dds"
 					default_format = "#low"
-					size = { 30 30 }
+					size = { 25 25 }
 				}
 				button_checkbox = {
 					name = "mrfp_can_be_recruited"
