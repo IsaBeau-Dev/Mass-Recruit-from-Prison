@@ -159,19 +159,19 @@ mrfp_prison_window_show_herd = {
   scope = character
   is_shown = {
     # mrfp_redirect_from_target_to_liege = yes
-    # scope:target = {
-    #   save_scope_as = secondary_recipient
+    scope:target = {
+      save_temporary_scope_as = secondary_recipient
 
-    #   if = {
-    #       limit = {
-    #           is_ruler = no
-    #           exists = liege
-    #       }
-    #       liege = {
-    #           save_scope_as = secondary_recipient
-    #       }
-    #   }
-    # }
+      if = {
+          limit = {
+              is_ruler = no
+              exists = liege
+          }
+          liege = {
+              save_temporary_scope_as = secondary_recipient
+          }
+      }
+      }
 
     #scope target exists
     scope:target = {
@@ -184,10 +184,10 @@ mrfp_prison_window_show_herd = {
     exists = domicile
     is_ai = no
 
-    # #scope does not exists ????
-    # scope:secondary_recipient = {
-    #   always = no
-    # }
+    #scope does not exists ????
+    scope:secondary_recipient = {
+      always = yes
+    }
 
 
     # # # Target or their liege (= secondary_recipient) must care about Herd
