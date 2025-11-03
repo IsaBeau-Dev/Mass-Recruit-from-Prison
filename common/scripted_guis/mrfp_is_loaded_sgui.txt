@@ -125,7 +125,7 @@ mrfp_prison_window_ransom = {
   scope = character
   is_shown = {
     #test for script values
-    mrfp_target_ransom_cost <= mrfp_secondary_recipient_gold
+    mrfp_target_ransom_gold_cost <= mrfp_secondary_recipient_gold
   }
 }
 mrfp_prison_window_recruited = {

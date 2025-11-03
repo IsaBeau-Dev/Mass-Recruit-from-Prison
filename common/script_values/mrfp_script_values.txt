@@ -14,7 +14,7 @@
     }
     value = scope:secondary_recipient.gold
 }
-mrfp_target_ransom_cost = {
+mrfp_target_ransom_gold_cost = {
     value = scope:target.ransom_cost_value
     if = {
         limit = {
