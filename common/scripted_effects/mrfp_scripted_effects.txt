@@ -100,7 +100,11 @@ mrfp_ransom = {
 
 		#save again for script values
 		save_scope_as = target
-	
+		
+		if = {
+			limit = { scope:the_story.var:mrfp_ransom_payment_option = gold }
+			mrfp_ransom_all_unblocked_prisoners_for_gold = yes
+		}
 
 		mrfp_ransom_all_unblocked_prisoners_for_gold = yes
     }
@@ -177,7 +181,7 @@ mrfp_ransom_all_unblocked_prisoners_for_herd = {
 			save_scope_as = imprisoner
 		}
 		ransom_interaction_effect = yes
-		
+
 		run_interaction = {
 			interaction = ransom_interaction
 			actor = scope:the_story_owner
@@ -242,6 +246,28 @@ mrfp_toggle_variable = {
 				set_variable = { 
 					name = $VARIABLE_NAME$
 					value = no
+				}
+			} 
+		} 
+	}
+}
+
+mrfp_toggle_ransom_payment_option = {
+	switch = {
+		trigger = scope:the_story.var:mrfp_ransom_payment_option
+		gold = {
+			scope:the_story = {
+				set_variable = { 
+					name = mrfp_ransom_payment_option
+					value = herd
+				}
+			} 
+		} 
+		herd = { 
+			scope:the_story = {
+				set_variable = { 
+					name = mrfp_ransom_payment_option
+					value = gold
 				}
 			} 
 		} 
