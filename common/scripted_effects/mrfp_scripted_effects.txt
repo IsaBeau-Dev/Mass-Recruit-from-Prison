@@ -102,8 +102,19 @@ mrfp_ransom = {
 		save_scope_as = target
 		
 		if = {
-			limit = { scope:the_story.var:mrfp_ransom_for_herd_enabled = no }
+			limit = { 
+				scope:the_story.var:mrfp_ransom_for_herd_enabled = no
+			 }
 			mrfp_ransom_all_unblocked_prisoners_for_gold = yes
+			# scope:the_story_owner = {
+			# 	mrfp_send_debug_message = yes
+			# }
+		}
+		if = {
+			limit = { 
+				scope:the_story.var:mrfp_ransom_for_herd_enabled = yes
+			 }
+			mrfp_ransom_all_unblocked_prisoners_for_herd = yes
 			scope:the_story_owner = {
 				mrfp_send_debug_message = yes
 			}
