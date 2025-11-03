@@ -271,28 +271,6 @@ mrfp_toggle_variable = {
 	}
 }
 
-mrfp_toggle_ransom_payment_option = {
-	switch = {
-		trigger = scope:the_story.var:mrfp_ransom_payment_option
-		gold = {
-			scope:the_story = {
-				set_variable = { 
-					name = mrfp_ransom_payment_option
-					value = herd
-				}
-			} 
-		} 
-		herd = { 
-			scope:the_story = {
-				set_variable = { 
-					name = mrfp_ransom_payment_option
-					value = gold
-				}
-			} 
-		} 
-	}
-}
-
 # mrfp_display_variable = {
 #     desc = $VARIABLE_NAME$
 #     first_valid = {
