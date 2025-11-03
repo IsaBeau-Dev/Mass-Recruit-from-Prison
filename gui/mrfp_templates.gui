@@ -187,7 +187,7 @@ types mrfp_window_types {
 				raw_text = "Total Herd [herd_i] Ransomed:"
 				default_format = "#high"
 				autoresize = yes
-				visible = "[IsNomad( GetPlayer )]" #TODO keep it or always visable ?
+				visible = "[IsNomad( GetPlayer )]"
 			}
 
 			text_single = {
@@ -195,7 +195,7 @@ types mrfp_window_types {
 				text = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_total_ransomed_herd').GetValue|0]"
 				default_format = "#low"
 				autoresize = yes
-				visible = "[IsNomad( GetPlayer )]" #TODO keep it or always visable ?
+				visible = "[IsNomad( GetPlayer )]"
 			}
 		}
 	}
