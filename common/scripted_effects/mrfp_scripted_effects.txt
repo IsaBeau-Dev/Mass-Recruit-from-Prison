@@ -143,7 +143,11 @@ mrfp_ransom_all_unblocked_prisoners_for_gold = {
 			}
 		}
 
+		add_character_flag = mrfp_recently_ransomed_for_gold
+
 		mrfp_update_ransom_counter_current = yes
+
+		remove_character_flag = mrfp_recently_ransomed_for_gold
 
 		run_interaction = {
 			interaction = ransom_interaction
@@ -170,7 +174,11 @@ mrfp_ransom_all_unblocked_prisoners_for_herd = {
 			}
 		}
 
+		add_character_flag = mrfp_recently_ransomed_for_herd
+
 		mrfp_update_ransom_counter_current = yes
+
+		remove_character_flag = mrfp_recently_ransomed_for_herd
 
 		#workaround to set herd payment option
 		scope:the_story_owner = {
