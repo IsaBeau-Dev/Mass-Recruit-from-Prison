@@ -101,6 +101,7 @@ mrfp_ransom = {
 		#save again for script values
 		save_scope_as = target
 		
+		#TODO run gold ransom for people who dont have herd even with ransom for herd enabled?
 		if = {
 			limit = { 
 				scope:the_story.var:mrfp_ransom_for_herd_enabled = no
