@@ -107,10 +107,16 @@ types mrfp_window_types {
 				}
 			}
 
-			button_checkbox = {
-				name = "mrfp_can_be_recruited"
-				checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-				raw_tooltip = "Can be recruited"
+			hbox = {
+				icon = {
+					texture = "gfx/interface/icons/icon_prison.dds"
+					default_format = "#low"
+				}
+				button_checkbox = {
+					name = "mrfp_can_be_recruited"
+					checked = "[GetScriptedGui('mrfp_prison_window_recruited').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
+					raw_tooltip = "Can be recruited"
+				}
 			}
 		}
 	}
