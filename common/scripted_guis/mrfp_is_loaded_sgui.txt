@@ -124,9 +124,19 @@ mrfp_is_loaded_sgui_torture = {
 mrfp_prison_window_ransom = {
   scope = character
   is_shown = {
-    ##TODO also check if target has ransom option (gold or herd)
-    #test for script values
-    mrfp_target_ransom_gold_cost <= mrfp_secondary_recipient_gold
+    #test for script values (gold or herd)
+    if = {
+      limit = {
+        root.var:mrfp_ransom_for_herd_enabled = no
+      }
+      mrfp_target_ransom_gold_cost <= mrfp_secondary_recipient_gold
+    }
+    if = {
+      limit = {
+        root.var:mrfp_ransom_for_herd_enabled = yes
+      }
+      mrfp_target_ransom_herd_cost <= mrfp_secondary_recipient_herd
+    }
     #also make sure that the interaction will be accepted
     is_character_interaction_potentially_accepted = {
       interaction = ransom_interaction
