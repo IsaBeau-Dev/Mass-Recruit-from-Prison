@@ -36,6 +36,8 @@
         set_variable = { name = mrfp_total_ransomed_people_current value = 0 }
         set_variable = { name = mrfp_total_ransomed_gold value = 0 }
         set_variable = { name = mrfp_total_ransomed_gold_current value = 0 }
+        set_variable = { name = mrfp_total_ransomed_herd value = 0 }
+        set_variable = { name = mrfp_total_ransomed_herd_current value = 0 }
     }
 
     on_end = {
