@@ -119,3 +119,10 @@ mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Ändern Sie Ihre Präfere
 #TODO: icons for ransom and recruit
 mrfp_can_be_ransomed:0 "Kann freigekauft werden:" #idea for later [herd_i] and [gold_i] to show icones based on var in story
 mrfp_can_be_recruited:0 "Kann rekrutiert werden:"
+
+
+
+
+game_concept_mrfp_prison_icon:0 "Gold"
+game_concept_mrfp_prison_icon_desc:0 "'Gold' really represents all liquid assets of a Character; their wealth. It can be spent on many things, most notably constructing [buildings|E], paying for [regiments|E], and creating [titles|E]."
+game_concept_mrfp_prison_i:0 "@mrfp_prison_icon!"
