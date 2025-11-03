@@ -121,22 +121,22 @@ mrfp_is_loaded_sgui_torture = {
   }
 }
 #prison window gui stuff
-mrfp_prison_window_ransom = {
+mrfp_prison_window_ransom_gold = {
   scope = character
   is_shown = {
-    #test for script values (gold or herd)
-    if = {
-      limit = {
-        root.var:mrfp_ransom_for_herd_enabled = no
-      }
-      mrfp_target_ransom_gold_cost <= mrfp_secondary_recipient_gold
+    mrfp_target_ransom_gold_cost <= mrfp_secondary_recipient_gold
+    #also make sure that the interaction will be accepted
+    is_character_interaction_potentially_accepted = {
+      interaction = ransom_interaction
+      recipient = scope:target
+      required_response = yes
     }
-    if = {
-      limit = {
-        root.var:mrfp_ransom_for_herd_enabled = yes
-      }
-      mrfp_target_ransom_herd_cost <= mrfp_secondary_recipient_herd
-    }
+  }
+}
+mrfp_prison_window_ransom_herd = {
+  scope = character
+  is_shown = {
+    mrfp_target_ransom_herd_cost <= mrfp_secondary_recipient_herd
     #also make sure that the interaction will be accepted
     is_character_interaction_potentially_accepted = {
       interaction = ransom_interaction
