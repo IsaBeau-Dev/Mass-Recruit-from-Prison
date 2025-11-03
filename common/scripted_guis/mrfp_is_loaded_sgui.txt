@@ -158,7 +158,6 @@ mrfp_prison_window_recruited = {
 mrfp_prison_window_show_herd = {
   scope = character
   is_shown = {
-    # mrfp_redirect_from_target_to_liege = yes
     scope:target = {
       save_temporary_scope_as = secondary_recipient
 
