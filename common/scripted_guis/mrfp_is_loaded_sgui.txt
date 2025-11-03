@@ -190,11 +190,11 @@ mrfp_prison_window_show_herd = {
     }
 
 
-    # # # Target or their liege (= secondary_recipient) must care about Herd
-    # scope:secondary_recipient ?= {
-    #   government_has_flag = government_is_nomadic
-    #   exists = domicile
-    # }
+    # # Target or their liege (= secondary_recipient) must care about Herd
+    scope:secondary_recipient = {
+      government_has_flag = government_is_nomadic
+      exists = domicile
+    }
 
     # # is_valid = {
     # #   # Recipient has enough Herd
