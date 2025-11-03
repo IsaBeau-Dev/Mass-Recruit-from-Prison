@@ -1,34 +1,10 @@
 ﻿mrfp_secondary_recipient_gold = {
-    scope:target = {
-        save_temporary_scope_as = secondary_recipient
-
-        if = {
-            limit = {
-                is_ruler = no
-                exists = liege
-            }
-            liege = {
-                save_temporary_scope_as = secondary_recipient
-            }
-        }
-    }
+    mrfp_redirect_from_target_to_liege = yes
     value = scope:secondary_recipient.gold
 }
 
 mrfp_secondary_recipient_herd = {
-    scope:target = {
-        save_temporary_scope_as = secondary_recipient
-
-        if = {
-            limit = {
-                is_ruler = no
-                exists = liege
-            }
-            liege = {
-                save_temporary_scope_as = secondary_recipient
-            }
-        }
-    }
+    mrfp_redirect_from_target_to_liege = yes
     value = scope:secondary_recipient.domicile.herd
     round = yes
 }
