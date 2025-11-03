@@ -1,0 +1,5 @@
+﻿mrfp_prison_icon = {
+	alias = { mrfp_prison_i }
+
+	texture = "gfx/interface/icons/icon_prison.dds"
+}
