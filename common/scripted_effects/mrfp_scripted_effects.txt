@@ -143,7 +143,7 @@ mrfp_ransom_all_unblocked_prisoners_for_gold = {
 			}
 		}
 
-		mrfp_update_ransom_counter_current = yes
+		mrfp_update_ransom_counter_gold_current = yes
 
 		run_interaction = {
 			interaction = ransom_interaction
@@ -170,7 +170,7 @@ mrfp_ransom_all_unblocked_prisoners_for_herd = {
 			}
 		}
 
-		mrfp_update_ransom_counter_current = yes
+		mrfp_update_ransom_counter_herd_current = yes
 
 		#workaround to set herd payment option
 		scope:the_story_owner = {
@@ -206,16 +206,24 @@ mrfp_ransom_all_unblocked_prisoners_for_herd = {
 	}
 }
 
-mrfp_update_ransom_counter_current = {
+mrfp_update_ransom_counter_gold_current = {
 	scope:the_story_owner.var:mrfp_story = {
 		change_variable = {
 			name = mrfp_total_ransomed_people_current
 			add = 1
 		}
-		## TODO WATCH OUT
 		change_variable = {
 			name = mrfp_total_ransomed_gold_current
 			add = mrfp_target_ransom_gold_cost
+		}
+	}
+}
+
+mrfp_update_ransom_counter_herd_current = {
+	scope:the_story_owner.var:mrfp_story = {
+		change_variable = {
+			name = mrfp_total_ransomed_people_current
+			add = 1
 		}
 		change_variable = {
 			name = mrfp_total_ransomed_herd_current
