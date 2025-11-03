@@ -30,6 +30,7 @@ mrfp_secondary_recipient_herd = {
         }
     }
     value = scope:secondary_recipient.domicile.herd
+    round = yes
 }
 
 mrfp_target_ransom_gold_cost = {
