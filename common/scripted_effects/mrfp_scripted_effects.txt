@@ -348,7 +348,7 @@ mrfp_send_debug_message = {
 
 mrfp_redirect_from_target_to_liege = {
 	scope:target = {
-        save_scope_as = secondary_recipient
+        save_temporary_scope_as = secondary_recipient
 
         if = {
             limit = {
@@ -356,7 +356,7 @@ mrfp_redirect_from_target_to_liege = {
                 exists = liege
             }
             liege = {
-                save_scope_as = secondary_recipient
+                save_temporary_scope_as = secondary_recipient
             }
         }
     }
