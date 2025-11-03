@@ -117,21 +117,6 @@ mrfp_ransom_all_unblocked_prisoners = {
 			NOT = {	has_character_flag = mrfp_blocked_gui }
 			scope:the_story_owner = {
 				mrfp_target_ransom_gold_cost <= mrfp_secondary_recipient_gold
-		# scope:actor = {
-		# 		government_has_flag = government_is_nomadic
-		# 		exists = domicile
-		# 		is_ai = no
-		# 	}
-		# 	# Recipient must care about Herd
-		# 	scope:recipient ?= {
-		# 		government_has_flag = government_is_nomadic
-		# 		exists = domicile
-		# 	}
-		# }
-		# is_valid = {
-		# 	# Recipient has enough Herd
-		# 	scope:recipient = { domicile.herd >= domicile.medium_herd_value }
-		# }
 				is_character_interaction_potentially_accepted = {
 					interaction = ransom_interaction
 					recipient = scope:the_story_prisoner
@@ -184,6 +169,10 @@ mrfp_update_ransom_counter_current = {
 		change_variable = {
 			name = mrfp_total_ransomed_gold_current
 			add = mrfp_target_ransom_gold_cost
+		}
+		change_variable = {
+			name = mrfp_total_ransomed_herd_current
+			add = mrfp_target_ransom_herd_cost
 		}
 	}
 }
