@@ -272,13 +272,6 @@ mrfp_send_amount_people_ransomed_message = {
 				desc = prisonransomthingy_story_herd_only.message							  
 			}
 		}
-		# else = {
-		# 	send_interface_message = {
-		# 		type = event_captured_combatants_good
-		# 		title = prisonransomthingy_story_gold_only.title
-		# 		desc = prisonransomthingy_story_gold_only.message							  
-		# 	}
-		# }
 	}
 }
 
