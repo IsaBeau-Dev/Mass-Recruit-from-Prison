@@ -115,7 +115,7 @@ mrfp_ransom = {
 			if = {
 				limit = {
 					# mrfp_secondary_recipient_herd = 0
-					# mrfp_redirect_from_target_to_liege = yes
+					mrfp_redirect_from_target_to_liege = yes
 					# scope:secondary_recipient_herd < mrfp_target_ransom_herd_cost
 					# # Target or their liege (= secondary_recipient) must care about Herd
 					scope:secondary_recipient = {
