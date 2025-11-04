@@ -244,8 +244,8 @@ mrfp_send_amount_people_ransomed_message = {
 		limit = { scope:the_story.var:mrfp_total_ransomed_people_current >= 1 }
 		send_interface_message = {
 			type = event_captured_combatants_good
-			title = prisonransomthingy_story.title
-			desc = prisonransomthingy_story.message							  
+			title = prisonransomthingy_story_gold_only.title
+			desc = prisonransomthingy_story_gold_only.message							  
 		}
 	}
 }
