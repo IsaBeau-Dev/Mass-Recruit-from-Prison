@@ -134,18 +134,19 @@ mrfp_ransom = {
 			if = {
 				limit = {
 					liege ?= {
-						save_scope_as = target
-					}
-					scope:target = {
 						government_has_flag = government_is_nomadic
 						exists = domicile
 					}
+
 					# mrfp_redirect_from_target_to_liege = yes
 					# # # Target or their liege (= secondary_recipient) must care about Herd
 					# scope:secondary_recipient = {
 					# 	government_has_flag = government_is_nomadic
 					# 	exists = domicile
 					# }
+				}
+				liege ?= {
+					save_scope_as = target
 				}
 				scope:the_story_owner = {
 					send_interface_message = {
@@ -161,7 +162,7 @@ mrfp_ransom = {
 						left_icon = scope:target
 					}
 				}
-				mrfp_ransom_all_unblocked_prisoners_for_herd = yes
+				# mrfp_ransom_all_unblocked_prisoners_for_herd = yes
 			}
 			else = {
 				mrfp_ransom_all_unblocked_prisoners_for_gold = yes
