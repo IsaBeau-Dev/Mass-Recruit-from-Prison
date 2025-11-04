@@ -112,6 +112,7 @@ mrfp_ransom = {
 			limit = { 
 				scope:the_story.var:mrfp_ransom_for_herd_enabled = yes
 			}
+			# payer and prisoner are the same
 			if = {
 				limit = {
 					scope:target = {
@@ -129,31 +130,39 @@ mrfp_ransom = {
 				}
 				mrfp_ransom_all_unblocked_prisoners_for_herd = yes
 			}
-			# if = {
-			# 	limit = {
-			# 		mrfp_redirect_from_target_to_liege = yes
-			# 		# # Target or their liege (= secondary_recipient) must care about Herd
-			# 		scope:secondary_recipient = {
-			# 			government_has_flag = government_is_nomadic
-			# 			exists = domicile
-			# 		}
-			# 	}
-			# 	scope:the_story_owner = {
-			# 		send_interface_message = {
-			# 			type = event_captured_combatants_good
-			# 			title = debug_mrfp_title
-			# 			desc = "prisoner"
-			# 			left_icon = scope:target
-			# 		}
-			# 		send_interface_message = {
-			# 			type = event_captured_combatants_good
-			# 			title = debug_mrfp_title
-			# 			desc = "secondary recipient"
-			# 			left_icon = scope:secondary_recipient
-			# 		}
-			# 	}
-			# 	mrfp_ransom_all_unblocked_prisoners_for_herd = yes
-			# }
+			# payer and prisoner are different
+			if = {
+				limit = {
+					liege ?= {
+						save_scope_as = target
+					}
+					scope:target = {
+						government_has_flag = government_is_nomadic
+						exists = domicile
+					}
+					# mrfp_redirect_from_target_to_liege = yes
+					# # # Target or their liege (= secondary_recipient) must care about Herd
+					# scope:secondary_recipient = {
+					# 	government_has_flag = government_is_nomadic
+					# 	exists = domicile
+					# }
+				}
+				scope:the_story_owner = {
+					send_interface_message = {
+						type = event_captured_combatants_good
+						title = debug_mrfp_title
+						desc = "prisoner"
+						left_icon = scope:the_story_prisoner
+					}
+					send_interface_message = {
+						type = event_captured_combatants_good
+						title = debug_mrfp_title
+						desc = "payer"
+						left_icon = scope:target
+					}
+				}
+				mrfp_ransom_all_unblocked_prisoners_for_herd = yes
+			}
 			else = {
 				mrfp_ransom_all_unblocked_prisoners_for_gold = yes
 			}
