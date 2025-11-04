@@ -3,5 +3,5 @@ window = {
 	layer = top
 	using = Window_Size_MainTab
 	using = Window_Background_Sidebar
-	visible = "[GetVariableSystem.Exists('show_my_window')]"
+	visible = "[GetVariableSystem.Exists('mrfp_show_settings_window')]"
 }
