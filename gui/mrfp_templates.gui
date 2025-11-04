@@ -112,7 +112,7 @@ types mrfp_window_types {
 				button_checkbox = {
 					name = "mrfp_can_be_ransomed"
 					checked = "[GetScriptedGui('mrfp_prison_window_ransom_gold').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-					raw_tooltip = "Can be ransomed for gold"
+					raw_tooltip = "Can be ransomed for [gold|E] [gold_i]"
 				}
 				text_single = {
 					text = "[herd_i]"
@@ -122,7 +122,7 @@ types mrfp_window_types {
 				button_checkbox = {
 					name = "mrfp_can_be_ransomed_herd"
 					checked = "[GetScriptedGui('mrfp_prison_window_ransom_herd').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-					raw_tooltip = "Can be ransomed for herd"
+					raw_tooltip = "Can be ransomed for [herd|E] [herd_i]"
 					visible = "[GetScriptedGui('mrfp_prison_window_show_herd').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
 				}
 			}
