@@ -120,5 +120,5 @@ mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Ändern Sie Ihre Präfere
 
 #prison gui
 #TODO: icons for ransom and recruit
-mrfp_can_be_ransomed:0 "Kann freigekauft werden:" #idea for later [herd_i] and [gold_i] to show icones based on var in story
-mrfp_can_be_recruited:0 "Kann rekrutiert werden:"
+mrfp_can_be_ransomed:0 "Lösegeld möglich:" #idea for later [herd_i] and [gold_i] to show icones based on var in story
+mrfp_can_be_recruited:0 "Rekrutierung möglich:"
