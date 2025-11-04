@@ -256,6 +256,7 @@ types mrfp_window_types {
 						maximumsize = { 520 240 }
 						# MRFP
 
+						##TODO REMOVE CLAIMS HERE
 						widget_character_list_item_finder = {
 							layoutpolicy_horizontal = expanding
 							blockoverride "divider" {}
