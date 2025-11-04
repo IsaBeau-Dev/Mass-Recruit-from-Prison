@@ -125,9 +125,14 @@ mrfp_ransom = {
 					send_interface_message = {
 						type = event_captured_combatants_good
 						title = debug_mrfp_title
-						desc = debug_mrfp_desc
+						desc = "prisoner"
 						left_icon = scope:the_story_prisoner
-
+					}
+					send_interface_message = {
+						type = event_captured_combatants_good
+						title = debug_mrfp_title
+						desc = "secondary recipient"
+						left_icon = scope:secondary_recipient
 					}
 				}
 				mrfp_ransom_all_unblocked_prisoners_for_herd = yes
