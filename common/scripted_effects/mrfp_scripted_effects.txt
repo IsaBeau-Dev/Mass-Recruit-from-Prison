@@ -108,7 +108,7 @@ mrfp_ransom = {
 			 }
 			mrfp_ransom_all_unblocked_prisoners_for_gold = yes
 		}
-		if = {
+		else_if = {
 			limit = { 
 				scope:the_story.var:mrfp_ransom_for_herd_enabled = yes
 			 }
