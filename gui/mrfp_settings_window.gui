@@ -13,6 +13,7 @@ window = {
 		text = "SETTINGS"
 		#default_format = "#P" macht es grün
 		#default_format = "#L" unterstrichen
+		#default_format = "#N" macht es rot
 		default_format = "#T;L"
 		align = center
 		position = { 200 20 }
