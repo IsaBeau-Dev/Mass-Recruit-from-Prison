@@ -1,7 +1,19 @@
 window = {
-	name = "mrfp_settings_window"
-	layer = top
-	using = Window_Size_MainTab
-	using = Window_Background_Sidebar
-	visible = "[GetVariableSystem.Exists('mrfp_show_settings_window')]"
+    name = "mrfp_settings_window"
+    layer = top
+    using = Window_Size_MainTab
+    using = Window_Background_Sidebar
+    visible = "[GetVariableSystem.Exists('mrfp_show_settings_window')]"
+	size = { 800 600 }
+
+
+	
+
+	text_single = {
+		text = "SETTINGS"
+		#default_format = "#P" macht es grün
+		default_format = "#T"
+		align = center
+		position = { 200 20 }
+	}
 }
