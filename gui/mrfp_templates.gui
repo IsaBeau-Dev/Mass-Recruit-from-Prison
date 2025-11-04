@@ -62,7 +62,7 @@ types mrfp_button_types
 			# onclick = "[GetScriptedGui('mrfp_is_loaded_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 			tooltip = "mrfp_tooltip"
 			using = tooltip_se
-			texture = "gfx/interface/icons/flat_icons/main_menu.dds"
+			texture = "gfx/interface/icons/flat_icons/mrfp_settings.dds"
 		}
 		modify_texture = {
 			texture = "gfx/interface/colors/gold.dds"
