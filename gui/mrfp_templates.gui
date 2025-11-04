@@ -57,7 +57,7 @@ types mrfp_button_types
 		#visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
 		enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
 
-		button_prison_release = {
+		button_prison_settings = {
 			parentanchor = center
 			# onclick = "[GetScriptedGui('mrfp_is_loaded_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 			tooltip = "mrfp_tooltip"
