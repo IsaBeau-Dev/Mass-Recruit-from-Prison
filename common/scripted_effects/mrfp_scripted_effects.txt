@@ -131,7 +131,7 @@ mrfp_ransom = {
 				mrfp_ransom_all_unblocked_prisoners_for_herd = yes
 			}
 			# payer and prisoner are different
-			if = {
+			else_if = {
 				limit = {
 					liege ?= {
 						government_has_flag = government_is_nomadic
