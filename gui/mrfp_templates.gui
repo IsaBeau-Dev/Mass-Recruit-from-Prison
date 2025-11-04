@@ -84,7 +84,7 @@ types mrfp_window_types {
 		}
 	}
 
-	type mrfp_can_be_ransomed_and_can_be_recruited = hbox = {
+	type mrfp_can_be_ransomed_and_can_be_recruited = hbox {
 		layoutpolicy_horizontal = fixed
 		spacing = 5
 
