@@ -1,0 +1,7 @@
+window = {
+	name = "mrfp_settings_window"
+	layer = top
+	using = Window_Size_MainTab
+	using = Window_Background_Sidebar
+	visible = "[GetVariableSystem.Exists('show_my_window')]"
+}

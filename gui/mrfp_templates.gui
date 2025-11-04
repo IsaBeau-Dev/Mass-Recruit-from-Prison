@@ -59,7 +59,7 @@ types mrfp_button_types
 
 		button_prison_release = {
 			parentanchor = center
-			# onclick = "[GetVariableSystem.Toggle('mrfp_show_settings_window')]"
+			onclick = "[GetVariableSystem.Toggle('mrfp_show_settings_window')]"
 			tooltip = "mrfp_setting_tooltip"
 			using = tooltip_se
 			texture = "gfx/interface/icons/flat_icons/mrfp_settings.dds"
