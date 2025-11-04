@@ -403,9 +403,15 @@ types mrfp_window_types {
 					}
 				}
 				#MRFP
+				spacer = {
+					size = { 50 50 }
+				}
 				mrfp_button_recruit = {}
 				mrfp_button_ransom = {}
 				mrfp_button_torture = {}
+				spacer = {
+					size = { 50 50 }
+				}
 				mrfp_button_settings = {}
 				#MRFP
 			}
