@@ -261,6 +261,9 @@ types mrfp_window_types {
 							layoutpolicy_horizontal = expanding
 							blockoverride "divider" {}
 							blockoverride "character_relation" {}
+							#mrfp
+							blockoverride "claims" {}
+							#mrfp
 
 							blockoverride "gridbox_items"
 							{
