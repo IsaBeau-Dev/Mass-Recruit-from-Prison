@@ -296,7 +296,8 @@
 					mrfp_layout_with_more_than_4_prisoners = {}
 
 					## Layout with MAX_PRISONER_COUNT_GRID(4) or fewer prisoners
-					mrfp_layout_with_4_prisoners_or_fewer = {}
+					#removed as it has issues with the 2 checkbox approach for herd and ransom
+					# mrfp_layout_with_4_prisoners_or_fewer = {}
 
 					# MRFP
 				}
