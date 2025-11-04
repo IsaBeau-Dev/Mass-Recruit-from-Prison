@@ -137,13 +137,6 @@ mrfp_ransom = {
 						government_has_flag = government_is_nomadic
 						exists = domicile
 					}
-
-					# mrfp_redirect_from_target_to_liege = yes
-					# # # Target or their liege (= secondary_recipient) must care about Herd
-					# scope:secondary_recipient = {
-					# 	government_has_flag = government_is_nomadic
-					# 	exists = domicile
-					# }
 				}
 				liege ?= {
 					save_scope_as = target
@@ -162,7 +155,7 @@ mrfp_ransom = {
 						left_icon = scope:target
 					}
 				}
-				# mrfp_ransom_all_unblocked_prisoners_for_herd = yes
+				mrfp_ransom_all_unblocked_prisoners_for_herd = yes
 			}
 			else = {
 				mrfp_ransom_all_unblocked_prisoners_for_gold = yes
@@ -423,19 +416,19 @@ mrfp_send_debug_message = {
 	}
 }
 
-# does not work as intended
-mrfp_redirect_from_target_to_liege = {
-	scope:target = {
-        save_temporary_scope_as = secondary_recipient
+# # does not work as intended
+# mrfp_redirect_from_target_to_liege = {
+# 	scope:target = {
+#         save_temporary_scope_as = secondary_recipient
 
-        if = {
-            limit = {
-                is_ruler = no
-                exists = liege
-            }
-            liege = {
-                save_temporary_scope_as = secondary_recipient
-            }
-        }
-    }
-}
+#         if = {
+#             limit = {
+#                 is_ruler = no
+#                 exists = liege
+#             }
+#             liege = {
+#                 save_temporary_scope_as = secondary_recipient
+#             }
+#         }
+#     }
+# }
