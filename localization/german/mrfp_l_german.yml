@@ -97,7 +97,7 @@ decision_group_type_mrfp: "Massenrekrutierung"
  prisonreleasethingy_story_release.title:0 "Gefangene(r) stimmt/stimmen den gewählten Optionen zu"
  prisonreleasethingy_story_release.message:0 "Du hast insgesamt [ROOT.Var('mrfp_story').Var('mrfp_total_recruited_current').GetValue] Personen aus dem Gefängnis entlassen."
 
- prisonransomthingy_story_gold_only.title:0 "Gefangene freigekauft"
+ prisonransomthingy_story.title:0 "Gefangene freigekauft"
  prisonransomthingy_story_gold_only.message:0 "Sie haben [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
 
 ##welcome message

@@ -250,7 +250,7 @@ mrfp_send_amount_people_ransomed_message = {
 			 }
 			send_interface_message = {
 				type = event_captured_combatants_good
-				title = prisonransomthingy_story_gold_and_herd.title
+				title = prisonransomthingy_story.title
 				desc = prisonransomthingy_story_gold_and_herd.message							  
 			}
 		}
@@ -259,7 +259,7 @@ mrfp_send_amount_people_ransomed_message = {
 			limit = { scope:the_story.var:mrfp_total_ransomed_gold_current >= 1 }
 			send_interface_message = {
 				type = event_captured_combatants_good
-				title = prisonransomthingy_story_gold_only.title
+				title = prisonransomthingy_story.title
 				desc = prisonransomthingy_story_gold_only.message							  
 			}
 		}
@@ -268,7 +268,7 @@ mrfp_send_amount_people_ransomed_message = {
 			limit = { scope:the_story.var:mrfp_total_ransomed_herd_current >= 1 }
 			send_interface_message = {
 				type = event_captured_combatants_good
-				title = prisonransomthingy_story_herd_only.title
+				title = prisonransomthingy_story.title
 				desc = prisonransomthingy_story_herd_only.message							  
 			}
 		}
