@@ -242,11 +242,43 @@ mrfp_update_ransom_counter = {
 mrfp_send_amount_people_ransomed_message = {
 	if = {
 		limit = { scope:the_story.var:mrfp_total_ransomed_people_current >= 1 }
-		send_interface_message = {
-			type = event_captured_combatants_good
-			title = prisonransomthingy_story_gold_only.title
-			desc = prisonransomthingy_story_gold_only.message							  
+		#both herd and gold
+		if = {
+			limit = { 
+				scope:the_story.var:mrfp_total_ransomed_herd_current >= 1
+				scope:the_story.var:mrfp_total_ransomed_gold_current >= 1
+			 }
+			send_interface_message = {
+				type = event_captured_combatants_good
+				title = prisonransomthingy_story_gold_and_herd.title
+				desc = prisonransomthingy_story_gold_and_herd.message							  
+			}
 		}
+		#only gold
+		else_if = {
+			limit = { scope:the_story.var:mrfp_total_ransomed_gold_current >= 1 }
+			send_interface_message = {
+				type = event_captured_combatants_good
+				title = prisonransomthingy_story_gold_only.title
+				desc = prisonransomthingy_story_gold_only.message							  
+			}
+		}
+		#only herd
+		else_if = {
+			limit = { scope:the_story.var:mrfp_total_ransomed_herd_current >= 1 }
+			send_interface_message = {
+				type = event_captured_combatants_good
+				title = prisonransomthingy_story_herd_only.title
+				desc = prisonransomthingy_story_herd_only.message							  
+			}
+		}
+		# else = {
+		# 	send_interface_message = {
+		# 		type = event_captured_combatants_good
+		# 		title = prisonransomthingy_story_gold_only.title
+		# 		desc = prisonransomthingy_story_gold_only.message							  
+		# 	}
+		# }
 	}
 }
 
