@@ -55,7 +55,7 @@ mod_auto_demand_conversion_on_death = {
     }
     effect = {
         primary_heir = {
-            add_character_flag = enable_auto_mrfp
+            add_character_flag = enable_auto_demand_conversion
         }
         
     }
