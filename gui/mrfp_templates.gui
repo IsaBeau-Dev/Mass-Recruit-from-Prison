@@ -130,7 +130,7 @@ types mrfp_window_types {
 			hbox = {
 				icon = {
 					texture = "gfx/interface/icons/icon_prison.dds"
-					default_format = "#low"
+					# default_format = "#low"
 					size = { 25 25 }
 				}
 				button_checkbox = {
