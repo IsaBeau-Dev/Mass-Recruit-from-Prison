@@ -100,6 +100,8 @@ decision_group_type_mrfp: "Massenrekrutierung"
  prisonransomthingy_story.title:0 "Gefangene freigekauft"
  prisonransomthingy_story_gold_only.message:0 "Sie haben [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
  prisonransomthingy_story_herd_only.message:0 "Sie haben [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] Herde [herd_i] aus dem Gefängnis freigekauft."
+ prisonransomthingy_story_gold_and_herd.message:0 "Sie haben [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] Herde [herd_i] und [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
+
 
 ##welcome message
 mrfp_welcome_events.0001.title:0 "Willkommen zu Massenaktionen im Gefängnis"

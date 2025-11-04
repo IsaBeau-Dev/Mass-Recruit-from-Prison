@@ -99,6 +99,7 @@ decision_group_type_mrfp: "Mass Recruit"
  prisonransomthingy_story.title:0 "Prisoners Ransomed"
  prisonransomthingy_story_gold_only.message:0 "You have ransomed [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] gold [gold_i]"
  prisonransomthingy_story_herd_only.message:0 "You have ransomed [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] herd [herd_i]"
+ prisonransomthingy_story_gold_and_herd.message:0 "You have ransomed [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] herd [herd_i] and [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] gold [gold_i]"
 
 ##welcome message
 mrfp_welcome_events.0001.title:0 "Welcome to Mass Prison Actions"
