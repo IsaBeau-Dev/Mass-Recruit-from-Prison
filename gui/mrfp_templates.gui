@@ -233,7 +233,7 @@ types mrfp_window_types {
 
 	## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
 	type mrfp_layout_with_more_than_4_prisoners = vbox_character_list {
-		# visible = "[GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) )]"
+		visible = "[GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) )]"
 		layoutpolicy_horizontal = expanding
 		layoutpolicy_vertical = expanding
 
@@ -395,168 +395,168 @@ types mrfp_window_types {
 
 	## Layout with MAX_PRISONER_COUNT_GRID(4) or fewer prisoners
 	#removed as it has issues with the 2 checkbox approach for herd and ransom
-	# type mrfp_layout_with_4_prisoners_or_fewer = vbox {
-	# 	# visible = "[And( GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, '(int32)0' ), LessThanOrEqualTo_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) ) )]"
-	# 	visible = no
-	# 	layoutpolicy_horizontal = expanding
-	# 	layoutpolicy_vertical = expanding
-	# 	margin = { 0 15 }
-	# 	margin_left = 10
+	type mrfp_layout_with_4_prisoners_or_fewer = vbox {
+		visible = "[And( GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, '(int32)0' ), LessThanOrEqualTo_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) ) )]"
+		# visible = no
+		layoutpolicy_horizontal = expanding
+		layoutpolicy_vertical = expanding
+		margin = { 0 15 }
+		margin_left = 10
 
-	# 	fixedgridbox = {
-	# 		datamodel = "[CharacterSelectionList.GetList]"
-	# 		layoutpolicy_horizontal = expanding
-	# 		layoutpolicy_vertical = expanding
-	# 		addcolumn = 262
-	# 		# MRFP
-	# 		addrow = 505
-	# 		# MRFP
-	# 		datamodel_wrap = 2
-	# 		flipdirection = yes
-	# 		#setitemsizefromcell = yes
+		fixedgridbox = {
+			datamodel = "[CharacterSelectionList.GetList]"
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+			addcolumn = 262
+			# MRFP
+			addrow = 505
+			# MRFP
+			datamodel_wrap = 2
+			flipdirection = yes
+			#setitemsizefromcell = yes
 
-	# 		item = {
-	# 			widget = {
-	# 				# MRFP
-	# 				size = { 262 495}
-	# 				# MRFP
-	# 				datacontext = "[CharacterListItem.GetCharacter]"
+			item = {
+				widget = {
+					# MRFP
+					size = { 262 495}
+					# MRFP
+					datacontext = "[CharacterListItem.GetCharacter]"
 
-	# 				background = {
-	# 					texture = "gfx/interface/skinned/illustrations/dungeon.dds"
-	# 					margin = { -5 0 }
-	# 					fittype = centercrop
-	# 					alpha = 0.3
+					background = {
+						texture = "gfx/interface/skinned/illustrations/dungeon.dds"
+						margin = { -5 0 }
+						fittype = centercrop
+						alpha = 0.3
 
-	# 					using = Mask_Rough_Edges
-	# 				}
+						using = Mask_Rough_Edges
+					}
 
-	# 				background = {
-	# 					using = Background_Frame
-	# 					alpha = 0.5
-	# 				}
+					background = {
+						using = Background_Frame
+						alpha = 0.5
+					}
 
-	# 				widget = {
-	# 					size = { 100% 100% }
-	# 					scissor = yes
+					widget = {
+						size = { 100% 100% }
+						scissor = yes
 
-	# 					portrait_body = {
-	# 						parentanchor = bottom|hcenter
-	# 						position = { 0 -170 }
+						portrait_body = {
+							parentanchor = bottom|hcenter
+							position = { 0 -170 }
 
-	# 						blockoverride "coa" {}
-	# 						blockoverride "opinion_box" {}
-	# 						blockoverride "status_icons" {}
-	# 					}
-	# 				}
+							blockoverride "coa" {}
+							blockoverride "opinion_box" {}
+							blockoverride "status_icons" {}
+						}
+					}
 
-	# 				vbox = {
-	# 					expand = {}
+					vbox = {
+						expand = {}
 
-	# 					hbox = {
-	# 						layoutpolicy_horizontal = expanding
-	# 						margin = { 5 5 }
+						hbox = {
+							layoutpolicy_horizontal = expanding
+							margin = { 5 5 }
 
-	# 						expand = {}
+							expand = {}
 
-	# 						hbox = {
-	# 							spacing = 5
+							hbox = {
+								spacing = 5
 
-	# 							background = {
-	# 								using = Background_Area
-	# 							}
+								background = {
+									using = Background_Area
+								}
 
-	# 							vbox = {
-	# 								margin_bottom = 3
+								vbox = {
+									margin_bottom = 3
 
-	# 								expand = {}
+									expand = {}
 
-	# 								portrait_status_icons = {}
-	# 							}
+									portrait_status_icons = {}
+								}
 
-	# 							vbox = {
-	# 								layoutpolicy_vertical = expanding
+								vbox = {
+									layoutpolicy_vertical = expanding
 
-	# 								expand = {}
+									expand = {}
 
-	# 								coa_realm_tiny_crown = {
-	# 									visible = "[Character.HasLandedTitles]"
-	# 								}
+									coa_realm_tiny_crown = {
+										visible = "[Character.HasLandedTitles]"
+									}
 
-	# 								portrait_opinion = {}
-	# 							}
-	# 						}
-	# 					}
+									portrait_opinion = {}
+								}
+							}
+						}
 
 
-	# 					vbox = {
-	# 						layoutpolicy_horizontal = expanding
-	# 						margin = { 5 5 }
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							margin = { 5 5 }
 
-	# 						background = {
-	# 							using = Background_Area
-	# 							margin_bottom = 3
-	# 						}
+							background = {
+								using = Background_Area
+								margin_bottom = 3
+							}
 
-	# 						text_single = {
-	# 							text = "[Character.GetShortUINameNoTooltip]"
-	# 							default_format = "#high"
-	# 							using = Font_Size_Medium
-	# 						}
+							text_single = {
+								text = "[Character.GetShortUINameNoTooltip]"
+								default_format = "#high"
+								using = Font_Size_Medium
+							}
 
-	# 						text_single = {
-	# 							visible = "[Character.IsImprisoned]"
-	# 							name = "type"
-	# 							text = "[CharacterListItem.GetText('tooltip')]"
-	# 						}
-	# 					}
+							text_single = {
+								visible = "[Character.IsImprisoned]"
+								name = "type"
+								text = "[CharacterListItem.GetText('tooltip')]"
+							}
+						}
 
-	# 					spacer = {
-	# 						size = { 3 3 }
-	# 					}
+						spacer = {
+							size = { 3 3 }
+						}
 
-	# 					### Actions
-	# 					vbox = {
-	# 						name = "actions"
-	# 						layoutpolicy_horizontal = expanding
-	# 						visible = "[And( CharacterListItem.GetCharacter.IsAlive, CharacterListItem.GetCharacter.IsImprisoned )]"
-	# 						spacing = 10
-	# 						margin = { 10 5 }
-	# 						margin_bottom = 15
+						### Actions
+						vbox = {
+							name = "actions"
+							layoutpolicy_horizontal = expanding
+							visible = "[And( CharacterListItem.GetCharacter.IsAlive, CharacterListItem.GetCharacter.IsImprisoned )]"
+							spacing = 10
+							margin = { 10 5 }
+							margin_bottom = 15
 
-	# 						background = {
-	# 							using = Background_Area_Dark
-	# 						}
+							background = {
+								using = Background_Area_Dark
+							}
 
-	# 						hbox = {
-	# 							spacing = 5
+							hbox = {
+								spacing = 5
 
-	# 							icon = {
-	# 								texture = "gfx/interface/icons/portraits/punishment.dds"
-	# 								size = { 20 20 }
-	# 							}
+								icon = {
+									texture = "gfx/interface/icons/portraits/punishment.dds"
+									size = { 20 20 }
+								}
 
-	# 							text_single = {
-	# 								name = "imprisoned_time"
-	# 								layoutpolicy_horizontal = expanding
-	# 								text = "[CharacterListItem.GetText('imprisoned_time')]"
-	# 							}
-	# 						}
+								text_single = {
+									name = "imprisoned_time"
+									layoutpolicy_horizontal = expanding
+									text = "[CharacterListItem.GetText('imprisoned_time')]"
+								}
+							}
 
-	# 						# MRFP
-	# 						# New gold display
-	# 						mrfp_prisoner_gold_display = {}
+							# MRFP
+							# New gold display
+							mrfp_prisoner_gold_display = {}
 
-	# 						mrfp_can_be_ransomed_and_can_be_recruited = {}
-	# 						# MRFP
+							mrfp_can_be_ransomed_and_can_be_recruited = {}
+							# MRFP
 
-	# 						prison_interactions_hbox = {}
-	# 					}
-	# 				}
-	# 			}
-	# 		}
-	# 	}
-	# }
+							prison_interactions_hbox = {}
+						}
+					}
+				}
+			}
+		}
+	}
 
 }
 
