@@ -117,28 +117,28 @@
 												name = "mrfp_add_1_to_prowess_limit"
 												text = "+1"
 												default_format = "#T"
-												max_width = 40
+												size = { 40 33 }
 												# onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											}
 											button_standard = {
 												name = "mrfp_subtract_1_to_prowess_limit"
 												text = "-1"
 												default_format = "#T"
-												max_width = 40
+												size = { 40 33 }
 												# onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											}
 											button_standard = {
 												name = "mrfp_add_10_to_prowess_limit"
 												text = "+10"
 												default_format = "#T"
-												max_width = 40
+												size = { 50 33 }
 												# onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											}
 											button_standard = {
 												name = "mrfp_subtract_10_to_prowess_limit"
 												text = "-10"
 												default_format = "#T"
-												max_width = 40
+												size = { 50 33 }
 												# onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											}
 										}
@@ -415,7 +415,7 @@
 								text = "Tip: Only people will be ransomed, that can be ransomed for the maximum amout of gold possible. Otherwise they will remain in your prison"
 								default_format = "#low"
 								multiline = yes
-								max_width = 400
+								size = { 40 33 }0
 								visible =  "[NOT(IsNomad( GetPlayer ))]"
 							}
 						}
