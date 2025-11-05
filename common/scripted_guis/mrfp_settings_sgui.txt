@@ -15,11 +15,11 @@ mrfp_settings_prowess_limit_add_1 = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
-    save_scope_value_as = { name = mrfp_prowess_threshold_add_or_subtract value = 10 }
+    save_scope_value_as = { name = mrfp_prowess_threshold_add_or_subtract value = 1 }
     root.var:mrfp_story = {
       set_variable = {
         name = mrfp_prowess_threshold
-        value = mrfp_prowess_threshold_check_value
+        value = mrfp_prowess_threshold_script_value
       }
     }
   }
@@ -29,10 +29,11 @@ mrfp_settings_prowess_limit_add_10 = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
+    save_scope_value_as = { name = mrfp_prowess_threshold_add_or_subtract value = 10 }
     root.var:mrfp_story = {
-      change_variable = {
+      set_variable = {
         name = mrfp_prowess_threshold
-        add = 10
+        value = mrfp_prowess_threshold_script_value
       }
     }
   }
@@ -42,10 +43,11 @@ mrfp_settings_prowess_limit_subtract_1 = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
+    save_scope_value_as = { name = mrfp_prowess_threshold_add_or_subtract value = -1 }
     root.var:mrfp_story = {
-      change_variable = {
+      set_variable = {
         name = mrfp_prowess_threshold
-        add = -1
+        value = mrfp_prowess_threshold_script_value
       }
     }
   }
@@ -55,10 +57,11 @@ mrfp_settings_prowess_limit_subtract_10 = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
+    save_scope_value_as = { name = mrfp_prowess_threshold_add_or_subtract value = -10 }
     root.var:mrfp_story = {
-      change_variable = {
+      set_variable = {
         name = mrfp_prowess_threshold
-        add = -10
+        value = mrfp_prowess_threshold_script_value
       }
     }
   }
