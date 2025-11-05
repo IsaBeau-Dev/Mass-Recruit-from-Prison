@@ -1,6 +1,7 @@
 ﻿mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION = {
   scope = character
   effect = {
+    mrfp_start_story_if_not_exist = yes
     root.var:mrfp_story = {
       save_scope_as = the_story
     }
