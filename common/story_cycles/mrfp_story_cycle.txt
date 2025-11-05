@@ -7,36 +7,33 @@
             }
         }
 
-        # # Core recruitment settings
-        # those are all variables but since we are switching from setting var to false/true to removing them instead, keep this as info
-        # set_variable = {
-        #     name = mrfp_threshold_enabled
-        #     value = no
-        # }
+        # Core recruitment settings
+        set_variable = {
+            name = mrfp_threshold_enabled
+            value = no
+        }
         set_variable = {
             name = mrfp_prowess_threshold
             value = 16
         }
 
-        # those are all variables but since we are switching from setting var to false/true to removing them instead, keep this as info
-        # # Ransom for herd or gold settings
-        # set_variable = {
-        #     name = mrfp_ransom_for_herd_enabled
-        #     value = no
-        # }
+        # Ransom for herd or gold settings
+        set_variable = {
+            name = mrfp_ransom_for_herd_enabled
+            value = no
+        }
 
         # Release options configuration
-        set_variable = mrfp_RELEASE_DEMAND_CONVERSION 
-        set_variable = mrfp_RELEASE_RECRUIT
-        # those are all variables but since we are switching from setting var to false/true to removing them instead, keep this as info
-        # set_variable = mrfp_RELEASE_RENOUNCE_CLAIMS
-        # set_variable = mrfp_RELEASE_BANISH
-        # set_variable = mrfp_RELEASE_GAIN_HOOK
-        # set_variable = mrfp_RELEASE_TAKE_VOWS
-        # set_variable = mrfp_RELEASE_AS_EXECUTIONER
-        # set_variable = mrfp_RELEASE_DISFIGURE
-        # set_variable = mrfp_RELEASE_BLIND
-        # set_variable = mrfp_RELEASE_CASTRATE
+        set_variable = { name = mrfp_RELEASE_DEMAND_CONVERSION value = yes }
+        set_variable = { name = mrfp_RELEASE_RECRUIT value = yes }
+        set_variable = { name = mrfp_RELEASE_RENOUNCE_CLAIMS value = no }
+        set_variable = { name = mrfp_RELEASE_BANISH value = no }
+        set_variable = { name = mrfp_RELEASE_GAIN_HOOK value = no }
+        set_variable = { name = mrfp_RELEASE_TAKE_VOWS value = no }
+        set_variable = { name = mrfp_RELEASE_AS_EXECUTIONER value = no }
+        set_variable = { name = mrfp_RELEASE_DISFIGURE value = no }
+        set_variable = { name = mrfp_RELEASE_BLIND value = no }
+        set_variable = { name = mrfp_RELEASE_CASTRATE value = no }
 
         # Additional tracking variables
         set_variable = { name = mrfp_total_recruited value = 0 }
