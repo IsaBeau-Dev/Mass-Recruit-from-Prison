@@ -97,7 +97,7 @@
 									text = "mrfp_set_threshold.0001.settings.nh"
 								}
 							}
-							
+
 							vbox = {
 								visible = "[PdxGuiFoldOut.IsUnfolded]"
 
@@ -119,7 +119,7 @@
 											align = left
 										}
 										text_single = {
-											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'MRFP_ENABLED_OR_DISABLED_BOOL' )]"
+											text = "[SelectLocalization( GetPlayer.MakeScope.Var('mrfp_story').IsSet, 'mrfp.0001.enabled', 'mrfp.0001.disabled')]"
 											# text= "#P Enabled#!"
 											default_format = "#T"
 											align = left
