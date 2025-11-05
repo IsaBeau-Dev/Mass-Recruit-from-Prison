@@ -4,7 +4,7 @@
     using = Window_Size_MainTab
     using = Window_Background_Sidebar
     visible = "[GetVariableSystem.Exists('mrfp_show_settings_window')]"
-    size = { 800 600 }
+    size = { 800 700 }
 	parentanchor = center
 
 	oncreate = "[BindTabsContext]"
