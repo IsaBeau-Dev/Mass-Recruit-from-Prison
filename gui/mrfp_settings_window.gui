@@ -133,11 +133,11 @@
 									}
 
 
-									# hbox = {
-									# 	using = mrfp_send_option_template
-									# 	datacontext = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
-									# 	# datacontext = "[GetPlayer.MakeScope.Var('mrfp_story').Story.MakeScope.Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
-									# }
+									hbox = {
+										using = mrfp_send_option_template
+										datacontext = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
+										# datacontext = "[GetPlayer.MakeScope.Var('mrfp_story').Story.MakeScope.Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
+									}
 								}
 								
 							}
@@ -341,12 +341,13 @@ local_template mrfp_send_option_template
     hbox = {
         spacing = 5
         text_single = {    
-            text = "Scope"
+            text = "TODO a"
             default_format = "#T"
             # align = left
         }
         text_single = {
-            text = "[SelectLocalization( GetPlayer.MakeScope.Var('mrfp_story').Var('[Scope.IsSet]').GetValue, 'mrfp.0001.enabled', 'mrfp.0001.disabled')]"
+			# TODO text
+            text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DEMAND_CONVERSION' )]"
             default_format = "#T"
             # align = left
         }
