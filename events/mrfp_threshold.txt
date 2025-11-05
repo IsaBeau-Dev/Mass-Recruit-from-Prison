@@ -11,9 +11,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_threshold_enabled = yes
         }
-        desc = mrfp_set_threshold.0001.enabled
+        desc = mrfp_set_threshold.0001.enabled_n
       }
-      desc = mrfp_set_threshold.0001.disabled
+      desc = mrfp_set_threshold.0001.disabled_n
     }
     desc = mrfp_set_threshold.0001.prowess.t
     first_valid = {
