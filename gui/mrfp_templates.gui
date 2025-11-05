@@ -260,70 +260,7 @@ types mrfp_window_types {
 			using = Background_Area_Dark
 		}
 
-		hbox = {
-			margin = { 10 0 }
-			spacing = 3
-
-			#MRFP
-			# text_single = {
-			# 	text = "MASS_PRISONER_ACTIONS"
-			# 	default_format = "#low"
-			# 	align = nobaseline
-			# }
-			#MRFP
-
-			spacer = {
-				size = { 5 5 }
-			}
-
-			button_round  = {
-				name = "ransom"
-				enabled = "[CourtWindow.CanDoMassPrisonerAction('ransom')]"
-
-				button_prison_ransom = {
-					parentanchor = center
-					onclick = "[CourtWindow.MassPrisonerAction('ransom')]"
-					tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('ransom')]"
-					using = tooltip_se
-				}
-			}
-
-			button_round  = {
-				name = "release"
-				enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
-
-				button_prison_release = {
-					parentanchor = center
-					onclick = "[CourtWindow.MassPrisonerAction('release')]"
-					tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('release')]"
-					using = tooltip_se
-				}
-			}
-
-			button_round  = {
-				name = "execute"
-				enabled = "[CourtWindow.CanDoMassPrisonerAction('execute')]"
-
-				button_prison_execute = {
-					parentanchor = center
-					onclick = "[CourtWindow.MassPrisonerAction('execute')]"
-					tooltip = "[CourtWindow.GetMassPrisonerActionTooltip('execute')]"
-					using = tooltip_se
-				}
-			}
-			#MRFP
-			spacer = {
-				size = { 30 30 }
-			}
-			mrfp_button_recruit = {}
-			mrfp_button_ransom = {}
-			mrfp_button_torture = {}
-			spacer = {
-				size = { 30 30 }
-			}
-			mrfp_button_settings = {}
-			#MRFP
-		}
+		mrfp_prison_bottom_buttons = {}
 
 	}
 
