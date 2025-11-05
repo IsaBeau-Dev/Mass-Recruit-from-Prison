@@ -1,10 +1,11 @@
 ﻿mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION = {
   scope = character
   effect = {
-    root.var:mrfp_story = {
-      save_scope_as = the_story
-    }
-    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_DEMAND_CONVERSION }
+    mrfp_send_debug_message = yes
+    # root.var:mrfp_story = {
+    #   save_scope_as = the_story
+    # }
+    # mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_DEMAND_CONVERSION }
   }
 }
 
