@@ -113,7 +113,7 @@
 												name = "mrfp_toggle_prowess_limit_button"
 												text = "mrfp_toggle_send_option"
 												default_format = "#T"
-												# onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											}
 										}
 									}

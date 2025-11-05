@@ -1,5 +1,16 @@
 ﻿
 #prowess limit
+mrfp_settings_prowess_limit_toggle = {
+  scope = character
+  effect = {
+    mrfp_start_story_if_not_exist = yes
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_threshold_enabled }
+  }
+}
+
 mrfp_settings_prowess_limit_add_1 = {
   scope = character
   effect = {
