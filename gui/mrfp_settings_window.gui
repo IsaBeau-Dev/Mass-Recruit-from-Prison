@@ -131,13 +131,6 @@
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
 									}
-
-
-									hbox = {
-										using = mrfp_send_option_template
-										datacontext = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
-										# datacontext = "[GetPlayer.MakeScope.Var('mrfp_story').Story.MakeScope.Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
-									}
 								}
 								
 							}
@@ -331,30 +324,4 @@
     #         widget = { text_single = { text = "i" default_format = "#T" } }
     #     }
     # }
-}
-
-
-
-#######template
-local_template mrfp_send_option_template
-{
-    hbox = {
-        spacing = 5
-        text_single = {    
-            text = "TODO a"
-            default_format = "#T"
-            # align = left
-        }
-        text_single = {
-			# TODO text
-            text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DEMAND_CONVERSION' )]"
-            default_format = "#T"
-            # align = left
-        }
-        button_standard = {
-            name = "mrfp_setting_toggle_button"
-            text = "Toggle"
-            default_format = "#T"
-        }
-    }
 }
