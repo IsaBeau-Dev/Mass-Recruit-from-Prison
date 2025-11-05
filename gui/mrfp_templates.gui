@@ -55,7 +55,7 @@ types mrfp_button_types
 		# code for your button and any nested controls you want
 		name = "mrfp"
 		#visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
-		enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
+		# enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
 
 		button_prison_release = {
 			parentanchor = center
@@ -250,11 +250,11 @@ types mrfp_window_types {
 
 	type mrfp_prison_bottom_buttons_box = hbox {
 		name = "mrfp_prison_bottom_buttons_box"
-		visible = "[And( GreaterThan_int32( CourtWindow.GetPrisoners.GetTotalNumber, '(int32)0' ), LessThanOrEqualTo_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) ) )]"
+		visible = "[And( GreaterThanOrEqualTo_int32( CourtWindow.GetPrisoners.GetTotalNumber, '(int32)0' ), LessThanOrEqualTo_int32( CourtWindow.GetPrisoners.GetTotalNumber, GetDefine( 'NGui', 'MAX_PRISONER_COUNT_GRID' ) ) )]"
 		layoutpolicy_horizontal = expanding
 		margin = { 10 10 }
 		spacing = 5
-		parentanchor = bottom|right
+		# parentanchor = bottom|right
 
 		background = {
 			using = Background_Area_Dark
