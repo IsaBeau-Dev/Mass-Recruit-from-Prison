@@ -118,11 +118,22 @@
 											layoutpolicy_vertical = expanding
 											# addcolumn = 527
 											# addrow = 70
+											
+											hbox = {
+												spacing = 5
+												text_single = {
+													text = "RELEASE_DEMAND_CONVERSION"
+													default_format = "#T"
+													align = left
+												}
+												button_standard = {
+													name = "mrfp_toggle_release_demand_conversion_button"
+													# text = "[GetVariableSystem.GetBool('mrfp_release_demand_conversion')? 'mrfp_set_threshold.0001.a' : 'mrfp_set_threshold.0001.a']"
+													text = "#P Enabled#!"
+													default_format = "#T;B"
+													# on_clicked = "ToggleVariable('mrfp_release_demand_conversion')"
+												}
 
-											text_single = {
-												text = "Recruitment Settings:"
-												default_format = "#T"
-												align = left
 											}
 
 										}
