@@ -1,7 +1,10 @@
-﻿mrfp_enabled_or_disabled_bool = {
+﻿mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DEMAND_CONVERSION = {
     type = character
 
     text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_DEMAND_CONVERSION = yes
+        }
         localization_key = mrfp.0001.enabled
     }
     text = {
@@ -10,8 +13,197 @@
         }
         localization_key = mrfp.0001.disabled
     }
-	text = {
-		localization_key = "ERROR"
-		fallback = yes
-	}
+    text = {
+        localization_key = "ERROR"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RECRUIT = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_RECRUIT = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_RECRUIT = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "ERROR"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RENOUNCE_CLAIMS = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_RENOUNCE_CLAIMS = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_RENOUNCE_CLAIMS = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "ERROR"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BANISH = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_BANISH = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_BANISH = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "ERROR"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_GAIN_HOOK = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_GAIN_HOOK = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_GAIN_HOOK = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "ERROR"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_TAKE_VOWS = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_TAKE_VOWS = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_TAKE_VOWS = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "ERROR"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_AS_EXECUTIONER = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_AS_EXECUTIONER = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_AS_EXECUTIONER = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "ERROR"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DISFIGURE = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_DISFIGURE = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_DISFIGURE = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "ERROR"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BLIND = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_BLIND = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_BLIND = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "ERROR"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_CASTRATE = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_CASTRATE = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_CASTRATE = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "ERROR"
+        fallback = yes
+    }
 }
