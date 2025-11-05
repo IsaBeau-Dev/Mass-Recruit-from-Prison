@@ -1,4 +1,28 @@
-﻿mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DEMAND_CONVERSION = {
+﻿#prowess limit
+mrfp_enabled_or_disabled_prowess_limit = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_threshold_enabled = yes
+        }
+        localization_key = mrfp_set_threshold.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_threshold_enabled = no
+        }
+        localization_key = mrfp_set_threshold.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+
+# send options
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DEMAND_CONVERSION = {
     type = character
 
     text = {

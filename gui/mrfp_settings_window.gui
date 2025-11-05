@@ -103,13 +103,25 @@
 
 									hbox = {
 										spacing = 20
-										text_single = { 
-											text = "LIMIT"
-											default_format = "#T"
+										hbox = {
+											spacing = 10
+											text_single = { 
+												text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_prowess_limit' )]"
+												default_format = "#T"
+											}
+											button_standard = {
+												name = "mrfp_toggle_prowess_limit_button"
+												text = "mrfp_toggle_send_option"
+												default_format = "#T"
+												# onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+											}
 										}
-										text_single = {
-											text = "Value"
-											default_format = "#T"
+										hbox = {
+											spacing = 5
+											text_single = {
+												text = "Value"
+												default_format = "#T"
+											}
 										}
 										hbox = {
 											spacing = 5
