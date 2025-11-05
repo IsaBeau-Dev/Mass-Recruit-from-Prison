@@ -7,23 +7,110 @@
     size = { 800 600 }
 	parentanchor = center
 
-    text_single = {
-        text = "SETTINGS"
-        default_format = "#T;L"
-        align = center
-        position = { 350 20 }
-    }
+    # text_single = {
+    #     text = "SETTINGS"
+    #     default_format = "#T;L"
+    #     align = center
+    #     position = { 350 20 }
+    # }
 
-    text_single = {
-        text = "Recruitment Settings:"
-        default_format = "#T"
-        align = left
-        position = { 50 50 }
-        max_width = 700
-    }
-	widget = {
+    # text_single = {
+    #     text = "Recruitment Settings:"
+    #     default_format = "#T"
+    #     align = left
+    #     position = { 50 50 }
+    #     max_width = 700
+    # }
+
+	# copy over stuff from decisions window
+	margin_widget = {
 		size = { 100% 100% }
+		margin_top = 30
+		margin_bottom = 25
+		margin_right = 13
+		widget = {
+			size = { 100% 100% }
+			vbox = {
+				using = Window_Margins
+
+				header_pattern = {
+					layoutpolicy_horizontal = expanding
+
+					blockoverride "header_text"
+					{
+						text = "Settings for test"
+					}
+
+					blockoverride "button_close"
+					{
+						onclick = "[GetVariableSystem.Toggle('mrfp_show_settings_window')]"
+					}
+				}
+				hbox_tab_buttons = {
+					name = "test"
+
+					blockoverride "tab_name"
+					{
+						text = "aaaaa"
+					}
+				}
+
+				### DECISIONS ###
+				scrollbox = {
+					name = "mrfp_settings_window_scrollarea"
+					# widgetid = "decisions_panel_decisions_scrollarea"  #lesson_china_decisions_open uses this
+					visible = yes
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+
+					background = {
+						texture = "gfx/interface/skinned/illustrations/decisions.dds"
+						fittype = end
+						alpha = 0.4
+
+						using = Mask_Rough_Edges
+
+						modify_texture = {
+							texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+							blend_mode = alphamultiply
+							mirror = vertical
+						}
+					}
+
+					blockoverride "scrollbox_content"
+					{
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+
+						vbox = {
+							name = "asdasd"
+							spacing = 2
+
+							layoutpolicy_horizontal = expanding
+
+							# datamodel = "[DecisionsView.GetDecisionGroupItems]"
+							# item = {
+							# 	vbox_decision_group_foldout = {}
+							# }
+						}
+					}
+					blockoverride "scrollbox_expand" {
+						expand = {}
+					}
+				}
+			}
+		}
 	}
+
+
+
+
+
+
+
+
+
+
 	# button_expandable_toggle_field = {
 	# 	text = "mrfp_set_threshold.0001.settings.nh"
 	# 	default_format = "#T;S"
