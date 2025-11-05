@@ -132,6 +132,13 @@
 											# enabled = yes
 										}
 									}
+									mrfp_send_option_template = {
+										blockoverrides = {
+											VarName = {
+												text = "RELEASE_RECRUIT"
+											}
+										}
+									}
 
 								}
 							}
