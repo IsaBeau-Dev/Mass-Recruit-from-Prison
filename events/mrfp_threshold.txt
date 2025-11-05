@@ -69,9 +69,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_DEMAND_CONVERSION = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_RENOUNCE_CLAIMS
     first_valid = {
@@ -79,9 +79,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_RENOUNCE_CLAIMS = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_BANISH
     first_valid = {
@@ -89,9 +89,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_BANISH = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_GAIN_HOOK
     first_valid = {
@@ -99,9 +99,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_GAIN_HOOK = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_TAKE_VOWS
     first_valid = {
@@ -109,9 +109,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_TAKE_VOWS = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_AS_EXECUTIONER
     first_valid = {
@@ -119,9 +119,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_AS_EXECUTIONER = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_RECRUIT
     first_valid = {
@@ -129,9 +129,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_RECRUIT = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_DISFIGURE
     first_valid = {
@@ -139,9 +139,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_DISFIGURE = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_BLIND
     first_valid = {
@@ -149,9 +149,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_BLIND = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_CASTRATE
     first_valid = {
@@ -159,9 +159,9 @@ mrfp_set_threshold.0001 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_CASTRATE = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     
   }
@@ -293,9 +293,9 @@ mrfp_set_threshold.0002 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_DEMAND_CONVERSION = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_RENOUNCE_CLAIMS
     first_valid = {
@@ -303,9 +303,9 @@ mrfp_set_threshold.0002 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_RENOUNCE_CLAIMS = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_BANISH
     first_valid = {
@@ -313,9 +313,9 @@ mrfp_set_threshold.0002 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_BANISH = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_GAIN_HOOK
     first_valid = {
@@ -323,9 +323,9 @@ mrfp_set_threshold.0002 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_GAIN_HOOK = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     # desc = mrfp_set_threshold.0001.settings.p2
     desc = RELEASE_TAKE_VOWS
@@ -334,9 +334,9 @@ mrfp_set_threshold.0002 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_TAKE_VOWS = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = mrfp_set_threshold.0001.settings.p2
     desc = RELEASE_AS_EXECUTIONER
@@ -345,9 +345,9 @@ mrfp_set_threshold.0002 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_AS_EXECUTIONER = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_RECRUIT
     first_valid = {
@@ -355,9 +355,9 @@ mrfp_set_threshold.0002 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_RECRUIT = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_DISFIGURE
     first_valid = {
@@ -365,9 +365,9 @@ mrfp_set_threshold.0002 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_DISFIGURE = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     # desc = mrfp_set_threshold.0001.settings.p3
     desc = RELEASE_BLIND
@@ -376,9 +376,9 @@ mrfp_set_threshold.0002 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_BLIND = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_CASTRATE
     first_valid = {
@@ -386,9 +386,9 @@ mrfp_set_threshold.0002 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_CASTRATE = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
   }
 
@@ -422,9 +422,9 @@ mrfp_set_threshold.0003 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_DEMAND_CONVERSION = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_RENOUNCE_CLAIMS
     first_valid = {
@@ -432,9 +432,9 @@ mrfp_set_threshold.0003 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_RENOUNCE_CLAIMS = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_BANISH
     first_valid = {
@@ -442,9 +442,9 @@ mrfp_set_threshold.0003 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_BANISH = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_GAIN_HOOK
     first_valid = {
@@ -452,9 +452,9 @@ mrfp_set_threshold.0003 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_GAIN_HOOK = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_TAKE_VOWS
     first_valid = {
@@ -462,9 +462,9 @@ mrfp_set_threshold.0003 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_TAKE_VOWS = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
   }
 
@@ -523,9 +523,9 @@ mrfp_set_threshold.0004 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_AS_EXECUTIONER = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_RECRUIT
     first_valid = {
@@ -533,9 +533,9 @@ mrfp_set_threshold.0004 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_RECRUIT = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_DISFIGURE
     first_valid = {
@@ -543,9 +543,9 @@ mrfp_set_threshold.0004 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_DISFIGURE = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_BLIND
     first_valid = {
@@ -553,9 +553,9 @@ mrfp_set_threshold.0004 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_BLIND = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
     desc = RELEASE_CASTRATE
     first_valid = {
@@ -563,9 +563,9 @@ mrfp_set_threshold.0004 = {
         trigger = {
           scope:the_story.var:mrfp_RELEASE_CASTRATE = yes
         }
-        desc = mrfp.0001.enabled
+        desc = mrfp.0001.enabled_n
       }
-      desc = mrfp.0001.disabled
+      desc = mrfp.0001.disabled_n
     }
   }
 

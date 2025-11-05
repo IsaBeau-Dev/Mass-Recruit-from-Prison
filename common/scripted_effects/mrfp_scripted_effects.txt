@@ -351,9 +351,9 @@ mrfp_toggle_variable = {
 #         trigger = {
 #           var:mrfp_$VARIABLE_NAME$ = yes
 #         }
-#         desc = mrfp.0001.enabled
+#         desc = mrfp.0001.enabled_n
 #       }
-#       desc = mrfp.0001.disabled
+#       desc = mrfp.0001.disabled_n
 #     }
 # }
 
