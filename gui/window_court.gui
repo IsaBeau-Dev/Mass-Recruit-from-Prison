@@ -251,11 +251,17 @@
 						alpha = 0
 					}
 
-					text_single = {
-						visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
-						text = "PRISON_EMPTY"
-						default_format = "#weak"
-					}
+					# MRFP
+					mrfp_prison_stats = {}
+					mrfp_layout_exactly_0_prisoners = {}
+					
+					
+					# text_single = {
+					# 	visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
+					# 	text = "PRISON_EMPTY"
+					# 	default_format = "#weak"
+					# }
+					# MRFP
 
 					background = {
 						visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
@@ -288,9 +294,9 @@
 						}
 					}
 					# MRFP
-
+					
 					#prison info box aka amout recruited and earned gold
-					mrfp_prison_stats = {}
+					# mrfp_prison_stats = {}
 
 					## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
 					mrfp_layout_with_more_than_4_prisoners = {}
