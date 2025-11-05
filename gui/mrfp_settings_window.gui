@@ -119,30 +119,29 @@
 
 										hbox = {
 											spacing = 5
-											# text_single = {	
-											# 	text = "RELEASE_DEMAND_CONVERSION"
-											# 	default_format = "#T"
-											# 	align = left
-											# }
+											text_single = {	
+												text = "RELEASE_DEMAND_CONVERSION"
+												default_format = "#T"
+												align = left
+											}
 											text_single = {
-												# text = "[SelectLocalization( GetPlayer.MakeScope.Var('mrfp_story').Story.MakeScope.Var('mrfp_RELEASE_DEMAND_CONVERSION').IsSet, 'mrfp.0001.enabled', 'mrfp.0001.disabled')]"
 												text = "[GetPlayer.Custom('mrfp_enabled_or_disabled_bool')]"
 												default_format = "#T"
 												align = left
 											}
-											# button_standard = {
-											# 	name = "mrfp_toggle_release_demand_conversion_button"
-											# 	text = "Toggle"
-											# 	default_format = "#T"
-											# 	onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-											# 	# onclick = "[GetPlayer.MakeScope.Var('mrfp_story').Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
-											# 	# enabled = yes
-											# }
+											button_standard = {
+												name = "mrfp_toggle_release_demand_conversion_button"
+												text = "Toggle"
+												default_format = "#T"
+												onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												# onclick = "[GetPlayer.MakeScope.Var('mrfp_story').Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
+												# enabled = yes
+											}
 										}
-										# hbox = {
-										# 	using = mrfp_send_option_template
-										# 	datacontext = "[GetPlayer.MakeScope.Var('mrfp_story').Story.MakeScope.Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
-										# }
+										hbox = {
+											using = mrfp_send_option_template
+											datacontext = "[GetPlayer.MakeScope.Var('mrfp_story').Story.MakeScope.Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
+										}
 									}
 								}
 							}
