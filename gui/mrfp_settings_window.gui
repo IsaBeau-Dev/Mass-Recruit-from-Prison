@@ -96,7 +96,7 @@
 								layoutpolicy_horizontal = expanding
 
 								vbox = {
-									spacing = 4
+									spacing = 20
 
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = expanding
@@ -116,10 +116,17 @@
 												# onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											}
 										}
+									}
+									hbox = {
+										spacing = 20
 										hbox = {
 											spacing = 5
 											text_single = {
-												text = "Value"
+												text = "mrfp_set_threshold.0001.prowess.t"
+												default_format = "#T"
+											}
+											text_single = {
+												text = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_prowess_threshold').GetValue] @skill_prowess_icon"
 												default_format = "#T"
 											}
 										}
