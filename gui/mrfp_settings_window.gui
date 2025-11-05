@@ -126,11 +126,15 @@
 													default_format = "#T"
 													align = left
 												}
+												text_single = {
+													text = "#P Enabled#!"
+													default_format = "#T"
+													align = left
+												}
 												button_standard = {
 													name = "mrfp_toggle_release_demand_conversion_button"
-													# text = "[GetVariableSystem.GetBool('mrfp_release_demand_conversion')? 'mrfp_set_threshold.0001.a' : 'mrfp_set_threshold.0001.a']"
-													text = "#P Enabled#!"
-													default_format = "#T;B"
+													text = "Toggle"
+													default_format = "#T"
 													# on_clicked = "ToggleVariable('mrfp_release_demand_conversion')"
 												}
 
