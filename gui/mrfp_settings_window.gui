@@ -98,7 +98,7 @@
 								blockoverride "text"
 								{
 									#TODO proper localization key
-									raw_text = "mrfp_set_threshold.0001.settings.nh"
+									text = "mrfp_set_threshold.0001.settings.nh"
 								}
 							}
 
@@ -126,7 +126,7 @@
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_demand_conversion_button"
-											text = "Toggle"
+											text = "mrfp_toggle_send_option"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
@@ -145,7 +145,7 @@
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_recruit_button"
-											text = "Toggle"
+											text = "mrfp_toggle_send_option"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_RECRUIT').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
@@ -164,7 +164,7 @@
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_renounce_claims_button"
-											text = "Toggle"
+											text = "mrfp_toggle_send_option"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_RENOUNCE_CLAIMS').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
@@ -183,7 +183,7 @@
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_banish_button"
-											text = "Toggle"
+											text = "mrfp_toggle_send_option"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_BANISH').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
@@ -202,7 +202,7 @@
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_gain_hook_button"
-											text = "Toggle"
+											text = "mrfp_toggle_send_option"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_GAIN_HOOK').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
@@ -221,7 +221,7 @@
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_take_vows_button"
-											text = "Toggle"
+											text = "mrfp_toggle_send_option"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_TAKE_VOWS').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
@@ -240,7 +240,7 @@
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_as_executioner_button"
-											text = "Toggle"
+											text = "mrfp_toggle_send_option"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_AS_EXECUTIONER').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
@@ -259,7 +259,7 @@
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_disfigure_button"
-											text = "Toggle"
+											text = "mrfp_toggle_send_option"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DISFIGURE').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
@@ -278,7 +278,7 @@
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_blind_button"
-											text = "Toggle"
+											text = "mrfp_toggle_send_option"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_BLIND').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
@@ -297,7 +297,7 @@
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_castrate_button"
-											text = "Toggle"
+											text = "mrfp_toggle_send_option"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_CASTRATE').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
