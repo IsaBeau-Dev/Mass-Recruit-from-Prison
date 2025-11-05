@@ -254,7 +254,6 @@ types mrfp_window_types {
 		layoutpolicy_horizontal = expanding
 		margin = { 10 10 }
 		spacing = 5
-		# parentanchor = bottom|right
 
 		background = {
 			using = Background_Area_Dark
