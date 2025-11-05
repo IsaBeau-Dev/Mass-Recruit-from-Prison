@@ -129,9 +129,6 @@
 											text = "Toggle"
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-											# onclick = "[GetVariableSystem.Toggle('mrfp_show_settings_window')]"
-											# onclick = "[GetPlayer.MakeScope.Var('mrfp_story').Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
-											# enabled = yes
 										}
 									}
 
