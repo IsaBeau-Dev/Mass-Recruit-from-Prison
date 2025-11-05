@@ -10,7 +10,7 @@
 	oncreate = "[BindTabsContext]"
 	oncreate = "[PdxGuiTabs.ListenFor( 'mrfp_settings_window_tab_buttons' )]"
 	oncreate = "[PdxGuiTabs.AddTab( 'mrfp_settings_recruit_tab' )]"
-	oncreate = "[PdxGuiTabs.AddTab( 'great_projects' )]"
+	oncreate = "[PdxGuiTabs.AddTab( 'mrfp_settings_ransom_tab' )]"
 
 	# copy over stuff from decisions window
 	margin_widget = {
@@ -311,7 +311,7 @@
 				scrollbox = {
 					name = "tab_projects"
 					widgetid = "tab_projects"
-					visible = "[PdxGuiTabs.IsTabSet( 'great_projects' )]"
+					visible = "[PdxGuiTabs.IsTabSet( 'mrfp_settings_ransom_tab' )]"
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
 					
