@@ -97,43 +97,44 @@
 									text = "mrfp_set_threshold.0001.settings.nh"
 								}
 							}
-									vbox = {
-										visible = "[PdxGuiFoldOut.IsUnfolded]"
+							
+							vbox = {
+								visible = "[PdxGuiFoldOut.IsUnfolded]"
 
-										layoutpolicy_horizontal = expanding
+								layoutpolicy_horizontal = expanding
 
-										fixedgridbox = {
-											name = "mrfp_settings_window_decisions_fixedgridbox"
+								fixedgridbox = {
+									name = "mrfp_settings_window_decisions_fixedgridbox"
 
-											layoutpolicy_horizontal = expanding
-											layoutpolicy_vertical = expanding
-											# addcolumn = 527
-											# addrow = 70
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+									# addcolumn = 527
+									# addrow = 70
+									
+									hbox = {
+										spacing = 5
+										text_single = {
+											text = "RELEASE_DEMAND_CONVERSION"
+											default_format = "#T"
+											align = left
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'MRFP_ENABLED_OR_DISABLED_BOOL' )]"
+											# text= "#P Enabled#!"
+											default_format = "#T"
+											align = left
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_demand_conversion_button"
+											text = "Toggle"
+											default_format = "#T"
 											
-											hbox = {
-												spacing = 5
-												text_single = {
-													text = "RELEASE_DEMAND_CONVERSION"
-													default_format = "#T"
-													align = left
-												}
-												text_single = {
-													text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'MRFP_ENABLED_OR_DISABLED_BOOL' )]"
-													# text= "#P Enabled#!"
-													default_format = "#T"
-													align = left
-												}
-												button_standard = {
-													name = "mrfp_toggle_release_demand_conversion_button"
-													text = "Toggle"
-													default_format = "#T"
-													
-													# on_clicked = "ToggleVariable('mrfp_release_demand_conversion')"
-												}
-											}
-
+											# on_clicked = "ToggleVariable('mrfp_release_demand_conversion')"
 										}
 									}
+
+								}
+							}
 
 
 							# item = {
