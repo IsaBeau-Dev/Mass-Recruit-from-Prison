@@ -144,14 +144,14 @@
 												text = "-1"
 												default_format = "#T"
 												size = { 40 33 }
-												onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_add_10').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_subtract_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											}
 											button_standard = {
 												name = "mrfp_add_10_to_prowess_limit"
 												text = "+10"
 												default_format = "#T"
 												size = { 50 33 }
-												onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_subtract_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+												onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_add_10').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											}
 											button_standard = {
 												name = "mrfp_subtract_10_to_prowess_limit"
