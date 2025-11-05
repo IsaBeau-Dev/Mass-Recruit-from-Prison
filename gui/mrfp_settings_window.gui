@@ -125,8 +125,7 @@
 												align = left
 											}
 											text_single = {
-												text = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_RELEASE_DEMAND_CONVERSION').GetValue]"
-												# text = "[SelectLocalization( GetPlayer.MakeScope.Var('mrfp_story').Story.MakeScope.Var('mrfp_RELEASE_DEMAND_CONVERSION').GetValue, 'mrfp.0001.enabled', 'mrfp.0001.disabled')]"
+												text = "[SelectLocalization( GetPlayer.MakeScope.Var('mrfp_story').Story.MakeScope.Var('mrfp_RELEASE_DEMAND_CONVERSION').IsSet, 'mrfp.0001.enabled', 'mrfp.0001.disabled')]"
 												default_format = "#T"
 												align = left
 											}
@@ -346,7 +345,7 @@ local_template mrfp_send_option_template
     hbox = {
         spacing = 5
         text_single = {    
-            text = "[Scope.GetValue]"
+            text = "TODO aa"
             default_format = "#T"
             align = left
         }
