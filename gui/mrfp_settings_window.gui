@@ -97,7 +97,8 @@
 							button_expandable_toggle_field = {
 								blockoverride "text"
 								{
-									text = "mrfp_set_threshold.0001.settings.nh"
+									#TODO proper localization key
+									raw_text = "mrfp_set_threshold.0001.settings.nh"
 								}
 							}
 
