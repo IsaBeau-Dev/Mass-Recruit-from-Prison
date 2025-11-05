@@ -10,22 +10,29 @@ window = {
         text = "SETTINGS"
         default_format = "#T;L"
         align = center
-        position = { 200 20 }
+        position = { 350 20 }
     }
 
     text_single = {
         text = "Recruitment Settings:"
         default_format = "#T"
         align = left
-        position = { 50 80 }
+        position = { 50 50 }
         max_width = 700
     }
+	text_single = {
+		text = "mrfp_set_threshold.0001.settings.nh"
+		default_format = "#T;S"
+		align = left
+		position = { 50 80 }
+		max_width = 700
+	}
 
     vbox = {
         position = { 50 120 }
         layoutpolicy_vertical = fixed
         layoutpolicy_horizontal = fixed
-        maximumsize = { 700 360 }
+        maximumsize = { 700 160 }
 
         hbox = {
             layoutpolicy_horizontal = expanding
