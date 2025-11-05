@@ -25,9 +25,9 @@
 	# copy over stuff from decisions window
 	margin_widget = {
 		size = { 100% 100% }
-		margin_top = 30
-		margin_bottom = 25
-		margin_right = 13
+		# margin_top = 0
+		# margin_bottom = 25
+		# margin_right = 13
 		widget = {
 			size = { 100% 100% }
 			vbox = {
@@ -64,6 +64,7 @@
 					layoutpolicy_vertical = expanding
 
 					background = {
+						#TODO change texture to prison
 						texture = "gfx/interface/skinned/illustrations/decisions.dds"
 						fittype = end
 						alpha = 0.4
