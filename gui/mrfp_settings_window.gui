@@ -102,7 +102,9 @@
 									layoutpolicy_vertical = expanding
 
 									hbox = {
-										spacing = 20
+										spacing = 50
+										layoutpolicy_horizontal = expanding
+										layoutpolicy_vertical = expanding
 										text_single = { 
 											text = "LIMIT"
 											default_format = "#T"
@@ -112,7 +114,9 @@
 											default_format = "#T"
 										}
 										hbox = {
-											spacing = 5
+											spacing = 25
+											layoutpolicy_horizontal = expanding
+											layoutpolicy_vertical = expanding
 											button_standard = {
 												name = "mrfp_add_1_to_prowess_limit"
 												text = "+1"
@@ -131,20 +135,19 @@
 												name = "mrfp_add_10_to_prowess_limit"
 												text = "+10"
 												default_format = "#T"
-												max_width = 40
+												max_width = 60
 												# onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											}
 											button_standard = {
 												name = "mrfp_subtract_10_to_prowess_limit"
 												text = "-10"
 												default_format = "#T"
-												max_width = 40
+												max_width = 60
 												# onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											}
+											expand = {}
 										}
-									}
-
-									
+									}									
 								}
 							}
 						}
