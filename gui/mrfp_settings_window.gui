@@ -90,13 +90,22 @@
 							layoutpolicy_horizontal = expanding
 
 							item = {
-								button_expandable_toggle_field = {
-									text = "mrfp_set_threshold.0001.settings.nh"
-									default_format = "#T;S"
-									align = left
-									position = { 50 80 }
-									# max_width = 700
-									autoresize = yes
+								vbox = {
+									spacing = 4
+									layoutpolicy_horizontal = expanding
+
+									oncreate = "[BindFoldOutContext]"
+									oncreate = "[PdxGuiFoldOut.Unfold]"
+
+									button_expandable_toggle_field = {
+										text = "mrfp_set_threshold.0001.settings.nh"
+										default_format = "#T;S"
+										align = left
+										position = { 50 80 }
+										# max_width = 700
+										autoresize = yes
+									}
+
 								}
 							}
 						}
