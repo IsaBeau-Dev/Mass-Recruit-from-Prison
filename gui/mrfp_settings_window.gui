@@ -56,8 +56,8 @@
 
 				### Recruit ###
 				scrollbox = {
-					name = "mrfp_settings_window_scrollarea"
-					widgetid = "mrfp_settings_recruit_scrollarea"  #lesson_china_decisions_open uses this
+					name = "mrfp_settings_recruit_scrollarea"
+					widgetid = "mrfp_settings_recruit_scrollarea_id"  #lesson_china_decisions_open uses this
 					visible = "[PdxGuiTabs.IsTabSet( 'mrfp_settings_recruit_tab' )]"
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
@@ -307,23 +307,14 @@
 					}
 				}
 
-				### GREAT PROJECTS ###
+				### Ransom ###
 				scrollbox = {
-					name = "tab_projects"
-					widgetid = "tab_projects"
+					name = "mrfp_settings_ransom_scrollarea"
+					widgetid = "mrfp_settings_ransom_scrollarea_id"  #lesson_china_decisions_open uses this
 					visible = "[PdxGuiTabs.IsTabSet( 'mrfp_settings_ransom_tab' )]"
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
 					
-					state = {
-						name = _show
-						on_start = "[DecisionsView.SetGreatProjectsTabActive( '(bool)yes' )]"
-					}
-
-					state = {
-						name = _hide
-						on_start = "[DecisionsView.SetGreatProjectsTabActive( '(bool)no' )]"
-					}
 
 					blockoverride "scrollbox_content"
 					{
@@ -332,103 +323,7 @@
 							layoutpolicy_vertical = expanding
 							spacing = 5
 
-							# EMPTY PROJECT LIST
-							vbox = {
-								visible = "[And( IsDataModelEmpty( DecisionsView.GetAvailableGreatProjectItems ), And( IsDataModelEmpty( DecisionsView.GetPlannedGreatProjectItems), IsDataModelEmpty( DecisionsView.GetOngoingGreatProjectItems) ) )]"
-								layoutpolicy_horizontal = expanding
-
-								text_single = {
-									layoutpolicy_horizontal = expanding
-									text = "DECISIONS_VIEW_EMPTY_PROJECTS"
-									align = hcenter|nobaseline
-								}
-							}
-
-							# PROJECTS YOU CAN FUND (planned, need contributions)
-							text_label_center = {
-								visible = "[Not( IsDataModelEmpty( DecisionsView.GetPlannedGreatProjectItems))]"
-								layoutpolicy_horizontal = expanding
-
-								text = "DECISIONS_VIEW_PLANNED_PROJECTS"
-							}
-
-							vbox = {
-								datamodel = "[DecisionsView.GetPlannedGreatProjectItems]"
-								visible = "[Not( IsDataModelEmpty( DecisionsView.GetPlannedGreatProjectItems))]"
-								layoutpolicy_horizontal = expanding
-								margin_bottom = 15
-								spacing = 10
-
-								item = {
-									button_project_item = {
-										datacontext = "[GreatProjectItem.GetProject]"
-										layoutpolicy_horizontal = expanding
-
-										blockoverride "can_contribute_text_visible"
-										{
-											visible = "[GreatProject.CanPlayerContributeToProject]" # "[DecisionView.CanPlayerContributeToProject( GreatProject.Self )]"
-										}
-									}
-								}
-							}
-
-							# PROJECTS YOU CAN FUND (ongoing)
-							text_label_center = {
-								visible = "[Not( IsDataModelEmpty( DecisionsView.GetOngoingGreatProjectItems))]"
-								layoutpolicy_horizontal = expanding
-
-								text = "DECISIONS_VIEW_ONGOING_PROJECTS"
-
-							}
-
-							vbox = {
-								datamodel = "[DecisionsView.GetOngoingGreatProjectItems]"
-								visible = "[Not( IsDataModelEmpty( DecisionsView.GetOngoingGreatProjectItems))]"
-								layoutpolicy_horizontal = expanding
-								margin_bottom = 15
-								spacing = 10
-
-								item = {
-									button_project_item = {
-										datacontext = "[GreatProjectItem.GetProject]"
-										layoutpolicy_horizontal = expanding
-
-										blockoverride "can_contribute_text_visible"
-										{
-											visible = "[GreatProject.CanPlayerContributeToProject]" # "[DecisionView.CanPlayerContributeToProject( GreatProject.Self )]"
-										}
-
-									}
-								}
-							}
-
-							# PROJECTS YOU CAN START
-							text_label_center = {
-								visible = "[Not( IsDataModelEmpty( DecisionsView.GetAvailableGreatProjectItems))]"
-								layoutpolicy_horizontal = expanding
-
-								text = "AVAILABLE_DECISIONS_VIEW_PROJECTS"
-							}
-
-							vbox = {
-								datamodel = "[DecisionsView.GetAvailableGreatProjectItems]"
-								visible = "[Not( IsDataModelEmpty( DecisionsView.GetAvailableGreatProjectItems))]"
-								layoutpolicy_horizontal = expanding
-								margin_bottom = 15
-								spacing = 10
-
-								item = {
-									button_available_project_item = {
-										layoutpolicy_horizontal = expanding
-
-										blockoverride "size_illustration"
-										{
-											position = { -2 0 }
-											size = { 250 48 }
-										}
-									}
-								}
-							}
+							# TODO add ransom settings here
 
 
 
