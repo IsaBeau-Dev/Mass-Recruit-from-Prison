@@ -582,37 +582,6 @@ types mrfp_window_types {
 		}
 	}
 
-	## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
-	type mrfp_layout_exactly_0_prisoners = vbox_character_list {
-		visible = "[LessThanOrEqualTo_int32( CourtWindow.GetPrisoners.GetTotalNumber, '(int32)0' )]"
-		layoutpolicy_horizontal = expanding
-		layoutpolicy_vertical = expanding
-
-		blockoverride "container_implementation"
-		{
-			text_single = {
-				visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
-				text = "PRISON_EMPTY"
-				default_format = "#weak"
-			}
-		}
-
-		blockoverride "bottom_bar"
-		{
-			hbox = {
-				margin = { 10 10 }
-				spacing = 3
-
-				# spacer = {
-				# 	size = { 300 30 }
-				# }
-
-
-				mrfp_button_settings = {}
-
-			}
-		}
-	}
 }
 
 
