@@ -103,7 +103,8 @@
 
 									hbox = {
 										spacing = 50
-
+										layoutpolicy_horizontal = expanding
+										layoutpolicy_vertical = expanding
 										text_single = { 
 											text = "LIMIT"
 											default_format = "#T"
@@ -114,7 +115,8 @@
 										}
 										hbox = {
 											spacing = 25
-
+											layoutpolicy_horizontal = expanding
+											layoutpolicy_vertical = expanding
 											button_standard = {
 												name = "mrfp_add_1_to_prowess_limit"
 												text = "+1"
@@ -194,7 +196,6 @@
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
-										expand = {}
 									}
 
 									##### release_recruit
@@ -214,7 +215,6 @@
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_RECRUIT').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
-										expand = {}
 									}
 
 									##### release_renounce_claims
@@ -234,7 +234,6 @@
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_RENOUNCE_CLAIMS').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
-										expand = {}
 									}
 
 									##### release_banish
@@ -254,7 +253,6 @@
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_BANISH').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
-										expand = {}
 									}
 
 									##### release_gain_hook
@@ -274,7 +272,6 @@
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_GAIN_HOOK').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
-										expand = {}
 									}
 
 									##### release_take_vows
@@ -294,7 +291,6 @@
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_TAKE_VOWS').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
-										expand = {}
 									}
 
 									##### release_as_executioner
@@ -314,7 +310,6 @@
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_AS_EXECUTIONER').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
-										expand = {}
 									}
 
 									##### release_disfigure
@@ -334,7 +329,6 @@
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DISFIGURE').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
-										expand = {}
 									}
 
 									##### release_blind
@@ -354,7 +348,6 @@
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_BLIND').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
-										expand = {}
 									}
 
 									##### release_castrate
@@ -374,7 +367,6 @@
 											default_format = "#T"
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_CASTRATE').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
-										expand = {}
 									}
 								}
 							}
