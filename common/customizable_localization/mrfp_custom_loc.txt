@@ -3,13 +3,13 @@
 
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_DEMAND_CONVERSION = yes
+            root.var:mrfp_story.var:mrfp_RELEASE_DEMAND_CONVERSION = yes
         }
         localization_key = mrfp.0001.enabled
     }
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_DEMAND_CONVERSION = no
+            root.var:mrfp_story.var:mrfp_RELEASE_DEMAND_CONVERSION = no
         }
         localization_key = mrfp.0001.disabled
     }
@@ -24,13 +24,13 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RECRUIT = {
 
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_RECRUIT = yes
+            root.var:mrfp_story.var:mrfp_RELEASE_RECRUIT = yes
         }
         localization_key = mrfp.0001.enabled
     }
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_RECRUIT = no
+            root.var:mrfp_story.var:mrfp_RELEASE_RECRUIT = no
         }
         localization_key = mrfp.0001.disabled
     }
@@ -45,13 +45,13 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RENOUNCE_CLAIMS = {
 
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_RENOUNCE_CLAIMS = yes
+            root.var:mrfp_story.var:mrfp_RELEASE_RENOUNCE_CLAIMS = yes
         }
         localization_key = mrfp.0001.enabled
     }
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_RENOUNCE_CLAIMS = no
+            root.var:mrfp_story.var:mrfp_RELEASE_RENOUNCE_CLAIMS = no
         }
         localization_key = mrfp.0001.disabled
     }
@@ -66,13 +66,13 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BANISH = {
 
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_BANISH = yes
+            root.var:mrfp_story.var:mrfp_RELEASE_BANISH = yes
         }
         localization_key = mrfp.0001.enabled
     }
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_BANISH = no
+            root.var:mrfp_story.var:mrfp_RELEASE_BANISH = no
         }
         localization_key = mrfp.0001.disabled
     }
@@ -87,13 +87,13 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_GAIN_HOOK = {
 
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_GAIN_HOOK = yes
+            root.var:mrfp_story.var:mrfp_RELEASE_GAIN_HOOK = yes
         }
         localization_key = mrfp.0001.enabled
     }
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_GAIN_HOOK = no
+            root.var:mrfp_story.var:mrfp_RELEASE_GAIN_HOOK = no
         }
         localization_key = mrfp.0001.disabled
     }
@@ -108,13 +108,13 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_TAKE_VOWS = {
 
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_TAKE_VOWS = yes
+            root.var:mrfp_story.var:mrfp_RELEASE_TAKE_VOWS = yes
         }
         localization_key = mrfp.0001.enabled
     }
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_TAKE_VOWS = no
+            root.var:mrfp_story.var:mrfp_RELEASE_TAKE_VOWS = no
         }
         localization_key = mrfp.0001.disabled
     }
@@ -129,13 +129,13 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_AS_EXECUTIONER = {
 
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_AS_EXECUTIONER = yes
+            root.var:mrfp_story.var:mrfp_RELEASE_AS_EXECUTIONER = yes
         }
         localization_key = mrfp.0001.enabled
     }
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_AS_EXECUTIONER = no
+            root.var:mrfp_story.var:mrfp_RELEASE_AS_EXECUTIONER = no
         }
         localization_key = mrfp.0001.disabled
     }
@@ -150,13 +150,13 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DISFIGURE = {
 
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_DISFIGURE = yes
+            root.var:mrfp_story.var:mrfp_RELEASE_DISFIGURE = yes
         }
         localization_key = mrfp.0001.enabled
     }
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_DISFIGURE = no
+            root.var:mrfp_story.var:mrfp_RELEASE_DISFIGURE = no
         }
         localization_key = mrfp.0001.disabled
     }
@@ -171,13 +171,13 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BLIND = {
 
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_BLIND = yes
+            root.var:mrfp_story.var:mrfp_RELEASE_BLIND = yes
         }
         localization_key = mrfp.0001.enabled
     }
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_BLIND = no
+            root.var:mrfp_story.var:mrfp_RELEASE_BLIND = no
         }
         localization_key = mrfp.0001.disabled
     }
@@ -192,13 +192,13 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_CASTRATE = {
 
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_CASTRATE = yes
+            root.var:mrfp_story.var:mrfp_RELEASE_CASTRATE = yes
         }
         localization_key = mrfp.0001.enabled
     }
     text = {
         trigger = {  
-            root.var:mrfp_story:mrfp_RELEASE_CASTRATE = no
+            root.var:mrfp_story.var:mrfp_RELEASE_CASTRATE = no
         }
         localization_key = mrfp.0001.disabled
     }
