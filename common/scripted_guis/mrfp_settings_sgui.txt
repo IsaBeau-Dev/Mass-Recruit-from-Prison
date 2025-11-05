@@ -15,6 +15,7 @@ mrfp_settings_prowess_limit_add_1 = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
+    save_scope_value_as = { name = mrfp_prowess_threshold_add_or_subtract value = 10 }
     root.var:mrfp_story = {
       set_variable = {
         name = mrfp_prowess_threshold

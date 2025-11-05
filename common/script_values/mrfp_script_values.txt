@@ -68,9 +68,9 @@ mrfp_amout_of_prisoners = {
 }
 
 ## settings window stuff
-mrfp_prowess_threshold_check_value = {
+mrfp_prowess_threshold_script_value = {
     value = var:mrfp_prowess_threshold
-    add = 1
+    add = scope:mrfp_prowess_threshold_add_or_subtract
 
     min = 0
     max = 100
