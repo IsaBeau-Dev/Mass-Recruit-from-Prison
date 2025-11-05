@@ -143,14 +143,6 @@
 											datacontext = "[GetPlayer.MakeScope.Var('mrfp_story').Story.MakeScope.Var('mrfp_RELEASE_RENOUNCE_CLAIMS')]"
 										}
 									}
-									# mrfp_send_option_template = {
-									# 	blockoverrides = {
-									# 		VarName = {
-									# 			text = "RELEASE_RECRUIT"
-									# 		}
-									# 	}
-									# }
-
 								}
 							}
 
