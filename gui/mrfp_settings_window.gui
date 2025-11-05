@@ -127,7 +127,8 @@
 											name = "mrfp_toggle_release_demand_conversion_button"
 											text = "Toggle"
 											default_format = "#T"
-											onclick = "[GetPlayer.MakeScope.Var('mrfp_story').Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'VarName', GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_RELEASE_DEMAND_CONVERSION') ).End)]"
+											# onclick = "[GetPlayer.MakeScope.Var('mrfp_story').Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
 											# enabled = yes
 										}
 									}
@@ -324,4 +325,31 @@
     #         widget = { text_single = { text = "i" default_format = "#T" } }
     #     }
     # }
+}
+
+
+
+#######template
+local_template mrfp_send_option_template
+{
+	hbox = {
+		spacing = 5
+		text_single = {	
+			text = "RELEASE_DEMAND_CONVERSION"
+			default_format = "#T"
+			align = left
+		}
+		text_single = {
+			text = "[SelectLocalization( GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_RELEASE_DEMAND_CONVERSION').IsSet, 'mrfp.0001.enabled', 'mrfp.0001.disabled')]"
+			default_format = "#T"
+			align = left
+		}
+		button_standard = {
+			name = "mrfp_toggle_release_demand_conversion_button"
+			text = "Toggle"
+			default_format = "#T"
+			# onclick = "[GetPlayer.MakeScope.Var('mrfp_story').Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
+			# enabled = yes
+		}
+	}
 }
