@@ -28,6 +28,13 @@
 		max_width = 700
 	}
 
+	button_expandable_toggle_field = {
+		name = "mrfp_close_settings_window_button"
+		text = "EXIT"
+		position = { 650 520 }
+		# on_clicked = "SetVariable('mrfp_show_settings_window', false)"
+	}
+
     vbox = {
         position = { 50 120 }
         layoutpolicy_vertical = fixed
