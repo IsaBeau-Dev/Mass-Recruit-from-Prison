@@ -127,18 +127,18 @@
 											name = "mrfp_toggle_release_demand_conversion_button"
 											text = "Toggle"
 											default_format = "#T"
-											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'VarName', GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_RELEASE_DEMAND_CONVERSION') ).End)]"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 											# onclick = "[GetPlayer.MakeScope.Var('mrfp_story').Toggle('mrfp_RELEASE_DEMAND_CONVERSION')]"
 											# enabled = yes
 										}
 									}
-									mrfp_send_option_template = {
-										blockoverrides = {
-											VarName = {
-												text = "RELEASE_RECRUIT"
-											}
-										}
-									}
+									# mrfp_send_option_template = {
+									# 	blockoverrides = {
+									# 		VarName = {
+									# 			text = "RELEASE_RECRUIT"
+									# 		}
+									# 	}
+									# }
 
 								}
 							}
