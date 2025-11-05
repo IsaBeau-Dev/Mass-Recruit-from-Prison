@@ -327,7 +327,6 @@ types mrfp_window_types {
 			mrfp_button_settings = {}
 			#MRFP
 		}
-	}
 
 	## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
 	type mrfp_layout_with_more_than_4_prisoners = vbox_character_list {
