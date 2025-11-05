@@ -106,6 +106,29 @@
 									text = "mrfp_set_threshold.0001.settings.nh"
 								}
 							}
+									vbox = {
+										visible = "[PdxGuiFoldOut.IsUnfolded]"
+
+										layoutpolicy_horizontal = expanding
+
+										fixedgridbox = {
+											name = "mrfp_settings_window_decisions_fixedgridbox"
+
+											layoutpolicy_horizontal = expanding
+											layoutpolicy_vertical = expanding
+											# addcolumn = 527
+											# addrow = 70
+
+											text_single = {
+												text = "Recruitment Settings:"
+												default_format = "#T"
+												align = left
+												position = { 50 50 }
+												max_width = 700
+											}
+
+										}
+									}
 
 
 							# item = {
