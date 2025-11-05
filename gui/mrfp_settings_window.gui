@@ -25,9 +25,11 @@
 	# copy over stuff from decisions window
 	margin_widget = {
 		size = { 100% 100% }
+
 		# margin_top = 0
 		# margin_bottom = 25
 		# margin_right = 13
+
 		widget = {
 			size = { 100% 100% }
 			vbox = {
@@ -108,8 +110,10 @@
 
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = expanding
+
 									# addcolumn = 527
 									# addrow = 70
+
 									vbox = {
 										spacing = 4
 
