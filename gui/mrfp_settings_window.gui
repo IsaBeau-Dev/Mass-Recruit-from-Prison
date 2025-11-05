@@ -127,7 +127,7 @@
 													align = left
 												}
 												text_single = {
-													text = "#P Enabled#!"
+													text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'MRFP_ENABLED_OR_DISABLED_BOOL' )]"
 													default_format = "#T"
 													align = left
 												}
@@ -135,9 +135,9 @@
 													name = "mrfp_toggle_release_demand_conversion_button"
 													text = "Toggle"
 													default_format = "#T"
+													
 													# on_clicked = "ToggleVariable('mrfp_release_demand_conversion')"
 												}
-
 											}
 
 										}
