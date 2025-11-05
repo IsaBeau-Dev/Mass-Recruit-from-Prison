@@ -261,10 +261,6 @@
 						default_format = "#weak"
 					}
 
-					#mrfp
-					# mrfp_prison_bottom_buttons_box = {}
-					#mrfp
-
 					background = {
 						visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
 						texture = "gfx/interface/skinned/illustrations/dungeon.dds"
