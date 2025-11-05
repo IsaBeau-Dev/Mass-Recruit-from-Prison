@@ -256,6 +256,7 @@
 						text = "PRISON_EMPTY"
 						default_format = "#weak"
 					}
+					mrfp_prison_bottom_buttons_box = {}
 
 					background = {
 						visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
