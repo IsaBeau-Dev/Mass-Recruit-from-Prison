@@ -98,7 +98,22 @@
 									# max_width = 700
 									autoresize = yes
 								}
+							}
+						}
+					}
+					blockoverride "scrollbox_expand" {
+						expand = {}
+					}
+				}
+			}
+		}
+	}
 
+
+
+
+
+##################
 								# vbox = {
 								# 	spacing = 4
 
@@ -170,24 +185,7 @@
 								# 		}
 								# 	}
 								# }
-							}
-						}
-					}
-					blockoverride "scrollbox_expand" {
-						expand = {}
-					}
-				}
-			}
-		}
-	}
-
-
-
-
-
-
-
-
+##############
 
 	# button_expandable_toggle_field = {
 	# 	text = "mrfp_set_threshold.0001.settings.nh"
