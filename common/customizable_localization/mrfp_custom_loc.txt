@@ -1,0 +1,17 @@
+﻿mrfp_enabled_or_disabled_bool = {
+    type = character
+
+    text = {
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story:mrfp_RELEASE_DEMAND_CONVERSION = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+	text = {
+		localization_key = "ERROR"
+		fallback = yes
+	}
+}
