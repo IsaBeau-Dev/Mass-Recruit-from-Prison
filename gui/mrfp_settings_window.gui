@@ -1,4 +1,4 @@
-window = {
+﻿window = {
     name = "mrfp_settings_window"
     layer = top
     using = Window_Size_MainTab
@@ -36,7 +36,20 @@ window = {
 
         hbox = {
             layoutpolicy_horizontal = expanding
-            widget = { text_single = { text = "a" default_format = "#T" } }
+            widget = {
+				hbox = {
+					spacing = 5 
+					text_single = { text = "RELEASE_DEMAND_CONVERSION" }
+					button_standard = { 
+						name = "mrfp_toggle_release_demand_conversion_button"
+						# text = "[GetVariableSystem.GetBool('mrfp_release_demand_conversion')? 'mrfp_set_threshold.0001.a' : 'mrfp_set_threshold.0001.a']"
+						text = "mrfp.0001.enabled"
+						text = "test"
+						# default_format = "#T;B"
+						# on_clicked = "ToggleVariable('mrfp_release_demand_conversion')"
+					}
+				}
+			 }
             widget = { text_single = { text = "d" default_format = "#T" } }
             widget = { text_single = { text = "g" default_format = "#T" } }
         }
