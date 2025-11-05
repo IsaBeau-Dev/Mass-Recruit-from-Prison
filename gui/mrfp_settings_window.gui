@@ -123,8 +123,6 @@
 												text = "Recruitment Settings:"
 												default_format = "#T"
 												align = left
-												position = { 50 50 }
-												max_width = 700
 											}
 
 										}
