@@ -16,9 +16,9 @@ mrfp_settings_prowess_limit_add_1 = {
   effect = {
     mrfp_start_story_if_not_exist = yes
     root.var:mrfp_story = {
-      change_variable = {
+      set_variable = {
         name = mrfp_prowess_threshold
-        add = 1
+        value = mrfp_prowess_threshold_check_value
       }
     }
   }

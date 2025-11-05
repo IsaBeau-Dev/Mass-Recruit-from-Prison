@@ -66,3 +66,13 @@ mrfp_amout_of_prisoners = {
       add = 1
     }
 }
+
+## settings window stuff
+mrfp_prowess_threshold_check_value = {
+    value = var:mrfp_prowess_threshold
+    add = 1
+
+    min = 0
+    max = 100
+
+}
