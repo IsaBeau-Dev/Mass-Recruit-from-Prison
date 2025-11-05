@@ -50,7 +50,7 @@
 				### Recruit ###
 				scrollbox = {
 					name = "mrfp_settings_recruit_scrollarea"
-					widgetid = "mrfp_settings_recruit_scrollarea_id"  #lesson_china_decisions_open uses this
+					widgetid = "mrfp_settings_recruit_scrollarea_id"
 					visible = "[PdxGuiTabs.IsTabSet( 'mrfp_settings_recruit_tab' )]"
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
@@ -302,7 +302,7 @@
 				### Ransom ###
 				scrollbox = {
 					name = "mrfp_settings_ransom_scrollarea"
-					widgetid = "mrfp_settings_ransom_scrollarea_id"  #lesson_china_decisions_open uses this
+					widgetid = "mrfp_settings_ransom_scrollarea_id"
 					visible = "[PdxGuiTabs.IsTabSet( 'mrfp_settings_ransom_tab' )]"
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
