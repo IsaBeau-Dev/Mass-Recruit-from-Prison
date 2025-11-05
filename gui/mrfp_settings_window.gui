@@ -38,7 +38,7 @@
 
 					blockoverride "header_text"
 					{
-						text = "Settings for test"
+						text = "Settings for MRFP"
 					}
 
 					blockoverride "button_close"
@@ -89,10 +89,79 @@
 
 							layoutpolicy_horizontal = expanding
 
-							# datamodel = "[DecisionsView.GetDecisionGroupItems]"
-							# item = {
-							# 	vbox_decision_group_foldout = {}
-							# }
+							item = {
+								vbox {
+									spacing = 4
+
+									layoutpolicy_horizontal = expanding
+
+									oncreate = "[BindFoldOutContext]"
+									oncreate = "[PdxGuiFoldOut.Unfold]"
+
+									button_expandable_toggle_field = {
+										blockoverride "text"
+										{
+											text = "test group heading"
+										}
+									}
+
+									vbox = {
+										visible = "[PdxGuiFoldOut.IsUnfolded]"
+
+										layoutpolicy_horizontal = expanding
+
+										fixedgridbox = {
+											name = "mrfp_settings_window_decisions_fixedgridbox"
+
+											layoutpolicy_horizontal = expanding
+											layoutpolicy_vertical = expanding
+
+											addcolumn = 527
+											# addrow = "[Select_float( DecisionGroupType.HasTag('extra_big_button'), '(float)70.0', Select_float( DecisionGroupType.HasTag('big_button'), '(float)60.0', '(float)50.0' ))]"
+											addrow = 70
+
+											item = {
+												vbox = {
+													layoutpolicy_horizontal = expanding
+
+													button_normal = {
+														text = "mrfp_set_threshold.0001.b"
+														default_format = "#T;S"
+														align = left
+														# max_width = 700
+														autoresize = yes
+													}
+													# button_decision_entry_cached = {
+
+													# 	layoutpolicy_horizontal = expanding
+
+													# 	# blockoverride "button_size" {
+													# 	# 	minimumsize = "[Select_CVector2f( DecisionGroupType.HasTag('extra_big_button'), '(CVector2f)527,65', Select_CVector2f( DecisionGroupType.HasTag('big_button'), '(CVector2f)527,55', '(CVector2f)527,45' ) )]"
+													# 	# }
+
+													# 	# blockoverride "size_illustration" {
+													# 	# 	minimumsize = "[Select_CVector2f( DecisionGroupType.HasTag('extra_big_button'), '(CVector2f)527,65', Select_CVector2f( DecisionGroupType.HasTag('big_button'), '(CVector2f)527,55', '(CVector2f)527,45' ) )]"
+													# 	# }
+
+													# 	# blockoverride "decision_texture_icon" {
+													# 	# 	texture = "[DecisionsViewItem.GetDecisionPicture]"
+													# 	# }
+
+													# 	# blockoverride "decision_texture_highlight" {
+													# 	# 	texture = "[DecisionsViewItem.GetDecisionPicture]"
+													# 	# }
+
+													# 	# onclick = "[DecisionsViewItem.OnSelect]"
+													# 	# onclick = "[PdxGuiTriggerAllAnimations('decisions_detail_refresh')]"
+													# 	# down = "[DecisionsViewItem.IsSelected]"
+													# }
+													expand = {}
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 					blockoverride "scrollbox_expand" {
@@ -102,7 +171,6 @@
 			}
 		}
 	}
-
 
 
 
