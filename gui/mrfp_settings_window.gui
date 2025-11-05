@@ -74,6 +74,39 @@
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = expanding
 
+						##Prowess
+						vbox = {
+							name = "mrfp_settings_window_prowess"
+							spacing = 2
+
+							layoutpolicy_horizontal = expanding
+
+							oncreate = "[BindFoldOutContext]"
+
+							button_expandable_toggle_field = {
+								blockoverride "text"
+								{
+									text = "mrfp_settings_prowess_group_heading"
+								}
+							}
+
+							vbox = {
+								visible = "[PdxGuiFoldOut.IsUnfolded]"
+
+								layoutpolicy_horizontal = expanding
+
+								vbox = {
+									spacing = 4
+
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+
+									
+								}
+							}
+						}
+
+						#Send options
 						vbox = {
 							name = "mrfp_settings_window_send_options"
 							spacing = 2
@@ -289,37 +322,6 @@
 											onclick = "[GetScriptedGui('mrfp_settings_send_option_toggle_mrfp_RELEASE_CASTRATE').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 										}
 									}
-								}
-							}
-						}
-
-						vbox = {
-							name = "mrfp_settings_window_prowess"
-							spacing = 2
-
-							layoutpolicy_horizontal = expanding
-
-							oncreate = "[BindFoldOutContext]"
-
-							button_expandable_toggle_field = {
-								blockoverride "text"
-								{
-									text = "mrfp_settings_prowess_group_heading"
-								}
-							}
-
-							vbox = {
-								visible = "[PdxGuiFoldOut.IsUnfolded]"
-
-								layoutpolicy_horizontal = expanding
-
-								vbox = {
-									spacing = 4
-
-									layoutpolicy_horizontal = expanding
-									layoutpolicy_vertical = expanding
-
-									
 								}
 							}
 						}
