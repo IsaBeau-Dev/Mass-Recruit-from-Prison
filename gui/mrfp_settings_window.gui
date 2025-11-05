@@ -46,19 +46,19 @@
 						onclick = "[GetVariableSystem.Toggle('mrfp_show_settings_window')]"
 					}
 				}
-				hbox_tab_buttons = {
-					name = "test"
+				# hbox_tab_buttons = {
+				# 	name = "test"
 
-					blockoverride "tab_name"
-					{
-						text = "aaaaa"
-					}
-				}
+				# 	blockoverride "tab_name"
+				# 	{
+				# 		text = "aaaaa"
+				# 	}
+				# }
 
-				### DECISIONS ###
+				### Recruit ###
 				scrollbox = {
 					name = "mrfp_settings_window_scrollarea"
-					# widgetid = "decisions_panel_decisions_scrollarea"  #lesson_china_decisions_open uses this
+					# widgetid = "mrfp_tab_recruit"  #lesson_china_decisions_open uses this
 					visible = yes
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
@@ -90,77 +90,86 @@
 							layoutpolicy_horizontal = expanding
 
 							item = {
-								vbox {
-									spacing = 4
-
-									layoutpolicy_horizontal = expanding
-
-									oncreate = "[BindFoldOutContext]"
-									oncreate = "[PdxGuiFoldOut.Unfold]"
-
-									button_expandable_toggle_field = {
-										blockoverride "text"
-										{
-											text = "test group heading"
-										}
-									}
-
-									vbox = {
-										visible = "[PdxGuiFoldOut.IsUnfolded]"
-
-										layoutpolicy_horizontal = expanding
-
-										fixedgridbox = {
-											name = "mrfp_settings_window_decisions_fixedgridbox"
-
-											layoutpolicy_horizontal = expanding
-											layoutpolicy_vertical = expanding
-
-											addcolumn = 527
-											# addrow = "[Select_float( DecisionGroupType.HasTag('extra_big_button'), '(float)70.0', Select_float( DecisionGroupType.HasTag('big_button'), '(float)60.0', '(float)50.0' ))]"
-											addrow = 70
-
-											item = {
-												vbox = {
-													layoutpolicy_horizontal = expanding
-
-													button_normal = {
-														text = "mrfp_set_threshold.0001.b"
-														default_format = "#T;S"
-														align = left
-														# max_width = 700
-														autoresize = yes
-													}
-													# button_decision_entry_cached = {
-
-													# 	layoutpolicy_horizontal = expanding
-
-													# 	# blockoverride "button_size" {
-													# 	# 	minimumsize = "[Select_CVector2f( DecisionGroupType.HasTag('extra_big_button'), '(CVector2f)527,65', Select_CVector2f( DecisionGroupType.HasTag('big_button'), '(CVector2f)527,55', '(CVector2f)527,45' ) )]"
-													# 	# }
-
-													# 	# blockoverride "size_illustration" {
-													# 	# 	minimumsize = "[Select_CVector2f( DecisionGroupType.HasTag('extra_big_button'), '(CVector2f)527,65', Select_CVector2f( DecisionGroupType.HasTag('big_button'), '(CVector2f)527,55', '(CVector2f)527,45' ) )]"
-													# 	# }
-
-													# 	# blockoverride "decision_texture_icon" {
-													# 	# 	texture = "[DecisionsViewItem.GetDecisionPicture]"
-													# 	# }
-
-													# 	# blockoverride "decision_texture_highlight" {
-													# 	# 	texture = "[DecisionsViewItem.GetDecisionPicture]"
-													# 	# }
-
-													# 	# onclick = "[DecisionsViewItem.OnSelect]"
-													# 	# onclick = "[PdxGuiTriggerAllAnimations('decisions_detail_refresh')]"
-													# 	# down = "[DecisionsViewItem.IsSelected]"
-													# }
-													expand = {}
-												}
-											}
-										}
-									}
+								button_expandable_toggle_field = {
+									text = "mrfp_set_threshold.0001.settings.nh"
+									default_format = "#T;S"
+									align = left
+									position = { 50 80 }
+									# max_width = 700
+									autoresize = yes
 								}
+
+								# vbox = {
+								# 	spacing = 4
+
+								# 	layoutpolicy_horizontal = expanding
+
+								# 	oncreate = "[BindFoldOutContext]"
+								# 	oncreate = "[PdxGuiFoldOut.Unfold]"
+
+								# 	button_expandable_toggle_field = {
+								# 		blockoverride "text"
+								# 		{
+								# 			text = "test group heading"
+								# 		}
+								# 	}
+
+								# 	vbox = {
+								# 		visible = "[PdxGuiFoldOut.IsUnfolded]"
+
+								# 		layoutpolicy_horizontal = expanding
+
+								# 		fixedgridbox = {
+								# 			name = "mrfp_settings_window_decisions_fixedgridbox"
+
+								# 			layoutpolicy_horizontal = expanding
+								# 			layoutpolicy_vertical = expanding
+
+								# 			addcolumn = 527
+								# 			# addrow = "[Select_float( DecisionGroupType.HasTag('extra_big_button'), '(float)70.0', Select_float( DecisionGroupType.HasTag('big_button'), '(float)60.0', '(float)50.0' ))]"
+								# 			addrow = 70
+
+								# 			item = {
+								# 				vbox = {
+								# 					layoutpolicy_horizontal = expanding
+
+								# 					button_normal = {
+								# 						text = "mrfp_set_threshold.0001.b"
+								# 						default_format = "#T;S"
+								# 						align = left
+								# 						# max_width = 700
+								# 						autoresize = yes
+								# 					}
+								# 					# button_decision_entry_cached = {
+
+								# 					# 	layoutpolicy_horizontal = expanding
+
+								# 					# 	# blockoverride "button_size" {
+								# 					# 	# 	minimumsize = "[Select_CVector2f( DecisionGroupType.HasTag('extra_big_button'), '(CVector2f)527,65', Select_CVector2f( DecisionGroupType.HasTag('big_button'), '(CVector2f)527,55', '(CVector2f)527,45' ) )]"
+								# 					# 	# }
+
+								# 					# 	# blockoverride "size_illustration" {
+								# 					# 	# 	minimumsize = "[Select_CVector2f( DecisionGroupType.HasTag('extra_big_button'), '(CVector2f)527,65', Select_CVector2f( DecisionGroupType.HasTag('big_button'), '(CVector2f)527,55', '(CVector2f)527,45' ) )]"
+								# 					# 	# }
+
+								# 					# 	# blockoverride "decision_texture_icon" {
+								# 					# 	# 	texture = "[DecisionsViewItem.GetDecisionPicture]"
+								# 					# 	# }
+
+								# 					# 	# blockoverride "decision_texture_highlight" {
+								# 					# 	# 	texture = "[DecisionsViewItem.GetDecisionPicture]"
+								# 					# 	# }
+
+								# 					# 	# onclick = "[DecisionsViewItem.OnSelect]"
+								# 					# 	# onclick = "[PdxGuiTriggerAllAnimations('decisions_detail_refresh')]"
+								# 					# 	# down = "[DecisionsViewItem.IsSelected]"
+								# 					# }
+								# 					expand = {}
+								# 				}
+								# 			}
+								# 		}
+								# 	}
+								# }
 							}
 						}
 					}
