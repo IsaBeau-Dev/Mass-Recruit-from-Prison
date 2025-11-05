@@ -57,8 +57,7 @@
 					layoutpolicy_vertical = expanding
 
 					background = {
-						#TODO change texture to prison
-						texture = "gfx/interface/skinned/illustrations/decisions.dds"
+						texture = "gfx/interface/illustrations/decisions/decision_prison.dds"
 						fittype = end
 						alpha = 0.4
 
@@ -309,6 +308,19 @@
 					layoutpolicy_horizontal = expanding
 					layoutpolicy_vertical = expanding
 					
+					background = {
+						texture = "gfx/interface/illustrations/decisions/decision_prison.dds"
+						fittype = end
+						alpha = 0.4
+
+						using = Mask_Rough_Edges
+
+						modify_texture = {
+							texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+							blend_mode = alphamultiply
+							mirror = vertical
+						}
+					}
 
 					blockoverride "scrollbox_content"
 					{
