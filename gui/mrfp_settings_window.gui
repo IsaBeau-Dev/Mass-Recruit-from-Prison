@@ -40,7 +40,8 @@
 
 					blockoverride "header_text"
 					{
-						text = "Settings for MRFP"
+						#TODO proper localization key
+						raw_text = "Settings for MRFP"
 					}
 
 					blockoverride "button_close"
