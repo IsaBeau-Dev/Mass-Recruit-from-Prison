@@ -331,10 +331,10 @@
 
 							# TODO add ransom settings here
 
-
-
-							expand = {}
 						}
+					}
+					blockoverride "scrollbox_expand" {
+						expand = {}
 					}
 				}
 			}
