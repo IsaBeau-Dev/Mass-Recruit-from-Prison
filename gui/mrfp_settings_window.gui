@@ -437,7 +437,7 @@
 								text = "Tip: Only people will be ransomed, that can be ransomed for the maximum amout of gold possible. Otherwise they will remain in your prison"
 								default_format = "#low"
 								multiline = yes
-								size = { 40 33 }0
+								size = { 40 33 }
 								visible =  "[NOT(IsNomad( GetPlayer ))]"
 							}
 						}
