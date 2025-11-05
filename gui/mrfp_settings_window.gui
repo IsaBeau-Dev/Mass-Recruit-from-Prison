@@ -84,7 +84,7 @@
 						layoutpolicy_vertical = expanding
 
 						vbox = {
-							name = "asdasd"
+							name = "mrfp_settings_window_main_vbox"
 							spacing = 2
 
 							layoutpolicy_horizontal = expanding
@@ -94,17 +94,30 @@
 									spacing = 4
 									layoutpolicy_horizontal = expanding
 
-									oncreate = "[BindFoldOutContext]"
-									oncreate = "[PdxGuiFoldOut.Unfold]"
+									# oncreate = "[BindFoldOutContext]"
+									# oncreate = "[PdxGuiFoldOut.Unfold]"
 
-									button_expandable_toggle_field = {
-										text = "mrfp_set_threshold.0001.settings.nh"
-										default_format = "#T;S"
-										align = left
-										position = { 50 80 }
-										# max_width = 700
-										autoresize = yes
+									fixedgridbox = {
+										name = "decisions_in_group"
+										datamodel = "[DecisionGroupItem.GetDecisions]"
+
+										layoutpolicy_horizontal = expanding
+										layoutpolicy_vertical = expanding
+
+										addcolumn = 527
+										# addrow = "[Select_float( DecisionGroupType.HasTag('extra_big_button'), '(float)70.0', Select_float( DecisionGroupType.HasTag('big_button'), '(float)60.0', '(float)50.0' ))]"
+										addrow = 70
+										
+										button_expandable_toggle_field = {
+											text = "mrfp_set_threshold.0001.settings.nh"
+											default_format = "#T;S"
+											align = left
+											position = { 50 80 }
+											# max_width = 700
+											autoresize = yes
+										}
 									}
+
 
 								}
 							}
