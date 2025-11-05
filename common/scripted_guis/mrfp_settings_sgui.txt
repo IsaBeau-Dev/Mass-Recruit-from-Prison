@@ -1,10 +1,99 @@
-﻿mrfp_settings_send_option_toggle = {
+﻿mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION = {
   scope = character
   effect = {
     root.var:mrfp_story = {
       save_scope_as = the_story
     }
-    mrfp_toggle_variable = { VARIABLE_NAME = scope:VarName }
-    
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_DEMAND_CONVERSION }
+  }
+}
+
+mrfp_settings_send_option_toggle_mrfp_RELEASE_RECRUIT = {
+  scope = character
+  effect = {
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_RECRUIT }
+  }
+}
+
+mrfp_settings_send_option_toggle_mrfp_RELEASE_RENOUNCE_CLAIMS = {
+  scope = character
+  effect = {
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_RENOUNCE_CLAIMS }
+  }
+}
+
+mrfp_settings_send_option_toggle_mrfp_RELEASE_BANISH = {
+  scope = character
+  effect = {
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_BANISH }
+  }
+}
+
+mrfp_settings_send_option_toggle_mrfp_RELEASE_GAIN_HOOK = {
+  scope = character
+  effect = {
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_GAIN_HOOK }
+  }
+}
+
+mrfp_settings_send_option_toggle_mrfp_RELEASE_TAKE_VOWS = {
+  scope = character
+  effect = {
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_TAKE_VOWS }
+  }
+}
+
+mrfp_settings_send_option_toggle_mrfp_RELEASE_AS_EXECUTIONER = {
+  scope = character
+  effect = {
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_AS_EXECUTIONER }
+  }
+}
+
+mrfp_settings_send_option_toggle_mrfp_RELEASE_DISFIGURE = {
+  scope = character
+  effect = {
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_DISFIGURE }
+  }
+}
+
+mrfp_settings_send_option_toggle_mrfp_RELEASE_BLIND = {
+  scope = character
+  effect = {
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_BLIND }
+  }
+}
+
+mrfp_settings_send_option_toggle_mrfp_RELEASE_CASTRATE = {
+  scope = character
+  effect = {
+    root.var:mrfp_story = {
+      save_scope_as = the_story
+    }
+    mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_CASTRATE }
   }
 }
