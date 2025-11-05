@@ -4,18 +4,48 @@ window = {
     using = Window_Size_MainTab
     using = Window_Background_Sidebar
     visible = "[GetVariableSystem.Exists('mrfp_show_settings_window')]"
-	size = { 800 600 }
+    size = { 800 600 }
 
+    text_single = {
+        text = "SETTINGS"
+        default_format = "#T;L"
+        align = center
+        position = { 200 20 }
+    }
 
-	
+    text_single = {
+        text = "Recruitment Settings:"
+        default_format = "#T"
+        align = left
+        position = { 50 80 }
+        max_width = 700
+    }
 
-	text_single = {
-		text = "SETTINGS"
-		#default_format = "#P" macht es grün
-		#default_format = "#L" unterstrichen
-		#default_format = "#N" macht es rot
-		default_format = "#T;L"
-		align = center
-		position = { 200 20 }
-	}
+    vbox = {
+        position = { 50 120 }
+        layoutpolicy_vertical = fixed
+        layoutpolicy_horizontal = fixed
+        maximumsize = { 700 360 }
+
+        hbox = {
+            layoutpolicy_horizontal = expanding
+            widget = { text_single = { text = "a" default_format = "#T" } }
+            widget = { text_single = { text = "d" default_format = "#T" } }
+            widget = { text_single = { text = "g" default_format = "#T" } }
+        }
+
+        hbox = {
+            layoutpolicy_horizontal = expanding
+            widget = { text_single = { text = "b" default_format = "#T" } }
+            widget = { text_single = { text = "e" default_format = "#T" } }
+            widget = { text_single = { text = "h" default_format = "#T" } }
+        }
+
+        hbox = {
+            layoutpolicy_horizontal = expanding
+            widget = { text_single = { text = "c" default_format = "#T" } }
+            widget = { text_single = { text = "f" default_format = "#T" } }
+            widget = { text_single = { text = "i" default_format = "#T" } }
+        }
+    }
 }
