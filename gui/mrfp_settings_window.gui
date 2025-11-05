@@ -30,8 +30,7 @@
 
 					blockoverride "header_text"
 					{
-						#TODO proper localization key
-						raw_text = "Settings for MRFP"
+						text = "mrfp_settings_window_header"
 					}
 
 					blockoverride "button_close"
