@@ -20,59 +20,66 @@
         position = { 50 50 }
         max_width = 700
     }
-	text_single = {
-		text = "mrfp_set_threshold.0001.settings.nh"
-		default_format = "#T;S"
-		align = left
-		position = { 50 80 }
-		max_width = 700
-	}
-
+	# button_expandable_toggle_field = {
+	# 	text = "mrfp_set_threshold.0001.settings.nh"
+	# 	default_format = "#T;S"
+	# 	align = left
+	# 	position = { 50 80 }
+	# 	# max_width = 700
+	# 	autoresize = yes
+	# }
 	button_expandable_toggle_field = {
-		name = "mrfp_close_settings_window_button"
-		text = "EXIT"
-		position = { 650 520 }
-		# on_clicked = "SetVariable('mrfp_show_settings_window', false)"
+		blockoverride "text"
+		{
+			text = "mrfp_set_threshold.0001.settings.nh"
+		}
 	}
 
-    vbox = {
-        position = { 50 120 }
-        layoutpolicy_vertical = fixed
-        layoutpolicy_horizontal = fixed
-        maximumsize = { 700 160 }
+	# button_expandable_toggle_field = {
+	# 	name = "mrfp_close_settings_window_button"
+	# 	text = "EXIT"
+	# 	position = { 650 520 }
+	# 	# on_clicked = "SetVariable('mrfp_show_settings_window', false)"
+	# }
 
-        hbox = {
-            layoutpolicy_horizontal = expanding
-            widget = {
-				hbox = {
-					spacing = 5 
-					text_single = { text = "RELEASE_DEMAND_CONVERSION" }
-					button_standard = { 
-						name = "mrfp_toggle_release_demand_conversion_button"
-						# text = "[GetVariableSystem.GetBool('mrfp_release_demand_conversion')? 'mrfp_set_threshold.0001.a' : 'mrfp_set_threshold.0001.a']"
-						text = "mrfp.0001.enabled"
-						text = "test"
-						# default_format = "#T;B"
-						# on_clicked = "ToggleVariable('mrfp_release_demand_conversion')"
-					}
-				}
-			 }
-            widget = { text_single = { text = "d" default_format = "#T" } }
-            widget = { text_single = { text = "g" default_format = "#T" } }
-        }
+    # vbox = {
+    #     position = { 50 120 }
+    #     layoutpolicy_vertical = fixed
+    #     layoutpolicy_horizontal = fixed
+    #     maximumsize = { 700 160 }
 
-        hbox = {
-            layoutpolicy_horizontal = expanding
-            widget = { text_single = { text = "b" default_format = "#T" } }
-            widget = { text_single = { text = "e" default_format = "#T" } }
-            widget = { text_single = { text = "h" default_format = "#T" } }
-        }
+    #     hbox = {
+    #         layoutpolicy_horizontal = expanding
+    #         widget = {
+	# 			hbox = {
+	# 				spacing = 5 
+	# 				text_single = { text = "RELEASE_DEMAND_CONVERSION" }
+	# 				button_standard = { 
+	# 					name = "mrfp_toggle_release_demand_conversion_button"
+	# 					# text = "[GetVariableSystem.GetBool('mrfp_release_demand_conversion')? 'mrfp_set_threshold.0001.a' : 'mrfp_set_threshold.0001.a']"
+	# 					text = "mrfp.0001.enabled"
+	# 					text = "test"
+	# 					# default_format = "#T;B"
+	# 					# on_clicked = "ToggleVariable('mrfp_release_demand_conversion')"
+	# 				}
+	# 			}
+	# 		 }
+    #         widget = { text_single = { text = "d" default_format = "#T" } }
+    #         widget = { text_single = { text = "g" default_format = "#T" } }
+    #     }
 
-        hbox = {
-            layoutpolicy_horizontal = expanding
-            widget = { text_single = { text = "c" default_format = "#T" } }
-            widget = { text_single = { text = "f" default_format = "#T" } }
-            widget = { text_single = { text = "i" default_format = "#T" } }
-        }
-    }
+    #     hbox = {
+    #         layoutpolicy_horizontal = expanding
+    #         widget = { text_single = { text = "b" default_format = "#T" } }
+    #         widget = { text_single = { text = "e" default_format = "#T" } }
+    #         widget = { text_single = { text = "h" default_format = "#T" } }
+    #     }
+
+    #     hbox = {
+    #         layoutpolicy_horizontal = expanding
+    #         widget = { text_single = { text = "c" default_format = "#T" } }
+    #         widget = { text_single = { text = "f" default_format = "#T" } }
+    #         widget = { text_single = { text = "i" default_format = "#T" } }
+    #     }
+    # }
 }
