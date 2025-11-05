@@ -6,7 +6,7 @@
     }
     text = { # possibility 2
 		trigger = {  
-			root.var:mrfp_RELEASE_DEMAND_CONVERSION = no
+			root.var:mrfp_story.var:mrfp_RELEASE_DEMAND_CONVERSION = no
 		}
 		localization_key = mrfp.0001.disabled
 	}

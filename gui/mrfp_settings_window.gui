@@ -128,6 +128,7 @@
 												}
 												text_single = {
 													text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'MRFP_ENABLED_OR_DISABLED_BOOL' )]"
+													# text= "#P Enabled#!"
 													default_format = "#T"
 													align = left
 												}
