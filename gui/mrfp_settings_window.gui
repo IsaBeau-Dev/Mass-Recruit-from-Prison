@@ -89,6 +89,8 @@
 
 							layoutpolicy_horizontal = expanding
 
+							oncreate = "[BindFoldOutContext]"
+
 							# button_expandable_toggle_field = {
 							# 	text = "mrfp_set_threshold.0001.settings.nh"
 							# 	default_format = "#T;S"
@@ -97,6 +99,7 @@
 							# 	# max_width = 700
 							# 	autoresize = yes
 							# }
+
 							button_expandable_toggle_field = {
 								blockoverride "text"
 								{
