@@ -48,12 +48,6 @@
 					}
 				}
 
-				# hbox = {
-				# 	layoutpolicy_horizontal = expanding
-				# 	button_standard = { layoutpolicy_horizontal = expanding }
-				# 	button_standard = { layoutpolicy_horizontal = expanding }
-				# }
-
 				### Recruit ###
 				scrollbox = {
 					name = "mrfp_settings_recruit_scrollarea"
