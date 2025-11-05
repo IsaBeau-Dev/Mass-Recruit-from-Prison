@@ -10,7 +10,8 @@
 	oncreate = "[BindTabsContext]"
 	oncreate = "[PdxGuiTabs.ListenFor( 'mrfp_settings_window_tab_buttons' )]"
 	oncreate = "[PdxGuiTabs.AddTab( 'mrfp_settings_recruit_tab' )]"
-	oncreate = "[PdxGuiTabs.AddTab( 'mrfp_settings_ransom_tab' )]"
+	oncreate = "[PdxGuiTabs.AddTab( 'mrfp_settings_ransom_tab' )]"	
+	oncreate = "[GetScriptedGui('mrfp_settings_start_story_if_not_exists').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 
 	# copy over stuff from decisions window
 	margin_widget = {
@@ -332,7 +333,7 @@
 								text = "You Can only ransom for [gold] [gold_i] !"
 								default_format = "#T"
 							}
-							
+
 							# TODO add localization
 							text_single = { 
 								text = "Tip: Only people will be ransomed, that can be ransomed for the maximum amout of gold possible. Otherwise they will remain in your prison"

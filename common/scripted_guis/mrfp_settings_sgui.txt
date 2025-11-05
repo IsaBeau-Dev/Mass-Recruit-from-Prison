@@ -106,3 +106,10 @@ mrfp_settings_send_option_toggle_mrfp_RELEASE_CASTRATE = {
     mrfp_toggle_variable = { VARIABLE_NAME = mrfp_RELEASE_CASTRATE }
   }
 }
+
+mrfp_settings_start_story_if_not_exists = {
+  scope = character
+  effect = {
+    mrfp_start_story_if_not_exist = yes
+  }
+}
