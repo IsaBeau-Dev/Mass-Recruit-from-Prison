@@ -101,6 +101,7 @@
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = expanding
 
+									#Enable/disable Limit
 									hbox = {
 										spacing = 20
 										hbox = {
@@ -117,6 +118,8 @@
 											}
 										}
 									}
+
+									#Set limit
 									hbox = {
 										spacing = 20
 										hbox = {
