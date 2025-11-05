@@ -10,6 +10,7 @@
 	oncreate = "[BindTabsContext]"
 	oncreate = "[PdxGuiTabs.ListenFor( 'mrfp_settings_window_tab_buttons' )]"
 	oncreate = "[PdxGuiTabs.AddTab( 'mrfp_settings_recruit_tab' )]"
+	oncreate = "[PdxGuiTabs.AddTab( 'great_projects' )]"
 
 	# copy over stuff from decisions window
 	margin_widget = {
@@ -299,50 +300,140 @@
 									}
 								}
 							}
-
-
-							# item = {
-							# 	vbox = {
-							# 		spacing = 4
-							# 		layoutpolicy_horizontal = expanding
-
-							# 		# oncreate = "[BindFoldOutContext]"
-							# 		# oncreate = "[PdxGuiFoldOut.Unfold]"
-
-							# 		fixedgridbox = {
-							# 			name = "decisions_in_group"
-							# 			datamodel = "[DecisionGroupItem.GetDecisions]"
-
-							# 			layoutpolicy_horizontal = expanding
-							# 			layoutpolicy_vertical = expanding
-
-							# 			addcolumn = 527
-							# 			# addrow = "[Select_float( DecisionGroupType.HasTag('extra_big_button'), '(float)70.0', Select_float( DecisionGroupType.HasTag('big_button'), '(float)60.0', '(float)50.0' ))]"
-							# 			addrow = 70
-
-							# 			item = {
-							# 				vbox = {
-							# 					layoutpolicy_horizontal = expanding
-							# 					button_expandable_toggle_field = {
-							# 						text = "mrfp_set_threshold.0001.settings.nh"
-							# 						default_format = "#T;S"
-							# 						align = left
-							# 						position = { 50 80 }
-							# 						# max_width = 700
-							# 						autoresize = yes
-							# 					}
-							# 				}
-
-							# 			}
-							# 		}
-
-
-							# 	}
-							# }
 						}
 					}
 					blockoverride "scrollbox_expand" {
 						expand = {}
+					}
+				}
+
+				### GREAT PROJECTS ###
+				scrollbox = {
+					name = "tab_projects"
+					widgetid = "tab_projects"
+					visible = "[PdxGuiTabs.IsTabSet( 'great_projects' )]"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					
+					state = {
+						name = _show
+						on_start = "[DecisionsView.SetGreatProjectsTabActive( '(bool)yes' )]"
+					}
+
+					state = {
+						name = _hide
+						on_start = "[DecisionsView.SetGreatProjectsTabActive( '(bool)no' )]"
+					}
+
+					blockoverride "scrollbox_content"
+					{
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+							spacing = 5
+
+							# EMPTY PROJECT LIST
+							vbox = {
+								visible = "[And( IsDataModelEmpty( DecisionsView.GetAvailableGreatProjectItems ), And( IsDataModelEmpty( DecisionsView.GetPlannedGreatProjectItems), IsDataModelEmpty( DecisionsView.GetOngoingGreatProjectItems) ) )]"
+								layoutpolicy_horizontal = expanding
+
+								text_single = {
+									layoutpolicy_horizontal = expanding
+									text = "DECISIONS_VIEW_EMPTY_PROJECTS"
+									align = hcenter|nobaseline
+								}
+							}
+
+							# PROJECTS YOU CAN FUND (planned, need contributions)
+							text_label_center = {
+								visible = "[Not( IsDataModelEmpty( DecisionsView.GetPlannedGreatProjectItems))]"
+								layoutpolicy_horizontal = expanding
+
+								text = "DECISIONS_VIEW_PLANNED_PROJECTS"
+							}
+
+							vbox = {
+								datamodel = "[DecisionsView.GetPlannedGreatProjectItems]"
+								visible = "[Not( IsDataModelEmpty( DecisionsView.GetPlannedGreatProjectItems))]"
+								layoutpolicy_horizontal = expanding
+								margin_bottom = 15
+								spacing = 10
+
+								item = {
+									button_project_item = {
+										datacontext = "[GreatProjectItem.GetProject]"
+										layoutpolicy_horizontal = expanding
+
+										blockoverride "can_contribute_text_visible"
+										{
+											visible = "[GreatProject.CanPlayerContributeToProject]" # "[DecisionView.CanPlayerContributeToProject( GreatProject.Self )]"
+										}
+									}
+								}
+							}
+
+							# PROJECTS YOU CAN FUND (ongoing)
+							text_label_center = {
+								visible = "[Not( IsDataModelEmpty( DecisionsView.GetOngoingGreatProjectItems))]"
+								layoutpolicy_horizontal = expanding
+
+								text = "DECISIONS_VIEW_ONGOING_PROJECTS"
+
+							}
+
+							vbox = {
+								datamodel = "[DecisionsView.GetOngoingGreatProjectItems]"
+								visible = "[Not( IsDataModelEmpty( DecisionsView.GetOngoingGreatProjectItems))]"
+								layoutpolicy_horizontal = expanding
+								margin_bottom = 15
+								spacing = 10
+
+								item = {
+									button_project_item = {
+										datacontext = "[GreatProjectItem.GetProject]"
+										layoutpolicy_horizontal = expanding
+
+										blockoverride "can_contribute_text_visible"
+										{
+											visible = "[GreatProject.CanPlayerContributeToProject]" # "[DecisionView.CanPlayerContributeToProject( GreatProject.Self )]"
+										}
+
+									}
+								}
+							}
+
+							# PROJECTS YOU CAN START
+							text_label_center = {
+								visible = "[Not( IsDataModelEmpty( DecisionsView.GetAvailableGreatProjectItems))]"
+								layoutpolicy_horizontal = expanding
+
+								text = "AVAILABLE_DECISIONS_VIEW_PROJECTS"
+							}
+
+							vbox = {
+								datamodel = "[DecisionsView.GetAvailableGreatProjectItems]"
+								visible = "[Not( IsDataModelEmpty( DecisionsView.GetAvailableGreatProjectItems))]"
+								layoutpolicy_horizontal = expanding
+								margin_bottom = 15
+								spacing = 10
+
+								item = {
+									button_available_project_item = {
+										layoutpolicy_horizontal = expanding
+
+										blockoverride "size_illustration"
+										{
+											position = { -2 0 }
+											size = { 250 48 }
+										}
+									}
+								}
+							}
+
+
+
+							expand = {}
+						}
 					}
 				}
 			}
