@@ -464,7 +464,7 @@
 								default_format = "#T"
 								size = { 300 50}
 								onclick = "[GetScriptedGui('mrfp_settings_toggle_ransom_herd_or_gold').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-								visible =  "[IsNomad( GetPlayer )]"
+								# visible =  "[IsNomad( GetPlayer )]"
 							}
 
 						}
@@ -503,6 +503,25 @@
 							# layoutpolicy_horizontal = expanding
 							# layoutpolicy_vertical = expanding
 							spacing = 25
+							
+							hbox = {
+								spacing = 5
+								# TODO add localization
+								text_single = { 
+									text = "Mass Ransoming every month for [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )] automatically is"
+									default_format = "#T"
+									multiline = yes
+									max_width = 600
+								}
+								text_single = { 
+									text = "[SelectLocalization( GetPlayer.MakeScope.Var('enable_auto_mrfp_ransom').IsSet, 'mrfp.0001.enabled', 'mrfp.0001.disabled')]"
+									default_format = "#T"
+								}				
+							}
+
+
+
+							#######
 
 							# hbox = {
 							# 	spacing = 5

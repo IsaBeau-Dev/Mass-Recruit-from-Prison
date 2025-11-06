@@ -232,6 +232,10 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_CASTRATE = {
     }
 }
 
+#Ransom
+
+
+
 ## Mass actions monthly
 mrfp_ransom_for_herd_custom_loc = {
     type = character
