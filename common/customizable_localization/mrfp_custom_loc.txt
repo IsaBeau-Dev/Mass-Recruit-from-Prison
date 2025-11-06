@@ -233,7 +233,6 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_CASTRATE = {
 }
 
 ## Mass actions monthly
-#prowess limit
 mrfp_ransom_for_herd_custom_loc = {
     type = character
 
@@ -246,6 +245,27 @@ mrfp_ransom_for_herd_custom_loc = {
     text = {
         trigger = {  
             root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_ransom_for_gold_custom_loc = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
         }
         localization_key = mrfp.0001.disabled
     }
