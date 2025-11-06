@@ -137,7 +137,8 @@ mrfp_settings_prowess_group_heading:0 "Aktuelle Kampffertigkeitseinstellungen:"
 mrfp_error:0 "#N FEHLER#!"
 #Ransom Settings
 mrfp_ransom_settings_only_gold_possible:0 "Eine Lösegeldforderung ist nur mit [gold] [gold_i] möglich !"
-mrfp_ransom_settings_tip_only_for_max_amout_released:0 "Tipp: Es wird nur von Personen Lösegeld eingefordert, die für die maximal mögliche Menge an Gold freigelassen werden können. Sonst bleiben sie solange in deinem [prison]"
+mrfp_ransom_settings_tip_only_for_max_amout_released:0 "Tipp: Es wird nur von Personen Lösegeld eingefordert, die für die maximal mögliche Menge an [gold] freigelassen werden können. Sonst bleiben sie solange in deinem [prison]!"
+mrfp_ransom_settings_tip_herd_is_prefered_not_only:0 "Tipp: Nur Personen, die tatsächlich für [herd] ausgelöst werden können, werden auch für [herd] [herd_i] ausgelöst. Bitte beachte, dass nur von Personen Lösegeld eingefordert wird, die für die maximal mögliche Menge an [gold] [gold_i] oder [herd] [herd_i] freigelassen werden können. Sonst bleiben sie solange in deinem [prison]"
 mrfp_ransom_settings_currently_ransoming_for:0 "Die Massenlösegeldforderung wird aktuell eingefordert für"
 mrfp_toggle_ransom_herd_or_gold:0 "Ändern"
 #Monthly actions
