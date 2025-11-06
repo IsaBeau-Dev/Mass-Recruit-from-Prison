@@ -274,3 +274,24 @@ mrfp_ransom_for_gold_custom_loc = {
         fallback = yes
     }
 }
+
+mrfp_ransom_herd_and_gold_custom_loc = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no
+        }
+        localization_key = "[gold] [gold_i]"
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
+        }
+        localization_key = "[herd] [herd_i]"
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
