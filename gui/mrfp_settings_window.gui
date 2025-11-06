@@ -619,52 +619,6 @@
 									onclick = "[GetScriptedGui('mrfp_settings_toggle_monthly_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 								}
 							}
-
-
-
-
-							#######
-
-							# hbox = {
-							# 	spacing = 5
-							# 	# TODO add localization
-							# 	text_single = { 
-							# 		text = "Mass Ransoming every month for [herd] [herd_i] automatically is"
-							# 		default_format = "#T"
-							# 		multiline = yes
-							# 		max_width = 600
-							# 		visible =  "[IsNomad( GetPlayer )]"
-							# 	}
-							# 	text_single = { 
-							# 		text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_for_herd_custom_loc' )]"
-							# 		default_format = "#T"
-							# 		visible =  "[IsNomad( GetPlayer )]"
-							# 	}				
-							# }
-							# hbox = {
-							# 	spacing = 5
-							# 	# TODO add localization
-							# 	text_single = { 
-							# 		text = "Mass Ransoming every month for [gold] [gold_i] automatically is"
-							# 		default_format = "#T"
-							# 		multiline = yes
-							# 		max_width = 600
-							# 	}
-							# 	text_single = { 
-							# 		text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_for_gold_custom_loc' )]"
-							# 		default_format = "#T"
-							# 	}				
-							# }
-
-
-							# # # TODO add localization
-							# text_single = { 
-							# 	text = "Tip: Only people will be ransomed, that can be ransomed for the maximum amout of gold possible. Otherwise they will remain in your prison"
-							# 	default_format = "#low"
-							# 	multiline = yes
-							# 	max_width = 400
-							# 	visible =  "[Not(IsNomad( GetPlayer ))]"
-							# }
 						}
 					}
 					blockoverride "scrollbox_expand" {
