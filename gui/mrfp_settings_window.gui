@@ -429,7 +429,7 @@
 							text_single = { 
 								text = "You Can only ransom for [gold] [gold_i] !"
 								default_format = "#T"
-								# visible =  "[IsNomad( GetPlayer )]"
+								visible =  "[Not(IsNomad( GetPlayer ))]"
 							}
 
 							# # TODO add localization
@@ -438,6 +438,7 @@
 								default_format = "#low"
 								multiline = yes
 								max_width = 400
+								visible =  "[Not(IsNomad( GetPlayer ))]"
 							}
 						}
 					}
