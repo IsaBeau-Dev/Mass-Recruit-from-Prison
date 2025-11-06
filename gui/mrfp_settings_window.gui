@@ -212,6 +212,7 @@
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DEMAND_CONVERSION' )]"
 											default_format = "#T"
+											min_width = 73
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_demand_conversion_button"
@@ -232,6 +233,7 @@
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RECRUIT' )]"
 											default_format = "#T"
+											min_width = 73
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_recruit_button"
@@ -252,6 +254,7 @@
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RENOUNCE_CLAIMS' )]"
 											default_format = "#T"
+											min_width = 73
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_renounce_claims_button"
@@ -272,6 +275,7 @@
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BANISH' )]"
 											default_format = "#T"
+											min_width = 73
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_banish_button"
@@ -292,6 +296,7 @@
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_GAIN_HOOK' )]"
 											default_format = "#T"
+											min_width = 73
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_gain_hook_button"
@@ -312,6 +317,7 @@
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_TAKE_VOWS' )]"
 											default_format = "#T"
+											min_width = 73
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_take_vows_button"
@@ -332,6 +338,7 @@
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_AS_EXECUTIONER' )]"
 											default_format = "#T"
+											min_width = 73
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_as_executioner_button"
@@ -352,6 +359,7 @@
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DISFIGURE' )]"
 											default_format = "#T"
+											min_width = 73
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_disfigure_button"
@@ -372,6 +380,7 @@
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BLIND' )]"
 											default_format = "#T"
+											min_width = 73
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_blind_button"
@@ -392,6 +401,7 @@
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_CASTRATE' )]"
 											default_format = "#T"
+											min_width = 73
 										}
 										button_standard = {
 											name = "mrfp_toggle_release_castrate_button"
