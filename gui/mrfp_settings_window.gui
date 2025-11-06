@@ -399,7 +399,7 @@
 					}
 				}
 
-				### Ransom ###
+				### Ransom Settings ###
 				scrollbox = {
 					name = "mrfp_settings_ransom_scrollarea"
 					widgetid = "mrfp_settings_ransom_scrollarea_id"
@@ -428,16 +428,15 @@
 							layoutpolicy_vertical = expanding
 							spacing = 5
 
-							# TODO add localization
 							text_single = { 
-								text = "You Can only ransom for [gold] [gold_i] !"
+								text = "mrfp_ransom_settings_only_gold_possible"
 								default_format = "#T"
 								visible =  "[Not(IsNomad( GetPlayer ))]"
 							}
 
 							# # TODO add localization
 							text_single = { 
-								text = "Tip: Only people will be ransomed, that can be ransomed for the maximum amout of gold possible. Otherwise they will remain in your prison"
+								text = "mrfp_ransom_settings_tip_only_for_max_amout_released"
 								default_format = "#low"
 								multiline = yes
 								max_width = 400
@@ -601,7 +600,7 @@
 
 								hbox = {
 									spacing = 5
-									
+
 									text_single = { 
 										text = "mrfp_ransom_for_herd_or_gold_dynamic_text"
 										default_format = "#T"
