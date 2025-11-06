@@ -514,9 +514,9 @@
 
 								hbox = {
 									spacing = 5
-									# TODO add localization
+
 									text_single = { 
-										text = "Mass Recruiting every month automatically is"
+										text = "mrfp_mass_recruit_monthly_text"
 										default_format = "#T"
 										multiline = yes
 										max_width = 600
@@ -529,8 +529,7 @@
 								button_expandable_toggle_field = {
 									blockoverride "text"
 									{
-										# TODO add localization
-										text = "With the following options:"
+										text = "mrfp_send_options_toggle_button_list"
 									}
 								}
 								vbox = {
@@ -602,9 +601,9 @@
 
 								hbox = {
 									spacing = 5
-									# TODO add localization
+									
 									text_single = { 
-										text = "Mass Ransoming every month for [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )] automatically is"
+										text = "mrfp_ransom_for_herd_or_gold_dynamic_text"
 										default_format = "#T"
 										multiline = yes
 										max_width = 600
