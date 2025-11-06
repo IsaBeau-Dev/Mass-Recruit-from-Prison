@@ -523,8 +523,46 @@
 							text_single = { 
 								text = "With the following options"
 								default_format = "#T"
-								multiline = yes
-								max_width = 600
+							}
+							text_single = { 
+								text = "RELEASE_DEMAND_CONVERSION"
+								default_format = "#T"
+							}
+							text_single = { 
+								text = "RELEASE_RECRUIT"
+								default_format = "#T"
+							}
+							text_single = { 
+								text = "RELEASE_RENOUNCE_CLAIMS"
+								default_format = "#T"
+							}
+							text_single = { 
+								text = "mrfp_RELEASE_BANISH"
+								default_format = "#T"
+							}
+							text_single = { 
+								text = "RELEASE_GAIN_HOOK"
+								default_format = "#T"
+							}
+							text_single = { 
+								text = "RELEASE_TAKE_VOWS"
+								default_format = "#T"
+							}
+							text_single = { 
+								text = "RELEASE_AS_EXECUTIONER"
+								default_format = "#T"
+							}
+							text_single = { 
+								text = "RELEASE_DISFIGURE"
+								default_format = "#T"
+							}
+							text_single = { 
+								text = "RELEASE_BLIND"
+								default_format = "#T"
+							}
+							text_single = { 
+								text = "RELEASE_CASTRATE"
+								default_format = "#T"
 							}
 							button_standard = {
 								name = "mrfp_toggle_monthly_recruit_button"
