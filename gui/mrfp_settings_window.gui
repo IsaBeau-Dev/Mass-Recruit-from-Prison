@@ -473,9 +473,9 @@
 					blockoverride "scrollbox_content"
 					{
 						vbox = {
-							layoutpolicy_horizontal = expanding
-							layoutpolicy_vertical = expanding
-							spacing = 5
+							# layoutpolicy_horizontal = expanding
+							# layoutpolicy_vertical = expanding
+							spacing = 25
 
 							hbox = {
 								spacing = 5
@@ -485,12 +485,12 @@
 									default_format = "#T"
 									multiline = yes
 									max_width = 600
-									visible =  "[Not(IsNomad( GetPlayer ))]"
+									visible =  "[IsNomad( GetPlayer )]"
 								}
 								text_single = { 
 									text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_for_herd_custom_loc' )]"
 									default_format = "#T"
-									visible =  "[Not(IsNomad( GetPlayer ))]"
+									visible =  "[IsNomad( GetPlayer )]"
 								}				
 							}
 							hbox = {
@@ -501,12 +501,10 @@
 									default_format = "#T"
 									multiline = yes
 									max_width = 600
-									# visible =  "[Not(IsNomad( GetPlayer ))]"
 								}
 								text_single = { 
 									text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_for_gold_custom_loc' )]"
 									default_format = "#T"
-									visible =  "[Not(IsNomad( GetPlayer ))]"
 								}				
 							}
 
