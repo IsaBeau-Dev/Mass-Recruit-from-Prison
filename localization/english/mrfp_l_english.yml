@@ -138,6 +138,7 @@ mrfp_error:0 "#N ERROR#!"
 mrfp_ransom_settings_only_gold_possible:0 "You Can only ransom for [gold] [gold_i] !"
 mrfp_ransom_settings_tip_only_for_max_amout_released:0 "Tip: Only people will be ransomed, that can be ransomed for the maximum amout of gold possible. Otherwise they will remain in your [prison]"
 mrfp_ransom_settings_currently_ransoming_for:0 "You are currently mass ransoming for"
+mrfp_toggle_ransom_herd_or_gold:0 "Toggle"
 #Monthly actions
 mrfp_mass_recruit_monthly_text:0 "Mass Recruiting every month automatically is"
 mrfp_send_options_toggle_button_list:0 "With the following options:"
