@@ -1,4 +1,9 @@
-﻿window = {
+﻿## just replace
+# default_format = "#high"
+# with default_format = "#T"
+#in the whole document to get title text back 
+
+window = {
     name = "mrfp_settings_window"
     layer = top
     using = Window_Size_MainTab
