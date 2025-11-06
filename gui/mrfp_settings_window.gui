@@ -523,7 +523,7 @@
 								text = "mrfp_toggle_monthly_ransom"
 								default_format = "#T"
 								size = { 300 50}
-								# onclick = "[GetScriptedGui('mrfp_settings_toggle_ransom_herd_or_gold').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								onclick = "[GetScriptedGui('mrfp_settings_toggle_monthly_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 							}
 
 
