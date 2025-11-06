@@ -427,6 +427,7 @@
 							layoutpolicy_horizontal = expanding
 							layoutpolicy_vertical = expanding
 							spacing = 5
+							ignoreinvisible = yes
 
 							text_single = { 
 								text = "mrfp_ransom_settings_only_gold_possible"
@@ -441,10 +442,10 @@
 								max_width = 400
 								visible =  "[Not(IsNomad( GetPlayer ))]"
 							}
-
+							
 							hbox = {
 								spacing = 5
-
+								
 								text_single = { 
 									text = "mrfp_ransom_settings_currently_ransoming_for"
 									default_format = "#T"
@@ -458,6 +459,7 @@
 									visible =  "[IsNomad( GetPlayer )]"
 								}				
 							}
+
 							button_standard = {
 								name = "mrfp_toggle_ransom_herd_or_gold_button"
 								text = "mrfp_toggle_ransom_herd_or_gold"
@@ -467,6 +469,21 @@
 								visible =  "[IsNomad( GetPlayer )]"
 							}
 
+							# text_single = { 
+							# 	text = "mrfp_ransom_settings_tip_only_for_max_amout_released"
+							# 	default_format = "#low"
+							# 	multiline = yes
+							# 	max_width = 400
+							# 	visible =  "[Not(IsNomad( GetPlayer ))]"
+							# }
+
+							text_single = { 
+								text = "mrfp_ransom_settings_tip_herd_is_prefered_not_only"
+								default_format = "#low"
+								multiline = yes
+								max_width = 400
+								visible =  "[IsNomad( GetPlayer )]"
+							}
 						}
 						
 					}
