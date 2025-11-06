@@ -441,11 +441,6 @@
 								max_width = 400
 								visible =  "[Not(IsNomad( GetPlayer ))]"
 							}
-						}
-						vbox = {
-							layoutpolicy_horizontal = expanding
-							layoutpolicy_vertical = expanding
-							spacing = 5
 
 							hbox = {
 								spacing = 5
