@@ -193,19 +193,6 @@ mrfp_settings_toggle_ransom_herd_or_gold = {
 }
 
 ### Monthly actions
-mrfp_settings_toggle_monthly_ransom = {
-  scope = character
-  effect = {
-    mrfp_start_story_if_not_exist = yes
-    if = {
-      limit = { has_character_flag = enable_auto_mrfp_ransom }
-      remove_character_flag = enable_auto_mrfp_ransom
-    }
-    else = {
-      add_character_flag = enable_auto_mrfp_ransom
-    }
-  }
-}
 mrfp_settings_toggle_monthly_recruit = {
   scope = character
   effect = {
@@ -219,7 +206,19 @@ mrfp_settings_toggle_monthly_recruit = {
     }
   }
 }
-
+mrfp_settings_toggle_monthly_ransom = {
+  scope = character
+  effect = {
+    mrfp_start_story_if_not_exist = yes
+    if = {
+      limit = { has_character_flag = enable_auto_mrfp_ransom }
+      remove_character_flag = enable_auto_mrfp_ransom
+    }
+    else = {
+      add_character_flag = enable_auto_mrfp_ransom
+    }
+  }
+}
 
 ####
 mrfp_settings_start_story_if_not_exists = {

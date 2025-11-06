@@ -503,7 +503,38 @@
 							# layoutpolicy_horizontal = expanding
 							# layoutpolicy_vertical = expanding
 							spacing = 25
-							
+
+							#recruit
+							hbox = {
+								spacing = 5
+								# TODO add localization
+								text_single = { 
+									text = "Mass Recruiting every month automatically is"
+									default_format = "#T"
+									multiline = yes
+									max_width = 600
+								}
+								text_single = {
+									text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_flag_custom_loc' )]"
+									default_format = "#T"
+								}				
+							}
+							# TODO add localization
+							text_single = { 
+								text = "With the following options"
+								default_format = "#T"
+								multiline = yes
+								max_width = 600
+							}
+							button_standard = {
+								name = "mrfp_toggle_monthly_recruit_button"
+								text = "mrfp_toggle_monthly_recruit"
+								default_format = "#T"
+								size = { 300 50}
+								onclick = "[GetScriptedGui('mrfp_settings_toggle_monthly_recruit').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							}
+
+							#ransom
 							hbox = {
 								spacing = 5
 								# TODO add localization
