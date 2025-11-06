@@ -83,6 +83,7 @@
 							layoutpolicy_horizontal = expanding
 
 							oncreate = "[BindFoldOutContext]"
+							oncreate = "[PdxGuiFoldOut.Unfold]"
 
 							button_expandable_toggle_field = {
 								blockoverride "text"
@@ -180,6 +181,7 @@
 							layoutpolicy_horizontal = expanding
 
 							oncreate = "[BindFoldOutContext]"
+							oncreate = "[PdxGuiFoldOut.Unfold]"
 
 							button_expandable_toggle_field = {
 								blockoverride "text"
