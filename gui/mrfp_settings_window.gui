@@ -469,16 +469,8 @@
 								visible =  "[IsNomad( GetPlayer )]"
 							}
 
-							# text_single = { 
-							# 	text = "mrfp_ransom_settings_tip_only_for_max_amout_released"
-							# 	default_format = "#low"
-							# 	multiline = yes
-							# 	max_width = 400
-							# 	visible =  "[Not(IsNomad( GetPlayer ))]"
-							# }
-
 							text_single = { 
-								text = "mrfp_ransom_settings_tip_herd_is_prefered_not_only"
+								text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_tip_custom_loc' )]"
 								default_format = "#low"
 								multiline = yes
 								max_width = 400

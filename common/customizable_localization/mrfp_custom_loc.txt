@@ -246,7 +246,7 @@ mrfp_ransom_tip_custom_loc = {
         trigger = {  
             root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
         }
-        localization_key = "[herd] [herd_i]"
+        localization_key = "mrfp_ransom_settings_tip_herd_is_prefered_not_only"
     }
     text = {
         localization_key = "mrfp_error"
