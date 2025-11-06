@@ -141,8 +141,8 @@ mrfp_ransom_settings_tip_herd_is_prefered_not_only:0 "Tip: Only people that actu
 mrfp_ransom_settings_currently_ransoming_for:0 "You are currently mass ransoming for"
 mrfp_toggle_ransom_herd_or_gold:0 "Toggle"
 #Monthly actions
-mrfp_mass_recruit_monthly_text:0 "Mass Recruiting every month automatically is"
+mrfp_mass_recruit_monthly_text:0 "Automatic monthly recruitment is"
 mrfp_send_options_toggle_button_list:0 "With the following options:"
-mrfp_ransom_for_herd_or_gold_dynamic_text:0 "Mass Ransoming every month for [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )] automatically is"
+mrfp_ransom_for_herd_or_gold_dynamic_text:0 "Automatic monthly ransoming for [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )] is"
 mrfp_toggle_monthly_recruit:0 "Start/Stop Mass Recruitment"
 mrfp_toggle_monthly_ransom:0 "Start/Stop Mass Ransoming"
