@@ -506,6 +506,8 @@
 							# layoutpolicy_vertical = expanding
 							spacing = 25
 
+							oncreate = "[BindFoldOutContext]"
+
 							#recruit
 							hbox = {
 								spacing = 5
@@ -521,60 +523,66 @@
 									default_format = "#T"
 								}				
 							}
-							# TODO add localization
-							text_single = { 
-								text = "With the following options:"
-								default_format = "#T"
+							button_expandable_toggle_field = {
+								blockoverride "text"
+								{
+									# TODO add localization
+									text = "With the following options:"
+								}
 							}
-							text_single = { 
-								text = "RELEASE_DEMAND_CONVERSION"
-								default_format = "#T"
-								visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_DEMAND_CONVERSION').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							}
-							text_single = { 
-								text = "RELEASE_RECRUIT"
-								default_format = "#T"
-								visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_RECRUIT').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							}
-							text_single = { 
-								text = "RELEASE_RENOUNCE_CLAIMS"
-								default_format = "#T"
-								visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_RENOUNCE_CLAIMS').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							}
-							text_single = { 
-								text = "RELEASE_BANISH"
-								default_format = "#T"
-								visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_BANISH').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							}
-							text_single = { 
-								text = "RELEASE_GAIN_HOOK"
-								default_format = "#T"
-								visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_GAIN_HOOK').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							}
-							text_single = { 
-								text = "RELEASE_TAKE_VOWS"
-								default_format = "#T"
-								visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_TAKE_VOWS').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							}
-							text_single = { 
-								text = "RELEASE_AS_EXECUTIONER"
-								default_format = "#T"
-								visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_AS_EXECUTIONER').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							}
-							text_single = { 
-								text = "RELEASE_DISFIGURE"
-								default_format = "#T"
-								visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_DISFIGURE').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							}
-							text_single = { 
-								text = "RELEASE_BLIND"
-								default_format = "#T"
-								visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_BLIND').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							}
-							text_single = { 
-								text = "RELEASE_CASTRATE"
-								default_format = "#T"
-								visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_CASTRATE').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							vbox = {
+								name = "mrfp_send_options_all_list"
+								visible = "[PdxGuiFoldOut.IsUnfolded]"
+								text_single = { 
+									text = "RELEASE_DEMAND_CONVERSION"
+									default_format = "#T"
+									visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_DEMAND_CONVERSION').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+								text_single = { 
+									text = "RELEASE_RECRUIT"
+									default_format = "#T"
+									visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_RECRUIT').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+								text_single = { 
+									text = "RELEASE_RENOUNCE_CLAIMS"
+									default_format = "#T"
+									visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_RENOUNCE_CLAIMS').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+								text_single = { 
+									text = "RELEASE_BANISH"
+									default_format = "#T"
+									visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_BANISH').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+								text_single = { 
+									text = "RELEASE_GAIN_HOOK"
+									default_format = "#T"
+									visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_GAIN_HOOK').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+								text_single = { 
+									text = "RELEASE_TAKE_VOWS"
+									default_format = "#T"
+									visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_TAKE_VOWS').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+								text_single = { 
+									text = "RELEASE_AS_EXECUTIONER"
+									default_format = "#T"
+									visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_AS_EXECUTIONER').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+								text_single = { 
+									text = "RELEASE_DISFIGURE"
+									default_format = "#T"
+									visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_DISFIGURE').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+								text_single = { 
+									text = "RELEASE_BLIND"
+									default_format = "#T"
+									visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_BLIND').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+								text_single = { 
+									text = "RELEASE_CASTRATE"
+									default_format = "#T"
+									visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_CASTRATE').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
 							}
 							button_standard = {
 								name = "mrfp_toggle_monthly_recruit_button"
