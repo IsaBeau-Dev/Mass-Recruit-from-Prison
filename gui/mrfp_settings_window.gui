@@ -544,13 +544,13 @@
 
 									text_single = { 
 										text = "mrfp_mass_recruit_monthly_text"
-										default_format = "#T"
+										default_format = "#high"
 										multiline = yes
 										max_width = 600
 									}
 									text_single = {
 										text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_recruit_flag_custom_loc' )]"
-										default_format = "#T"
+										default_format = "#high"
 									}				
 								}
 								button_expandable_toggle_field = {
@@ -616,7 +616,7 @@
 								button_standard = {
 									name = "mrfp_toggle_monthly_recruit_button"
 									text = "mrfp_toggle_monthly_recruit"
-									default_format = "#T"
+									default_format = "#high"
 									size = { 300 50}
 									onclick = "[GetScriptedGui('mrfp_settings_toggle_monthly_recruit').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 								}
@@ -631,19 +631,19 @@
 
 									text_single = { 
 										text = "mrfp_ransom_for_herd_or_gold_dynamic_text"
-										default_format = "#T"
+										default_format = "#high"
 										multiline = yes
 										max_width = 600
 									}
 									text_single = {
 										text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_flag_custom_loc' )]"
-										default_format = "#T"
+										default_format = "#high"
 									}				
 								}
 								button_standard = {
 									name = "mrfp_toggle_monthly_ransom_button"
 									text = "mrfp_toggle_monthly_ransom"
-									default_format = "#T"
+									default_format = "#high"
 									size = { 300 50}
 									onclick = "[GetScriptedGui('mrfp_settings_toggle_monthly_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 								}
