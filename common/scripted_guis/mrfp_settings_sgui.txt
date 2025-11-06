@@ -70,7 +70,7 @@ mrfp_settings_prowess_limit_subtract_10 = {
 
 
 # send options
-mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION = {
+mrfp_settings_send_option_mrfp_RELEASE_DEMAND_CONVERSION = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
@@ -81,7 +81,7 @@ mrfp_settings_send_option_toggle_mrfp_RELEASE_DEMAND_CONVERSION = {
   }
 }
 
-mrfp_settings_send_option_toggle_mrfp_RELEASE_RECRUIT = {
+mrfp_settings_send_option_mrfp_RELEASE_RECRUIT = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
@@ -92,7 +92,7 @@ mrfp_settings_send_option_toggle_mrfp_RELEASE_RECRUIT = {
   }
 }
 
-mrfp_settings_send_option_toggle_mrfp_RELEASE_RENOUNCE_CLAIMS = {
+mrfp_settings_send_option_mrfp_RELEASE_RENOUNCE_CLAIMS = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
@@ -103,7 +103,7 @@ mrfp_settings_send_option_toggle_mrfp_RELEASE_RENOUNCE_CLAIMS = {
   }
 }
 
-mrfp_settings_send_option_toggle_mrfp_RELEASE_BANISH = {
+mrfp_settings_send_option_mrfp_RELEASE_BANISH = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
@@ -114,7 +114,7 @@ mrfp_settings_send_option_toggle_mrfp_RELEASE_BANISH = {
   }
 }
 
-mrfp_settings_send_option_toggle_mrfp_RELEASE_GAIN_HOOK = {
+mrfp_settings_send_option_mrfp_RELEASE_GAIN_HOOK = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
@@ -125,7 +125,7 @@ mrfp_settings_send_option_toggle_mrfp_RELEASE_GAIN_HOOK = {
   }
 }
 
-mrfp_settings_send_option_toggle_mrfp_RELEASE_TAKE_VOWS = {
+mrfp_settings_send_option_mrfp_RELEASE_TAKE_VOWS = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
@@ -136,7 +136,7 @@ mrfp_settings_send_option_toggle_mrfp_RELEASE_TAKE_VOWS = {
   }
 }
 
-mrfp_settings_send_option_toggle_mrfp_RELEASE_AS_EXECUTIONER = {
+mrfp_settings_send_option_mrfp_RELEASE_AS_EXECUTIONER = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
@@ -147,7 +147,7 @@ mrfp_settings_send_option_toggle_mrfp_RELEASE_AS_EXECUTIONER = {
   }
 }
 
-mrfp_settings_send_option_toggle_mrfp_RELEASE_DISFIGURE = {
+mrfp_settings_send_option_mrfp_RELEASE_DISFIGURE = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
@@ -158,7 +158,7 @@ mrfp_settings_send_option_toggle_mrfp_RELEASE_DISFIGURE = {
   }
 }
 
-mrfp_settings_send_option_toggle_mrfp_RELEASE_BLIND = {
+mrfp_settings_send_option_mrfp_RELEASE_BLIND = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
@@ -169,7 +169,7 @@ mrfp_settings_send_option_toggle_mrfp_RELEASE_BLIND = {
   }
 }
 
-mrfp_settings_send_option_toggle_mrfp_RELEASE_CASTRATE = {
+mrfp_settings_send_option_mrfp_RELEASE_CASTRATE = {
   scope = character
   effect = {
     mrfp_start_story_if_not_exist = yes
