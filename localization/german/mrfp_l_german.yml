@@ -138,6 +138,7 @@ mrfp_error:0 "#N FEHLER#!"
 #Ransom Settings
 mrfp_ransom_settings_only_gold_possible:0 "Eine Lösegeldforderung ist nur mit [gold] [gold_i] möglich !"
 mrfp_ransom_settings_tip_only_for_max_amout_released:0 "Tipp: Es wird nur von Personen Lösegeld eingefordert, die für die maximal mögliche Menge an Gold freigelassen werden können. Sonst bleiben sie solange in deinem [prison]"
+mrfp_ransom_settings_currently_ransoming_for:0 "Die Massenlösegeldforderung wird aktuell eingefordert für"
 #Monthly actions
 mrfp_mass_recruit_monthly_text:0 "Die Massenrekrutierung jeden Monat ist"
 mrfp_send_options_toggle_button_list:0 "Mit den folgenden Optionen:"

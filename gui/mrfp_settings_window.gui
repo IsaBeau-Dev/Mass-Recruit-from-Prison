@@ -445,9 +445,9 @@
 
 							hbox = {
 								spacing = 5
-								# TODO add localization
+								
 								text_single = { 
-									text = "You are currently mass ransoming for"
+									text = "mrfp_ransom_settings_currently_ransoming_for"
 									default_format = "#T"
 									multiline = yes
 									max_width = 600
