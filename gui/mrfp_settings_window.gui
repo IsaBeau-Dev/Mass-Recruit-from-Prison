@@ -434,7 +434,6 @@
 								visible =  "[Not(IsNomad( GetPlayer ))]"
 							}
 
-							# # TODO add localization
 							text_single = { 
 								text = "mrfp_ransom_settings_tip_only_for_max_amout_released"
 								default_format = "#low"
@@ -445,7 +444,7 @@
 
 							hbox = {
 								spacing = 5
-								
+
 								text_single = { 
 									text = "mrfp_ransom_settings_currently_ransoming_for"
 									default_format = "#T"
