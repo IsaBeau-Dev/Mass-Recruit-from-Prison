@@ -232,7 +232,7 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_CASTRATE = {
     }
 }
 
-##Recruit
+##Ransom
 mrfp_ransom_tip_custom_loc = {
     type = character
 
@@ -253,6 +253,7 @@ mrfp_ransom_tip_custom_loc = {
         fallback = yes
     }
 }
+
 ## Mass actions monthly
 mrfp_recruit_flag_custom_loc = {
     type = character
