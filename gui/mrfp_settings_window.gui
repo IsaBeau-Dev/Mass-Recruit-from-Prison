@@ -513,8 +513,8 @@
 									multiline = yes
 									max_width = 600
 								}
-								text_single = { 
-									text = "[SelectLocalization( GetPlayer.MakeScope.Var('enable_auto_mrfp_ransom').IsSet, 'mrfp.0001.enabled', 'mrfp.0001.disabled')]"
+								text_single = {
+									text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_flag_custom_loc' )]"
 									default_format = "#T"
 								}				
 							}

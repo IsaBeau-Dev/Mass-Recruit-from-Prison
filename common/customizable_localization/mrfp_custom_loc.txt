@@ -233,7 +233,20 @@ mrfp_enabled_or_disabled_bool_mrfp_RELEASE_CASTRATE = {
 }
 
 #Ransom
+mrfp_ransom_flag_custom_loc = {
+    type = character
 
+    text = {
+        trigger = {  
+            has_character_flag = enable_auto_mrfp_ransom
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        localization_key = mrfp.0001.disabled
+        fallback = yes
+    }
+}
 
 
 ## Mass actions monthly
