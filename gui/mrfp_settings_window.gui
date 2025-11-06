@@ -442,6 +442,43 @@
 								visible =  "[Not(IsNomad( GetPlayer ))]"
 							}
 						}
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+							spacing = 5
+
+							hbox = {
+								spacing = 5
+								# TODO add localization
+								text_single = { 
+									text = "Mass Ransoming every month for [herd] [herd_i] automatically is"
+									default_format = "#T"
+									multiline = yes
+									max_width = 600
+									visible =  "[IsNomad( GetPlayer )]"
+								}
+								text_single = { 
+									text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_for_herd_custom_loc' )]"
+									default_format = "#T"
+									visible =  "[IsNomad( GetPlayer )]"
+								}				
+							}
+							hbox = {
+								spacing = 5
+								# TODO add localization
+								text_single = { 
+									text = "Mass Ransoming every month for [gold] [gold_i] automatically is"
+									default_format = "#T"
+									multiline = yes
+									max_width = 600
+								}
+								text_single = { 
+									text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_for_gold_custom_loc' )]"
+									default_format = "#T"
+								}				
+							}
+						}
+						
 					}
 					blockoverride "scrollbox_expand" {
 						expand = {}
@@ -477,36 +514,36 @@
 							# layoutpolicy_vertical = expanding
 							spacing = 25
 
-							hbox = {
-								spacing = 5
-								# TODO add localization
-								text_single = { 
-									text = "Mass Ransoming every month for [herd] [herd_i] automatically is"
-									default_format = "#T"
-									multiline = yes
-									max_width = 600
-									visible =  "[IsNomad( GetPlayer )]"
-								}
-								text_single = { 
-									text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_for_herd_custom_loc' )]"
-									default_format = "#T"
-									visible =  "[IsNomad( GetPlayer )]"
-								}				
-							}
-							hbox = {
-								spacing = 5
-								# TODO add localization
-								text_single = { 
-									text = "Mass Ransoming every month for [gold] [gold_i] automatically is"
-									default_format = "#T"
-									multiline = yes
-									max_width = 600
-								}
-								text_single = { 
-									text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_for_gold_custom_loc' )]"
-									default_format = "#T"
-								}				
-							}
+							# hbox = {
+							# 	spacing = 5
+							# 	# TODO add localization
+							# 	text_single = { 
+							# 		text = "Mass Ransoming every month for [herd] [herd_i] automatically is"
+							# 		default_format = "#T"
+							# 		multiline = yes
+							# 		max_width = 600
+							# 		visible =  "[IsNomad( GetPlayer )]"
+							# 	}
+							# 	text_single = { 
+							# 		text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_for_herd_custom_loc' )]"
+							# 		default_format = "#T"
+							# 		visible =  "[IsNomad( GetPlayer )]"
+							# 	}				
+							# }
+							# hbox = {
+							# 	spacing = 5
+							# 	# TODO add localization
+							# 	text_single = { 
+							# 		text = "Mass Ransoming every month for [gold] [gold_i] automatically is"
+							# 		default_format = "#T"
+							# 		multiline = yes
+							# 		max_width = 600
+							# 	}
+							# 	text_single = { 
+							# 		text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_for_gold_custom_loc' )]"
+							# 		default_format = "#T"
+							# 	}				
+							# }
 
 
 							# # # TODO add localization
