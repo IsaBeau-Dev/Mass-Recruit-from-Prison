@@ -139,7 +139,7 @@ mrfp_ransom_settings_only_gold_possible:0 "You Can only ransom for [gold] [gold_
 mrfp_ransom_settings_tip_only_for_max_amout_released:0 "Tip: Only people will be ransomed, that can be ransomed for the maximum amout of [gold] [gold_i] possible. Otherwise they will remain in your [prison]"
 mrfp_ransom_settings_tip_herd_is_prefered_not_only:0 "Tip: Only people that actually can be ransomed for held, will also be ransomed for [herd] [herd_i]. In general keep in mind that only people will be ransomed, that can be ransomed for the maximum amout of [gold] [gold_i] or [herd] [herd_i]. Otherwise they will remain in your [prison]!"
 mrfp_ransom_settings_currently_ransoming_for:0 "You are currently mass ransoming for"
-mrfp_toggle_ransom_herd_or_gold:0 "Change to [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )]"
+mrfp_toggle_ransom_herd_or_gold:0 "Change to [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_inverse_custom_loc' )]"
 #Monthly actions
 mrfp_mass_recruit_monthly_text:0 "Automatic monthly recruitment is"
 mrfp_send_options_toggle_button_list:0 "With the following options:"
