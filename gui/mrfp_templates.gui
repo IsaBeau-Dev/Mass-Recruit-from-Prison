@@ -599,39 +599,3 @@ types mrfp_window_types {
 		}
 	}
 }
-
-
-
-
-
-# #########isabau
-# button_round  = {
-# 	name = "mrfp"
-# 	enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
-
-# 	button_prison_release = {
-# 		parentanchor = center
-# 		onclick = "[GetScriptedGui('mrfp_is_loaded_sgui_recruit').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-# 		tooltip = "mrfp_tooltip"
-# 		using = tooltip_se
-# 	}
-# }
-# ###isabau
-
-
-
-###########from uni ui
-# #########isabau
-# button_round  = {
-# 	name = "mrfp"
-# 	visible = "[GetGlobalVariable('mrfp_is_loaded').IsSet]"
-# 	enabled = "[CourtWindow.CanDoMassPrisonerAction('release')]"
-
-# 	button_prison_release = {
-# 		parentanchor = center
-# 		onclick = "[GetScriptedGui('mrfp_is_loaded_sgui_recruit').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-# 		tooltip = "mrfp_tooltip"
-# 		using = tooltip_se
-# 	}
-# }
-# ###isabau
