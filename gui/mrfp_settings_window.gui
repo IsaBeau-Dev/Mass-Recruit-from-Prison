@@ -458,6 +458,15 @@
 									visible =  "[IsNomad( GetPlayer )]"
 								}				
 							}
+							button_standard = {
+								name = "mrfp_toggle_ransom_herd_or_gold_button"
+								text = "mrfp_toggle_ransom_herd_or_gold"
+								default_format = "#T"
+								size = { 300 50}
+								#TODO create sgui
+								# onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							}
+
 						}
 						
 					}
