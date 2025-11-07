@@ -134,17 +134,17 @@ disable_mrfp_ransom_decision = {
     ai_check_interval = 0
 }
 
-enable_mrfp_ransom_for_herd_decision = {
+toggle_mrfp_ransom_for_herd_decision = {
 
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
 	}
     decision_group_type = mrfp
     
-    title = enable_mrfp_ransom_for_herd_decision
-    desc = enable_mrfp_ransom_for_herd_decision_desc
-    confirm_text = enable_mrfp_ransom_for_herd_decision_confirm
-    selection_tooltip = enable_mrfp_ransom_for_herd_decision_tooltip
+    title = toggle_mrfp_ransom_for_herd_decision
+    desc = toggle_mrfp_ransom_for_herd_decision_desc
+    confirm_text = toggle_mrfp_ransom_for_herd_decision_confirm
+    selection_tooltip = toggle_mrfp_ransom_for_herd_decision_tooltip
 
     ai_check_interval = 0
 
@@ -177,41 +177,6 @@ enable_mrfp_ransom_for_herd_decision = {
     ai_will_do = {
         base = 0
     }
-}
-
-disable_mrfp_ransom_for_herd_decision = {
-   
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
-	}
-    title = disable_mrfp_ransom_for_herd_decision
-    desc = disable_mrfp_ransom_for_herd_decision_desc
-    confirm_text = disable_mrfp_ransom_for_herd_decision_confirm
-    selection_tooltip = disable_mrfp_ransom_for_herd_decision_tooltip
-
-    decision_group_type = mrfp
-    
-
-    is_shown = {
-        is_ai = no
-        #
-        # root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no
-        always = no
-        has_game_rule = on_mrfp
-    }
-
-    effect = {
-        remove_character_flag = enable_auto_mrfp_ransom
-    }
-
-    ai_potential = {
-        always = no
-    }
-
-    ai_will_do = {
-        base = 0
-    }
-    ai_check_interval = 0
 }
 
 set_mrfp_threshold = {
