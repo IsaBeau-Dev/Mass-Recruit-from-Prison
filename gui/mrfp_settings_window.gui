@@ -477,12 +477,7 @@ window = {
 									multiline = yes
 									max_width = 600
 									visible =  "[IsNomad( GetPlayer )]"
-								}
-								text_single = { 
-									text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )]"
-									default_format = "#high"
-									visible =  "[IsNomad( GetPlayer )]"
-								}				
+								}			
 							}
 
 							button_standard = {

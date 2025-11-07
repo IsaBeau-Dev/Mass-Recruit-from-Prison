@@ -142,7 +142,7 @@ toggle_mrfp_ransom_for_herd_decision = {
     decision_group_type = mrfp
     
     title = toggle_mrfp_ransom_for_herd_decision
-    desc = toggle_mrfp_ransom_for_herd_decision_desc
+    desc = "mrfp_ransom_settings_currently_ransoming_for"
     confirm_text = toggle_mrfp_ransom_for_herd_decision_confirm
     selection_tooltip = toggle_mrfp_ransom_for_herd_decision_tooltip
 
@@ -151,23 +151,15 @@ toggle_mrfp_ransom_for_herd_decision = {
     is_shown = {
         is_ai = no
         # 
-        # mrfp_start_story_if_not_exist = yes
-        # root.var:mrfp_story = {
-        # save_scope_as = the_story
-        # }
-        # mrfp_toggle_variable = { VARIABLE_NAME = mrfp_ransom_for_herd_enabled }
-        trigger_if = {
-            limit = {
-                root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
-            }
-            always = yes
-        }
-        # root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no
         has_game_rule = on_mrfp
     }
 
     effect = {
-        add_character_flag = enable_auto_mrfp_ransom
+        mrfp_start_story_if_not_exist = yes
+        root.var:mrfp_story = {
+        save_scope_as = the_story
+        }
+        mrfp_toggle_variable = { VARIABLE_NAME = mrfp_ransom_for_herd_enabled }
     }
 
     ai_potential = {
