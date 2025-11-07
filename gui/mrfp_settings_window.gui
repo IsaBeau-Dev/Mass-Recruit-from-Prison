@@ -41,7 +41,8 @@ window = {
 
 					blockoverride "button_close"
 					{
-						onclick = "[GetScriptedGui('mrfp_inital_opening_remove_temp_var').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End) , GetVariableSystem.Toggle('mrfp_show_settings_window')]"
+						onclick = "[GetVariableSystem.Toggle('mrfp_show_settings_window')]"
+						onclick = "[GetScriptedGui('mrfp_inital_opening_remove_temp_var').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					}
 				}
 				hbox_tab_buttons = {
