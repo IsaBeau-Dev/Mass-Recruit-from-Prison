@@ -42,8 +42,8 @@ mrfp_welcome_event = {
                     trigger_event = mrfp_set_threshold.0001
                 }
                 else = {
-                    #open settings via workaround with global var
-                    set_global_variable = mrfp_settings_window_show
+                    #open settings via workaround with character flag
+                    add_character_flag = mrfp_settings_window_show
 
                 }
                 # trigger_event = mrfp_welcome_events.0001

@@ -8,7 +8,7 @@ window = {
     layer = top
     using = Window_Size_MainTab
     using = Window_Background_Sidebar
-    visible = "[Or(GetGlobalVariable('mrfp_settings_window_show').IsSet , GetVariableSystem.Exists('mrfp_show_settings_window') )]"
+    visible = "[Or( GetPlayer.MakeScope.Var('mrfp_settings_window_show').IsSet , GetVariableSystem.Exists('mrfp_show_settings_window') )]"
     size = { 800 700 }
 	parentanchor = center
 
@@ -42,7 +42,7 @@ window = {
 					blockoverride "button_close"
 					{
 						onclick = "[GetVariableSystem.Toggle('mrfp_show_settings_window')]"
-						onclick = "[GetScriptedGui('mrfp_inital_opening_remove_global_var').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+						onclick = "[GetScriptedGui('mrfp_inital_opening_remove_temp_flag').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 					}
 				}
 				hbox_tab_buttons = {
