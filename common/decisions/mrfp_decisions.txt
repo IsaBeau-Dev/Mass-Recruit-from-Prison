@@ -151,6 +151,16 @@ toggle_mrfp_ransom_for_herd_decision = {
         is_ai = no
         has_game_rule = mrfp_new_and_old_settings
     }
+    is_valid = {
+        OR = {
+            government_has_flag = government_is_nomadic
+            AND = {
+                root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
+                NOT = { government_has_flag = government_is_nomadic }
+            }
+        }
+
+    }
 
     effect = {
         if = {
