@@ -54,11 +54,12 @@ setting_on_mrfp_open_settings_on_new_game_desc:1 "Das Spiel öffnet automatisch 
 setting_off_mrfp_open_settings_on_new_game:1 "Nein"
 setting_off_mrfp_open_settings_on_new_game_desc:1 "Das Spiel öffnet das Modeinstellungsmenü nicht automatisch, wenn ein neues Spiel gestartet wird."
 #
-rule_mrfp_new_or_old_settings:1 "Einstellungsoberfläche"
-setting_mrfp_only_new_settings:1 "Nur das neue Einstellungsfenster verwenden"
-setting_mrfp_only_new_settings_desc:1 "Ersetzt die alte entscheidungsbasierte Oberfläche durch das neue zentrale Einstellungsfenster."
-setting_off_mrfp_new_and_old_settings:1 "Neue und alte Einstellungen verwenden"
-setting_off_mrfp_new_and_old_settings_desc:1 "Behält die alte entscheidungsbasierte Oberfläche zusätzlich zum neuen Einstellungsfenster bei."
+rule_mrfp_new_or_old_settings:1 "Einstellungsfenster"
+setting_mrfp_only_new_settings:1 "Nur neues Fenster"
+setting_mrfp_only_new_settings_desc:1 "Verwendet nur das neue Einstellungsfenster."
+setting_mrfp_new_and_old_settings:1 "Beides verwenden"
+setting_mrfp_new_and_old_settings_desc:1 "Nutze neues Fenster und alte Entscheidungen."
+
 
 
 # decision group
