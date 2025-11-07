@@ -357,8 +357,18 @@ mrfp_display_warning_if_wrong_prowess_else_open = {
 				scope:the_story.var:mrfp_prowess_threshold = 24
 			}
 		}
-		# trigger_event = mrfp_warning_wrong_prowess_for_old_settings
-		mrfp_send_debug_message = yes
+		send_interface_message = {
+			type = event_war_bad
+			title = "ERROR: WRONG PROWESS LIMIT"
+			right_icon = scope:actor
+
+			show_as_tooltip = {
+				custom_tooltip = {
+					text = "You have the wrong prowess limit. Please change it in the new settings window"
+				}
+			}
+		}
+		
 	}
 	else = {
 		trigger_event = mrfp_set_threshold.0001
