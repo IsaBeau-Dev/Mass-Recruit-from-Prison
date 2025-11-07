@@ -208,8 +208,7 @@ set_mrfp_threshold = {
         scope:actor.var:mrfp_story = {
             save_scope_as = the_story
         }
-        mrfp_display_warning_if_wrong_prowess = yes
-        trigger_event = mrfp_set_threshold.0001
+        mrfp_display_warning_if_wrong_prowess_else_open = yes
     }
 
 

@@ -344,7 +344,7 @@ mrfp_toggle_variable = {
 	}
 }
 
-mrfp_display_warning_if_wrong_prowess = {
+mrfp_display_warning_if_wrong_prowess_else_open = {
 	if = {
 		limit = {
 			NOR = {
@@ -359,6 +359,9 @@ mrfp_display_warning_if_wrong_prowess = {
 		}
 		# trigger_event = mrfp_warning_wrong_prowess_for_old_settings
 		mrfp_send_debug_message = yes
+	}
+	else = {
+		trigger_event = mrfp_set_threshold.0001
 	}
 }
 
