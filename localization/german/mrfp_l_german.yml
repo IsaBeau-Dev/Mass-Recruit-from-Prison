@@ -58,7 +58,8 @@ rule_mrfp_new_or_old_settings:1 "Einstellungsfenster"
 setting_mrfp_only_new_settings:1 "Nur neues Fenster"
 setting_mrfp_only_new_settings_desc:1 "Ersetzt die alte entscheidungsbasierte Oberfläche durch das neue zentrale Einstellungsfenster."
 setting_mrfp_new_and_old_settings:1 "Beides verwenden"
-setting_mrfp_new_and_old_settings_desc:1 "Behält die alte entscheidungsbasierte Oberfläche zusätzlich zum neuen Einstellungsfenster bei. @warning_icon! #X Es sind Fehler beim Limit von Kampfgeschick möglich, da das neue Einstellungsfenster alle Werte von 0-100 möglich macht.#!\n Man kann aber trotzdem das neue Einstellungsfenster ignorieren und alles wie gewohnt benutzen."
+setting_mrfp_new_and_old_settings_desc:1 "Behält die alte Oberfläche zusätzlich zum neuen Einstellungsfenster. @warning_icon! #X Kampfgeschick kann fehlerhaft sein, da das neue Fenster Werte von 0–100 erlaubt.#! Man kann das Neue ignorieren und wie gewohnt spielen."
+
 
 
 
