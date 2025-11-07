@@ -258,3 +258,12 @@ mrfp_settings_start_story_if_not_exists = {
   }
 }
 ## workaround for initial opening via global var
+mrfp_inital_opening_remove_global_var = {
+  scope = all
+  effect = {
+    if = {
+      limit = { has_global_variable = mrfp_settings_window_show }
+      remove_global_variable = mrfp_settings_window_show
+    }
+  }
+}
