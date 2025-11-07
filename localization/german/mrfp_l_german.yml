@@ -104,6 +104,10 @@ decision_group_type_mrfp: "Massenaktionen für das Gefängnis"
  mrfp_send_options.p1:0 "Gehe zu Teil 1"
  mrfp_send_options.p2:0 "Gehe zu Teil 2"
  mrfp_back_to_send_options:0 "Zurück zu den Sendeoptionen"
+#error message for wrong prowess on startup
+mrfp_prowess_limit_error_title:0 "FEHLER: FALSCHES KAMPFGESCHICK-LIMIT"
+mrfp_prowess_limit_error_tooltip:0 "Du hast ein falsches Kampfgeschick-Limit eingestellt. Bitte ändere es im neuen Einstellungsfenster."
+
 
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Gefangener freigelassen"

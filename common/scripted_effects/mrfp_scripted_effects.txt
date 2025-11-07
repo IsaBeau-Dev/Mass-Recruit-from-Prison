@@ -359,12 +359,12 @@ mrfp_display_warning_if_wrong_prowess_else_open = {
 		}
 		send_interface_message = {
 			type = event_war_bad
-			title = "ERROR: WRONG PROWESS LIMIT"
+			title = mrfp_prowess_limit_error_title
 			right_icon = scope:actor
 
 			show_as_tooltip = {
 				custom_tooltip = {
-					text = "You have the wrong prowess limit. Please change it in the new settings window"
+					text = mrfp_prowess_limit_error_tooltip
 				}
 			}
 		}
