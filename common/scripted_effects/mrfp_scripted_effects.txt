@@ -344,6 +344,24 @@ mrfp_toggle_variable = {
 	}
 }
 
+mrfp_display_warning_if_wrong_prowess = {
+	if = {
+		limit = {
+			NOR = {
+				scope:the_story.var:mrfp_prowess_threshold = 6
+				scope:the_story.var:mrfp_prowess_threshold = 8
+				scope:the_story.var:mrfp_prowess_threshold = 10
+				scope:the_story.var:mrfp_prowess_threshold = 12
+				scope:the_story.var:mrfp_prowess_threshold = 16
+				scope:the_story.var:mrfp_prowess_threshold = 20
+				scope:the_story.var:mrfp_prowess_threshold = 24
+			}
+			# trigger_event = mrfp_warning_wrong_prowess_for_old_settings
+			mrfp_send_debug_message = yes
+		}
+	}
+}
+
 # mrfp_display_variable = {
 #     desc = $VARIABLE_NAME$
 #     first_valid = {

@@ -39,6 +39,7 @@ mrfp_welcome_event = {
                 }
                 if = {
                     limit = { has_game_rule = mrfp_new_and_old_settings }
+                    mrfp_display_warning_if_wrong_prowess = yes
                     trigger_event = mrfp_set_threshold.0001
                 }
                 else = {
