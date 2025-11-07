@@ -564,6 +564,7 @@ window = {
 										text = "mrfp_send_options_toggle_button_list"
 									}
 								}
+								#mrfp_send_options_all_list
 								vbox = {
 									name = "mrfp_send_options_all_list"
 									visible = "[PdxGuiFoldOut.IsUnfolded]"
