@@ -257,3 +257,4 @@ mrfp_settings_start_story_if_not_exists = {
     mrfp_start_story_if_not_exist = yes
   }
 }
+## workaround for initial opening via global var

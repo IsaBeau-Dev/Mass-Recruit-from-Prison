@@ -41,10 +41,11 @@ mrfp_welcome_event = {
                     limit = { has_game_rule = mrfp_new_and_old_settings }
                     trigger_event = mrfp_set_threshold.0001
                 }
-                #TODO
-                # else = {
-                #     #trigger event to open prison window and settings!!
-                # }
+                else = {
+                    #open settings via workaround with global var
+                    set_global_variable = mrfp_settings_window_show
+
+                }
                 # trigger_event = mrfp_welcome_events.0001
             }
         }
