@@ -57,7 +57,8 @@ rule_mrfp_new_or_old_settings:1 "Settings Interface"
 setting_mrfp_only_new_settings:1 "Use only the new settings window"
 setting_mrfp_only_new_settings_desc:1 "Replaces the old decision-based settings with the new unified settings window."
 setting_mrfp_new_and_old_settings:1 "Use both new and old settings"
-setting_mrfp_new_and_old_settings_desc:1 "Keeps the old decision-based settings alongside the new settings window."
+setting_mrfp_new_and_old_settings_desc:1 "Keeps the old decision-based settings alongside the new settings window. @warning_icon! #X Combat Skill may behave incorrectly, as the new window allows values from 0–100.#! You can still ignore the new window and play as usual."
+
 
 # decision group
 decision_group_type_mrfp: "Mass Recruit"
