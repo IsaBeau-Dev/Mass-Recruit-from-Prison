@@ -37,8 +37,15 @@ mrfp_welcome_event = {
                 scope:actor.var:mrfp_story = {
                     save_scope_as = the_story
                 }
+                if = {
+                    limit = { has_game_rule = mrfp_new_and_old_settings }
+                    trigger_event = mrfp_set_threshold.0001
+                }
+                #TODO
+                # else = {
+                #     #trigger event to open prison window and settings!!
+                # }
                 # trigger_event = mrfp_welcome_events.0001
-                trigger_event = mrfp_set_threshold.0001
             }
         }
 	}
