@@ -155,6 +155,13 @@ toggle_mrfp_ransom_for_herd_decision = {
     }
 
     effect = {
+        if = {
+            limit = { root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no }
+            custom_tooltip = mrfp_ransom_settings_tip_only_for_max_amout_released
+        }
+        else = {
+            custom_tooltip = mrfp_ransom_settings_tip_herd_is_prefered_not_only
+        }
         mrfp_start_story_if_not_exist = yes
         root.var:mrfp_story = {
         save_scope_as = the_story
