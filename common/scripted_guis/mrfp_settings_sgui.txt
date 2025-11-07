@@ -258,12 +258,12 @@ mrfp_settings_start_story_if_not_exists = {
   }
 }
 ## workaround for initial opening via global var
-mrfp_inital_opening_remove_temp_flag = {
+mrfp_inital_opening_remove_temp_var = {
   scope = character
   effect = {
     if = {
-      limit = { has_character_flag = mrfp_settings_window_show }
-      remove_character_flag = mrfp_settings_window_show
+      limit = { has_variable = mrfp_settings_window_show }
+      remove_variable = mrfp_settings_window_show
     }
   }
 }

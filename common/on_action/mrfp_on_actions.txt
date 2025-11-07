@@ -43,7 +43,7 @@ mrfp_welcome_event = {
                 }
                 else = {
                     #open settings via workaround with character flag
-                    add_character_flag = mrfp_settings_window_show
+                    set_variable = mrfp_settings_window_show
 
                 }
                 # trigger_event = mrfp_welcome_events.0001
