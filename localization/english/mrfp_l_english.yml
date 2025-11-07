@@ -133,7 +133,8 @@ mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Change your preferences f
 mrfp_can_be_ransomed:0 "Can be ransomed:"
 mrfp_can_be_recruited:0 "Can be recruited:"
 
-## TODO add mrfp_setting_tooltip 
+## mrfp_setting_tooltip
+mrfp_setting_tooltip:0 "Opens the new unified settings window where you can control everything in one place" 
 ## setting window
 mrfp_toggle_send_option:0 "Toggle"
 mrfp_settings_tab_mrfp_settings_recruit_tab:0 "#T Recruit Settings#!"

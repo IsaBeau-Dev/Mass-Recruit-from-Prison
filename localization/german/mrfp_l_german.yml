@@ -136,7 +136,8 @@ mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Ändern Sie Ihre Präfere
 #prison gui
 mrfp_can_be_ransomed:0 "Lösegeld möglich:" #idea for later [herd_i] and [gold_i] to show icones based on var in story
 mrfp_can_be_recruited:0 "Rekrutierung möglich:"
-
+## mrfp_setting_tooltip
+mrfp_setting_tooltip:0 "Öffnet das neue zentrale Einstellungsfenster, in dem du alles an einem Ort steuern kannst"
 ## setting window
 mrfp_toggle_send_option:0 "Umschalten"
 mrfp_settings_tab_mrfp_settings_recruit_tab:0 "#T Rekrutierung#!"
