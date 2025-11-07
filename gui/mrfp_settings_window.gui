@@ -674,6 +674,14 @@ window = {
 									onclick = "[GetScriptedGui('mrfp_settings_toggle_monthly_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 								}
 							}
+
+							text_single = { 
+								text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_tip_custom_loc' )]"
+								default_format = "#low"
+								multiline = yes
+								max_width = 400
+								visible =  "[IsNomad( GetPlayer )]"
+							}
 						}
 					}
 					blockoverride "scrollbox_expand" {
