@@ -8,7 +8,7 @@ window = {
     layer = top
     using = Window_Size_MainTab
     using = Window_Background_Sidebar
-    visible = "[Or([GetGlobalVariable('mrfp_settings_window_show').IsSet] , [GetVariableSystem.Exists('mrfp_show_settings_window')])]"
+    visible = "[Or(GetGlobalVariable('mrfp_settings_window_show').IsSet , GetVariableSystem.Exists('mrfp_show_settings_window') )]"
     size = { 800 700 }
 	parentanchor = center
 
