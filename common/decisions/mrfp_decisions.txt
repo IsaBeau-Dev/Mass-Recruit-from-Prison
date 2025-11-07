@@ -144,7 +144,6 @@ toggle_mrfp_ransom_for_herd_decision = {
     title = toggle_mrfp_ransom_for_herd_decision
     desc = "mrfp_ransom_settings_currently_ransoming_for"
     confirm_text = mrfp_toggle_ransom_herd_or_gold
-    selection_tooltip = toggle_mrfp_ransom_for_herd_decision_tooltip
 
     ai_check_interval = 0
 

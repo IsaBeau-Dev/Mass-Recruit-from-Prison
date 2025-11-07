@@ -27,6 +27,8 @@ disable_mrfp_ransom_decision_tooltip:0 "Stop automatically ransoming from prison
 disable_mrfp_ransom_decision_desc:0 "I will not ransom prisoners any longer."
 disable_mrfp_ransom_decision_effect_tooltip:0 "Stop demanding ransom for prisoners every month."
 disable_mrfp_ransom_decision_confirm:0 "Stop ransoming"
+#decision herd or gold
+toggle_mrfp_ransom_for_herd_decision:0 "Change prefered ressource for ransoming"
 #game rule
 game_rule_category_mrfp:0 "Mass Prison Actions"
 rule_mrfp:0 "Auto Mass Recruit from Prison Decision is shown"
