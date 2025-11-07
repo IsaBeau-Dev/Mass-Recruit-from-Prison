@@ -571,70 +571,70 @@ window = {
 									text_single = { 
 										text = "RELEASE_DEMAND_CONVERSION"
 										default_format = "#high"
-										min_width = 200
+										min_width = 210
 										align = left
 										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_DEMAND_CONVERSION').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									}
 									text_single = { 
 										text = "RELEASE_RECRUIT"
 										default_format = "#high"
-										min_width = 200
+										min_width = 210
 										align = left
 										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_RECRUIT').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									}
 									text_single = { 
 										text = "RELEASE_RENOUNCE_CLAIMS"
 										default_format = "#high"
-										min_width = 200
+										min_width = 210
 										align = left
 										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_RENOUNCE_CLAIMS').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									}
 									text_single = { 
 										text = "RELEASE_BANISH"
 										default_format = "#high"
-										min_width = 200
+										min_width = 210
 										align = left
 										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_BANISH').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									}
 									text_single = { 
 										text = "RELEASE_GAIN_HOOK"
 										default_format = "#high"
-										min_width = 200
+										min_width = 210
 										align = left
 										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_GAIN_HOOK').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									}
 									text_single = { 
 										text = "RELEASE_TAKE_VOWS"
 										default_format = "#high"
-										min_width = 200
+										min_width = 210
 										align = left
 										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_TAKE_VOWS').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									}
 									text_single = { 
 										text = "RELEASE_AS_EXECUTIONER"
 										default_format = "#high"
-										min_width = 200
+										min_width = 210
 										align = left
 										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_AS_EXECUTIONER').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									}
 									text_single = { 
 										text = "RELEASE_DISFIGURE"
 										default_format = "#high"
-										min_width = 200
+										min_width = 210
 										align = left
 										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_DISFIGURE').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									}
 									text_single = { 
 										text = "RELEASE_BLIND"
 										default_format = "#high"
-										min_width = 200
+										min_width = 210
 										align = left
 										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_BLIND').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									}
 									text_single = { 
 										text = "RELEASE_CASTRATE"
 										default_format = "#high"
-										min_width = 200
+										min_width = 210
 										align = left
 										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_CASTRATE').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
 									}
