@@ -142,7 +142,7 @@ mrfp_ransom_settings_tip_herd_is_prefered_not_only:0 "Tipp: Nur Personen, die ta
 mrfp_ransom_settings_currently_ransoming_for:0 "Die Massenlösegeldforderung wird aktuell eingefordert für"
 mrfp_toggle_ransom_herd_or_gold:0 "Ändere zu [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_inverse_custom_loc' )]"
 #Monthly actions
-mrfp_mass_recruit_monthly_text:0 "Die Massenrekrutierung jeden Monat ist"
+mrfp_mass_recruit_monthly_text:0 "Die automatische Massenrekrutierung jeden Monat ist"
 mrfp_send_options_toggle_button_list:0 "Mit den folgenden Optionen:"
 mrfp_ransom_for_herd_or_gold_dynamic_text:0 "Die Massenlösegeldforderung jeden Monat automatisch für [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )] ist"
 mrfp_toggle_monthly_recruit:0 "Starte/Stoppe die Massenfreilassung für die aktuellen Bedingungen"
