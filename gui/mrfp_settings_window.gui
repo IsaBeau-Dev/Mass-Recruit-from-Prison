@@ -212,7 +212,7 @@ window = {
 										text_single = { 
 											text = "RELEASE_DEMAND_CONVERSION"
 											default_format = "#high"
-											min_width = 175
+											min_width = 210
 										}
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DEMAND_CONVERSION' )]"
@@ -233,7 +233,7 @@ window = {
 										text_single = { 
 											text = "RELEASE_RECRUIT"
 											default_format = "#high"
-											min_width = 175
+											min_width = 210
 										}
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RECRUIT' )]"
@@ -254,7 +254,7 @@ window = {
 										text_single = { 
 											text = "RELEASE_RENOUNCE_CLAIMS"
 											default_format = "#high"
-											min_width = 175
+											min_width = 210
 										}
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RENOUNCE_CLAIMS' )]"
@@ -275,7 +275,7 @@ window = {
 										text_single = { 
 											text = "RELEASE_BANISH"
 											default_format = "#high"
-											min_width = 175
+											min_width = 210
 										}
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BANISH' )]"
@@ -296,7 +296,7 @@ window = {
 										text_single = { 
 											text = "RELEASE_GAIN_HOOK"
 											default_format = "#high"
-											min_width = 175
+											min_width = 210
 										}
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_GAIN_HOOK' )]"
@@ -317,7 +317,7 @@ window = {
 										text_single = { 
 											text = "RELEASE_TAKE_VOWS"
 											default_format = "#high"
-											min_width = 175
+											min_width = 210
 										}
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_TAKE_VOWS' )]"
@@ -338,7 +338,7 @@ window = {
 										text_single = { 
 											text = "RELEASE_AS_EXECUTIONER"
 											default_format = "#high"
-											min_width = 175
+											min_width = 210
 										}
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_AS_EXECUTIONER' )]"
@@ -359,7 +359,7 @@ window = {
 										text_single = { 
 											text = "RELEASE_DISFIGURE"
 											default_format = "#high"
-											min_width = 175
+											min_width = 210
 										}
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DISFIGURE' )]"
@@ -380,7 +380,7 @@ window = {
 										text_single = { 
 											text = "RELEASE_BLIND"
 											default_format = "#high"
-											min_width = 175
+											min_width = 210
 										}
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BLIND' )]"
@@ -401,7 +401,7 @@ window = {
 										text_single = { 
 											text = "RELEASE_CASTRATE"
 											default_format = "#high"
-											min_width = 175
+											min_width = 210
 										}
 										text_single = {
 											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_CASTRATE' )]"
