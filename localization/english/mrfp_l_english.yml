@@ -63,7 +63,7 @@ setting_mrfp_new_and_old_settings_desc:1 "Keeps the old decision-based settings 
 
 
 # decision group
-decision_group_type_mrfp: "Mass Prison Action"
+decision_group_type_mrfp: "Mass Prison Actions"
 
 #prowess threshold stuff
  set_mrfp_threshold:0 "Change Settings of Mass Recruit"
