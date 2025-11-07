@@ -52,6 +52,12 @@ setting_on_mrfp_open_settings_on_new_game:1 "Yes"
 setting_on_mrfp_open_settings_on_new_game_desc:1 "The game will automatically open the settings menu when starting a new game."
 setting_off_mrfp_open_settings_on_new_game:1 "No"
 setting_off_mrfp_open_settings_on_new_game_desc:1 "The game will not automatically open the settings menu when starting a new game."
+#
+rule_mrfp_new_or_old_settings:1 "Open Mod Settings on New Game Start"
+setting_mrfp_only_new_settings:1 "Yes"
+setting_mrfp_only_new_settings_desc:1 "The game will automatically open the settings menu when starting a new game."
+setting_off_mrfp_new_and_old_settings:1 "No"
+setting_off_mrfp_new_and_old_settings_desc:1 "The game will not automatically open the settings menu when starting a new game."
 
 # decision group
 decision_group_type_mrfp: "Mass Recruit"

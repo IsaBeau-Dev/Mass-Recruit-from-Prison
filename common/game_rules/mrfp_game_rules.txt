@@ -47,22 +47,22 @@ mrfp_open_settings_on_new_game = {
 	}
 }
 
-# mrfp_new_or_old_settings = {
+mrfp_new_or_old_settings = {
 	
-# 	categories = {
-# 		mrfp
-# 	}
+	categories = {
+		mrfp
+	}
 	
-# 	default = mrfp_new_settings
+	default = mrfp_only_new_settings
 
-# 	mrfp_new_settings = {
+	mrfp_only_new_settings = {
 	
-# 	}
+	}
 	
-# 	mrfp_old_settings  = {
+	mrfp_new_and_old_settings  = {
 	
-# 	}
-# }
+	}
+}
 
 # mrfp_welcome_event = {
 	
