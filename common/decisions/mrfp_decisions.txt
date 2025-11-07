@@ -149,7 +149,7 @@ toggle_mrfp_ransom_for_herd_decision = {
 
     is_shown = {
         is_ai = no
-        # 
+        has_game_rule = mrfp_new_and_old_settings
     }
 
     effect = {
@@ -185,6 +185,7 @@ set_mrfp_threshold = {
 
     is_shown = {
         is_ai = no
+        has_game_rule = mrfp_new_and_old_settings
     }
     decision_group_type = mrfp
 
