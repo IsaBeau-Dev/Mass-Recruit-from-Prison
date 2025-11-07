@@ -64,7 +64,7 @@ setting_mrfp_new_and_old_settings_desc:1 "Behält die alte Oberfläche zusätzli
 
 
 # decision group
-decision_group_type_mrfp: "Massenrekrutierung"
+decision_group_type_mrfp: "Massenaktionen für das Gefängnis"
 
 #prowess threshold stuff
  set_mrfp_threshold:0 "Ändern der Einstellung Massenrekrutierung"
