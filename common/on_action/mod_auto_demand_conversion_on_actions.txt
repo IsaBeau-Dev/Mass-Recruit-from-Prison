@@ -16,20 +16,20 @@ mod_auto_demand_conversion_on_action = {
         house = {
             every_house_member = {
                 save_scope_as = target
-                mrfp_run_interaction_if_possible = { INTERACTION_KEY = demand_conversion_interaction }
+                mrfp_run_interaction_if_accepted = { INTERACTION_KEY = demand_conversion_interaction }
                 clear_saved_scope = target
             }
         }
 
         every_vassal_or_below = {
             save_scope_as = target
-            mrfp_run_interaction_if_possible = { INTERACTION_KEY = demand_conversion_vassal_ruler_interaction }
+            mrfp_run_interaction_if_accepted = { INTERACTION_KEY = demand_conversion_vassal_ruler_interaction }
             clear_saved_scope = target
         }
 
         every_courtier = {
             save_scope_as = target
-            mrfp_run_interaction_if_possible = { INTERACTION_KEY = ask_for_conversion_courtier_interaction }
+            mrfp_run_interaction_if_accepted = { INTERACTION_KEY = ask_for_conversion_courtier_interaction }
             clear_saved_scope = target
         }
     }

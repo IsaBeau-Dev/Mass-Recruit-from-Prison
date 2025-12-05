@@ -1,33 +1,41 @@
-﻿mrfp_run_interaction_if_possible = {
-    # scripted effect that runs a given interaction if it's potentially accepted
-    # usage: mrfp_run_interaction_if_possible = { interaction = some_interaction_key }
-
-    root = {    
-        if = {
-            limit = {
-                is_character_interaction_potentially_accepted = {
-                    interaction = $INTERACTION_KEY$
-                    recipient = scope:target
-                    # required_response = maybe
-                    ai_accept = 100
-                }
-            }
-            root = {
-                send_interface_message = {
-                    type = event_captured_combatants_good
-                    title = $INTERACTION_KEY$
-                    desc = debug_mrfp_desc
-                    # left_icon = root
-                    right_icon = scope:target
-                }
-            }
-
-            run_interaction = {
-                interaction = $INTERACTION_KEY$
-                actor = root
-                recipient = scope:target
-                execute_threshold = maybe
-            }
+﻿mrfp_run_interaction_if_accepted = {
+    root = {
+        run_interaction = {
+            interaction = $INTERACTION_KEY$
+            actor = root
+            recipient = scope:target
+            execute_threshold = accept
         }
     }
+
+
+    #ALTERNATIVE OLD CODE 
+    # root = {    
+    #     if = {
+    #         limit = {
+    #             is_character_interaction_potentially_accepted = {
+    #                 interaction = $INTERACTION_KEY$
+    #                 recipient = scope:target
+    #                 # required_response = maybe
+    #                 # ai_accept = 100
+    #             }
+    #         }
+    #         # root = {
+    #         #     send_interface_message = {
+    #         #         type = event_captured_combatants_good
+    #         #         title = $INTERACTION_KEY$
+    #         #         desc = debug_mrfp_desc
+    #         #         # left_icon = root
+    #         #         right_icon = scope:target
+    #         #     }
+    #         # }
+
+    #         run_interaction = {
+    #             interaction = $INTERACTION_KEY$
+    #             actor = root
+    #             recipient = scope:target
+    #             execute_threshold = accept
+    #         }
+    #     }
+    # }
 }
