@@ -15,58 +15,16 @@ mod_auto_demand_conversion_on_action = {
     effect = {
         house = {
             every_house_member = {
-                if = {
-                    limit = {
-                        is_character_interaction_potentially_accepted = {
-                            interaction = demand_conversion_interaction
-                            recipient = this
-                            required_response = yes
-                        }
-                    }
-                }
-                run_interaction = {
-                    interaction = demand_conversion_interaction
-                    actor = root
-                    recipient = this
-                    execute_threshold = maybe
-                }
+                mrfp_run_interaction_if_possible = { interaction = demand_conversion_interaction }
             }
         }
 
         every_vassal_or_below = {
-            if = {
-                limit = {
-                    is_character_interaction_potentially_accepted = {
-                        interaction = demand_conversion_vassal_ruler_interaction
-                        recipient = this
-                        required_response = yes
-                    }
-                }
-            }
-            run_interaction = {
-                interaction = demand_conversion_vassal_ruler_interaction
-                actor = root
-                recipient = this
-                execute_threshold = maybe
-            }
+            mrfp_run_interaction_if_possible = { interaction = demand_conversion_vassal_ruler_interaction }
         }
 
         every_courtier = {
-            if = {
-                limit = {
-                    is_character_interaction_potentially_accepted = {
-                        interaction = ask_for_conversion_courtier_interaction
-                        recipient = this
-                        required_response = yes
-                    }
-                }
-            }
-            run_interaction = {
-                interaction = ask_for_conversion_courtier_interaction
-                actor = root
-                recipient = this
-                execute_threshold = maybe
-            }
+            mrfp_run_interaction_if_possible = { interaction = ask_for_conversion_courtier_interaction }
         }
     }
 }
