@@ -2,12 +2,14 @@
     # scripted effect that runs a given interaction if it's potentially accepted
     # usage: mrfp_run_interaction_if_possible = { interaction = some_interaction_key }
 
-    send_interface_message = {
-        type = event_captured_combatants_good
-        title = $INTERACTION_KEY$
-        desc = debug_mrfp_desc
-        left_icon = root
-        right_icon = this
+    root= {
+        send_interface_message = {
+            type = event_captured_combatants_good
+            title = $INTERACTION_KEY$
+            desc = debug_mrfp_desc
+            # left_icon = root
+            right_icon = scope:target
+        }
     }
     # if = {
     #     limit = {
