@@ -14,7 +14,26 @@
     }
     value = scope:secondary_recipient.gold
 }
-mrfp_target_ransom_cost = {
+
+mrfp_secondary_recipient_herd = {
+    scope:target = {
+        save_temporary_scope_as = secondary_recipient
+
+        if = {
+            limit = {
+                is_ruler = no
+                exists = liege
+            }
+            liege = {
+                save_temporary_scope_as = secondary_recipient
+            }
+        }
+    }
+    value = scope:secondary_recipient.domicile.herd
+    round = yes
+}
+
+mrfp_target_ransom_gold_cost = {
     value = scope:target.ransom_cost_value
     if = {
         limit = {
@@ -27,9 +46,33 @@ mrfp_target_ransom_cost = {
     }
 }
 
+mrfp_target_ransom_herd_cost = {
+    value = scope:target.domicile.medium_herd_value
+    #not needed as the legacy does not increase herd ransom cost
+    # if = {
+    #     limit = {
+    #             exists = dynasty
+    #             dynasty = {
+    #                 has_dynasty_perk = fp1_pillage_legacy_3
+    #             }
+    #     }
+    #     value = scope:target.increased_ransom_cost_value
+    # }
+}
+
 mrfp_amout_of_prisoners = {
     value = 0
     every_prisoner = {
       add = 1
     }
+}
+
+## settings window stuff
+mrfp_prowess_threshold_script_value = {
+    value = var:mrfp_prowess_threshold
+    add = scope:mrfp_prowess_threshold_add_or_subtract
+
+    min = 0
+    max = 100
+
 }

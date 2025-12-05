@@ -134,6 +134,58 @@ disable_mrfp_ransom_decision = {
     ai_check_interval = 0
 }
 
+toggle_mrfp_ransom_for_herd_decision = {
+
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_recruitment.dds"
+	}
+    decision_group_type = mrfp
+    
+    title = toggle_mrfp_ransom_for_herd_decision
+    desc = "mrfp_ransom_settings_currently_ransoming_for"
+    confirm_text = mrfp_toggle_ransom_herd_or_gold
+
+    ai_check_interval = 0
+
+    is_shown = {
+        is_ai = no
+        has_game_rule = mrfp_new_and_old_settings
+    }
+    is_valid = {
+        OR = {
+            government_has_flag = government_is_nomadic
+            AND = {
+                root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
+                NOT = { government_has_flag = government_is_nomadic }
+            }
+        }
+
+    }
+
+    effect = {
+        if = {
+            limit = { root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no }
+            custom_tooltip = mrfp_ransom_settings_tip_only_for_max_amout_released
+        }
+        else = {
+            custom_tooltip = mrfp_ransom_settings_tip_herd_is_prefered_not_only
+        }
+        mrfp_start_story_if_not_exist = yes
+        root.var:mrfp_story = {
+        save_scope_as = the_story
+        }
+        mrfp_toggle_variable = { VARIABLE_NAME = mrfp_ransom_for_herd_enabled }
+    }
+
+    ai_potential = {
+        always = no
+    }
+
+    ai_will_do = {
+        base = 0
+    }
+}
+
 set_mrfp_threshold = {
     
 	picture = {
@@ -143,6 +195,7 @@ set_mrfp_threshold = {
 
     is_shown = {
         is_ai = no
+        has_game_rule = mrfp_new_and_old_settings
     }
     decision_group_type = mrfp
 
@@ -155,7 +208,7 @@ set_mrfp_threshold = {
         scope:actor.var:mrfp_story = {
             save_scope_as = the_story
         }
-        trigger_event = mrfp_set_threshold.0001
+        mrfp_display_warning_if_wrong_prowess_else_open = yes
     }
 
 

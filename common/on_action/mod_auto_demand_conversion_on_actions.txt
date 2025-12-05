@@ -15,31 +15,22 @@ mod_auto_demand_conversion_on_action = {
     effect = {
         house = {
             every_house_member = {
-                run_interaction = {
-                    interaction = demand_conversion_interaction
-                    actor = root
-                    recipient = this
-                    send_threshold = maybe
-                }
+                save_scope_as = target
+                mrfp_run_interaction_if_accepted = { INTERACTION_KEY = demand_conversion_interaction }
+                clear_saved_scope = target
             }
         }
 
         every_vassal_or_below = {
-            run_interaction = {
-                interaction = demand_conversion_vassal_ruler_interaction
-                actor = root
-                recipient = this
-                send_threshold = maybe
-            }
+            save_scope_as = target
+            mrfp_run_interaction_if_accepted = { INTERACTION_KEY = demand_conversion_vassal_ruler_interaction }
+            clear_saved_scope = target
         }
 
         every_courtier = {
-            run_interaction = {
-                interaction = ask_for_conversion_courtier_interaction
-                actor = root
-                recipient = this
-                send_threshold = maybe
-            }
+            save_scope_as = target
+            mrfp_run_interaction_if_accepted = { INTERACTION_KEY = ask_for_conversion_courtier_interaction }
+            clear_saved_scope = target
         }
     }
 }
@@ -55,7 +46,7 @@ mod_auto_demand_conversion_on_death = {
     }
     effect = {
         primary_heir = {
-            add_character_flag = enable_auto_mrfp
+            add_character_flag = enable_auto_demand_conversion
         }
         
     }

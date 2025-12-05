@@ -1,0 +1,690 @@
+﻿## just replace
+# default_format = "#high"
+# with default_format = "#T"
+#in the whole document to get title text back 
+
+window = {
+    name = "mrfp_settings_window"
+    layer = top
+    using = Window_Size_MainTab
+    using = Window_Background_Sidebar
+    visible = "[Or( GetPlayer.MakeScope.Var('mrfp_settings_window_show').IsSet , GetVariableSystem.Exists('mrfp_show_settings_window') )]"
+    size = { 800 700 }
+	parentanchor = center
+
+	oncreate = "[BindTabsContext]"
+	oncreate = "[PdxGuiTabs.ListenFor( 'mrfp_settings_window_tab_buttons' )]"
+	oncreate = "[PdxGuiTabs.AddTab( 'mrfp_settings_recruit_tab' )]"
+	oncreate = "[PdxGuiTabs.AddTab( 'mrfp_settings_ransom_tab' )]"
+	oncreate = "[PdxGuiTabs.AddTab( 'mrfp_settings_mass_actions_monthly_tab' )]"	
+	oncreate = "[GetScriptedGui('mrfp_settings_start_story_if_not_exists').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+
+	margin_widget = {
+		size = { 100% 100% }
+
+		# margin_top = 0
+		# margin_bottom = 25
+		# margin_right = 13
+
+		widget = {
+			size = { 100% 100% }
+			vbox = {
+				using = Window_Margins
+
+				header_pattern = {
+					layoutpolicy_horizontal = expanding
+
+					blockoverride "header_text"
+					{
+						text = "mrfp_settings_window_header"
+					}
+
+					blockoverride "button_close"
+					{
+						onclick = "[GetVariableSystem.Toggle('mrfp_show_settings_window')]"
+						onclick = "[GetScriptedGui('mrfp_inital_opening_remove_temp_var').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					}
+				}
+				hbox_tab_buttons = {
+					name = "mrfp_settings_window_tab_buttons"
+
+					blockoverride "tab_name"
+					{
+						text = "[PdxGuiTabItem.LocalizeTab( 'mrfp_settings_tab' )]"
+					}
+				}
+
+				### Recruit ###
+				scrollbox = {
+					name = "mrfp_settings_recruit_scrollarea"
+					widgetid = "mrfp_settings_recruit_scrollarea_id"
+					visible = "[PdxGuiTabs.IsTabSet( 'mrfp_settings_recruit_tab' )]"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+
+					background = {
+						texture = "gfx/interface/illustrations/decisions/decision_prison.dds"
+						fittype = end
+						alpha = 0.4
+
+						using = Mask_Rough_Edges
+
+						modify_texture = {
+							texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+							blend_mode = alphamultiply
+							mirror = vertical
+						}
+					}
+
+					blockoverride "scrollbox_content"
+					{
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+
+						##Prowess
+						vbox = {
+							name = "mrfp_settings_window_prowess"
+							spacing = 2
+
+							layoutpolicy_horizontal = expanding
+
+							oncreate = "[BindFoldOutContext]"
+							oncreate = "[PdxGuiFoldOut.Unfold]"
+
+							button_expandable_toggle_field = {
+								blockoverride "text"
+								{
+									text = "mrfp_settings_prowess_group_heading"
+								}
+							}
+
+							vbox = {
+								visible = "[PdxGuiFoldOut.IsUnfolded]"
+
+								layoutpolicy_horizontal = expanding
+
+								vbox = {
+									spacing = 20
+
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+
+									#Enable/disable Limit
+									hbox = {
+										spacing = 20
+										hbox = {
+											spacing = 10
+											text_single = { 
+												text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_prowess_limit' )]"
+												default_format = "#high"
+											}
+											button_standard = {
+												name = "mrfp_toggle_prowess_limit_button"
+												text = "mrfp_toggle_send_option"
+												default_format = "#high"
+												onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+											}
+										}
+									}
+
+									#Set limit
+									hbox = {
+										spacing = 20
+										hbox = {
+											spacing = 5
+											text_single = {
+												text = "mrfp_set_threshold.0001.prowess.t"
+												default_format = "#high"
+											}
+											text_single = {
+												raw_text = "[GetPlayer.MakeScope.Var('mrfp_story').Var('mrfp_prowess_threshold').GetValue] @skill_prowess_icon"
+												default_format = "#high"
+											}
+										}
+										hbox = {
+											spacing = 5
+											button_standard = {
+												name = "mrfp_add_1_to_prowess_limit"
+												raw_text = "+1"
+												default_format = "#high"
+												size = { 40 33 }
+												onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_add_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+											}
+											button_standard = {
+												name = "mrfp_subtract_1_to_prowess_limit"
+												raw_text = "-1"
+												default_format = "#high"
+												size = { 40 33 }
+												onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_subtract_1').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+											}
+											button_standard = {
+												name = "mrfp_add_10_to_prowess_limit"
+												raw_text = "+10"
+												default_format = "#high"
+												size = { 50 33 }
+												onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_add_10').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+											}
+											button_standard = {
+												name = "mrfp_subtract_10_to_prowess_limit"
+												raw_text = "-10"
+												default_format = "#high"
+												size = { 50 33 }
+												onclick = "[GetScriptedGui('mrfp_settings_prowess_limit_subtract_10').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+											}
+										}
+									}
+
+									
+								}
+							}
+						}
+
+						#Send options
+						vbox = {
+							name = "mrfp_settings_window_send_options"
+							spacing = 2
+
+							layoutpolicy_horizontal = expanding
+
+							oncreate = "[BindFoldOutContext]"
+							oncreate = "[PdxGuiFoldOut.Unfold]"
+
+							button_expandable_toggle_field = {
+								blockoverride "text"
+								{
+									text = "mrfp_settings_send_options_group_heading"
+								}
+							}
+
+							vbox = {
+								visible = "[PdxGuiFoldOut.IsUnfolded]"
+
+								layoutpolicy_horizontal = expanding
+
+								vbox = {
+									spacing = 4
+
+									layoutpolicy_horizontal = expanding
+									layoutpolicy_vertical = expanding
+
+									##### release_demand_conversion
+									hbox = {
+										spacing = 20
+										text_single = { 
+											text = "RELEASE_DEMAND_CONVERSION"
+											default_format = "#high"
+											min_width = 210
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DEMAND_CONVERSION' )]"
+											default_format = "#high"
+											min_width = 73
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_demand_conversion_button"
+											text = "mrfp_toggle_send_option"
+											default_format = "#high"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_DEMAND_CONVERSION').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										}
+									}
+
+									##### release_recruit
+									hbox = {
+										spacing = 20
+										text_single = { 
+											text = "RELEASE_RECRUIT"
+											default_format = "#high"
+											min_width = 210
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RECRUIT' )]"
+											default_format = "#high"
+											min_width = 73
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_recruit_button"
+											text = "mrfp_toggle_send_option"
+											default_format = "#high"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_RECRUIT').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										}
+									}
+
+									##### release_renounce_claims
+									hbox = {
+										spacing = 20
+										text_single = { 
+											text = "RELEASE_RENOUNCE_CLAIMS"
+											default_format = "#high"
+											min_width = 210
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RENOUNCE_CLAIMS' )]"
+											default_format = "#high"
+											min_width = 73
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_renounce_claims_button"
+											text = "mrfp_toggle_send_option"
+											default_format = "#high"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_RENOUNCE_CLAIMS').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										}
+									}
+
+									##### release_banish
+									hbox = {
+										spacing = 20
+										text_single = { 
+											text = "RELEASE_BANISH"
+											default_format = "#high"
+											min_width = 210
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BANISH' )]"
+											default_format = "#high"
+											min_width = 73
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_banish_button"
+											text = "mrfp_toggle_send_option"
+											default_format = "#high"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_BANISH').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										}
+									}
+
+									##### release_gain_hook
+									hbox = {
+										spacing = 20
+										text_single = { 
+											text = "RELEASE_GAIN_HOOK"
+											default_format = "#high"
+											min_width = 210
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_GAIN_HOOK' )]"
+											default_format = "#high"
+											min_width = 73
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_gain_hook_button"
+											text = "mrfp_toggle_send_option"
+											default_format = "#high"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_GAIN_HOOK').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										}
+									}
+
+									##### release_take_vows
+									hbox = {
+										spacing = 20
+										text_single = { 
+											text = "RELEASE_TAKE_VOWS"
+											default_format = "#high"
+											min_width = 210
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_TAKE_VOWS' )]"
+											default_format = "#high"
+											min_width = 73
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_take_vows_button"
+											text = "mrfp_toggle_send_option"
+											default_format = "#high"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_TAKE_VOWS').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										}
+									}
+
+									##### release_as_executioner
+									hbox = {
+										spacing = 20
+										text_single = { 
+											text = "RELEASE_AS_EXECUTIONER"
+											default_format = "#high"
+											min_width = 210
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_AS_EXECUTIONER' )]"
+											default_format = "#high"
+											min_width = 73
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_as_executioner_button"
+											text = "mrfp_toggle_send_option"
+											default_format = "#high"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_AS_EXECUTIONER').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										}
+									}
+
+									##### release_disfigure
+									hbox = {
+										spacing = 20
+										text_single = { 
+											text = "RELEASE_DISFIGURE"
+											default_format = "#high"
+											min_width = 210
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DISFIGURE' )]"
+											default_format = "#high"
+											min_width = 73
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_disfigure_button"
+											text = "mrfp_toggle_send_option"
+											default_format = "#high"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_DISFIGURE').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										}
+									}
+
+									##### release_blind
+									hbox = {
+										spacing = 20
+										text_single = { 
+											text = "RELEASE_BLIND"
+											default_format = "#high"
+											min_width = 210
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BLIND' )]"
+											default_format = "#high"
+											min_width = 73
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_blind_button"
+											text = "mrfp_toggle_send_option"
+											default_format = "#high"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_BLIND').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										}
+									}
+
+									##### release_castrate
+									hbox = {
+										spacing = 20
+										text_single = { 
+											text = "RELEASE_CASTRATE"
+											default_format = "#high"
+											min_width = 210
+										}
+										text_single = {
+											text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_enabled_or_disabled_bool_mrfp_RELEASE_CASTRATE' )]"
+											default_format = "#high"
+											min_width = 73
+										}
+										button_standard = {
+											name = "mrfp_toggle_release_castrate_button"
+											text = "mrfp_toggle_send_option"
+											default_format = "#high"
+											onclick = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_CASTRATE').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										}
+									}
+								}
+							}
+						}
+					}
+					blockoverride "scrollbox_expand" {
+						expand = {}
+					}
+				}
+
+				### Ransom Settings ###
+				scrollbox = {
+					name = "mrfp_settings_ransom_scrollarea"
+					widgetid = "mrfp_settings_ransom_scrollarea_id"
+					visible = "[PdxGuiTabs.IsTabSet( 'mrfp_settings_ransom_tab' )]"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					
+					background = {
+						texture = "gfx/interface/illustrations/decisions/decision_prison.dds"
+						fittype = end
+						alpha = 0.4
+
+						using = Mask_Rough_Edges
+
+						modify_texture = {
+							texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+							blend_mode = alphamultiply
+							mirror = vertical
+						}
+					}
+
+					blockoverride "scrollbox_content"
+					{
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+							spacing = 5
+							ignoreinvisible = yes
+
+							text_single = { 
+								text = "mrfp_ransom_settings_only_gold_possible"
+								default_format = "#high"
+								visible =  "[Not(IsNomad( GetPlayer ))]"
+							}
+
+							text_single = { 
+								text = "mrfp_ransom_settings_tip_only_for_max_amout_released"
+								default_format = "#low"
+								multiline = yes
+								max_width = 400
+								visible =  "[Not(IsNomad( GetPlayer ))]"
+							}
+							
+							hbox = {
+								spacing = 5
+								
+								text_single = { 
+									text = "mrfp_ransom_settings_currently_ransoming_for"
+									default_format = "#high"
+									multiline = yes
+									max_width = 600
+									visible =  "[IsNomad( GetPlayer )]"
+								}			
+							}
+
+							button_standard = {
+								name = "mrfp_toggle_ransom_herd_or_gold_button"
+								text = "mrfp_toggle_ransom_herd_or_gold"
+								default_format = "#high"
+								size = { 300 50}
+								onclick = "[GetScriptedGui('mrfp_settings_toggle_ransom_herd_or_gold').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								visible =  "[IsNomad( GetPlayer )]"
+							}
+
+							text_single = { 
+								text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_tip_custom_loc' )]"
+								default_format = "#low"
+								multiline = yes
+								max_width = 400
+								visible =  "[IsNomad( GetPlayer )]"
+							}
+						}
+						
+					}
+					blockoverride "scrollbox_expand" {
+						expand = {}
+					}
+				}
+
+				### Mass Actions Monthly ###
+				scrollbox = {
+					name = "mrfp_settings_mass_actions_monthly_scrollarea"
+					widgetid = "mrfp_settings_mass_actions_monthly_scrollarea_id"
+					visible = "[PdxGuiTabs.IsTabSet( 'mrfp_settings_mass_actions_monthly_tab' )]"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					
+					background = {
+						texture = "gfx/interface/illustrations/decisions/decision_prison.dds"
+						fittype = end
+						alpha = 0.4
+
+						using = Mask_Rough_Edges
+
+						modify_texture = {
+							texture = "gfx/interface/component_masks/mask_fade_vertical.dds"
+							blend_mode = alphamultiply
+							mirror = vertical
+						}
+					}
+
+					blockoverride "scrollbox_content"
+					{
+						vbox = {
+							# layoutpolicy_horizontal = expanding
+							# layoutpolicy_vertical = expanding
+							spacing = 25
+
+							oncreate = "[BindFoldOutContext]"
+
+							#recruit
+							vbox = {
+								spacing = 25
+
+								hbox = {
+									spacing = 5
+
+									text_single = { 
+										text = "mrfp_mass_recruit_monthly_text"
+										default_format = "#high"
+										multiline = yes
+										max_width = 600
+									}
+									text_single = {
+										text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_recruit_flag_custom_loc' )]"
+										default_format = "#high"
+									}				
+								}
+								button_expandable_toggle_field = {
+									blockoverride "text"
+									{
+										text = "mrfp_send_options_toggle_button_list"
+									}
+								}
+								#mrfp_send_options_all_list
+								vbox = {
+									name = "mrfp_send_options_all_list"
+									visible = "[PdxGuiFoldOut.IsUnfolded]"
+									text_single = { 
+										text = "RELEASE_DEMAND_CONVERSION"
+										default_format = "#high"
+										min_width = 210
+										align = left
+										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_DEMAND_CONVERSION').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+									text_single = { 
+										text = "RELEASE_RECRUIT"
+										default_format = "#high"
+										min_width = 210
+										align = left
+										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_RECRUIT').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+									text_single = { 
+										text = "RELEASE_RENOUNCE_CLAIMS"
+										default_format = "#high"
+										min_width = 210
+										align = left
+										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_RENOUNCE_CLAIMS').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+									text_single = { 
+										text = "RELEASE_BANISH"
+										default_format = "#high"
+										min_width = 210
+										align = left
+										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_BANISH').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+									text_single = { 
+										text = "RELEASE_GAIN_HOOK"
+										default_format = "#high"
+										min_width = 210
+										align = left
+										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_GAIN_HOOK').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+									text_single = { 
+										text = "RELEASE_TAKE_VOWS"
+										default_format = "#high"
+										min_width = 210
+										align = left
+										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_TAKE_VOWS').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+									text_single = { 
+										text = "RELEASE_AS_EXECUTIONER"
+										default_format = "#high"
+										min_width = 210
+										align = left
+										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_AS_EXECUTIONER').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+									text_single = { 
+										text = "RELEASE_DISFIGURE"
+										default_format = "#high"
+										min_width = 210
+										align = left
+										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_DISFIGURE').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+									text_single = { 
+										text = "RELEASE_BLIND"
+										default_format = "#high"
+										min_width = 210
+										align = left
+										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_BLIND').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+									text_single = { 
+										text = "RELEASE_CASTRATE"
+										default_format = "#high"
+										min_width = 210
+										align = left
+										visible = "[GetScriptedGui('mrfp_settings_send_option_mrfp_RELEASE_CASTRATE').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+								}
+								button_standard = {
+									name = "mrfp_toggle_monthly_recruit_button"
+									text = "mrfp_toggle_monthly_recruit"
+									default_format = "#high"
+									size = { 300 50}
+									onclick = "[GetScriptedGui('mrfp_settings_toggle_monthly_recruit').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+							}
+
+							#ransom
+							vbox = {
+								spacing = 25
+
+								hbox = {
+									spacing = 5
+
+									text_single = { 
+										text = "mrfp_ransom_for_herd_or_gold_dynamic_text"
+										default_format = "#high"
+										multiline = yes
+										max_width = 600
+									}
+									text_single = {
+										text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_flag_custom_loc' )]"
+										default_format = "#high"
+									}				
+								}
+								button_standard = {
+									name = "mrfp_toggle_monthly_ransom_button"
+									text = "mrfp_toggle_monthly_ransom"
+									default_format = "#high"
+									size = { 300 50}
+									onclick = "[GetScriptedGui('mrfp_settings_toggle_monthly_ransom').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+								}
+							}
+
+							text_single = { 
+								text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_tip_custom_loc' )]"
+								default_format = "#low"
+								multiline = yes
+								max_width = 400
+								visible =  "[IsNomad( GetPlayer )]"
+							}
+						}
+					}
+					blockoverride "scrollbox_expand" {
+						expand = {}
+					}
+				}
+			}
+		}
+	}
+}

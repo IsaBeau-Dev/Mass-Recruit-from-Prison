@@ -1,4 +1,4 @@
-﻿mrfp_is_loaded_sgui = {
+﻿mrfp_is_loaded_sgui_recruit = {
   scope = character
   is_shown = {
     has_global_variable = mrfp_is_loaded
@@ -101,6 +101,7 @@ mrfp_is_loaded_sgui_torture = {
     has_global_variable = mrfp_is_loaded
   }
   effect = {
+    mrfp_start_story_if_not_exist = yes
     save_scope_as = the_story_owner
     root.var:mrfp_story = {
       save_scope_as = the_story
@@ -121,11 +122,28 @@ mrfp_is_loaded_sgui_torture = {
   }
 }
 #prison window gui stuff
-mrfp_prison_window_ransom = {
+mrfp_prison_window_ransom_gold = {
   scope = character
   is_shown = {
-    #test for script values
-    mrfp_target_ransom_cost <= mrfp_secondary_recipient_gold
+    mrfp_target_ransom_gold_cost <= mrfp_secondary_recipient_gold
+    #also make sure that the interaction will be accepted
+    is_character_interaction_potentially_accepted = {
+      interaction = ransom_interaction
+      recipient = scope:target
+      required_response = yes
+    }
+  }
+}
+mrfp_prison_window_ransom_herd = {
+  scope = character
+  is_shown = {
+    mrfp_target_ransom_herd_cost <= mrfp_secondary_recipient_herd
+    #also make sure that the interaction will be accepted
+    is_character_interaction_potentially_accepted = {
+      interaction = ransom_interaction
+      recipient = scope:target
+      required_response = yes
+    }
   }
 }
 mrfp_prison_window_recruited = {
@@ -137,6 +155,37 @@ mrfp_prison_window_recruited = {
     }
   }
 }
+
+mrfp_prison_window_show_herd = {
+  scope = character
+  is_shown = {
+    scope:target = {
+      save_temporary_scope_as = secondary_recipient
+
+      trigger_if = {
+          limit = {
+              is_ruler = no
+              exists = liege
+          }
+          liege = {
+              save_temporary_scope_as = secondary_recipient
+          }
+      }
+    }
+
+    # #root is player
+    government_has_flag = government_is_nomadic
+    exists = domicile
+    is_ai = no
+
+    # # Target or their liege (= secondary_recipient) must care about Herd
+    scope:secondary_recipient = {
+      government_has_flag = government_is_nomadic
+      exists = domicile
+    }
+  }
+}
+
 mrfp_prison_window_block_or_unblock_character = {
   scope = character
   effect = {

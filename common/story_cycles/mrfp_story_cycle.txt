@@ -17,6 +17,12 @@
             value = 16
         }
 
+        # Ransom for herd or gold settings
+        set_variable = {
+            name = mrfp_ransom_for_herd_enabled
+            value = no
+        }
+
         # Release options configuration
         set_variable = { name = mrfp_RELEASE_DEMAND_CONVERSION value = yes }
         set_variable = { name = mrfp_RELEASE_RECRUIT value = yes }
@@ -36,6 +42,8 @@
         set_variable = { name = mrfp_total_ransomed_people_current value = 0 }
         set_variable = { name = mrfp_total_ransomed_gold value = 0 }
         set_variable = { name = mrfp_total_ransomed_gold_current value = 0 }
+        set_variable = { name = mrfp_total_ransomed_herd value = 0 }
+        set_variable = { name = mrfp_total_ransomed_herd_current value = 0 }
     }
 
     on_end = {

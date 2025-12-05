@@ -1,7 +1,7 @@
 ﻿l_english:
 MRFP_MASS_ACTION_TT_INCLUDE: "\n#weak Prisoners that are hidden by a filter will ALSO be affected.#!"
-mrfp_tooltip_ransom: "#T $MASS_PRISONER_ACTION_RANSOM$#!\nRansom all [prisoners|E] for [gold|E].\n$MRFP_MASS_ACTION_TT_INCLUDE$"
-mrfp_tooltip:0 "Recruit all [prisoners|E] and convert them if possible.\nThis only works on characters without a title.$MRFP_MASS_ACTION_TT_INCLUDE$"
+mrfp_tooltip_ransom: "#T $MASS_PRISONER_ACTION_RANSOM$#!\nRansom all [prisoners|E] for [gold|E] [gold_i].\n$MRFP_MASS_ACTION_TT_INCLUDE$"
+mrfp_tooltip:0 "All [prisoners|E] will be released/recruited based on the current settings.\nThis only works on characters without a title.$MRFP_MASS_ACTION_TT_INCLUDE$"
 mrfp_tooltip_torture:0 "Torture all [prisoners|E]. Prisoners excluded via vanilla gui checkbox will not be affected!$MRFP_MASS_ACTION_TT_INCLUDE$"
 #decision recruit
 enable_mrfp_decision:0 "Start Mass Recruit From Prison"
@@ -27,6 +27,8 @@ disable_mrfp_ransom_decision_tooltip:0 "Stop automatically ransoming from prison
 disable_mrfp_ransom_decision_desc:0 "I will not ransom prisoners any longer."
 disable_mrfp_ransom_decision_effect_tooltip:0 "Stop demanding ransom for prisoners every month."
 disable_mrfp_ransom_decision_confirm:0 "Stop ransoming"
+#decision herd or gold
+toggle_mrfp_ransom_for_herd_decision:0 "Change prefered ressource for ransoming"
 #game rule
 game_rule_category_mrfp:0 "Mass Prison Actions"
 rule_mrfp:0 "Auto Mass Recruit from Prison Decision is shown"
@@ -52,9 +54,16 @@ setting_on_mrfp_open_settings_on_new_game:1 "Yes"
 setting_on_mrfp_open_settings_on_new_game_desc:1 "The game will automatically open the settings menu when starting a new game."
 setting_off_mrfp_open_settings_on_new_game:1 "No"
 setting_off_mrfp_open_settings_on_new_game_desc:1 "The game will not automatically open the settings menu when starting a new game."
+#
+rule_mrfp_new_or_old_settings:1 "Settings Interface"
+setting_mrfp_only_new_settings:1 "Only new settings window"
+setting_mrfp_only_new_settings_desc:1 "Replaces the old decision-based settings with the new unified settings window."
+setting_mrfp_new_and_old_settings:1 "Use both new and old settings"
+setting_mrfp_new_and_old_settings_desc:1 "Keeps the old decision-based settings alongside the new settings window. @warning_icon! #X Prowess may behave incorrectly, as the new window allows values from 0–100.#! You can still ignore the new window and play as usual."
+
 
 # decision group
-decision_group_type_mrfp: "Mass Recruit"
+decision_group_type_mrfp: "Mass Prison Actions"
 
 #prowess threshold stuff
  set_mrfp_threshold:0 "Change Settings of Mass Recruit"
@@ -64,8 +73,10 @@ decision_group_type_mrfp: "Mass Recruit"
 
  mrfp_set_threshold.0001.t:0 "Mass Recruit Settings"
  mrfp_set_threshold.0001.settings.t:0 "#T Current Prowess Settings:#!\n"
- mrfp_set_threshold.0001.enabled:0 "#P Enabled Limit#!\n"
- mrfp_set_threshold.0001.disabled:0 "#N Disabled Limit#!\n"
+ mrfp_set_threshold.0001.enabled:0 "#P Enabled Limit#!"
+ mrfp_set_threshold.0001.disabled:0 "#N Disabled Limit#!"
+ mrfp_set_threshold.0001.enabled_n:0 "$mrfp_set_threshold.0001.enabled$\n"
+ mrfp_set_threshold.0001.disabled_n:0 "$mrfp_set_threshold.0001.disabled$\n"
  mrfp_set_threshold.0001.prowess.t:0 "Minimum Prowess: "
  mrfp_set_threshold.0001.prowess.6:0 "6@skill_prowess_icon!\n"
  mrfp_set_threshold.0001.prowess.8:0 "8@skill_prowess_icon!\n"
@@ -76,28 +87,36 @@ decision_group_type_mrfp: "Mass Recruit"
  mrfp_set_threshold.0001.prowess.24:0 "24@skill_prowess_icon!\n"
 
  mrfp_set_threshold.0001.a:0 "Toggle Enable|Disable"
- mrfp_set_threshold.0001.b:0 "Toggle Prowess"
+ mrfp_set_threshold.0001.b:0 "Select|Set Prowess Level"
  mrfp_set_threshold.0001.d:0 "Exit"
 #new event options:
  mrfp_set_threshold.0001.settings.nh:0 "#T Current Send Options:#!\n"
- mrfp.0001.enabled:0 "#P Enabled#!\n"
- mrfp.0001.disabled:0 "#N Disabled#!\n"
+ mrfp.0001.enabled:0 "#P Enabled#!"
+ mrfp.0001.disabled:0 "#N Disabled#!"
+ mrfp.0001.enabled_n:0 "$mrfp.0001.enabled$\n"
+ mrfp.0001.disabled_n:0 "$mrfp.0001.disabled$\n"
  mrfp_set_threshold.0001.so:0 "Send options"
  mrfp_set_threshold.0001.settings.p1:0 "#T Part 1:#!\n"
  mrfp_set_threshold.0001.settings.p2:0 "#T Part 2:#!\n"
  mrfp_send_options.p1:0 "Go to Part 1"
  mrfp_send_options.p2:0 "Go to Part 2"
  mrfp_back_to_send_options:0 "Back to send options"
+#error message for wrong prowess on startup
+mrfp_prowess_limit_error_title:0 "ERROR: WRONG PROWESS LIMIT"
+mrfp_prowess_limit_error_tooltip:0 "You have the wrong prowess limit. Please change it in the new settings window."
+
 
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Prisoner Agrees To Release"
  prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] has agreed to your conditions for their release."
 
  prisonreleasethingy_story_release.title:0 "Prisoner(s) Agree(s) To Chosen Options"
- prisonreleasethingy_story_release.message:0 "You have released [ROOT.Var('mrfp_total_recruited_current').GetValue] people from prison."
+ prisonreleasethingy_story_release.message:0 "You have released [ROOT.Var('mrfp_story').Var('mrfp_total_recruited_current').GetValue] people from prison."
 
  prisonransomthingy_story.title:0 "Prisoners Ransomed"
- prisonransomthingy_story.message:0 "You have ransomed [ROOT.Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_total_ransomed_gold_current').GetValue] gold [gold_i]"
+ prisonransomthingy_story_gold_only.message:0 "You have ransomed [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] gold [gold_i]"
+ prisonransomthingy_story_herd_only.message:0 "You have ransomed [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] herd [herd_i]"
+ prisonransomthingy_story_gold_and_herd.message:0 "You have ransomed [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] herd [herd_i] and [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] gold [gold_i]"
 
 ##welcome message
 mrfp_welcome_events.0001.title:0 "Welcome to Mass Prison Actions"
@@ -117,3 +136,27 @@ mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Change your preferences f
 #prison gui
 mrfp_can_be_ransomed:0 "Can be ransomed:"
 mrfp_can_be_recruited:0 "Can be recruited:"
+
+## mrfp_setting_tooltip
+mrfp_setting_tooltip:0 "Opens the new unified settings window where you can control everything in one place" 
+## setting window
+mrfp_toggle_send_option:0 "Toggle"
+mrfp_settings_tab_mrfp_settings_recruit_tab:0 "#T Recruit Settings#!"
+mrfp_settings_tab_mrfp_settings_ransom_tab:0 "#T Ransom Settings#!"
+mrfp_settings_tab_mrfp_settings_mass_actions_monthly_tab:0 "#T Mass Actions Monthly#!"
+mrfp_settings_window_header:0 "Settings for MRFP"
+mrfp_settings_send_options_group_heading:0 "Current Send Options:"
+mrfp_settings_prowess_group_heading:0 "Current Prowess Settings:"
+mrfp_error:0 "#N ERROR#!"
+#Ransom Settings
+mrfp_ransom_settings_only_gold_possible:0 "You Can only ransom for [gold] [gold_i] !"
+mrfp_ransom_settings_tip_only_for_max_amout_released:0 "Tip: Only people will be ransomed, that can be ransomed for the maximum amout of [gold] [gold_i] possible. Otherwise they will remain in your [prison]"
+mrfp_ransom_settings_tip_herd_is_prefered_not_only:0 "Tip: Only people that actually can be ransomed for held, will also be ransomed for [herd] [herd_i]. In general keep in mind that only people will be ransomed, that can be ransomed for the maximum amout of [gold] [gold_i] or [herd] [herd_i]. Otherwise they will remain in your [prison]!"
+mrfp_ransom_settings_currently_ransoming_for:0 "You are currently mass ransoming for [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )]"
+mrfp_toggle_ransom_herd_or_gold:0 "Change to [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_inverse_custom_loc' )]"
+#Monthly actions
+mrfp_mass_recruit_monthly_text:0 "Automatic monthly recruitment is"
+mrfp_send_options_toggle_button_list:0 "With the following options:"
+mrfp_ransom_for_herd_or_gold_dynamic_text:0 "Automatic monthly ransoming for [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )] is"
+mrfp_toggle_monthly_recruit:0 "Start/Stop Mass Recruitment"
+mrfp_toggle_monthly_ransom:0 "Start/Stop Mass Ransoming"

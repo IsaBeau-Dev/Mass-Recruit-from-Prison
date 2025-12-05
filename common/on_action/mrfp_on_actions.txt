@@ -37,8 +37,16 @@ mrfp_welcome_event = {
                 scope:actor.var:mrfp_story = {
                     save_scope_as = the_story
                 }
+                if = {
+                    limit = { has_game_rule = mrfp_new_and_old_settings }
+                    mrfp_display_warning_if_wrong_prowess_else_open = yes
+                }
+                else = {
+                    #open settings via workaround with character flag
+                    set_variable = mrfp_settings_window_show
+
+                }
                 # trigger_event = mrfp_welcome_events.0001
-                trigger_event = mrfp_set_threshold.0001
             }
         }
 	}

@@ -1,7 +1,7 @@
 ﻿l_german:
 MRFP_MASS_ACTION_TT_INCLUDE: "\n#weak Gefangene, die durch Filter verborgen wurden, sind AUCH betroffen.#!"
-mrfp_tooltip:0 "Alle [Concept('prisoners', 'Gefangenen')|E] werden rekrutiert und wenn möglich konvertiert.\nDies funktioniert nur bei Characteren, die keine Titel besitzen.$MRFP_MASS_ACTION_TT_INCLUDE$"
-mrfp_tooltip_ransom: "#T $MASS_PRISONER_ACTION_RANSOM$#!\nAlle [Concept('prisoners', 'Gefangenen')|E] für [gold|E] auslösen.\n$MRFP_MASS_ACTION_TT_INCLUDE$"
+mrfp_tooltip:0 "Alle [Concept('prisoners', 'Gefangenen')|E] werden basierend auf den aktuellen Einstellung freigelassen/rekrutiert.\nDies funktioniert nur bei Characteren, die keine Titel besitzen.$MRFP_MASS_ACTION_TT_INCLUDE$"
+mrfp_tooltip_ransom:0 "#T $MASS_PRISONER_ACTION_RANSOM$#!\nAlle [Concept('prisoners', 'Gefangenen')|E] für [gold|E] [gold_i] auslösen.\n$MRFP_MASS_ACTION_TT_INCLUDE$"
 mrfp_tooltip_torture:0 "Foltere alle [prisoners|E]. Gefangene, die über das Vanilla-GUI-Kontrollkästchen ausgeschlossen wurden, sind nicht betroffen!$MRFP_MASS_ACTION_TT_INCLUDE$"
 
 #decision recruit
@@ -28,6 +28,8 @@ disable_mrfp_ransom_decision_tooltip:0 "Stop automatically ransoming from prison
 disable_mrfp_ransom_decision_desc:0 "I will not ransom prisoners any longer."
 disable_mrfp_ransom_decision_effect_tooltip:0 "Stop demanding ransom for prisoners every month."
 disable_mrfp_ransom_decision_confirm:0 "Stop ransoming"
+#decision herd or gold
+toggle_mrfp_ransom_for_herd_decision:0 "Ändere preferierte Ressource fürs Massenlösegeld"
 #game rule
 game_rule_category_mrfp:0 "Massengefängnisaktionen"
 rule_mrfp:0 "Automatische Massenrekrutierung aus dem Gefängnis Entscheidung anzeigen"
@@ -53,9 +55,18 @@ setting_on_mrfp_open_settings_on_new_game:1 "Ja"
 setting_on_mrfp_open_settings_on_new_game_desc:1 "Das Spiel öffnet automatisch das Modeinstellungsmenü, wenn ein neues Spiel gestartet wird."
 setting_off_mrfp_open_settings_on_new_game:1 "Nein"
 setting_off_mrfp_open_settings_on_new_game_desc:1 "Das Spiel öffnet das Modeinstellungsmenü nicht automatisch, wenn ein neues Spiel gestartet wird."
+#
+rule_mrfp_new_or_old_settings:1 "Einstellungsfenster"
+setting_mrfp_only_new_settings:1 "Nur neues Fenster"
+setting_mrfp_only_new_settings_desc:1 "Ersetzt die alte entscheidungsbasierte Oberfläche durch das neue zentrale Einstellungsfenster."
+setting_mrfp_new_and_old_settings:1 "Beides verwenden"
+setting_mrfp_new_and_old_settings_desc:1 "Behält die alte Oberfläche zusätzlich zum neuen Einstellungsfenster. @warning_icon! #X Kampfgeschick kann fehlerhaft sein, da das neue Fenster Werte von 0–100 erlaubt.#! Man kann das Neue ignorieren und wie gewohnt spielen."
+
+
+
 
 # decision group
-decision_group_type_mrfp: "Massenrekrutierung"
+decision_group_type_mrfp: "Massenaktionen für das Gefängnis"
 
 #prowess threshold stuff
  set_mrfp_threshold:0 "Ändern der Einstellung Massenrekrutierung"
@@ -65,8 +76,10 @@ decision_group_type_mrfp: "Massenrekrutierung"
 
  mrfp_set_threshold.0001.t:0 "Massenrekrutierung Einstellung"
  mrfp_set_threshold.0001.settings.t:0 "#T Aktuelle Kampffertigkeitseinstellungen:#!\n"
- mrfp_set_threshold.0001.enabled:0 "#P Limit aktivieren#!\n"
- mrfp_set_threshold.0001.disabled:0 "#N Limit deaktivieren#!\n"
+ mrfp_set_threshold.0001.enabled:0 "#P Limit aktivieren#!"
+ mrfp_set_threshold.0001.disabled:0 "#N Limit deaktivieren#!"
+ mrfp_set_threshold.0001.enabled_n:0 "$mrfp_set_threshold.0001.enabled$\n"
+ mrfp_set_threshold.0001.disabled_n:0 "$mrfp_set_threshold.0001.disabled$\n"
  mrfp_set_threshold.0001.prowess.t:0 "Minimale Fähigkeiten: "
  mrfp_set_threshold.0001.prowess.6:0 "6@skill_prowess_icon!\n"
  mrfp_set_threshold.0001.prowess.8:0 "8@skill_prowess_icon!\n"
@@ -81,24 +94,33 @@ decision_group_type_mrfp: "Massenrekrutierung"
  mrfp_set_threshold.0001.d:0 "Beenden"
 #new event options:
  mrfp_set_threshold.0001.settings.nh: "#T Aktuelle Sendeoptionen:#!\n"
- mrfp.0001.enabled:0 "#P Aktiviert#!\n"
- mrfp.0001.disabled:0 "#N Deaktiviert#!\n"
+ mrfp.0001.enabled:0 "#P Aktiviert#!"
+ mrfp.0001.disabled:0 "#N Deaktiviert#!"
+ mrfp.0001.enabled_n:0 "$mrfp.0001.enabled$\n"
+ mrfp.0001.disabled_n:0 "$mrfp.0001.disabled$\n"
  mrfp_set_threshold.0001.so:0 "Sendeoptionen"
  mrfp_set_threshold.0001.settings.p1:0 "#T Teil 1:#!\n"
  mrfp_set_threshold.0001.settings.p2:0 "#T Teil 2:#!\n"
  mrfp_send_options.p1:0 "Gehe zu Teil 1"
  mrfp_send_options.p2:0 "Gehe zu Teil 2"
  mrfp_back_to_send_options:0 "Zurück zu den Sendeoptionen"
+#error message for wrong prowess on startup
+mrfp_prowess_limit_error_title:0 "FEHLER: FALSCHES KAMPFGESCHICK-LIMIT"
+mrfp_prowess_limit_error_tooltip:0 "Du hast ein falsches Kampfgeschick-Limit eingestellt. Bitte ändere es im neuen Einstellungsfenster."
+
 
 #release from prison popup to message feed
  prisonreleasethingy.title:0 "Gefangener freigelassen"
  prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] hat Euren Kerker verlassen."
 
  prisonreleasethingy_story_release.title:0 "Gefangene(r) stimmt/stimmen den gewählten Optionen zu"
- prisonreleasethingy_story_release.message:0 "Du hast insgesamt [ROOT.Var('mrfp_total_recruited_current').GetValue] Personen aus dem Gefängnis entlassen."
+ prisonreleasethingy_story_release.message:0 "Du hast insgesamt [ROOT.Var('mrfp_story').Var('mrfp_total_recruited_current').GetValue] Personen aus dem Gefängnis entlassen."
 
  prisonransomthingy_story.title:0 "Gefangene freigekauft"
- prisonransomthingy_story.message:0 "Sie haben [ROOT.Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
+ prisonransomthingy_story_gold_only.message:0 "Sie haben [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
+ prisonransomthingy_story_herd_only.message:0 "Sie haben [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] Herde [herd_i] aus dem Gefängnis freigekauft."
+ prisonransomthingy_story_gold_and_herd.message:0 "Sie haben [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] Herde [herd_i] und [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
+
 
 ##welcome message
 mrfp_welcome_events.0001.title:0 "Willkommen zu Massenaktionen im Gefängnis"
@@ -116,5 +138,28 @@ mrfp_welcome_events.0003.option.threshold_toggle:0 "Einstellungen ändern"
 mrfp_welcome_events.0003.option.threshold_toggle_tt:0 "Ändern Sie Ihre Präferenzen für Aktionen, die an Gefangenen durchgeführt werden."
 
 #prison gui
-mrfp_can_be_ransomed:0 "Kann freigekauft werden:"
-mrfp_can_be_recruited:0 "Kann rekrutiert werden:"
+mrfp_can_be_ransomed:0 "Lösegeld möglich:" #idea for later [herd_i] and [gold_i] to show icones based on var in story
+mrfp_can_be_recruited:0 "Rekrutierung möglich:"
+## mrfp_setting_tooltip
+mrfp_setting_tooltip:0 "Öffnet das neue zentrale Einstellungsfenster, in dem du alles an einem Ort steuern kannst"
+## setting window
+mrfp_toggle_send_option:0 "Umschalten"
+mrfp_settings_tab_mrfp_settings_recruit_tab:0 "#T Rekrutierung#!"
+mrfp_settings_tab_mrfp_settings_ransom_tab:0 "#T Lösegeld#!"
+mrfp_settings_tab_mrfp_settings_mass_actions_monthly_tab:0 "#T Monatl. Massenaktionen#!"
+mrfp_settings_window_header:0 "Einstellungen für MRFP"
+mrfp_settings_send_options_group_heading:0 "Aktuelle Sendeoptionen:"
+mrfp_settings_prowess_group_heading:0 "Aktuelle Kampffertigkeitseinstellungen:"
+mrfp_error:0 "#N FEHLER#!"
+#Ransom Settings
+mrfp_ransom_settings_only_gold_possible:0 "Eine Lösegeldforderung ist nur mit [gold] [gold_i] möglich !"
+mrfp_ransom_settings_tip_only_for_max_amout_released:0 "Tipp: Es wird nur von Personen Lösegeld eingefordert, die für die maximal mögliche Menge an [gold] [gold_i] freigelassen werden können. Sonst bleiben sie solange in deinem [prison]!"
+mrfp_ransom_settings_tip_herd_is_prefered_not_only:0 "Tipp: Nur Personen, die tatsächlich für [herd] ausgelöst werden können, werden auch für [herd] [herd_i] ausgelöst. Bitte beachte, dass nur von Personen Lösegeld eingefordert wird, die für die maximal mögliche Menge an [gold] [gold_i] oder [herd] [herd_i] freigelassen werden können. Sonst bleiben sie solange in deinem [prison]"
+mrfp_ransom_settings_currently_ransoming_for:0 "Die Massenlösegeldforderung wird aktuell eingefordert für [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )]"
+mrfp_toggle_ransom_herd_or_gold:0 "Ändere zu [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_inverse_custom_loc' )]"
+#Monthly actions
+mrfp_mass_recruit_monthly_text:0 "Die automatische Massenrekrutierung jeden Monat ist"
+mrfp_send_options_toggle_button_list:0 "Mit den folgenden Optionen:"
+mrfp_ransom_for_herd_or_gold_dynamic_text:0 "Die Massenlösegeldforderung jeden Monat automatisch für [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )] ist"
+mrfp_toggle_monthly_recruit:0 "Starte/Stoppe die Massenfreilassung für die aktuellen Bedingungen"
+mrfp_toggle_monthly_ransom:0 "Starte/Stoppe die Massenforderung von Lösegeld"

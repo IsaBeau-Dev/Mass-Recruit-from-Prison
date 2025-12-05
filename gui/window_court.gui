@@ -251,6 +251,10 @@
 						alpha = 0
 					}
 
+					#mrfp
+					mrfp_prison_stats = {}
+					#mrfp
+
 					text_single = {
 						visible = "[LessThanOrEqualTo_int32( CharacterSelectionList.GetTotalNumber, '(int32)0' )]"
 						text = "PRISON_EMPTY"
@@ -290,7 +294,7 @@
 					# MRFP
 
 					#prison info box aka amout recruited and earned gold
-					mrfp_prison_stats = {}
+					
 
 					## Layout with more than MAX_PRISONER_COUNT_GRID(4) prisoners
 					mrfp_layout_with_more_than_4_prisoners = {}
@@ -298,6 +302,8 @@
 					## Layout with MAX_PRISONER_COUNT_GRID(4) or fewer prisoners
 					mrfp_layout_with_4_prisoners_or_fewer = {}
 
+
+					mrfp_prison_bottom_buttons_box = {}
 					# MRFP
 				}
 			}

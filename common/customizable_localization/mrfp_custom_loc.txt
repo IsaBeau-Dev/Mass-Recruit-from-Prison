@@ -1,0 +1,367 @@
+﻿#prowess limit
+mrfp_enabled_or_disabled_prowess_limit = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_threshold_enabled = yes
+        }
+        localization_key = mrfp_set_threshold.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_threshold_enabled = no
+        }
+        localization_key = mrfp_set_threshold.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+
+# send options
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DEMAND_CONVERSION = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_DEMAND_CONVERSION = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_DEMAND_CONVERSION = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RECRUIT = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_RECRUIT = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_RECRUIT = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_RENOUNCE_CLAIMS = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_RENOUNCE_CLAIMS = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_RENOUNCE_CLAIMS = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BANISH = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_BANISH = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_BANISH = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_GAIN_HOOK = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_GAIN_HOOK = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_GAIN_HOOK = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_TAKE_VOWS = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_TAKE_VOWS = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_TAKE_VOWS = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_AS_EXECUTIONER = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_AS_EXECUTIONER = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_AS_EXECUTIONER = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_DISFIGURE = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_DISFIGURE = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_DISFIGURE = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_BLIND = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_BLIND = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_BLIND = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_enabled_or_disabled_bool_mrfp_RELEASE_CASTRATE = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_CASTRATE = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_RELEASE_CASTRATE = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+##Ransom
+mrfp_ransom_tip_custom_loc = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no
+        }
+        localization_key = "mrfp_ransom_settings_tip_only_for_max_amout_released"
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
+        }
+        localization_key = "mrfp_ransom_settings_tip_herd_is_prefered_not_only"
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+## Mass actions monthly
+mrfp_recruit_flag_custom_loc = {
+    type = character
+
+    text = {
+        trigger = {  
+            has_character_flag = enable_auto_mrfp
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        localization_key = mrfp.0001.disabled
+        fallback = yes
+    }
+}
+mrfp_ransom_flag_custom_loc = {
+    type = character
+
+    text = {
+        trigger = {  
+            has_character_flag = enable_auto_mrfp_ransom
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        localization_key = mrfp.0001.disabled
+        fallback = yes
+    }
+}
+mrfp_ransom_for_herd_custom_loc = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_ransom_for_gold_custom_loc = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no
+        }
+        localization_key = mrfp.0001.enabled
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
+        }
+        localization_key = mrfp.0001.disabled
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+
+mrfp_ransom_herd_and_gold_custom_loc = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no
+        }
+        localization_key = "[gold] [gold_i]"
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
+        }
+        localization_key = "[herd] [herd_i]"
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
+mrfp_ransom_herd_and_gold_inverse_custom_loc = {
+    type = character
+
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = yes
+        }
+        localization_key = "[gold] [gold_i]"
+    }
+    text = {
+        trigger = {  
+            root.var:mrfp_story.var:mrfp_ransom_for_herd_enabled = no
+        }
+        localization_key = "[herd] [herd_i]"
+    }
+    text = {
+        localization_key = "mrfp_error"
+        fallback = yes
+    }
+}
