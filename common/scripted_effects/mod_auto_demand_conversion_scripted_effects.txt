@@ -7,8 +7,8 @@
             type = event_captured_combatants_good
             title = $INTERACTION_KEY$
             desc = debug_mrfp_desc
-            # left_icon = root
-            right_icon = scope:target
+            left_icon = root
+            right_icon = this
         }
     }
     # if = {
