@@ -19,13 +19,13 @@ mod_auto_demand_conversion_on_action = {
             }
         }
 
-        every_vassal_or_below = {
-            mrfp_run_interaction_if_possible = { INTERACTION_KEY = demand_conversion_vassal_ruler_interaction }
-        }
+        # every_vassal_or_below = {
+        #     mrfp_run_interaction_if_possible = { INTERACTION_KEY = demand_conversion_vassal_ruler_interaction }
+        # }
 
-        every_courtier = {
-            mrfp_run_interaction_if_possible = { INTERACTION_KEY = ask_for_conversion_courtier_interaction }
-        }
+        # every_courtier = {
+        #     mrfp_run_interaction_if_possible = { INTERACTION_KEY = ask_for_conversion_courtier_interaction }
+        # }
     }
 }
 
