@@ -28,7 +28,7 @@ mod_auto_demand_conversion_on_action = {
                     interaction = demand_conversion_interaction
                     actor = root
                     recipient = this
-                    send_threshold = maybe
+                    execute_threshold = maybe
                 }
             }
         }
@@ -47,7 +47,7 @@ mod_auto_demand_conversion_on_action = {
                 interaction = demand_conversion_vassal_ruler_interaction
                 actor = root
                 recipient = this
-                send_threshold = maybe
+                execute_threshold = maybe
             }
         }
 
@@ -65,7 +65,7 @@ mod_auto_demand_conversion_on_action = {
                 interaction = ask_for_conversion_courtier_interaction
                 actor = root
                 recipient = this
-                send_threshold = maybe
+                execute_threshold = maybe
             }
         }
     }
