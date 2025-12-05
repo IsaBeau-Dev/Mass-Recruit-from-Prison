@@ -8,8 +8,8 @@
                 is_character_interaction_potentially_accepted = {
                     interaction = $INTERACTION_KEY$
                     recipient = scope:target
-                    required_response = maybe
-                    # ai_accept = 1
+                    # required_response = maybe
+                    ai_accept = 48
                 }
             }
             root = {
