@@ -3,10 +3,11 @@
     # usage: mrfp_run_interaction_if_possible = { interaction = some_interaction_key }
 
     send_interface_message = {
-		type = event_captured_combatants_good
-		title = $INTERACTION_KEY$
-		desc = debug_mrfp_desc
-	}
+        type = event_captured_combatants_good
+        title = $INTERACTION_KEY$
+        desc = debug_mrfp_desc
+        left_icon = root
+    }
     # if = {
     #     limit = {
     #         is_character_interaction_potentially_accepted = {
@@ -15,11 +16,11 @@
     #             required_response = yes
     #         }
     #     }
-    #     run_interaction = {
-    #         interaction = $INTERACTION_KEY$
-    #         actor = root
-    #         recipient = this
-    #         execute_threshold = maybe
-    #     }
+    #     # run_interaction = {
+    #     #     interaction = $INTERACTION_KEY$
+    #     #     actor = root
+    #     #     recipient = this
+    #     #     execute_threshold = maybe
+    #     # }
     # }
 }
