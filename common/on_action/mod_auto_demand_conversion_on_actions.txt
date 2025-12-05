@@ -13,13 +13,13 @@ mod_auto_demand_conversion_on_action = {
         has_character_flag = enable_auto_demand_conversion
     }
     effect = {
-        # house = {
-        #     every_house_member = {
-        #         save_scope_as = target
-        #         mrfp_run_interaction_if_possible = { INTERACTION_KEY = demand_conversion_interaction }
-                
-        #     }
-        # }
+        house = {
+            every_house_member = {
+                save_scope_as = target
+                mrfp_run_interaction_if_possible = { INTERACTION_KEY = demand_conversion_interaction }
+                clear_saved_scope = target
+            }
+        }
 
         every_vassal_or_below = {
             save_scope_as = target
@@ -27,9 +27,11 @@ mod_auto_demand_conversion_on_action = {
             clear_saved_scope = target
         }
 
-        # every_courtier = {
-        #     mrfp_run_interaction_if_possible = { INTERACTION_KEY = ask_for_conversion_courtier_interaction }
-        # }
+        every_courtier = {
+            save_scope_as = target
+            mrfp_run_interaction_if_possible = { INTERACTION_KEY = ask_for_conversion_courtier_interaction }
+            clear_saved_scope = target
+        }
     }
 }
 
