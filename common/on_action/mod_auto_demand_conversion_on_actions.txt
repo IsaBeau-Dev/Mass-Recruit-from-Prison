@@ -24,6 +24,7 @@ mod_auto_demand_conversion_on_action = {
         every_vassal_or_below = {
             save_scope_as = target
             mrfp_run_interaction_if_possible = { INTERACTION_KEY = demand_conversion_vassal_ruler_interaction }
+            clear_saved_scope = target
         }
 
         # every_courtier = {
