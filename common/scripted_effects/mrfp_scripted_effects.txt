@@ -96,7 +96,8 @@ mrfp_send_amout_people_released_message = {
 		send_interface_message = {
 			type = event_captured_combatants_good
 			title = debug_mrfp_title
-			desc = "mrfp_total_recruited_current is  [ROOT.Var('mrfp_total_recruited_current').GetValue]"
+			# desc = "mrfp_total_recruited_current is  [ROOT.Var('mrfp_total_recruited_current').GetValue]"
+			desc = "Correctly get value ?[the_story.MakeScope.Var('mrfp_total_recruited_current').GetValue|0]"
 		}
 		send_interface_message = {
 			type = event_captured_combatants_good
