@@ -422,14 +422,6 @@ mrfp_start_story_if_not_exist = {
 # DEBUG
 ###############################################################
 
-# mrfp_send_debug_message = {
-#     mrfp_send_message = {
-#         TYPE = event_captured_combatants_good
-#         TITLE = debug_mrfp_title
-#         DESC = debug_mrfp_desc
-#         ICON =
-#     }
-# }
 mrfp_send_debug_message = {
 
     # Only run if your debug rule/flag is active
