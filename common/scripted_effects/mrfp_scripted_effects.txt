@@ -205,6 +205,7 @@ mrfp_ransom_all_unblocked_prisoners_for_gold = {
 			mrfp_send_debug_message = {
 				text = "MRFP: Monthly recruitment cycle executed with prowess threshold disabled."
 			}
+			mrfp_send_debug_message = yes
 		}
 		
 	}
