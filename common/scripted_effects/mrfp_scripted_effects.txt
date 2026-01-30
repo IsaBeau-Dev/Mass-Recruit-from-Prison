@@ -48,7 +48,7 @@ mrfp_update_recruitment_counter_current = {
 
 mrfp_update_recruitment_counter = {
 	change_variable = { name = mrfp_total_recruited  add = scope:the_story.var:mrfp_total_recruited_current }
-	# change_variable = { name = mrfp_total_recruited_current multiply = 0 }
+	change_variable = { name = mrfp_total_recruited_current multiply = 0 }
 }
 
 
