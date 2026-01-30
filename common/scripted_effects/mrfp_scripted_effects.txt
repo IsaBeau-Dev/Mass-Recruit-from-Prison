@@ -191,9 +191,6 @@ mrfp_ransom_all_unblocked_prisoners_for_gold = {
 				right_icon = scope:the_story_prisoner
 			}
 
-			mrfp_send_debug_message = {
-				text = "MRFP:_Monthly_recruitment_cycle_executed_with_prowess_threshold_disabled."
-			}
 			mrfp_send_debug_message = yes
 		}
 		
@@ -423,29 +420,9 @@ mrfp_start_story_if_not_exist = {
 ###############################################################
 
 mrfp_send_debug_message = {
-
-    # Only run if your debug rule/flag is active
-    if = {
-        limit = { always = yes } # Replace with your debug condition
-
-        # --- If custom text was provided ---
-        if = {
-            limit = { NOT = { flag:$text$ = flag:MRFP } }
-
-                send_interface_message = {
-                    type = event_captured_combatants_good
-                    title = debug_mrfp_title
-                    desc = $text$
-                }
-        }
-
-        # --- Otherwise use default text ---
-        else = {
-			send_interface_message = {
-				type = event_captured_combatants_good
-				title = debug_mrfp_title
-				desc = debug_mrfp_desc
-			}
-        }
-    }
+	send_interface_message = {
+		type = event_captured_combatants_good
+		title = debug_mrfp_title
+		desc = debug_mrfp_desc
+	}
 }
