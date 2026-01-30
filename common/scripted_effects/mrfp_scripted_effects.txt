@@ -53,51 +53,13 @@ mrfp_update_recruitment_counter = {
 
 
 mrfp_send_amout_people_released_message = {
-	# --- Check if the_story exists ---
-	if = {
-		limit = { NOT = { exists = scope:the_story } }
-		send_interface_message = {
-			type = event_captured_combatants_good
-			title = debug_mrfp_title
-			desc = "ERROR: 'the_story' scope does NOT exist when checking mrfp_total_recruited_current."
-		}
-	}
-
-	# --- Check if the_story exists AND the variable does NOT exist ---
-	if = {
-		limit = {
-			exists = scope:the_story
-			NOT = { 
-				scope:the_story = { has_variable = mrfp_total_recruited_current }
-			}
-		}
-		send_interface_message = {
-			type = event_captured_combatants_good
-			title = debug_mrfp_title
-			desc = "'the_story' exists, but variable 'mrfp_total_recruited_current' does NOT exist."
-		}
-	}
-
-	# --- Check if both the scope and the variable exist ---
-	if = {
-		limit = {
-			exists = scope:the_story
-			scope:the_story = { has_variable = mrfp_total_recruited_current }
-		}
-		send_interface_message = {
-			type = event_captured_combatants_good
-			title = debug_mrfp_title
-			desc = "'the_story' exists AND variable 'mrfp_total_recruited_current' exists."
-		}
-	}
-	###
 	if = {
 		limit = { scope:the_story.var:mrfp_total_recruited_current >= 1 }
 		send_interface_message = {
 			type = event_captured_combatants_good
 			title = debug_mrfp_title
 			# desc = "mrfp_total_recruited_current is  [ROOT.Var('mrfp_total_recruited_current').GetValue]"
-			desc = "Correctly get value ?[the_story.MakeScope.Var('mrfp_total_recruited_current').GetValue|0]"
+			desc = "Correctly get value ? [the_story.MakeScope.Var('mrfp_total_recruited_current').GetValue|0]"
 		}
 		send_interface_message = {
 			type = event_captured_combatants_good
