@@ -451,13 +451,12 @@ mrfp_send_debug_message = {
 
         # --- If custom text was provided ---
         if = {
-            limit = { NOT = { flag:$text$ = flag:X } }
+            limit = { NOT = { flag:$text$ = flag:MRFP } }
 
                 send_interface_message = {
                     type = event_captured_combatants_good
                     title = debug_mrfp_title
-                    # desc = $text$
-					desc = "AAAAAAAAAAAAAAAA"
+                    desc = $text$
                 }
         }
 
