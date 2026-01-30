@@ -1,17 +1,23 @@
-﻿# --- Shared triggers ---------------------------------------------------------
+﻿###############################################
+# MACROS
+###############################################
 
-mrfp_unblocked_prisoner_trigger = {
-    NOT = { has_character_flag = mrfp_blocked }
-    NOT = { has_character_flag = mrfp_blocked_gui }
-    NOT = { has_character_flag = mrfp_blocked_can_ransom }
+mrfp_modify_story_owner_var = {
+    # PARAMS:
+    # NAME  = variable name
+    # OP    = add / subtract / multiply / divide / set
+    # VALUE = numeric or variable
+    scope:the_story_owner.var:mrfp_story = {
+        change_variable = {
+            name = $NAME$
+            $OP$ = $VALUE$
+        }
+    }
 }
 
-mrfp_unblocked_ransom_trigger = {
-    NOT = { has_character_flag = mrfp_blocked }
-    NOT = { has_character_flag = mrfp_blocked_gui }
-}
-
-# --- War blocking ------------------------------------------------------------
+###############################################
+# WAR BLOCKING
+###############################################
 
 mrfp_is_at_war_with_target_or_their_liege_story = {
     mrfp_is_at_war_with_targets_liege_story = yes
@@ -36,7 +42,9 @@ mrfp_is_at_war_with_targets_liege_story = {
     }
 }
 
-# --- Recruitment -------------------------------------------------------------
+###############################################
+# RECRUITMENT
+###############################################
 
 mrfp_every_prisoner_effect_story = {
     run_interaction = {
@@ -48,8 +56,10 @@ mrfp_every_prisoner_effect_story = {
 }
 
 mrfp_update_recruitment_counter_current = {
-    scope:actor.var:mrfp_story = {
-        change_variable = { name = mrfp_total_recruited_current add = 1 }
+    mrfp_modify_story_owner_var = {
+        NAME = mrfp_total_recruited_current
+        OP = add
+        VALUE = 1
     }
 }
 
@@ -72,12 +82,20 @@ mrfp_send_amout_people_released_message = {
     }
 }
 
+mrfp_unblocked_prisoner_trigger = {
+    NOT = { has_character_flag = mrfp_blocked }
+    NOT = { has_character_flag = mrfp_blocked_gui }
+    NOT = { has_character_flag = mrfp_blocked_can_ransom }
+}
+
 mrfp_release_all_unblocked_prisoners = {
     if = { limit = { mrfp_unblocked_prisoner_trigger = yes } }
     mrfp_every_prisoner_effect_story = yes
 }
 
-# --- Ransom blocking ---------------------------------------------------------
+###############################################
+# RANSOM BLOCKING
+###############################################
 
 mrfp_block_high_value_ransoms_effect = {
     if = {
@@ -86,7 +104,9 @@ mrfp_block_high_value_ransoms_effect = {
     }
 }
 
-# --- Ransom core -------------------------------------------------------------
+###############################################
+# RANSOM CORE
+###############################################
 
 mrfp_ransom = {
     every_prisoner = {
@@ -107,10 +127,11 @@ mrfp_ransom = {
     mrfp_update_ransom_counter = yes
 }
 
-# --- Herd/gold decision wrapper ----------------------------------------------
+###############################################
+# HERD/GOLD DECISION WRAPPER
+###############################################
 
 mrfp_ransom_handle_herd_or_gold = {
-    # prisoner pays
     if = {
         limit = {
             scope:target = {
@@ -120,7 +141,6 @@ mrfp_ransom_handle_herd_or_gold = {
         }
         mrfp_ransom_all_unblocked_prisoners_for_herd = yes
     }
-    # liege pays
     else_if = {
         limit = {
             liege ?= {
@@ -136,7 +156,14 @@ mrfp_ransom_handle_herd_or_gold = {
     }
 }
 
-# --- Gold ransom -------------------------------------------------------------
+###############################################
+# GOLD RANSOM
+###############################################
+
+mrfp_unblocked_ransom_trigger = {
+    NOT = { has_character_flag = mrfp_blocked }
+    NOT = { has_character_flag = mrfp_blocked_gui }
+}
 
 mrfp_ransom_all_unblocked_prisoners_for_gold = {
     if = {
@@ -153,7 +180,16 @@ mrfp_ransom_all_unblocked_prisoners_for_gold = {
         }
     }
 
-    mrfp_update_ransom_counter_gold_current = yes
+    mrfp_modify_story_owner_var = {
+        NAME = mrfp_total_ransomed_people_current
+        OP = add
+        VALUE = 1
+    }
+    mrfp_modify_story_owner_var = {
+        NAME = mrfp_total_ransomed_gold_current
+        OP = add
+        VALUE = mrfp_target_ransom_gold_cost
+    }
 
     run_interaction = {
         interaction = ransom_interaction
@@ -163,7 +199,9 @@ mrfp_ransom_all_unblocked_prisoners_for_gold = {
     }
 }
 
-# --- Herd ransom -------------------------------------------------------------
+###############################################
+# HERD RANSOM
+###############################################
 
 mrfp_ransom_all_unblocked_prisoners_for_herd = {
     if = {
@@ -180,20 +218,33 @@ mrfp_ransom_all_unblocked_prisoners_for_herd = {
         }
     }
 
-    mrfp_update_ransom_counter_herd_current = yes
+    mrfp_modify_story_owner_var = {
+        NAME = mrfp_total_ransomed_people_current
+        OP = add
+        VALUE = 1
+    }
+    mrfp_modify_story_owner_var = {
+        NAME = mrfp_total_ransomed_herd_current
+        OP = add
+        VALUE = mrfp_target_ransom_herd_cost
+    }
 
     scope:the_story_owner = {
         save_scope_value_as = { name = herd_send_option value = yes }
     }
 
-    scope:the_story_prisoner = {
-        save_scope_as = payer
-        if = { limit = { is_ruler = no exists = liege } }
-        liege = { save_scope_as = payer }
+    if = {
+        limit = {
+            scope:the_story_prisoner = {
+                is_ruler = no
+                exists = liege
+            }
+        }
+        scope:the_story_prisoner.liege = { save_scope_as = payer }
     }
-
-    scope:the_story_prisoner = { save_scope_as = prisoner }
-    scope:the_story_owner = { save_scope_as = imprisoner }
+    else = {
+        scope:the_story_prisoner = { save_scope_as = payer }
+    }
 
     ransom_interaction_effect = yes
 
@@ -205,21 +256,9 @@ mrfp_ransom_all_unblocked_prisoners_for_herd = {
     }
 }
 
-# --- Ransom counters ---------------------------------------------------------
-
-mrfp_update_ransom_counter_gold_current = {
-    scope:the_story_owner.var:mrfp_story = {
-        change_variable = { name = mrfp_total_ransomed_people_current add = 1 }
-        change_variable = { name = mrfp_total_ransomed_gold_current add = mrfp_target_ransom_gold_cost }
-    }
-}
-
-mrfp_update_ransom_counter_herd_current = {
-    scope:the_story_owner.var:mrfp_story = {
-        change_variable = { name = mrfp_total_ransomed_people_current add = 1 }
-        change_variable = { name = mrfp_total_ransomed_herd_current add = mrfp_target_ransom_herd_cost }
-    }
-}
+###############################################
+# RANSOM COUNTERS
+###############################################
 
 mrfp_update_ransom_counter = {
     scope:the_story = {
@@ -232,7 +271,9 @@ mrfp_update_ransom_counter = {
     }
 }
 
-# --- Ransom messages ---------------------------------------------------------
+###############################################
+# RANSOM MESSAGES
+###############################################
 
 mrfp_send_amount_people_ransomed_message = {
     if = {
@@ -265,5 +306,88 @@ mrfp_send_amount_people_ransomed_message = {
                 desc = prisonransomthingy_story_herd_only.message
             }
         }
+    }
+}
+
+###############################################
+# EVENT STORY UTILITIES
+###############################################
+
+mrfp_toggle_variable = {
+    scope:the_story = {
+        if = {
+            limit = { var:$VARIABLE_NAME$ = yes }
+            set_variable = { name = $VARIABLE_NAME$ value = no }
+        }
+        else = {
+            set_variable = { name = $VARIABLE_NAME$ value = yes }
+        }
+    }
+}
+
+mrfp_display_warning_if_wrong_prowess_else_open = {
+    if = {
+        limit = {
+            NOT = {
+                scope:the_story.var:mrfp_prowess_threshold = { 6 8 10 12 16 20 24 }
+            }
+        }
+        send_interface_message = {
+            type = event_war_bad
+            title = mrfp_prowess_limit_error_title
+            right_icon = scope:actor
+            show_as_tooltip = {
+                custom_tooltip = { text = mrfp_prowess_limit_error_tooltip }
+            }
+        }
+    }
+    else = { trigger_event = mrfp_set_threshold.0001 }
+}
+
+###############################################
+# STORY INITIALIZATION
+###############################################
+
+mrfp_start_story_if_not_exist = {
+
+    if = {
+        limit = {
+            NOT = { has_variable = mrfp_story }
+            any_owned_story = { story_type = mrfp_recruitment_cycle }
+        }
+        random_owned_story = {
+            limit = { story_type = mrfp_recruitment_cycle }
+            save_scope_as = the_story
+        }
+        set_variable = { name = mrfp_story value = scope:the_story }
+    }
+
+    else_if = {
+        limit = {
+            has_variable = mrfp_story
+            NOT = { any_owned_story = { story_type = mrfp_recruitment_cycle } }
+        }
+        remove_variable = mrfp_story
+        create_story = mrfp_recruitment_cycle
+    }
+
+    else_if = {
+        limit = {
+            NOT = { has_variable = mrfp_story }
+            NOT = { any_owned_story = { story_type = mrfp_recruitment_cycle } }
+        }
+        create_story = mrfp_recruitment_cycle
+    }
+}
+
+###############################################
+# DEBUG
+###############################################
+
+mrfp_send_debug_message = {
+    send_interface_message = {
+        type = event_captured_combatants_good
+        title = debug_mrfp_title
+        desc = debug_mrfp_desc
     }
 }
