@@ -408,9 +408,10 @@ mrfp_start_story_if_not_exist = {
 ###############################################################
 
 mrfp_send_debug_message = {
-	send_interface_message = {
-		type = event_captured_combatants_good
-		title = debug_mrfp_title
-		desc = debug_mrfp_desc
-	}
+    mrfp_send_message = {
+        TYPE = event_captured_combatants_good
+        TITLE = debug_mrfp_title
+        DESC = debug_mrfp_desc
+        ICON =
+    }
 }
