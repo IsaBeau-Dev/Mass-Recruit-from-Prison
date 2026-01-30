@@ -1,12 +1,24 @@
-﻿##Story Cycle
+﻿# --- Shared triggers ---------------------------------------------------------
+
+mrfp_unblocked_prisoner_trigger = {
+    NOT = { has_character_flag = mrfp_blocked }
+    NOT = { has_character_flag = mrfp_blocked_gui }
+    NOT = { has_character_flag = mrfp_blocked_can_ransom }
+}
+
+mrfp_unblocked_ransom_trigger = {
+    NOT = { has_character_flag = mrfp_blocked }
+    NOT = { has_character_flag = mrfp_blocked_gui }
+}
+
+# --- War blocking ------------------------------------------------------------
+
 mrfp_is_at_war_with_target_or_their_liege_story = {
-	mrfp_is_at_war_with_targets_liege_story = yes
-	if = {
-		limit = { 
-			is_at_war_with =scope:the_story_owner
-		}
-		add_character_flag = mrfp_blocked
-	}
+    mrfp_is_at_war_with_targets_liege_story = yes
+    if = {
+        limit = { is_at_war_with = scope:the_story_owner }
+        add_character_flag = mrfp_blocked
+    }
 }
 
 mrfp_is_at_war_with_targets_liege_story = {
@@ -15,12 +27,8 @@ mrfp_is_at_war_with_targets_liege_story = {
             liege ?= {
                 is_at_war_with = scope:the_story_owner
                 OR = {
-                    scope:the_story_prisoner = {
-                        is_close_family_of = liege
-                    }
-                    scope:the_story_prisoner = {
-                        is_primary_heir_of = liege
-                    }
+                    scope:the_story_prisoner = { is_close_family_of = liege }
+                    scope:the_story_prisoner = { is_primary_heir_of = liege }
                 }
             }
         }
@@ -28,64 +36,48 @@ mrfp_is_at_war_with_targets_liege_story = {
     }
 }
 
+# --- Recruitment -------------------------------------------------------------
+
 mrfp_every_prisoner_effect_story = {
-	run_interaction = {
-		interaction = mrfp_vars_interaction_story
-		actor = scope:the_story_owner
-		recipient = scope:the_story_prisoner
-		execute_threshold = accept
-	}
+    run_interaction = {
+        interaction = mrfp_vars_interaction_story
+        actor = scope:the_story_owner
+        recipient = scope:the_story_prisoner
+        execute_threshold = accept
+    }
 }
 
 mrfp_update_recruitment_counter_current = {
-	scope:actor.var:mrfp_story = {
-		change_variable = {
-			name = mrfp_total_recruited_current
-			add = 1
-		}
-	}
+    scope:actor.var:mrfp_story = {
+        change_variable = { name = mrfp_total_recruited_current add = 1 }
+    }
 }
 
 mrfp_update_recruitment_counter = {
-	change_variable = { name = mrfp_total_recruited  add = scope:the_story.var:mrfp_total_recruited_current }
-	change_variable = { name = mrfp_total_recruited_current multiply = 0 }
+    change_variable = {
+        name = mrfp_total_recruited
+        add = scope:the_story.var:mrfp_total_recruited_current
+    }
+    change_variable = { name = mrfp_total_recruited_current multiply = 0 }
 }
 
-
 mrfp_send_amout_people_released_message = {
-	if = {
-		limit = { scope:the_story.var:mrfp_total_recruited_current >= 1 }
-		# send_interface_message = {
-		# 	type = event_captured_combatants_good
-		# 	title = debug_mrfp_title
-		# 	desc = "Correctly get value ? [the_story.MakeScope.Var('mrfp_total_recruited_current').GetValue|0]"
-		# }
-		send_interface_message = {
-			type = event_captured_combatants_good
-			title = prisonreleasethingy_story_release.title
-			desc = prisonreleasethingy_story_release.message							  
-		}
-	}
+    if = {
+        limit = { scope:the_story.var:mrfp_total_recruited_current >= 1 }
+        send_interface_message = {
+            type = event_captured_combatants_good
+            title = prisonreleasethingy_story_release.title
+            desc = prisonreleasethingy_story_release.message
+        }
+    }
 }
 
 mrfp_release_all_unblocked_prisoners = {
-	if = {
-		limit = {
-			NOT = {
-				has_character_flag = mrfp_blocked
-			}
-			NOT = {
-				has_character_flag = mrfp_blocked_gui
-			}
-			NOT = {
-				has_character_flag = mrfp_blocked_can_ransom
-			}
-		}
-
-		mrfp_every_prisoner_effect_story = yes
-		
-	}
+    if = { limit = { mrfp_unblocked_prisoner_trigger = yes } }
+    mrfp_every_prisoner_effect_story = yes
 }
+
+# --- Ransom blocking ---------------------------------------------------------
 
 mrfp_block_high_value_ransoms_effect = {
     if = {
@@ -94,379 +86,184 @@ mrfp_block_high_value_ransoms_effect = {
     }
 }
 
+# --- Ransom core -------------------------------------------------------------
 
-
-###RANSOM
 mrfp_ransom = {
-	every_prisoner = {
-		limit = { always = yes }
-		save_scope_as = the_story_prisoner
-		mrfp_is_at_war_with_target_or_their_liege_story = yes
+    every_prisoner = {
+        save_scope_as = the_story_prisoner
+        mrfp_is_at_war_with_target_or_their_liege_story = yes
+        save_scope_as = target
 
-		#save again for script values
-		save_scope_as = target
-		
-		#TODO run gold ransom for people who dont have herd even with ransom for herd enabled?
-		if = {
-			limit = { 
-				scope:the_story.var:mrfp_ransom_for_herd_enabled = no
-			 }
-			mrfp_ransom_all_unblocked_prisoners_for_gold = yes
-		}
-		else_if = {
-			limit = { 
-				scope:the_story.var:mrfp_ransom_for_herd_enabled = yes
-			}
-			# payer and prisoner are the same
-			if = {
-				limit = {
-					scope:target = {
-						government_has_flag = government_is_nomadic
-						exists = domicile
-					}
-				}
-				#debug messages
-				# scope:the_story_owner = {
-				# 	send_interface_message = {
-				# 		type = event_captured_combatants_good
-				# 		title = debug_mrfp_title
-				# 		desc = "prisoner+payer"
-				# 		left_icon = scope:target
-				# 	}
-				# }
-				mrfp_ransom_all_unblocked_prisoners_for_herd = yes
-			}
-			# payer and prisoner are different
-			else_if = {
-				limit = {
-					liege ?= {
-						government_has_flag = government_is_nomadic
-						exists = domicile
-					}
-				}
-				liege ?= {
-					save_scope_as = target
-				}
-				#debug messages
-				# scope:the_story_owner = {
-				# 	send_interface_message = {
-				# 		type = event_captured_combatants_good
-				# 		title = debug_mrfp_title
-				# 		desc = "prisoner"
-				# 		left_icon = scope:the_story_prisoner
-				# 	}
-				# 	send_interface_message = {
-				# 		type = event_captured_combatants_good
-				# 		title = debug_mrfp_title
-				# 		desc = "payer"
-				# 		left_icon = scope:target
-				# 	}
-				# }
-				mrfp_ransom_all_unblocked_prisoners_for_herd = yes
-			}
-			else = {
-				mrfp_ransom_all_unblocked_prisoners_for_gold = yes
-			}
-		}
+        if = {
+            limit = { scope:the_story.var:mrfp_ransom_for_herd_enabled = no }
+            mrfp_ransom_all_unblocked_prisoners_for_gold = yes
+        }
+        else = {
+            mrfp_ransom_handle_herd_or_gold = yes
+        }
     }
 
     mrfp_send_amount_people_ransomed_message = yes
-    
-	mrfp_update_ransom_counter = yes
+    mrfp_update_ransom_counter = yes
 }
+
+# --- Herd/gold decision wrapper ----------------------------------------------
+
+mrfp_ransom_handle_herd_or_gold = {
+    # prisoner pays
+    if = {
+        limit = {
+            scope:target = {
+                government_has_flag = government_is_nomadic
+                exists = domicile
+            }
+        }
+        mrfp_ransom_all_unblocked_prisoners_for_herd = yes
+    }
+    # liege pays
+    else_if = {
+        limit = {
+            liege ?= {
+                government_has_flag = government_is_nomadic
+                exists = domicile
+            }
+        }
+        liege ?= { save_scope_as = target }
+        mrfp_ransom_all_unblocked_prisoners_for_herd = yes
+    }
+    else = {
+        mrfp_ransom_all_unblocked_prisoners_for_gold = yes
+    }
+}
+
+# --- Gold ransom -------------------------------------------------------------
 
 mrfp_ransom_all_unblocked_prisoners_for_gold = {
-	if = {
-		limit = { 
-			NOT = {	has_character_flag = mrfp_blocked	}
-			NOT = {	has_character_flag = mrfp_blocked_gui }
-			scope:the_story_owner = {
-				mrfp_target_ransom_gold_cost <= mrfp_secondary_recipient_gold
-				is_character_interaction_potentially_accepted = {
-					interaction = ransom_interaction
-					recipient = scope:the_story_prisoner
-					required_response = yes
-				}
-			}
-		}
+    if = {
+        limit = {
+            mrfp_unblocked_ransom_trigger = yes
+            scope:the_story_owner = {
+                mrfp_target_ransom_gold_cost <= mrfp_secondary_recipient_gold
+                is_character_interaction_potentially_accepted = {
+                    interaction = ransom_interaction
+                    recipient = scope:the_story_prisoner
+                    required_response = yes
+                }
+            }
+        }
+    }
 
-		mrfp_update_ransom_counter_gold_current = yes
+    mrfp_update_ransom_counter_gold_current = yes
 
-		run_interaction = {
-			interaction = ransom_interaction
-			actor = scope:the_story_owner
-			recipient = scope:the_story_prisoner
-			execute_threshold = accept
-		}
-		
-	}
+    run_interaction = {
+        interaction = ransom_interaction
+        actor = scope:the_story_owner
+        recipient = scope:the_story_prisoner
+        execute_threshold = accept
+    }
 }
+
+# --- Herd ransom -------------------------------------------------------------
 
 mrfp_ransom_all_unblocked_prisoners_for_herd = {
-	if = {
-		limit = { 
-			NOT = {	has_character_flag = mrfp_blocked	}
-			NOT = {	has_character_flag = mrfp_blocked_gui }
-			scope:the_story_owner = {
-				mrfp_target_ransom_herd_cost <= mrfp_secondary_recipient_herd
-				is_character_interaction_potentially_accepted = {
-					interaction = ransom_interaction
-					recipient = scope:the_story_prisoner
-					required_response = yes
-				}
-			}
-		}
+    if = {
+        limit = {
+            mrfp_unblocked_ransom_trigger = yes
+            scope:the_story_owner = {
+                mrfp_target_ransom_herd_cost <= mrfp_secondary_recipient_herd
+                is_character_interaction_potentially_accepted = {
+                    interaction = ransom_interaction
+                    recipient = scope:the_story_prisoner
+                    required_response = yes
+                }
+            }
+        }
+    }
 
-		mrfp_update_ransom_counter_herd_current = yes
+    mrfp_update_ransom_counter_herd_current = yes
 
-		#workaround to set herd payment option
-		scope:the_story_owner = {
-			save_scope_value_as = { name = herd_send_option value = yes }
-		}
-		scope:the_story_prisoner = {
-			save_scope_as = payer
-			if = {
-				limit = {
-					is_ruler = no
-					exists = liege
-				}
-				liege = {
-					save_scope_as = payer
-				}
-			}
-		}
-		scope:the_story_prisoner = {
-			save_scope_as = prisoner
-		}
-		scope:the_story_owner = {
-			save_scope_as = imprisoner
-		}
-		ransom_interaction_effect = yes
+    scope:the_story_owner = {
+        save_scope_value_as = { name = herd_send_option value = yes }
+    }
 
-		run_interaction = {
-			interaction = ransom_interaction
-			actor = scope:the_story_owner
-			recipient = scope:the_story_prisoner
-			execute_threshold = accept
-		}
-		
-	}
+    scope:the_story_prisoner = {
+        save_scope_as = payer
+        if = { limit = { is_ruler = no exists = liege } }
+        liege = { save_scope_as = payer }
+    }
+
+    scope:the_story_prisoner = { save_scope_as = prisoner }
+    scope:the_story_owner = { save_scope_as = imprisoner }
+
+    ransom_interaction_effect = yes
+
+    run_interaction = {
+        interaction = ransom_interaction
+        actor = scope:the_story_owner
+        recipient = scope:the_story_prisoner
+        execute_threshold = accept
+    }
 }
 
+# --- Ransom counters ---------------------------------------------------------
+
 mrfp_update_ransom_counter_gold_current = {
-	scope:the_story_owner.var:mrfp_story = {
-		change_variable = {
-			name = mrfp_total_ransomed_people_current
-			add = 1
-		}
-		change_variable = {
-			name = mrfp_total_ransomed_gold_current
-			add = mrfp_target_ransom_gold_cost
-		}
-	}
+    scope:the_story_owner.var:mrfp_story = {
+        change_variable = { name = mrfp_total_ransomed_people_current add = 1 }
+        change_variable = { name = mrfp_total_ransomed_gold_current add = mrfp_target_ransom_gold_cost }
+    }
 }
 
 mrfp_update_ransom_counter_herd_current = {
-	scope:the_story_owner.var:mrfp_story = {
-		change_variable = {
-			name = mrfp_total_ransomed_people_current
-			add = 1
-		}
-		change_variable = {
-			name = mrfp_total_ransomed_herd_current
-			add = mrfp_target_ransom_herd_cost
-		}
-	}
+    scope:the_story_owner.var:mrfp_story = {
+        change_variable = { name = mrfp_total_ransomed_people_current add = 1 }
+        change_variable = { name = mrfp_total_ransomed_herd_current add = mrfp_target_ransom_herd_cost }
+    }
 }
 
 mrfp_update_ransom_counter = {
-	scope:the_story = {
-		change_variable = { name = mrfp_total_ransomed_people  add = scope:the_story.var:mrfp_total_ransomed_people_current }
-		change_variable = { name = mrfp_total_ransomed_gold  add = scope:the_story.var:mrfp_total_ransomed_gold_current }
-		change_variable = { name = mrfp_total_ransomed_herd  add = scope:the_story.var:mrfp_total_ransomed_herd_current }
-		change_variable = { name = mrfp_total_ransomed_people_current multiply = 0 }
-		change_variable = { name = mrfp_total_ransomed_gold_current multiply = 0 }
-		change_variable = { name = mrfp_total_ransomed_herd_current multiply = 0 }
-	}
+    scope:the_story = {
+        change_variable = { name = mrfp_total_ransomed_people add = scope:the_story.var:mrfp_total_ransomed_people_current }
+        change_variable = { name = mrfp_total_ransomed_gold add = scope:the_story.var:mrfp_total_ransomed_gold_current }
+        change_variable = { name = mrfp_total_ransomed_herd add = scope:the_story.var:mrfp_total_ransomed_herd_current }
+        change_variable = { name = mrfp_total_ransomed_people_current multiply = 0 }
+        change_variable = { name = mrfp_total_ransomed_gold_current multiply = 0 }
+        change_variable = { name = mrfp_total_ransomed_herd_current multiply = 0 }
+    }
 }
+
+# --- Ransom messages ---------------------------------------------------------
 
 mrfp_send_amount_people_ransomed_message = {
-	if = {
-		limit = { scope:the_story.var:mrfp_total_ransomed_people_current >= 1 }
-		#both herd and gold
-		if = {
-			limit = { 
-				scope:the_story.var:mrfp_total_ransomed_herd_current >= 1
-				scope:the_story.var:mrfp_total_ransomed_gold_current >= 1
-			 }
-			send_interface_message = {
-				type = event_captured_combatants_good
-				title = prisonransomthingy_story.title
-				desc = prisonransomthingy_story_gold_and_herd.message							  
-			}
-		}
-		#only gold
-		else_if = {
-			limit = { scope:the_story.var:mrfp_total_ransomed_gold_current >= 1 }
-			send_interface_message = {
-				type = event_captured_combatants_good
-				title = prisonransomthingy_story.title
-				desc = prisonransomthingy_story_gold_only.message							  
-			}
-		}
-		#only herd
-		else_if = {
-			limit = { scope:the_story.var:mrfp_total_ransomed_herd_current >= 1 }
-			send_interface_message = {
-				type = event_captured_combatants_good
-				title = prisonransomthingy_story.title
-				desc = prisonransomthingy_story_herd_only.message							  
-			}
-		}
-	}
+    if = {
+        limit = { scope:the_story.var:mrfp_total_ransomed_people_current >= 1 }
+
+        if = {
+            limit = {
+                scope:the_story.var:mrfp_total_ransomed_herd_current >= 1
+                scope:the_story.var:mrfp_total_ransomed_gold_current >= 1
+            }
+            send_interface_message = {
+                type = event_captured_combatants_good
+                title = prisonransomthingy_story.title
+                desc = prisonransomthingy_story_gold_and_herd.message
+            }
+        }
+        else_if = {
+            limit = { scope:the_story.var:mrfp_total_ransomed_gold_current >= 1 }
+            send_interface_message = {
+                type = event_captured_combatants_good
+                title = prisonransomthingy_story.title
+                desc = prisonransomthingy_story_gold_only.message
+            }
+        }
+        else_if = {
+            limit = { scope:the_story.var:mrfp_total_ransomed_herd_current >= 1 }
+            send_interface_message = {
+                type = event_captured_combatants_good
+                title = prisonransomthingy_story.title
+                desc = prisonransomthingy_story_herd_only.message
+            }
+        }
+    }
 }
-
-#event story stuff
-mrfp_toggle_variable = {
-	switch = {
-		trigger = scope:the_story.var:$VARIABLE_NAME$
-		no = {
-			scope:the_story = {
-				set_variable = { 
-					name = $VARIABLE_NAME$
-					value = yes
-				}
-			} 
-		} 
-		yes = { 
-			scope:the_story = {
-				set_variable = { 
-					name = $VARIABLE_NAME$
-					value = no
-				}
-			} 
-		} 
-	}
-}
-
-mrfp_display_warning_if_wrong_prowess_else_open = {
-	if = {
-		limit = {
-			NOR = {
-				scope:the_story.var:mrfp_prowess_threshold = 6
-				scope:the_story.var:mrfp_prowess_threshold = 8
-				scope:the_story.var:mrfp_prowess_threshold = 10
-				scope:the_story.var:mrfp_prowess_threshold = 12
-				scope:the_story.var:mrfp_prowess_threshold = 16
-				scope:the_story.var:mrfp_prowess_threshold = 20
-				scope:the_story.var:mrfp_prowess_threshold = 24
-			}
-		}
-		send_interface_message = {
-			type = event_war_bad
-			title = mrfp_prowess_limit_error_title
-			right_icon = scope:actor
-
-			show_as_tooltip = {
-				custom_tooltip = {
-					text = mrfp_prowess_limit_error_tooltip
-				}
-			}
-		}
-		
-	}
-	else = {
-		trigger_event = mrfp_set_threshold.0001
-	}
-}
-
-# mrfp_display_variable = {
-#     desc = $VARIABLE_NAME$
-#     first_valid = {
-#       triggered_desc = {
-#         trigger = {
-#           var:mrfp_$VARIABLE_NAME$ = yes
-#         }
-#         desc = mrfp.0001.enabled_n
-#       }
-#       desc = mrfp.0001.disabled_n
-#     }
-# }
-
-#### Check if story exists else start it on player
-mrfp_start_story_if_not_exist = {
-	#not has var but owns story
-	if = {
-		limit = {
-			NOT = {
-				has_variable = mrfp_story
-			}
-			any_owned_story = {
-				story_type = mrfp_recruitment_cycle
-			}
-		}
-		random_owned_story = {
-			limit = {
-				story_type = mrfp_recruitment_cycle
-			}
-			save_scope_as = the_story
-		}
-		set_variable = {
-			name = mrfp_story
-			value = scope:the_story
-		}
-	}
-	# has variable but no story
-	else_if = {
-		limit = {
-			has_variable = mrfp_story
-			NOT = {
-				any_owned_story = {
-					story_type = mrfp_recruitment_cycle
-				}
-			}
-		}
-		remove_variable = mrfp_story
-		create_story = mrfp_recruitment_cycle
-	}
-
-	# does not have both
-	else_if = {
-		limit = {
-			NOT = {
-				has_variable = mrfp_story
-			}
-			NOT = {
-				any_owned_story = {
-					story_type = mrfp_recruitment_cycle
-				}
-			}
-		}
-		create_story = mrfp_recruitment_cycle
-	}
-}
-
-mrfp_send_debug_message = {
-	send_interface_message = {
-		type = event_captured_combatants_good
-		title = debug_mrfp_title
-		desc = debug_mrfp_desc
-	}
-}
-
-# # does not work as intended
-# mrfp_redirect_from_target_to_liege = {
-# 	scope:target = {
-#         save_temporary_scope_as = secondary_recipient
-
-#         if = {
-#             limit = {
-#                 is_ruler = no
-#                 exists = liege
-#             }
-#             liege = {
-#                 save_temporary_scope_as = secondary_recipient
-#             }
-#         }
-#     }
-# }
