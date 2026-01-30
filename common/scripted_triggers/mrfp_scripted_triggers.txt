@@ -1,0 +1,23 @@
+﻿# Check if prisoner is unblocked
+mrfp_is_unblocked_prisoner = {
+    NOT = { has_character_flag = mrfp_blocked }
+    NOT = { has_character_flag = mrfp_blocked_gui }
+    NOT = { has_character_flag = mrfp_blocked_can_ransom }
+}
+
+# Check if ransom is possible (gold/herd)
+mrfp_can_ransom = {
+    scope:the_story_owner = {
+        $COST$ <= $POOL$
+        is_character_interaction_potentially_accepted = {
+            interaction = ransom_interaction
+            recipient = scope:the_story_prisoner
+            required_response = yes
+        }
+    }
+}
+
+# Validate prowess threshold
+mrfp_is_valid_prowess_threshold = {
+    scope:the_story.var:mrfp_prowess_threshold = { 6 8 10 12 16 20 24 }
+}
