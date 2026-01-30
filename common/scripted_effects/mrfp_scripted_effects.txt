@@ -201,6 +201,10 @@ mrfp_ransom_all_unblocked_prisoners_for_gold = {
 				desc = "Is unblocked prisoner check passed."
 				right_icon = scope:the_story_prisoner
 			}
+
+			mrfp_send_debug_message = {
+				text = "MRFP: Monthly recruitment cycle executed with prowess threshold disabled."
+			}
 		}
 		
 	}
@@ -231,26 +235,25 @@ mrfp_ransom_all_unblocked_prisoners_for_gold = {
         }
 
 		scope:the_story_owner = {
-			# mrfp_send_debug_message = yes
 			
-			# --- Check if target exists ---
-			if = {
-				limit = { NOT = { exists = scope:target } }
-				send_interface_message = {
-					type = event_captured_combatants_good
-					title = debug_mrfp_title
-					desc = "ERROR: 'target' scope does NOT exist "
-					right_icon = scope:the_story_prisoner
-				}
-			}
-			else = {
-				send_interface_message = {
-					type = event_captured_combatants_good
-					title = debug_mrfp_title
-					desc = "SUCCESS: 'target' scope exists"
-					right_icon = scope:the_story_prisoner
-				}
-			}
+			# # --- Check if target exists ---
+			# if = {
+			# 	limit = { NOT = { exists = scope:target } }
+			# 	send_interface_message = {
+			# 		type = event_captured_combatants_good
+			# 		title = debug_mrfp_title
+			# 		desc = "ERROR: 'target' scope does NOT exist "
+			# 		right_icon = scope:the_story_prisoner
+			# 	}
+			# }
+			# else = {
+			# 	send_interface_message = {
+			# 		type = event_captured_combatants_good
+			# 		title = debug_mrfp_title
+			# 		desc = "SUCCESS: 'target' scope exists"
+			# 		right_icon = scope:the_story_prisoner
+			# 	}
+			# }
 		}
 		
 
@@ -432,40 +435,39 @@ mrfp_start_story_if_not_exist = {
 # DEBUG
 ###############################################################
 
-mrfp_send_debug_message = {
-    mrfp_send_message = {
-        TYPE = event_captured_combatants_good
-        TITLE = debug_mrfp_title
-        DESC = debug_mrfp_desc
-        ICON =
-    }
-}
 # mrfp_send_debug_message = {
-
-#     # Only run if your debug rule/flag is active
-#     if = {
-#         limit = { game_rule = mrfp_debug_output_on }
-
-#         # --- If custom text was provided ---
-#         if = {
-#             limit = { NOT = { check_variable = { name = "$text$" value = "" } } }
-
-# 			mrfp_send_message = {
-# 				TYPE = event_captured_combatants_good
-# 				TITLE = debug_mrfp_title
-# 				DESC = "$text$"
-# 				ICON =
-# 			}
-#         }
-
-#         # --- Otherwise use default text ---
-#         else = {
-# 			mrfp_send_message = {
-# 				TYPE = event_captured_combatants_good
-# 				TITLE = debug_mrfp_title
-# 				DESC = debug_mrfp_desc
-# 				ICON =
-# 			}
-#         }
+#     mrfp_send_message = {
+#         TYPE = event_captured_combatants_good
+#         TITLE = debug_mrfp_title
+#         DESC = debug_mrfp_desc
+#         ICON =
 #     }
 # }
+mrfp_send_debug_message = {
+
+    # Only run if your debug rule/flag is active
+    if = {
+        limit = { always = yes } # Replace with your debug condition
+
+        # --- If custom text was provided ---
+        if = {
+            limit = { NOT = { flag:$text$ = flag:X } }
+
+                send_interface_message = {
+                    type = event_captured_combatants_good
+                    title = debug_mrfp_title
+                    # desc = $text$
+					desc = "AAAAAAAAAAAAAAAA"
+                }
+        }
+
+        # --- Otherwise use default text ---
+        else = {
+			send_interface_message = {
+				type = event_captured_combatants_good
+				title = debug_mrfp_title
+				desc = debug_mrfp_desc
+			}
+        }
+    }
+}
