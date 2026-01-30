@@ -19,5 +19,13 @@ mrfp_can_ransom = {
 
 # Validate prowess threshold
 mrfp_is_valid_prowess_threshold = {
-    scope:the_story.var:mrfp_prowess_threshold = { 6 8 10 12 16 20 24 }
+    OR = {
+        scope:the_story.var:mrfp_prowess_threshold = 6
+        scope:the_story.var:mrfp_prowess_threshold = 8
+        scope:the_story.var:mrfp_prowess_threshold = 10
+        scope:the_story.var:mrfp_prowess_threshold = 12
+        scope:the_story.var:mrfp_prowess_threshold = 16
+        scope:the_story.var:mrfp_prowess_threshold = 20
+        scope:the_story.var:mrfp_prowess_threshold = 24
+    }
 }
