@@ -54,6 +54,22 @@ mrfp_update_recruitment_counter = {
 
 mrfp_send_amout_people_released_message = {
 	if = {
+		limit = { NOT = { exists = scope:the_story } }
+		send_interface_message = {
+			type = event_captured_combatants_good
+			title = debug_mrfp_title
+			desc = "mrfp_send_amout_people_released_message was called without a valid 'the_story' scope."							  
+		}
+	}
+	if = {
+		limit = { exists = scope:the_story }
+		send_interface_message = {
+			type = event_captured_combatants_good
+			title = debug_mrfp_title
+			desc = " 'the_story' scope exists."							  
+		}
+	}
+	if = {
 		limit = { scope:the_story.var:mrfp_total_recruited_current >= 1 }
 		send_interface_message = {
 			type = event_captured_combatants_good
