@@ -12,16 +12,6 @@ mrfp_modify_story_owner_var = {
     }
 }
 
-# Send a standardized interface message
-mrfp_send_message = {
-    send_interface_message = {
-        type = $TYPE$
-        title = $TITLE$
-        desc = $DESC$
-        right_icon = $ICON$
-    }
-}
-
 # Add ransom counters (gold/herd)
 mrfp_add_ransom = {
     mrfp_modify_story_owner_var = {
@@ -108,11 +98,10 @@ mrfp_update_recruitment_counter = {
 mrfp_send_amout_people_released_message = {
     if = {
         limit = { scope:the_story.var:mrfp_total_recruited_current >= 1 }
-        mrfp_send_message = {
-            TYPE = event_captured_combatants_good
-            TITLE = prisonreleasethingy_story_release.title
-            DESC = prisonreleasethingy_story_release.message
-            ICON = 
+        send_interface_message = {
+            type = event_captured_combatants_good
+            title = prisonreleasethingy_story_release.title
+            desc = prisonreleasethingy_story_release.message 
         }
     }
 }
@@ -347,29 +336,26 @@ mrfp_send_amount_people_ransomed_message = {
                 scope:the_story.var:mrfp_total_ransomed_herd_current >= 1
                 scope:the_story.var:mrfp_total_ransomed_gold_current >= 1
             }
-            mrfp_send_message = {
-                TYPE = event_captured_combatants_good
-                TITLE = prisonransomthingy_story.title
-                DESC = prisonransomthingy_story_gold_and_herd.message
-                ICON =
+            send_interface_message = {
+                type = event_captured_combatants_good
+                title = prisonransomthingy_story.title
+                desc = prisonransomthingy_story_gold_and_herd.message
             }
         }
         else_if = {
             limit = { scope:the_story.var:mrfp_total_ransomed_gold_current >= 1 }
-            mrfp_send_message = {
-                TYPE = event_captured_combatants_good
-                TITLE = prisonransomthingy_story.title
-                DESC = prisonransomthingy_story_gold_only.message
-                ICON =
+            send_interface_message = {
+                type = event_captured_combatants_good
+                title = prisonransomthingy_story.title
+                desc = prisonransomthingy_story_gold_only.message
             }
         }
         else_if = {
             limit = { scope:the_story.var:mrfp_total_ransomed_herd_current >= 1 }
-            mrfp_send_message = {
-                TYPE = event_captured_combatants_good
-                TITLE = prisonransomthingy_story.title
-                DESC = prisonransomthingy_story_herd_only.message
-                ICON =
+            send_interface_message = {
+                type = event_captured_combatants_good
+                title = prisonransomthingy_story.title
+                desc = prisonransomthingy_story_herd_only.message
             }
         }
     }
@@ -386,11 +372,11 @@ mrfp_toggle_variable = {
 mrfp_display_warning_if_wrong_prowess_else_open = {
     if = {
         limit = { NOT = { mrfp_is_valid_prowess_threshold = yes } }
-        mrfp_send_message = {
-            TYPE = event_war_bad
-            TITLE = mrfp_prowess_limit_error_title
-            DESC = mrfp_prowess_limit_error_tooltip
-            ICON = scope:actor
+        send_interface_message = {
+            type = event_war_bad
+            title = mrfp_prowess_limit_error_title
+            desc = mrfp_prowess_limit_error_tooltip
+            right_icon = scope:actor
         }
     }
     else = { trigger_event = mrfp_set_threshold.0001 }
