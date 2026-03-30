@@ -107,16 +107,30 @@ mrfp_prowess_limit_error_tooltip:0 "You have the wrong prowess limit. Please cha
 
 
 #release from prison popup to message feed
- prisonreleasethingy.title:0 "Prisoner Agrees To Release"
- prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] has agreed to your conditions for their release."
+# ============================
+# VARIABLE KEYS
+mrfp_story_total_recruited_current:0 "[the_story.MakeScope.Var('mrfp_total_recruited_current').GetValue|0]"
+mrfp_story_total_ransomed_people_current:0 "[the_story.MakeScope.Var('mrfp_total_ransomed_people_current').GetValue|0]"
 
- prisonreleasethingy_story_release.title:0 "Prisoner(s) Agree(s) To Chosen Options"
- prisonreleasethingy_story_release.message:0 "You have released [ROOT.Var('mrfp_story').Var('mrfp_total_recruited_current').GetValue] people from prison."
+mrfp_story_total_ransomed_gold_current:0 "[the_story.MakeScope.Var('mrfp_total_ransomed_gold_current').GetValue|0]"
+mrfp_story_total_ransomed_herd_current:0 "[the_story.MakeScope.Var('mrfp_total_ransomed_herd_current').GetValue|0]"
+# ============================
+# RELEASE FROM PRISON POPUP
+prisonreleasethingy.title:0 "Prisoner Agrees To Release"
+prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] has agreed to your conditions for their release."
 
- prisonransomthingy_story.title:0 "Prisoners Ransomed"
- prisonransomthingy_story_gold_only.message:0 "You have ransomed [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] gold [gold_i]"
- prisonransomthingy_story_herd_only.message:0 "You have ransomed [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] herd [herd_i]"
- prisonransomthingy_story_gold_and_herd.message:0 "You have ransomed [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] people from prison for [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] herd [herd_i] and [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] gold [gold_i]"
+prisonreleasethingy_story_release.title:0 "Prisoner(s) Agree(s) To Chosen Options"
+prisonreleasethingy_story_release.message:0 "You have released $mrfp_story_total_recruited_current$ people from prison."
+# ============================
+# RANSOM STORY
+prisonransomthingy_story.title:0 "Prisoners Ransomed"
+
+prisonransomthingy_story_gold_only.message:0 "You have ransomed $mrfp_story_total_ransomed_people_current$ people from prison for $mrfp_story_total_ransomed_gold_current$ gold [gold_i]"
+
+prisonransomthingy_story_herd_only.message:0 "You have ransomed $mrfp_story_total_ransomed_people_current$ people from prison for $mrfp_story_total_ransomed_herd_current$ herd [herd_i]"
+
+prisonransomthingy_story_gold_and_herd.message:0 "You have ransomed $mrfp_story_total_ransomed_people_current$ people from prison for $mrfp_story_total_ransomed_herd_current$ herd [herd_i] and $mrfp_story_total_ransomed_gold_current$ gold [gold_i]"
+
 
 ##welcome message
 mrfp_welcome_events.0001.title:0 "Welcome to Mass Prison Actions"
@@ -151,7 +165,7 @@ mrfp_error:0 "#N ERROR#!"
 #Ransom Settings
 mrfp_ransom_settings_only_gold_possible:0 "You Can only ransom for [gold] [gold_i] !"
 mrfp_ransom_settings_tip_only_for_max_amout_released:0 "Tip: Only people will be ransomed, that can be ransomed for the maximum amout of [gold] [gold_i] possible. Otherwise they will remain in your [prison]"
-mrfp_ransom_settings_tip_herd_is_prefered_not_only:0 "Tip: Only people that actually can be ransomed for held, will also be ransomed for [herd] [herd_i]. In general keep in mind that only people will be ransomed, that can be ransomed for the maximum amout of [gold] [gold_i] or [herd] [herd_i]. Otherwise they will remain in your [prison]!"
+mrfp_ransom_settings_tip_herd_is_prefered_not_only:0 "Tip: Only people that actually can be ransomed for [herd] [herd_i], will also be ransomed for [herd] [herd_i]. In general keep in mind that only people will be ransomed, that can be ransomed for the maximum amout of [gold] [gold_i] or [herd] [herd_i]. Otherwise they will remain in your [prison]!"
 mrfp_ransom_settings_currently_ransoming_for:0 "You are currently mass ransoming for [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )]"
 mrfp_toggle_ransom_herd_or_gold:0 "Change to [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_inverse_custom_loc' )]"
 #Monthly actions

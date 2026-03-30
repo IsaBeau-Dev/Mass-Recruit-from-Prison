@@ -1,0 +1,58 @@
+action_can_ransom:1 "@gold_icon!Prisoner can be Ransomed"
+ action_can_ransom_combined_group_label:1 "@gold_icon!Prisoners can be Ransomed"
+ action_can_ransom_combined_group_name:1 "$action_can_ransom$"
+ action_can_ransom_desc:2 "You can ransom your [prisoner|E], [recipient.Custom('GetPrimaryTitleTierIcon')][recipient.GetShortUIName], for [gold|E].\n\n[recipient.GetSheHe|U] currently has @gold_icon!#V [recipient.MakeScope.ScriptValue('current_situation_gold_ransom')|0]/[recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#! of the Gold you can demand.$action_can_ransom_HELP$"
+ action_can_ransom_combined_group_description:1 "You can ransom your [prisoners|E] for [gold|E].$action_can_ransom_HELP$"
+ action_can_ransom_label:1 "@gold_icon!You can ransom [recipient.Custom('GetPrimaryTitleTierIcon')][recipient.GetShortUINameNoTooltip], @gold_icon!#V [recipient.MakeScope.ScriptValue('current_situation_gold_ransom')|0]/[recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#!"
+ action_can_ransom_combined_label:1 "Your [actor.Custom2('RelationToMe', recipient)], [recipient.Custom('GetPrimaryTitleTierIcon')][recipient.GetShortUINameNoTooltip], @gold_icon!#V [recipient.MakeScope.ScriptValue('current_situation_gold_ransom')|0]/[recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#!"
+ action_can_ransom_click:0 "#I Click to ransom [prisoner]#!"
+ action_can_ransom_HELP:0 "\n\n#help If a prisoner is a threat to you, such as a [rival|E], you might not want to ransom them. If so, you might want to [execute|E] them or let them rot in the dungeons indefinitely...#!"
+ 
+
+ action_can_ransom = {
+	combine_into_one = yes
+	check_create_action = {
+		every_prisoner = {
+			limit = {
+				OR = {
+					AND = {
+						OR = {
+							is_pool_guest = yes
+							is_ruler = yes
+						}
+						gold > 10
+					}
+					AND = {
+						is_ruler = no
+						liege ?= {
+							gold > 10
+						}
+					}
+				}
+				NOT = { is_at_war_with = root }
+				root = {
+					is_character_interaction_potentially_accepted = {
+						recipient = prev
+						interaction = ransom_interaction
+					}
+				}
+				# Can't ransom to self
+				NOT = { liege ?= root }
+			}
+			try_create_important_action = {
+				important_action_type = action_can_ransom
+				actor = root
+				recipient = this
+			}
+		}
+		
+	}
+
+	effect = {
+		open_interaction_window = {
+			interaction = ransom_interaction
+			actor = scope:actor
+			recipient = scope:recipient
+		}
+	}
+}

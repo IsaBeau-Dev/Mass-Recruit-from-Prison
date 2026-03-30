@@ -108,18 +108,32 @@ decision_group_type_mrfp: "Massenaktionen für das Gefängnis"
 mrfp_prowess_limit_error_title:0 "FEHLER: FALSCHES KAMPFGESCHICK-LIMIT"
 mrfp_prowess_limit_error_tooltip:0 "Du hast ein falsches Kampfgeschick-Limit eingestellt. Bitte ändere es im neuen Einstellungsfenster."
 
-
 #release from prison popup to message feed
- prisonreleasethingy.title:0 "Gefangener freigelassen"
- prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] hat Euren Kerker verlassen."
+# ============================
+# VARIABLE KEYS (same as English)
+mrfp_story_total_recruited_current:0 "[the_story.MakeScope.Var('mrfp_total_recruited_current').GetValue|0]"
+mrfp_story_total_ransomed_people_current:0 "[the_story.MakeScope.Var('mrfp_total_ransomed_people_current').GetValue|0]"
+mrfp_story_total_ransomed_gold_current:0 "[the_story.MakeScope.Var('mrfp_total_ransomed_gold_current').GetValue|0]"
+mrfp_story_total_ransomed_herd_current:0 "[the_story.MakeScope.Var('mrfp_total_ransomed_herd_current').GetValue|0]"
 
- prisonreleasethingy_story_release.title:0 "Gefangene(r) stimmt/stimmen den gewählten Optionen zu"
- prisonreleasethingy_story_release.message:0 "Du hast insgesamt [ROOT.Var('mrfp_story').Var('mrfp_total_recruited_current').GetValue] Personen aus dem Gefängnis entlassen."
+# ============================
+# RELEASE FROM PRISON POPUP (German)
+prisonreleasethingy.title:0 "Gefangener freigelassen"
+prisonreleasethingy.message:0 "[recipient.GetShortUINameNoTooltip] hat Euren Kerker verlassen."
 
- prisonransomthingy_story.title:0 "Gefangene freigekauft"
- prisonransomthingy_story_gold_only.message:0 "Sie haben [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
- prisonransomthingy_story_herd_only.message:0 "Sie haben [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] Herde [herd_i] aus dem Gefängnis freigekauft."
- prisonransomthingy_story_gold_and_herd.message:0 "Sie haben [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_people_current').GetValue] Personen für [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_herd_current').GetValue] Herde [herd_i] und [ROOT.Var('mrfp_story').Var('mrfp_total_ransomed_gold_current').GetValue] Gold [gold_i] aus dem Gefängnis freigekauft."
+prisonreleasethingy_story_release.title:0 "Gefangene(r) stimmt/stimmen den gewählten Optionen zu"
+prisonreleasethingy_story_release.message:0 "Du hast insgesamt $mrfp_story_total_recruited_current$ Personen aus dem Gefängnis entlassen."
+
+# ============================
+# RANSOM STORY (German)
+prisonransomthingy_story.title:0 "Gefangene freigekauft"
+
+prisonransomthingy_story_gold_only.message:0 "Sie haben $mrfp_story_total_ransomed_people_current$ Personen für $mrfp_story_total_ransomed_gold_current$ Gold [gold_i] aus dem Gefängnis freigekauft."
+
+prisonransomthingy_story_herd_only.message:0 "Sie haben $mrfp_story_total_ransomed_people_current$ Personen für $mrfp_story_total_ransomed_herd_current$ Herde [herd_i] aus dem Gefängnis freigekauft."
+
+prisonransomthingy_story_gold_and_herd.message:0 "Sie haben $mrfp_story_total_ransomed_people_current$ Personen für $mrfp_story_total_ransomed_herd_current$ Herde [herd_i] und $mrfp_story_total_ransomed_gold_current$ Gold [gold_i] aus dem Gefängnis freigekauft."
+
 
 
 ##welcome message
@@ -154,12 +168,13 @@ mrfp_error:0 "#N FEHLER#!"
 #Ransom Settings
 mrfp_ransom_settings_only_gold_possible:0 "Eine Lösegeldforderung ist nur mit [gold] [gold_i] möglich !"
 mrfp_ransom_settings_tip_only_for_max_amout_released:0 "Tipp: Es wird nur von Personen Lösegeld eingefordert, die für die maximal mögliche Menge an [gold] [gold_i] freigelassen werden können. Sonst bleiben sie solange in deinem [prison]!"
-mrfp_ransom_settings_tip_herd_is_prefered_not_only:0 "Tipp: Nur Personen, die tatsächlich für [herd] ausgelöst werden können, werden auch für [herd] [herd_i] ausgelöst. Bitte beachte, dass nur von Personen Lösegeld eingefordert wird, die für die maximal mögliche Menge an [gold] [gold_i] oder [herd] [herd_i] freigelassen werden können. Sonst bleiben sie solange in deinem [prison]"
+mrfp_ransom_settings_tip_herd_is_prefered_not_only:0 "Tipp: Nur Personen, die tatsächlich für [herd] [herd_i] ausgelöst werden können, werden auch für [herd] [herd_i] ausgelöst. Bitte beachte, dass nur von Personen Lösegeld eingefordert wird, die für die maximal mögliche Menge an [gold] [gold_i] oder [herd] [herd_i] freigelassen werden können. Sonst bleiben sie solange in deinem [prison]"
 mrfp_ransom_settings_currently_ransoming_for:0 "Die Massenlösegeldforderung wird aktuell eingefordert für [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )]"
 mrfp_toggle_ransom_herd_or_gold:0 "Ändere zu [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_inverse_custom_loc' )]"
 #Monthly actions
 mrfp_mass_recruit_monthly_text:0 "Die automatische Massenrekrutierung jeden Monat ist"
 mrfp_send_options_toggle_button_list:0 "Mit den folgenden Optionen:"
 mrfp_ransom_for_herd_or_gold_dynamic_text:0 "Die Massenlösegeldforderung jeden Monat automatisch für [GuiScope.SetRoot( GetPlayer.MakeScope ).Custom( 'mrfp_ransom_herd_and_gold_custom_loc' )] ist"
-mrfp_toggle_monthly_recruit:0 "Starte/Stoppe die Massenfreilassung für die aktuellen Bedingungen"
+#mrfp_toggle_monthly_recruit:0 "Starte/Stoppe die Massenfreilassung für die aktuellen Bedingungen"
+mrfp_toggle_monthly_recruit:0 "Starte/Stoppe die Massenfreilassung/Rekrutierung"
 mrfp_toggle_monthly_ransom:0 "Starte/Stoppe die Massenforderung von Lösegeld"
