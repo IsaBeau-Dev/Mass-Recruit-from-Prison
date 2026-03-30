@@ -74,14 +74,17 @@ types mrfp_button_types
 
 
 types mrfp_window_types {
-	# can only be used for fewer than MAX_PRISONER_COUNT_GRID(4) prisoners
-	type mrfp_prisoner_gold_display = hbox {
-		layoutpolicy_horizontal = expanding
+	type mrfp_prisoner_gold_and_herd_display = vbox {
 		spacing = 5
-		
+
 		text_single = {
-			text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', Character.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', Character.MakeScope ).ScriptValue('mrfp_target_ransom_gold_cost')|0] [gold_i]"
+			text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_ransom_gold_cost')|0] [gold_i]"
 			default_format = "#low"
+		}
+		text_single = {
+			text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_herd')|0] [herd_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_ransom_herd_cost')|0] [herd_i]"
+			default_format = "#low"
+			visible = "[GetScriptedGui('mrfp_prison_window_show_herd').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
 		}
 	}
 
@@ -147,17 +150,7 @@ types mrfp_window_types {
 		margin = { 10 5 }
 		spacing = 5
 
-		vbox = {
-			text_single = {
-				text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_gold')|0] [gold_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_ransom_gold_cost')|0] [gold_i]"
-				default_format = "#low"
-			}
-			text_single = {
-				text = "[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_secondary_recipient_herd')|0] [herd_i]/[GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).ScriptValue('mrfp_target_ransom_herd_cost')|0] [herd_i]"
-				default_format = "#low"
-				visible = "[GetScriptedGui('mrfp_prison_window_show_herd').IsShown(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope( 'target', CharacterListItem.GetCharacter.MakeScope ).End)]"
-			}
-		}
+		mrfp_prisoner_gold_and_herd_display = {}
 		mrfp_can_be_ransomed_and_can_be_recruited = {}
 	}
 
@@ -585,8 +578,7 @@ types mrfp_window_types {
 							}
 
 							# MRFP
-							# New gold display
-							mrfp_prisoner_gold_display = {}
+							mrfp_prisoner_gold_and_herd_display = {}
 
 							mrfp_can_be_ransomed_and_can_be_recruited = {}
 							# MRFP
