@@ -51,17 +51,14 @@
         save_scope_as = the_story_prisoner
         mrfp_is_at_war_with_targets_liege_story = yes
 
+        #Add blocked ransom flag to people you can ransom for >20 gold
+        mrfp_block_high_value_ransoms_effect = yes
+
         mrfp_release_all_unblocked_prisoners = yes
       }
     }
 
-    #temp set var for scripted effect to work (call this regardless because both on/off threshold will do it)
-    set_variable = {
-      name = mrfp_total_recruited_current
-      value = scope:the_story.var:mrfp_total_recruited_current
-    }
     mrfp_send_amout_people_released_message = yes
-    remove_variable = mrfp_total_recruited_current
     
     scope:the_story = {
       mrfp_update_recruitment_counter = yes
